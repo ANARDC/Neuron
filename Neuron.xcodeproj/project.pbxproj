@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */; };
+		994CBBA822DF6FEB007B5BD5 /* DiaryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */; };
+		994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */; };
+		994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */; };
+		9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
-		99B0F51922DDDC1B0037A4CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51822DDDC1B0037A4CA /* ViewController.swift */; };
+		99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */; };
 		99B0F51C22DDDC1B0037A4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F51A22DDDC1B0037A4CA /* Main.storyboard */; };
 		99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */; };
 		99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52022DDDC1C0037A4CA /* Assets.xcassets */; };
@@ -16,9 +21,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableExtension.swift; sourceTree = "<group>"; };
+		994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionView.swift; sourceTree = "<group>"; };
+		994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExCollectionView.swift; sourceTree = "<group>"; };
+		994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExCollectionView.swift; sourceTree = "<group>"; };
+		9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCellButton.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99B0F51822DDDC1B0037A4CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		99B0F51B22DDDC1B0037A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99B0F51E22DDDC1B0037A4CA /* Neuron.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Neuron.xcdatamodel; sourceTree = "<group>"; };
 		99B0F52022DDDC1C0037A4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9987AADA22DF857F0047215F /* CollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */,
+				994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */,
+				994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */,
+			);
+			path = CollectionViews;
+			sourceTree = "<group>";
+		};
 		99B0F50A22DDDC1B0037A4CA = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +76,16 @@
 		99B0F51522DDDC1B0037A4CA /* Neuron */ = {
 			isa = PBXGroup;
 			children = (
+				9987AADA22DF857F0047215F /* CollectionViews */,
+				99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */,
+				9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */,
+				994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */,
 				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
-				99B0F51822DDDC1B0037A4CA /* ViewController.swift */,
 				99B0F51A22DDDC1B0037A4CA /* Main.storyboard */,
-				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
 				99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */,
 				99B0F52522DDDC1C0037A4CA /* Info.plist */,
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
+				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
 			);
 			path = Neuron;
 			sourceTree = "<group>";
@@ -139,8 +162,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */,
-				99B0F51922DDDC1B0037A4CA /* ViewController.swift in Sources */,
+				994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */,
+				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
+				994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
+				9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */,
+				994CBBA822DF6FEB007B5BD5 /* DiaryCollectionView.swift in Sources */,
+				994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
