@@ -12,6 +12,7 @@
 		994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */; };
 		994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */; };
 		9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */; };
+		99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
 		99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */; };
 		99B0F51C22DDDC1B0037A4CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F51A22DDDC1B0037A4CA /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExCollectionView.swift; sourceTree = "<group>"; };
 		994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExCollectionView.swift; sourceTree = "<group>"; };
 		9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCellButton.swift; sourceTree = "<group>"; };
+		99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				99B0F52522DDDC1C0037A4CA /* Info.plist */,
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
 				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
+				99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */,
 			);
 			path = Neuron;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */,
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
 				994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */,
+				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
 				9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */,
 				994CBBA822DF6FEB007B5BD5 /* DiaryCollectionView.swift in Sources */,

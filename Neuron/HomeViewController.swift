@@ -17,6 +17,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //        addNoteCell?.addNote
     }
     
+    var diaryCountCells = 1
+    
     
     
     var addNoteCell: DiaryCollectionViewCell? = nil
@@ -55,10 +57,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let flowLayout = diaryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout  {
-            let width = UIScreen.main.bounds.width
-            let height = UIScreen.main.bounds.height
-            flowLayout.itemSize = CGSize(width: width - 40, height: height / 11)
+        if let flowLayout = diaryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let width = UIScreen.main.bounds.width - 20
+//            let height = UIScreen.main.bounds.height
+//            switch UIScreen.main.bounds.height {
+//            case 568: /// iPhone SE
+//            case 667: /// iPhone 6/6 Plus/6s/6s Plus/7/8
+//            case 736: /// iPhone 7 Plus/8 Plus
+//            case 812: /// iPhone X/Xs
+//            default:  /// iPhone Xs Max/Xr
+//            }
+            flowLayout.itemSize = CGSize(width: width, height: 90)
         }
     }
 }
