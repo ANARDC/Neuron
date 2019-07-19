@@ -9,48 +9,48 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - IBOutlets
     @IBOutlet weak var diaryCollectionView: DiaryCollectionView!
     @IBOutlet weak var lastExCollectionView: LastExCollectionView!
     @IBOutlet weak var allExCollectionView: AllExCollectionView!
-    //    @IBOutlet weak var showAllNotes: UILabel!
     @IBOutlet weak var showAllNotes: UIButton!
-    //    @IBAction func showAllNotes(_ sender: UIButton) {
-    //    }
     
-    let userDefaults = UserDefaults.standard
-    var notesCount = 1
-    var viewColor = UIColor.white
-    
-    @IBAction func theme(_ sender: UISwitch) {
-        switch viewColor {
-        case .white:
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view.backgroundColor = .lightGray
-            }, completion: nil)
-            viewColor = .lightGray
-        default:
-            UIView.animate(withDuration: 0.7, animations: {
-                self.view.backgroundColor = .white
-            }, completion: nil)
-            viewColor = .white
-        }
-        
-    }
+//    @IBAction func theme(_ sender: UISwitch) {
+//        switch viewColor {
+//        case .white:
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.view.backgroundColor = .lightGray
+//            }, completion: nil)
+//            viewColor = .lightGray
+//        default:
+//            UIView.animate(withDuration: 0.7, animations: {
+//                self.view.backgroundColor = .white
+//            }, completion: nil)
+//            viewColor = .white
+//        }
+//
+//    }
     
     @IBAction func addNoteCell(_ sender: UIButton) {
-        //        addNoteCell?.addNote
     }
     
+    // MARK: - Unwind Segue
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
         diaryCollectionView?.reloadData()
         showAllNotesViewing()
     }
     
+    // MARK: - Class Properties
     var addNoteCell: DiaryCollectionViewCell? = nil
+    let userDefaults = UserDefaults.standard
+    var notesCount = 1
+    var viewColor = UIColor.white
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
+        
         switch collectionView {
         case self.diaryCollectionView:
             return self.notesCount
@@ -82,8 +82,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    
-    
+    // MARK: - Viewing Functions
     func showAllNotesViewing() {
         /// Создаем minimumFontScale для кнопки showAllNotes как у UILabel
         showAllNotes.titleLabel?.minimumScaleFactor = 0.65
@@ -109,8 +108,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             //            }
         }
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
