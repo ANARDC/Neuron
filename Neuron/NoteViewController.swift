@@ -39,6 +39,7 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "lol"
     }
 }
 
