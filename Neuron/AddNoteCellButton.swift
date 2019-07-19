@@ -10,15 +10,15 @@ import UIKit
 
 class DiaryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addNote: AddNoteCellButton!
+    @IBOutlet weak var dateInt: UILabel!
+    @IBOutlet weak var dateString: UILabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var text: UILabel!
 }
-
 
 class AddNoteCellButton: UIButton {
     @IBInspectable var fillColor: UIColor = UIColor.clear
     var isAddButton: Bool = true
-}
-
-extension AddNoteCellButton {
     
     // Adding dashed border
     func addDashedBorder(_ rect: CGRect) {

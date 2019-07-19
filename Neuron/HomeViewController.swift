@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -15,45 +16,67 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var lastExCollectionView: LastExCollectionView!
     @IBOutlet weak var allExCollectionView: AllExCollectionView!
     @IBOutlet weak var showAllNotes: UIButton!
+    @IBOutlet weak var diaryCVHeight: NSLayoutConstraint!
     
-//    @IBAction func theme(_ sender: UISwitch) {
-//        switch viewColor {
-//        case .white:
-//            UIView.animate(withDuration: 0.5, animations: {
-//                self.view.backgroundColor = .lightGray
-//            }, completion: nil)
-//            viewColor = .lightGray
-//        default:
-//            UIView.animate(withDuration: 0.7, animations: {
-//                self.view.backgroundColor = .white
-//            }, completion: nil)
-//            viewColor = .white
-//        }
-//
-//    }
     
-    @IBAction func addNoteCell(_ sender: UIButton) {
-    }
     
-    // MARK: - Unwind Segue
-    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
-        diaryCollectionView?.reloadData()
-        showAllNotesViewing()
-    }
+    
     
     // MARK: - Class Properties
     var addNoteCell: DiaryCollectionViewCell? = nil
     let userDefaults = UserDefaults.standard
     var notesCount = 1
     var viewColor = UIColor.white
+    var notes = [Note]()
+    
+    //    @IBAction func theme(_ sender: UISwitch) {
+    //        switch viewColor {
+    //        case .white:
+    //            UIView.animate(withDuration: 0.5, animations: {
+    //                self.view.backgroundColor = .lightGray
+    //            }, completion: nil)
+    //            viewColor = .lightGray
+    //        default:
+    //            UIView.animate(withDuration: 0.7, animations: {
+    //                self.view.backgroundColor = .white
+    //            }, completion: nil)
+    //            viewColor = .white
+    //        }
+    //    }
+    
+    
+    
+    @IBAction func addNoteCell(_ sender: UIButton) {
+    }
+    
+    // MARK: - Unwind Segue
+    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
+        gettingNotesFromCoreData()
+        
+        diaryCollectionView?.reloadData()
+        switch userDefaults.integer(forKey: "notesCount") {
+            //        case 1:
+        //            diaryCVHeight.constant = 90
+        case ..<5:
+            diaryCVHeight.constant = CGFloat(90 + (10 + 90) * (userDefaults.integer(forKey: "notesCount") - 1))
+        default:
+            diaryCVHeight.constant = 390
+        }
+        
+        showAllNotesViewing()
+    }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
         
+        
         switch collectionView {
         case self.diaryCollectionView:
-            return self.notesCount
+            return self.notesCount < 5 ? self.notesCount : 4
         case self.lastExCollectionView:
             return 15
         default:
@@ -70,7 +93,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 addNoteCell = cell
                 return cell
             default:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as UICollectionViewCell
+                gettingNotesFromCoreData()
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
+//                print("--------------+++++++++", notes[0].date)
+                let index = notes.count - indexPath.row
+                cell.title.text = notes[index].title
+                cell.text.text = notes[index].text
+                cell.dateInt.text = notes[index].date?.components(separatedBy: ".")[0]
+                cell.dateString.text = notes[index].date?.components(separatedBy: ".")[1]
                 return cell
             }
         case self.lastExCollectionView:
@@ -81,6 +111,21 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             return cell
         }
     }
+    
+    
+    func gettingNotesFromCoreData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        do {
+            notes = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+        //        print(notes[0].date, "--------------+++++++++++++++++--------------------")
+    }
+    
+    
+    
     
     // MARK: - Viewing Functions
     func showAllNotesViewing() {
@@ -107,13 +152,23 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             //            default:  /// iPhone Xs Max/Xr
             //            }
         }
+        print(userDefaults.integer(forKey: "notesCount"))
+        switch userDefaults.integer(forKey: "notesCount") {
+            //        case 1:
+        //            diaryCVHeight.constant = 90
+        case ..<5:
+            diaryCVHeight.constant = CGFloat(90 + (10 + 90) * (userDefaults.integer(forKey: "notesCount") - 1))
+        default:
+            diaryCVHeight.constant = 390
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        diaryCollectionViewing()
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
+        print("-----------------------", userDefaults.integer(forKey: "notesCount"))
+        diaryCollectionViewing()
         showAllNotesViewing()
     }
 }
