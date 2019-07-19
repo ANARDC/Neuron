@@ -146,14 +146,14 @@
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Пачка папирос, прыщь на жопе волосьней оброс, яйца болят, стая котят" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="jnQ-q9-bJT">
                                                                             <rect key="frame" x="0.0" y="23.666666666666664" width="221" height="10.333333333333336"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="width" constant="221" id="Sjv-Z7-Ddh"/>
-                                                                            </constraints>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="221" id="RY8-II-CgS"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -499,6 +499,7 @@
                         <outlet property="allExCollectionView" destination="YEc-sb-uXe" id="mYj-NT-j02"/>
                         <outlet property="diaryCollectionView" destination="6CF-M2-y6r" id="9tg-Wq-BRI"/>
                         <outlet property="lastExCollectionView" destination="UMz-gd-WDT" id="6Ml-XZ-aIV"/>
+                        <outlet property="showAllNotes" destination="kYo-ZY-DLP" id="mkp-wU-AGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3Z-2A-YmR" sceneMemberID="firstResponder"/>
@@ -537,8 +538,12 @@
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2A8-nw-W5M">
                                                 <rect key="frame" x="126" y="280" width="83" height="53"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
                                                 <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="doneButton:" destination="dWe-Ab-I0i" eventType="touchUpInside" id="GRC-PQ-pgN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -564,8 +569,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="w8t-3C-hPS"/>
                     </view>
+                    <connections>
+                        <outlet property="noteText" destination="3So-vv-J8r" id="uDc-mf-DBP"/>
+                        <outlet property="noteTitle" destination="jV4-ex-YgB" id="4NN-FR-qWy"/>
+                        <segue destination="6hp-l6-xuX" kind="unwind" identifier="unwindSeque" unwindAction="unwindToHome:" id="eCv-Rt-9U9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8p-mh-E5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6hp-l6-xuX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-850.72463768115949" y="2101.3392857142858"/>
         </scene>

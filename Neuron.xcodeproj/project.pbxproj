@@ -80,6 +80,7 @@
 			children = (
 				9987AADA22DF857F0047215F /* CollectionViews */,
 				99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */,
+				99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */,
 				9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */,
 				994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */,
 				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
@@ -88,7 +89,6 @@
 				99B0F52522DDDC1C0037A4CA /* Info.plist */,
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
 				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
-				99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */,
 			);
 			path = Neuron;
 			sourceTree = "<group>";

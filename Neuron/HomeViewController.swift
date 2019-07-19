@@ -12,21 +12,27 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var diaryCollectionView: DiaryCollectionView!
     @IBOutlet weak var lastExCollectionView: LastExCollectionView!
     @IBOutlet weak var allExCollectionView: AllExCollectionView!
-    
+    @IBOutlet weak var showAllNotes: UILabel!
     @IBAction func addNoteCell(_ sender: UIButton) {
 //        addNoteCell?.addNote
     }
     
-    var diaryCountCells = 1
+    let userDefaults = UserDefaults.standard
+    var notesCount = 1
     
     
     
     var addNoteCell: DiaryCollectionViewCell? = nil
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if self.userDefaults.integer(forKey: "notesCount") == 0 {
+            self.userDefaults.set(1, forKey: "notesCount")
+        } else {
+            self.notesCount = self.userDefaults.integer(forKey: "notesCount")
+        }
         switch collectionView {
         case self.diaryCollectionView:
-            return 5
+            return self.notesCount
         case self.lastExCollectionView:
             return 15
         default:
@@ -55,6 +61,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
+        diaryCollectionView?.reloadData()
+        print("asdasdasdasd")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let flowLayout = diaryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -67,6 +78,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            case 812: /// iPhone X/Xs
 //            default:  /// iPhone Xs Max/Xr
 //            }
+            if self.userDefaults.integer(forKey: "notesCount") == 0 {
+                self.userDefaults.set(1, forKey: "notesCount")
+            } else {
+                self.notesCount = self.userDefaults.integer(forKey: "notesCount")
+            }
             flowLayout.itemSize = CGSize(width: width, height: 90)
         }
     }
