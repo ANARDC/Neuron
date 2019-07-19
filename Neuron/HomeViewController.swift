@@ -95,7 +95,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             default:
                 gettingNotesFromCoreData()
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
-//                print("--------------+++++++++", notes[0].date)
                 let index = notes.count - indexPath.row
                 cell.title.text = notes[index].title
                 cell.text.text = notes[index].text
@@ -167,7 +166,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
-        print("-----------------------", userDefaults.integer(forKey: "notesCount"))
         diaryCollectionViewing()
         showAllNotesViewing()
     }

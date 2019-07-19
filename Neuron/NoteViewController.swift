@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class NoteViewController: UIViewController {
-
+    
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteText: UITextView!
     
@@ -26,7 +26,7 @@ class NoteViewController: UIViewController {
             showAlert(for: "Title")
             return
         }
-        guard noteText.text != "" else {
+        guard noteText.text != "" && noteText.text != "Enter something..." else {
             showAlert(for: "Text")
             return
         }
@@ -63,6 +63,13 @@ class NoteViewController: UIViewController {
     }
     
     
+    func noteTextViewSetting() {
+        noteText.delegate = self
+        noteText.text = "Enter something..."
+        noteText.backgroundColor?.withAlphaComponent(0)
+        noteText.textColor = .lightGray
+    }
+    
     
     
     func showAlert(for emptyElement: String) {
@@ -72,9 +79,45 @@ class NoteViewController: UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        super.touchesBegan(touches, with: event)
+        self.view.endEditing(true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        noteTextViewSetting()
         navigationItem.title = "lol"
     }
 }
 
+extension NoteViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView)
+    {
+        if (textView.text == "Enter something..." && textView.textColor == .lightGray)
+        {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView)
+    {
+        if (textView.text == "")
+        {
+            textView.text = "Enter something..."
+            textView.textColor = .lightGray
+        }
+    }
+}
+
+
+extension UIScrollView {
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.next?.touchesBegan(touches, with: event)
+    }
+}
