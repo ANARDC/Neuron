@@ -70,8 +70,6 @@ class NoteViewController: UIViewController {
         noteText.textColor = .lightGray
     }
     
-    
-    
     func showAlert(for emptyElement: String) {
         let ac = UIAlertController(title: "Error", message: "\(emptyElement) cannot be empty", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Okay", style: .default, handler: nil)
@@ -79,20 +77,25 @@ class NoteViewController: UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    
+    /// Этот метод работает потому что в файле DesignableExtension реализовано соответствующее расширение UIScrollView
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         noteTextViewSetting()
-        navigationItem.title = "lol"
+        navigationItem.title = "Note"
+        self.tabBarController?.tabBar.isHidden = true
+//        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
 
+/// Реализация Placeholder
 extension NoteViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView)
@@ -115,9 +118,4 @@ extension NoteViewController: UITextViewDelegate {
 }
 
 
-extension UIScrollView {
-    
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.next?.touchesBegan(touches, with: event)
-    }
-}
+

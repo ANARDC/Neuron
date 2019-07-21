@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */; };
-		994CBBA822DF6FEB007B5BD5 /* DiaryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */; };
-		994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */; };
-		994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */; };
-		9969995022E21CC9000D6AF8 /* AllNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969994F22E21CC9000D6AF8 /* AllNotesViewController.swift */; };
-		9969995222E252D8000D6AF8 /* NoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969995122E252D8000D6AF8 /* NoteCollectionViewCell.swift */; };
-		9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */; };
+		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
+		996F4B2022E3768900B19478 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1F22E3768900B19478 /* Stats.storyboard */; };
+		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
+		9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */; };
+		9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20522E3F67900EED8FC /* SettingsViewController.swift */; };
+		9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */; };
+		9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */; };
 		99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
 		99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */; };
@@ -25,12 +26,13 @@
 
 /* Begin PBXFileReference section */
 		994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableExtension.swift; sourceTree = "<group>"; };
-		994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionView.swift; sourceTree = "<group>"; };
-		994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastExCollectionView.swift; sourceTree = "<group>"; };
-		994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllExCollectionView.swift; sourceTree = "<group>"; };
-		9969994F22E21CC9000D6AF8 /* AllNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesViewController.swift; sourceTree = "<group>"; };
-		9969995122E252D8000D6AF8 /* NoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCollectionViewCell.swift; sourceTree = "<group>"; };
-		9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCellButton.swift; sourceTree = "<group>"; };
+		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		996F4B1F22E3768900B19478 /* Stats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
+		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		9974E20522E3F67900EED8FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewController.swift; sourceTree = "<group>"; };
+		9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryCollectionViewCell+AddNoteCellButton.swift"; sourceTree = "<group>"; };
 		99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,14 +55,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9987AADA22DF857F0047215F /* CollectionViews */ = {
+		996F4B1822E36E6B00B19478 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				994CBBA722DF6FEB007B5BD5 /* DiaryCollectionView.swift */,
-				994CBBA922DF7023007B5BD5 /* LastExCollectionView.swift */,
-				994CBBAB22DF7030007B5BD5 /* AllExCollectionView.swift */,
+				99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */,
+				9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */,
+				996F4B1A22E36F8100B19478 /* Note */,
+				996F4B1B22E36FB600B19478 /* All Notes */,
 			);
-			path = CollectionViews;
+			path = Home;
+			sourceTree = "<group>";
+		};
+		996F4B1922E36F1300B19478 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */,
+				996F4B1822E36E6B00B19478 /* Home */,
+				9974E20422E3F5F400EED8FC /* Settings */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		996F4B1A22E36F8100B19478 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		996F4B1B22E36FB600B19478 /* All Notes */ = {
+			isa = PBXGroup;
+			children = (
+				9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */,
+				9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */,
+			);
+			path = "All Notes";
+			sourceTree = "<group>";
+		};
+		996F4B1C22E3740000B19478 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */,
+				99B0F51A22DDDC1B0037A4CA /* Main.storyboard */,
+				996F4B1D22E3741900B19478 /* Home.storyboard */,
+				996F4B1F22E3768900B19478 /* Stats.storyboard */,
+				996F4B2122E376A000B19478 /* Settings.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9974E20422E3F5F400EED8FC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9974E20522E3F67900EED8FC /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		99B0F50A22DDDC1B0037A4CA = {
@@ -82,16 +132,9 @@
 		99B0F51522DDDC1B0037A4CA /* Neuron */ = {
 			isa = PBXGroup;
 			children = (
-				9987AADA22DF857F0047215F /* CollectionViews */,
-				99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */,
-				99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */,
-				9969994F22E21CC9000D6AF8 /* AllNotesViewController.swift */,
-				9969995122E252D8000D6AF8 /* NoteCollectionViewCell.swift */,
-				9987AAD722DF81DD0047215F /* AddNoteCellButton.swift */,
-				994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */,
+				996F4B1C22E3740000B19478 /* Storyboards */,
+				996F4B1922E36F1300B19478 /* Screens */,
 				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
-				99B0F51A22DDDC1B0037A4CA /* Main.storyboard */,
-				99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */,
 				99B0F52522DDDC1C0037A4CA /* Info.plist */,
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
 				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
@@ -159,7 +202,10 @@
 			files = (
 				99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */,
 				99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */,
+				996F4B2022E3768900B19478 /* Stats.storyboard in Resources */,
+				996F4B2222E376A000B19478 /* Settings.storyboard in Resources */,
 				99B0F51C22DDDC1B0037A4CA /* Main.storyboard in Resources */,
+				996F4B1E22E3741900B19478 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,15 +217,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */,
-				994CBBAA22DF7023007B5BD5 /* LastExCollectionView.swift in Sources */,
-				9969995022E21CC9000D6AF8 /* AllNotesViewController.swift in Sources */,
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
-				994CBBAC22DF7030007B5BD5 /* AllExCollectionView.swift in Sources */,
+				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
 				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
+				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
-				9987AAD822DF81DD0047215F /* AddNoteCellButton.swift in Sources */,
-				9969995222E252D8000D6AF8 /* NoteCollectionViewCell.swift in Sources */,
-				994CBBA822DF6FEB007B5BD5 /* DiaryCollectionView.swift in Sources */,
+				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
+				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

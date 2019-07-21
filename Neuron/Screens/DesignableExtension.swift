@@ -58,3 +58,10 @@ extension UIView {
         get { return clipsToBounds }
     }
 }
+
+
+extension UIScrollView {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.next?.touchesBegan(touches, with: event)
+    }
+}
