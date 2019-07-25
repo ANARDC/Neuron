@@ -3,18 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */; };
+		992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BEF0C22E8BB0C00A9360A /* Calendar.swift */; };
+		994CBBA622DF44A5007B5BD5 /* Designable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Designable.swift */; };
 		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
 		996F4B2022E3768900B19478 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1F22E3768900B19478 /* Stats.storyboard */; };
 		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
 		9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */; };
 		9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20522E3F67900EED8FC /* SettingsViewController.swift */; };
 		9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */; };
+		9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E23C22E7A46800EED8FC /* CalendarViewController.swift */; };
 		9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */; };
+		999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */; };
 		99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
 		99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */; };
@@ -22,17 +25,23 @@
 		99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */; };
 		99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52022DDDC1C0037A4CA /* Assets.xcassets */; };
 		99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */; };
+		B7E0F035836F3F2D27CBB599 /* Pods_Neuron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EFABE5D2B322EC6D420006 /* Pods_Neuron.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableExtension.swift; sourceTree = "<group>"; };
+		01EFABE5D2B322EC6D420006 /* Pods_Neuron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neuron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.debug.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig"; sourceTree = "<group>"; };
+		992BEF0C22E8BB0C00A9360A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		994CBBA522DF44A5007B5BD5 /* Designable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designable.swift; sourceTree = "<group>"; };
 		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		996F4B1F22E3768900B19478 /* Stats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		9974E20522E3F67900EED8FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewController.swift; sourceTree = "<group>"; };
+		9974E23C22E7A46800EED8FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift"; sourceTree = SOURCE_ROOT; };
 		9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryCollectionViewCell+AddNoteCellButton.swift"; sourceTree = "<group>"; };
+		999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +51,7 @@
 		99B0F52022DDDC1C0037A4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B0F52322DDDC1C0037A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B0F52522DDDC1C0037A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.release.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,12 +59,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E0F035836F3F2D27CBB599 /* Pods_Neuron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11269DCA205FFB6EEAA324B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01EFABE5D2B322EC6D420006 /* Pods_Neuron.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4E7B9E2D3E26947D5CD4A00D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */,
+				D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		996F4B1822E36E6B00B19478 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +97,7 @@
 		996F4B1922E36F1300B19478 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				994CBBA522DF44A5007B5BD5 /* DesignableExtension.swift */,
+				994CBBA522DF44A5007B5BD5 /* Designable.swift */,
 				996F4B1822E36E6B00B19478 /* Home */,
 				9974E20422E3F5F400EED8FC /* Settings */,
 			);
@@ -87,8 +115,9 @@
 		996F4B1B22E36FB600B19478 /* All Notes */ = {
 			isa = PBXGroup;
 			children = (
-				9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */,
+				9974E23B22E765E000EED8FC /* Calendar */,
 				9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */,
+				9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */,
 			);
 			path = "All Notes";
 			sourceTree = "<group>";
@@ -113,11 +142,23 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		9974E23B22E765E000EED8FC /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				9974E23C22E7A46800EED8FC /* CalendarViewController.swift */,
+				999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */,
+				992BEF0C22E8BB0C00A9360A /* Calendar.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		99B0F50A22DDDC1B0037A4CA = {
 			isa = PBXGroup;
 			children = (
 				99B0F51522DDDC1B0037A4CA /* Neuron */,
 				99B0F51422DDDC1B0037A4CA /* Products */,
+				4E7B9E2D3E26947D5CD4A00D /* Pods */,
+				11269DCA205FFB6EEAA324B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,9 +190,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99B0F52822DDDC1C0037A4CA /* Build configuration list for PBXNativeTarget "Neuron" */;
 			buildPhases = (
+				E374B4C9288B02D65AC11E90 /* [CP] Check Pods Manifest.lock */,
 				99B0F50F22DDDC1B0037A4CA /* Sources */,
 				99B0F51022DDDC1B0037A4CA /* Frameworks */,
 				99B0F51122DDDC1B0037A4CA /* Resources */,
+				9D1754CFB684F71D63E4D083 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,20 +254,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9D1754CFB684F71D63E4D083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E374B4C9288B02D65AC11E90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Neuron-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99B0F50F22DDDC1B0037A4CA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */,
 				99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */,
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
 				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
 				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
 				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
+				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
+				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */,
-				994CBBA622DF44A5007B5BD5 /* DesignableExtension.swift in Sources */,
+				994CBBA622DF44A5007B5BD5 /* Designable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +456,7 @@
 		};
 		99B0F52922DDDC1C0037A4CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,6 +475,7 @@
 		};
 		99B0F52A22DDDC1C0037A4CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,60 +8,76 @@
 
 import UIKit
 
+// MARK: - IBInspectable properties of UIView
 extension UIView {
     
-    /// Радиус скругления
+    // Радиус скругления
     @IBInspectable var cornerRadius: CGFloat {
         set { layer.cornerRadius = newValue  }
         get { return layer.cornerRadius }
     }
     
-    /// Ширина границы
+    // Ширина границы
     @IBInspectable var borderWidth: CGFloat {
         set { layer.borderWidth = newValue }
         get { return layer.borderWidth }
     }
     
-    /// Цвет границы
+    // Цвет границы
     @IBInspectable var borderColor: CGColor? {
         set { layer.borderColor = newValue  }
         get { return layer.borderColor! }
     }
     
-    /// Смещение тени
+    // Смещение тени
     @IBInspectable var shadowOffset: CGSize {
         set { layer.shadowOffset = newValue  }
         get { return layer.shadowOffset }
     }
     
-    /// Прозрачность тени
+    // Прозрачность тени
     @IBInspectable var shadowOpacity: Float {
         set { layer.shadowOpacity = newValue }
         get { return layer.shadowOpacity }
     }
     
-    /// Радиус блура тени
+    // Радиус блура тени
     @IBInspectable var shadowRadius: CGFloat {
         set { layer.shadowRadius = newValue }
         get { return layer.shadowRadius }
     }
     
-    /// Цвет тени
+    // Цвет тени
     @IBInspectable var shadowColor: CGColor {
         set { layer.shadowColor = newValue }
         get { return layer.shadowColor! }
     }
     
-    /// Отсекание по границе
+    // Отсекание по границе
     @IBInspectable var _clipsToBounds: Bool {
         set { clipsToBounds = newValue }
         get { return clipsToBounds }
     }
 }
 
-
+// MARK: - Extension of UIScrollView to work touchesBegan method
 extension UIScrollView {
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.next?.touchesBegan(touches, with: event)
+    }
+}
+
+// MARK: - Design of NavigationBar
+class BarDesign {
+    func addCustomizedBackBtn(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Назад")
+        navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
+    func makeNavigationBarTranslucent(navigationController: UINavigationController?) {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
     }
 }

@@ -11,6 +11,9 @@ import CoreData
 
 class AllNotesTableViewController: UITableViewController {
     
+    @IBOutlet weak var calendarButton: UIBarButtonItem!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
+    
     var notes = [Note]()
     var notesCount = 0
     // MARK: - Table view data source
@@ -57,5 +60,10 @@ class AllNotesTableViewController: UITableViewController {
         notesCount = UserDefaults.standard.integer(forKey: "notesCount")
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()
+        BarDesign().addCustomizedBackBtn(navigationController: self.navigationController, navigationItem: self.navigationItem)
+        calendarButton.image = UIImage(named: "Иконка календаря")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        sortButton.image = UIImage(named: "Сортировка")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
 }

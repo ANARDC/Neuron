@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Hero
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -26,7 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     var notes = [Note]()
     
     
-    // MARK: - IBAcrions
+    // MARK: - IBActions
     @IBAction func addNoteCell(_ sender: UIButton) {
     }
     
@@ -144,6 +145,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         diaryCollectionViewHeightVieweing()
     }
     
+    // FIXME: - Переделай тут с UserDefaults на CoreData/
+    // Вытащи мелкие вещи в отдельные функции (одна вещь - одна функция)
     override func viewDidLoad() {
         super.viewDidLoad()
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
@@ -151,6 +154,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         diaryCollectionViewing()
         showAllNotesViewing()
         self.tabBarController?.tabBar.isHidden = false
+        
+        BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
     }
     
     override func viewWillAppear(_ animated: Bool) {

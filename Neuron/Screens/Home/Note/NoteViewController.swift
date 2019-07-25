@@ -77,25 +77,24 @@ class NoteViewController: UIViewController {
         present(ac, animated: true, completion: nil)
     }
     
-    /// Этот метод работает потому что в файле DesignableExtension реализовано соответствующее расширение UIScrollView
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         noteTextViewSetting()
         navigationItem.title = "Note"
         self.tabBarController?.tabBar.isHidden = true
-//        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        BarDesign().addCustomizedBackBtn(navigationController: self.navigationController, navigationItem: self.navigationItem)
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
 }
 
-/// Реализация Placeholder
+// MARK: - Placeholder Realization
 extension NoteViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView)
