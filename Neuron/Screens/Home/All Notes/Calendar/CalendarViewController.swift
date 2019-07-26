@@ -22,26 +22,14 @@ final class CalendarViewController: UIViewController {
     let currentMonthInfo = NoteCalendar().getDateInfo(of: .current)
     var daysList = [String]()
     var daysListStatus = [String]()
-    //    var previousMonthsDaysCount = 0
-    //    var nextMonthDaysCount = 0
     
     // MARK: - IBActions
     @IBAction func previousMonth(_ sender: UIButton) {
-        //        let month = NoteCalendar().getDateInfo(of: .previous).month
-        //        let year = NoteCalendar().getDateInfo(of: .previous).year
-        //        dateLabel.text = "\(month) \(year)"
-        //        let previousMonthInfo = NoteCalendar().getDateInfo(of: .previous)
-        //        previousMonthsDaysCount += previousMonthInfo.daysCount
         fillingDaysList(of: .previous)
         calendarCollectionView.reloadData()
     }
     
     @IBAction func nextMonth(_ sender: UIButton) {
-        //        let month = NoteCalendar().getDateInfo(of: .next).month
-        //        let year = NoteCalendar().getDateInfo(of: .next).year
-        //        dateLabel.text = "\(month) \(year)"
-        //        let nextMonthInfo = NoteCalendar().getDateInfo(of: .next)
-        //        nextMonthDaysCount += nextMonthInfo.daysCount
         fillingDaysList(of: .next)
         calendarCollectionView.reloadData()
     }
@@ -91,7 +79,7 @@ extension CalendarViewController {
         cell.dayButton.shadowRadius = 5
         cell.dayButton.shadowOffset = CGSize(width: 0, height: 0.5)
         
-
+        
         cell.dayButton.setTitle(daysList[index], for: .normal)
         
         switch daysListStatus[index] {
@@ -138,29 +126,17 @@ extension CalendarViewController {
         
         daysList.removeAll()
         daysListStatus.removeAll()
-        //        let currentDayNumberInWeek = currentMonthInfo.currentDayNumberInWeek!
-        //        let currentDayNumber = currentMonthInfo.currentDay!
-        //        let firstDayNumberInWeekPreliminaryResult = ((currentDayNumberInWeek - currentDayNumber - previousMonthsDaysCount) % 7 + 1) % 7
-        //        print("---------", firstDayNumberInWeekPreliminaryResult)
-        //        let firstDayNumberInWeek = firstDayNumberInWeekPreliminaryResult >= 0 ? firstDayNumberInWeekPreliminaryResult : 7 + firstDayNumberInWeekPreliminaryResult
+        
         let firstDayNumberInWeek = ("\(month.year)-\(month.month)-\(1)".date?.firstDayOfTheMonth.weekday)!
-        print("------------------------+++++++++++", month.month)
-        print("------------------------+++++++++++", position)
-        print("------------------------+++++++++++", firstDayNumberInWeek)
-        // "2016-2-18".date?.firstDayOfTheMonth.weekday   // 1 = Monday (Monday-Sunday 1-7)
-        //        print("firstDayNumberInWeek = (\(currentDayNumberInWeek) - \(currentDayNumber) - \(previousMonthsDaysCount) % 7 + 1) % 7 = \(firstDayNumberInWeek)")
         
         // Filling first part
         if firstDayNumberInWeek != 0 {
             let previousMonthInfo = NoteCalendar().getDateInfo(of: .previous)
             for i in 1...firstDayNumberInWeek {
-                print(i)
                 daysList.append(String(previousMonthInfo.daysCount - (firstDayNumberInWeek - i)))
                 daysListStatus.append("NotCurrent")
             }
-            print(NoteCalendar.offset)
             NoteCalendar.offset += 1
-            print(NoteCalendar.offset)
         }
         
         // Filling second part
@@ -168,37 +144,12 @@ extension CalendarViewController {
             daysList.append(String(i))
             daysListStatus.append("Current")
         }
+        
         // Filling third part
-        for i in stride(from: 0, to: 6 - (firstDayNumberInWeek + month.daysCount - 1) % 7, by: 1) {
+        for i in 0...6 - (firstDayNumberInWeek + month.daysCount) % 7 {
             daysList.append(String(i + 1))
             daysListStatus.append("NotCurrent")
         }
-        
-        print("опаньки приехали пацанчик", daysListStatus)
-        //        let currentDayNumberInWeek = currentMonthInfo.currentDayNumberInWeek!
-        //        let currentDayNumber = currentMonthInfo.currentDay!
-        //        let firstDayNumberInWeekPreliminaryResult = ((currentDayNumberInWeek - currentDayNumber - nextMonthDaysCount) % 7 + 1) % 7
-        //        let firstDayNumberInWeek = firstDayNumberInWeekPreliminaryResult >= 0 ? firstDayNumberInWeekPreliminaryResult : 7 + firstDayNumberInWeekPreliminaryResult
-        //
-        //        // Filling first part
-        //        if firstDayNumberInWeek != 0 {
-        //            let previousMonthInfo = NoteCalendar().getDateInfo(of: .previous)
-        //            for i in 1...firstDayNumberInWeek {
-        //                print(i)
-        //                daysList.append(String(previousMonthInfo.daysCount - (firstDayNumberInWeek - i)))
-        //            }
-        //            NoteCalendar.offset -= 1
-        //        }
-        //
-        //        // Filling second part
-        //        for i in 1...month.daysCount {
-        //            daysList.append(String(i))
-        //        }
-        //
-        //        // Filling third part
-        //        for i in stride(from: 0, to: 6 - (firstDayNumberInWeek + month.daysCount - 1) % 7, by: 1) {
-        //            daysList.append(String(i + 1))
-        //        }
     }
 }
 
