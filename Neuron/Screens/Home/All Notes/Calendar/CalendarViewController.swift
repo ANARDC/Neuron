@@ -48,6 +48,8 @@ final class CalendarViewController: UIViewController {
         viewViewing(dayNoteView)
         fillingDaysList(of: .current)
         collectionViewSetting()
+        NoteCalendar.offset = 0
+        calendarCollectionView.reloadData()
     }
 }
 
@@ -99,18 +101,19 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
         
-        if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) || cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
+        if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) {
             UIView.animate(withDuration: 0.8) {
+                cell.dayView.borderWidth = 0
+            }
+        } else if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
                 cell.dayView.borderWidth = 0
                 cell.dayView.shadowOpacity = 1
-            }
-        } else {
-            UIView.animate(withDuration: 0.8) {
-                cell.dayView.borderWidth = 0
+            }  else {
+                UIView.animate(withDuration: 0.8) {
+                    cell.dayView.borderWidth = 0
+                }
             }
         }
-        
-    }
     
     func collectionViewSetting() {
         calendarCollectionView.dataSource = self
@@ -157,7 +160,7 @@ extension CalendarViewController {
                 cell.dayNumber.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
             }
         default:
-            if (NoteCalendar.offset == -1 || NoteCalendar.offset == 1) && daysDatesList.contains("\(currentMonthInfo.currentDay!).\(currentMonthInfo.month.prefix(3)).\(currentMonthInfo.year)") {
+            if (NoteCalendar.offset == -1 || NoteCalendar.offset == 1) && daysDatesList[index] == "\(currentMonthInfo.currentDay!).\(currentMonthInfo.month.prefix(3)).\(currentMonthInfo.year)" {
                 cell.dayView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6)
                 cell.dayNumber.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
             } else {
