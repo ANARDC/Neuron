@@ -451,22 +451,6 @@
                                             <segue destination="xiJ-nd-wdn" kind="show" identifier="showDiary" id="Tne-tu-A86"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9uO-Qe-beK" customClass="PWSwitch" customModule="PWSwitch">
-                                        <rect key="frame" x="90" y="0.0" width="129" height="52"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOnFillColor">
-                                                <color key="value" red="0.45696753263473511" green="0.60822248458862305" blue="0.97924309968948364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOnBorderColor">
-                                                <color key="value" red="0.45696753263473511" green="0.60822248458862305" blue="0.97924309968948364" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
-                                                <real key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="nZW-Rz-wKw" firstAttribute="top" secondItem="LAw-p9-uf0" secondAttribute="bottom" constant="8" id="0A0-pM-pHC"/>
@@ -771,7 +755,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-dJ-2wF">
-                                        <rect key="frame" x="205.33333333333334" y="15" width="6.6666666666666572" height="12"/>
+                                        <rect key="frame" x="205.66666666666666" y="15" width="6.6666666666666572" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="6.6666666666666661" id="9Ds-r8-szY"/>
                                             <constraint firstAttribute="height" constant="12" id="OH6-eS-M5G"/>
@@ -792,7 +776,7 @@
                                             <action selector="nextMonth:" destination="4Pj-Qs-1Z6" eventType="touchUpInside" id="j0Z-rq-lW9"/>
                                         </connections>
                                     </button>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a4e-mx-Lb5">
+                                    <collectionView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="a4e-mx-Lb5">
                                         <rect key="frame" x="1" y="70" width="333" height="211"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="8a7-sa-m4I">
@@ -809,18 +793,34 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="47.5" height="42.200000000000003"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5v-LD-QfM">
-                                                            <rect key="frame" x="8.6666666666666643" y="5.6666666666666679" width="30" height="31.000000000000004"/>
-                                                            <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="13"/>
-                                                        </button>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UqU-sZ-aHA">
+                                                            <rect key="frame" x="8.0000000000000018" y="2" width="30.666666666666671" height="30"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lot-fF-aub">
+                                                                    <rect key="frame" x="11.333333333333332" y="8.3333333333333339" width="7.6666666666666679" height="17.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="13"/>
+                                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Lot-fF-aub" firstAttribute="centerX" secondItem="UqU-sZ-aHA" secondAttribute="centerX" id="fj9-XL-cT0"/>
+                                                                <constraint firstItem="Lot-fF-aub" firstAttribute="centerY" secondItem="UqU-sZ-aHA" secondAttribute="centerY" constant="2" id="mJf-ue-CQy"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                 </view>
+                                                <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstItem="e5v-LD-QfM" firstAttribute="centerX" secondItem="Zsz-Fj-ioI" secondAttribute="centerX" id="A4X-2f-LTB"/>
-                                                    <constraint firstItem="e5v-LD-QfM" firstAttribute="centerY" secondItem="Zsz-Fj-ioI" secondAttribute="centerY" id="geJ-gX-GPR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="UqU-sZ-aHA" secondAttribute="trailing" constant="9" id="BhF-k2-47d"/>
+                                                    <constraint firstItem="UqU-sZ-aHA" firstAttribute="leading" secondItem="Zsz-Fj-ioI" secondAttribute="leading" constant="8" id="Otz-YL-MHc"/>
+                                                    <constraint firstAttribute="bottom" secondItem="UqU-sZ-aHA" secondAttribute="bottom" constant="10.200000000000003" id="bWK-44-qb4"/>
+                                                    <constraint firstItem="UqU-sZ-aHA" firstAttribute="top" secondItem="Zsz-Fj-ioI" secondAttribute="top" constant="2" id="gRF-W3-z4w"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="dayButton" destination="e5v-LD-QfM" id="PgI-5b-IcL"/>
+                                                    <outlet property="dayNumber" destination="Lot-fF-aub" id="Qk5-9H-wad"/>
+                                                    <outlet property="dayView" destination="UqU-sZ-aHA" id="1Sf-sa-YTZ"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -829,10 +829,7 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G9A-Qq-PKT">
-                                        <rect key="frame" x="225" y="8" width="73" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="73" id="FRc-lm-SWu"/>
-                                        </constraints>
+                                        <rect key="frame" x="225.33333333333334" y="8" width="72.666666666666657" height="25"/>
                                         <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -845,7 +842,6 @@
                                     <constraint firstItem="G9A-Qq-PKT" firstAttribute="top" secondItem="eLt-xP-WKq" secondAttribute="top" constant="8" id="NTR-PL-7aS"/>
                                     <constraint firstAttribute="trailing" secondItem="btn-bh-0uF" secondAttribute="trailing" constant="190" id="RGC-ad-ShE"/>
                                     <constraint firstAttribute="trailing" secondItem="a4e-mx-Lb5" secondAttribute="trailing" constant="1" id="TFJ-He-ViD"/>
-                                    <constraint firstItem="YvN-dJ-2wF" firstAttribute="leading" secondItem="eLt-xP-WKq" secondAttribute="leading" constant="205.33333333333334" id="WRw-HR-Qsz"/>
                                     <constraint firstItem="a4e-mx-Lb5" firstAttribute="leading" secondItem="eLt-xP-WKq" secondAttribute="leading" constant="1" id="c4I-xN-6d8"/>
                                     <constraint firstItem="G9A-Qq-PKT" firstAttribute="leading" secondItem="YvN-dJ-2wF" secondAttribute="trailing" constant="13" id="eS9-Lo-vcw"/>
                                     <constraint firstItem="a4e-mx-Lb5" firstAttribute="top" secondItem="eLt-xP-WKq" secondAttribute="top" constant="70" id="lmP-BL-sjo"/>
@@ -917,12 +913,14 @@
                         <outlet property="calendarCollectionView" destination="a4e-mx-Lb5" id="NAo-WX-2UR"/>
                         <outlet property="calendarView" destination="eLt-xP-WKq" id="frN-CV-nFn"/>
                         <outlet property="dateLabel" destination="G9A-Qq-PKT" id="Gf8-B4-BE6"/>
+                        <outlet property="dayNoteText" destination="WGI-Tf-Zyy" id="gTk-YI-Cx5"/>
+                        <outlet property="dayNoteTitle" destination="0bc-WE-LA8" id="EL6-Bp-yMD"/>
                         <outlet property="dayNoteView" destination="iDb-3X-hnT" id="bQv-i0-an4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k12-pN-wjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1250" y="2607"/>
+            <point key="canvasLocation" x="-1250.4000000000001" y="2606.8965517241381"/>
         </scene>
         <!--Home-->
         <scene sceneID="011-9u-ibU">

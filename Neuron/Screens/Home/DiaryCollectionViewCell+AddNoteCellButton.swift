@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiaryCollectionViewCell: UICollectionViewCell {
+final class DiaryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var addNote: AddNoteCellButton!
     @IBOutlet weak var dateInt: UILabel!
     @IBOutlet weak var dateString: UILabel!
@@ -16,7 +16,7 @@ class DiaryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var text: UILabel!
 }
 
-class AddNoteCellButton: UIButton {
+final class AddNoteCellButton: UIButton {
     @IBInspectable var fillColor: UIColor = UIColor.clear
     var isAddButton: Bool = true
     

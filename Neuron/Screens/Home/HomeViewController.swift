@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Hero
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var diaryCollectionView: UICollectionView!
@@ -30,21 +30,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: - IBActions
     @IBAction func addNoteCell(_ sender: UIButton) {
     }
-    
-    //    @IBAction func theme(_ sender: UISwitch) {
-    //        switch viewColor {
-    //        case .white:
-    //            UIView.animate(withDuration: 0.5, animations: {
-    //                self.view.backgroundColor = .lightGray
-    //            }, completion: nil)
-    //            viewColor = .lightGray
-    //        default:
-    //            UIView.animate(withDuration: 0.7, animations: {
-    //                self.view.backgroundColor = .white
-    //            }, completion: nil)
-    //            viewColor = .white
-    //        }
-    //    }
     
     // MARK: - Unwind Segue
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
@@ -118,13 +103,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     // MARK: - Viewing Functions
     func showAllNotesViewing() {
-        /// Создаем minimumFontScale для кнопки showAllNotes как у UILabel
+        // Создаем minimumFontScale для кнопки showAllNotes как у UILabel
         showAllNotes.titleLabel?.minimumScaleFactor = 0.65
         showAllNotes.titleLabel?.numberOfLines = 1
         showAllNotes.titleLabel?.adjustsFontSizeToFitWidth = true
-        /// Настраиваем текст showAllNotes
+        showAllNotes.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+        // Настраиваем текст showAllNotes
         showAllNotes.setTitle("  Show All (\(userDefaults.integer(forKey: "notesCount") - 1))  ", for: .normal)
-        /// Настраиваем отображение showAllNotes
+        // Настраиваем отображение showAllNotes
         showAllNotes.isHidden = userDefaults.integer(forKey: "notesCount") < 5 ? true : false
     }
     
@@ -160,5 +146,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        lastExCollectionView.scrollToItem(at: IndexPath(row: 14, section: 0), at: UICollectionView.ScrollPosition.right, animated: true)
     }
 }

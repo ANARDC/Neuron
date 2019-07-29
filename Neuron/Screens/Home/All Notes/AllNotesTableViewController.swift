@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class AllNotesTableViewController: UITableViewController {
+final class AllNotesTableViewController: UITableViewController {
     
     @IBOutlet weak var calendarButton: UIBarButtonItem!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
-    var notes = [Note]()
+    var notes = CoreDataProcesses.notesFromCoreData
     var notesCount = 0
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -30,7 +31,6 @@ class AllNotesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        gettingNotesFromCoreData()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Note", for: indexPath) as! NoteTableViewCell
         let index = notes.count - indexPath.row - 1
@@ -42,21 +42,7 @@ class AllNotesTableViewController: UITableViewController {
         return cell
     }
     
-    
-    // MARK: - Getting data from CoreData functions
-    func gettingNotesFromCoreData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-        do {
-            notes = try context.fetch(fetchRequest)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    
     override func viewDidLoad() {
-        gettingNotesFromCoreData()
         notesCount = UserDefaults.standard.integer(forKey: "notesCount")
         self.tabBarController?.tabBar.isHidden = true
         super.viewDidLoad()

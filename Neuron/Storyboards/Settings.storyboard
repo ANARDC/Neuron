@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fR2-f2-9fs">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQc-lS-8Zg">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14799.2"/>
@@ -11,19 +11,314 @@
         <!--Settings-->
         <scene sceneID="Y7S-gA-TtO">
             <objects>
-                <viewController id="fR2-f2-9fs" customClass="ViewController" customModule="Neuron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fR2-f2-9fs" customClass="SettingsViewController" customModule="Neuron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xo-vu-YGL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="21V-hc-0aI">
+                                <rect key="frame" x="20" y="99" width="103" height="44.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-Mw-Ff5">
+                                        <rect key="frame" x="0.0" y="0.0" width="103" height="23"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-wY-f5y">
+                                        <rect key="frame" x="0.0" y="28" width="28.333333333333332" height="16.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-Vp-O0T">
+                                <rect key="frame" x="20" y="153.33333333333334" width="374" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-ch-jZH">
+                                        <rect key="frame" x="8" y="61" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="eax-BI-EvV">
+                                        <rect key="frame" x="8" y="10" width="151" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Filling in the diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-eK-3Tr">
+                                                <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сhoose a convenient time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CTd-cN-NTO">
+                                                <rect key="frame" x="0.0" y="20.333333333333314" width="151" height="17.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="cMJ-oW-Jxi">
+                                        <rect key="frame" x="8" y="64" width="357" height="29"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-ya-b6F">
+                                                <rect key="frame" x="0.0" y="0.0" width="51" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                                <state key="normal" title="10:30 pm">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="firstTimeFillingDiaryButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="2Z2-j5-twc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvM-vu-vCN">
+                                                <rect key="frame" x="102" y="0.0" width="51" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                                <state key="normal" title="11:00 pm">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="secondTimeFillingDiaryButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="zG8-f7-fhS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oji-KK-3i6">
+                                                <rect key="frame" x="204" y="0.0" width="51" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                                <state key="normal" title="11:30 pm">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="thirdTimeFillingDiaryButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="5R6-WH-eM3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfM-0H-ePA">
+                                                <rect key="frame" x="306" y="0.0" width="51" height="29"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                                <state key="normal" title="12:00 am">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fourthTimeFillingDiaryButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="5mI-Qx-Egx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6C-mM-tm6" customClass="PWSwitch" customModule="PWSwitch">
+                                        <rect key="frame" x="315" y="8" width="51" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="471-6j-Fea"/>
+                                            <constraint firstAttribute="height" constant="31" id="A81-kT-PAR"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="firstSwitchTouchDown:" destination="fR2-f2-9fs" eventType="touchDown" id="Vu9-fG-L1o"/>
+                                            <action selector="firstSwitchTouchDragExit:" destination="fR2-f2-9fs" eventType="touchDragExit" id="toY-Kd-Pzv"/>
+                                            <action selector="firstSwitchTouchUpInside:" destination="fR2-f2-9fs" eventType="touchUpInside" id="1oR-pg-5hz"/>
+                                            <action selector="firstSwitchTouchUpOutside:" destination="fR2-f2-9fs" eventType="touchUpOutside" id="MOQ-Np-sjv"/>
+                                            <action selector="firstSwitchValueChanged:" destination="fR2-f2-9fs" eventType="valueChanged" id="upo-CO-bse"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="T6C-mM-tm6" secondAttribute="trailing" constant="8" id="KwA-re-aIh"/>
+                                    <constraint firstItem="eax-BI-EvV" firstAttribute="top" secondItem="ZZw-Vp-O0T" secondAttribute="top" constant="10" id="LMg-a8-RIL"/>
+                                    <constraint firstItem="cMJ-oW-Jxi" firstAttribute="leading" secondItem="ZZw-Vp-O0T" secondAttribute="leading" constant="8" id="fQa-8r-Lvf"/>
+                                    <constraint firstAttribute="height" constant="100" id="jTO-rl-KSX"/>
+                                    <constraint firstItem="eax-BI-EvV" firstAttribute="leading" secondItem="ZZw-Vp-O0T" secondAttribute="leading" constant="8" id="ksK-01-rP6"/>
+                                    <constraint firstAttribute="bottom" secondItem="cMJ-oW-Jxi" secondAttribute="bottom" constant="7" id="pDq-cE-nCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="cMJ-oW-Jxi" secondAttribute="trailing" constant="9" id="vUX-sE-TT3"/>
+                                    <constraint firstItem="T6C-mM-tm6" firstAttribute="top" secondItem="ZZw-Vp-O0T" secondAttribute="top" constant="8" id="xIu-4v-6fO"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C2-Go-Nbv">
+                                <rect key="frame" x="20" y="268.33333333333331" width="31" height="16.333333333333314"/>
+                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-be-DmK">
+                                <rect key="frame" x="20" y="294.66666666666669" width="374" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-st-Cqp">
+                                        <rect key="frame" x="8" y="61" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="t33-iO-Eqm">
+                                        <rect key="frame" x="8" y="10" width="185" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Performance of tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efk-Rk-9Pv">
+                                                <rect key="frame" x="0.0" y="0.0" width="142.33333333333334" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the notification frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5Z-yv-uga">
+                                                <rect key="frame" x="0.0" y="20.333333333333314" width="185" height="17.666666666666671"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="uyw-8k-Vdl">
+                                        <rect key="frame" x="8" y="64" width="358" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-5H-Jd5">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
+                                                <state key="normal" title="Daily">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dailyFrequencyTaskButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="7SE-Hl-m7T"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyV-cZ-uxZ">
+                                                <rect key="frame" x="149.66666666666666" y="0.0" width="43" height="30"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
+                                                <state key="normal" title="Weekly">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weeklyFrequencyTaskButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="sg6-sI-Lhg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDA-kR-gSb">
+                                                <rect key="frame" x="312" y="0.0" width="46" height="30"/>
+                                                <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
+                                                <state key="normal" title="Monthly">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="monthlyFrequencyTaskButton:" destination="fR2-f2-9fs" eventType="touchUpInside" id="HS3-4S-aGR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZZ-r1-dwr" customClass="PWSwitch" customModule="PWSwitch">
+                                        <rect key="frame" x="315" y="7.6666666666666288" width="51" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="8HW-lZ-ZW6"/>
+                                            <constraint firstAttribute="width" constant="51" id="VZp-p4-bbQ"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="trackOffPushBorderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="secondSwitchDragExit:" destination="fR2-f2-9fs" eventType="touchDragExit" id="pcA-ix-zft"/>
+                                            <action selector="secondSwitchTouchDown:" destination="fR2-f2-9fs" eventType="touchDown" id="LnQ-Nc-txS"/>
+                                            <action selector="secondSwitchTouchUpInside:" destination="fR2-f2-9fs" eventType="touchUpInside" id="mgO-rY-3z0"/>
+                                            <action selector="secondSwitchTouchUpOutside:" destination="fR2-f2-9fs" eventType="touchUpOutside" id="mYK-Jh-69b"/>
+                                            <action selector="secondSwitchValueChanged:" destination="fR2-f2-9fs" eventType="valueChanged" id="Zc0-gs-Uzr"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uyw-8k-Vdl" secondAttribute="trailing" constant="8" id="3v2-gp-P6T"/>
+                                    <constraint firstItem="uyw-8k-Vdl" firstAttribute="leading" secondItem="r6K-be-DmK" secondAttribute="leading" constant="8" id="5f5-6G-Hyv"/>
+                                    <constraint firstAttribute="bottom" secondItem="uyw-8k-Vdl" secondAttribute="bottom" constant="6" id="9ws-KV-PuC"/>
+                                    <constraint firstAttribute="height" constant="100" id="ETq-ae-jrh"/>
+                                    <constraint firstAttribute="trailing" secondItem="kZZ-r1-dwr" secondAttribute="trailing" constant="8" id="F61-gz-Zrv"/>
+                                    <constraint firstItem="t33-iO-Eqm" firstAttribute="top" secondItem="r6K-be-DmK" secondAttribute="top" constant="10" id="MOS-y1-ZW0"/>
+                                    <constraint firstItem="t33-iO-Eqm" firstAttribute="leading" secondItem="r6K-be-DmK" secondAttribute="leading" constant="8" id="WPU-qW-KnN"/>
+                                    <constraint firstItem="kZZ-r1-dwr" firstAttribute="top" secondItem="r6K-be-DmK" secondAttribute="top" constant="7.6666666666666856" id="sUF-IS-mud"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="r6K-be-DmK" firstAttribute="top" secondItem="6C2-Go-Nbv" secondAttribute="bottom" constant="10" id="7wW-fK-V0U"/>
+                            <constraint firstItem="r6K-be-DmK" firstAttribute="leading" secondItem="RMP-f0-dQb" secondAttribute="leading" constant="20" id="9DF-Mq-oXg"/>
+                            <constraint firstItem="21V-hc-0aI" firstAttribute="leading" secondItem="RMP-f0-dQb" secondAttribute="leading" constant="19.999999999999993" id="FEl-ic-vG9"/>
+                            <constraint firstItem="6C2-Go-Nbv" firstAttribute="top" secondItem="ZZw-Vp-O0T" secondAttribute="bottom" constant="15" id="HcS-rV-azH"/>
+                            <constraint firstItem="21V-hc-0aI" firstAttribute="top" secondItem="RMP-f0-dQb" secondAttribute="top" constant="11" id="LlY-KJ-tvP"/>
+                            <constraint firstItem="ZZw-Vp-O0T" firstAttribute="leading" secondItem="RMP-f0-dQb" secondAttribute="leading" constant="20" id="a0T-5m-e0g"/>
+                            <constraint firstItem="ZZw-Vp-O0T" firstAttribute="top" secondItem="21V-hc-0aI" secondAttribute="bottom" constant="10" id="aMh-6j-Np8"/>
+                            <constraint firstItem="RMP-f0-dQb" firstAttribute="trailing" secondItem="ZZw-Vp-O0T" secondAttribute="trailing" constant="20" id="oCy-DY-jlq"/>
+                            <constraint firstItem="6C2-Go-Nbv" firstAttribute="leading" secondItem="RMP-f0-dQb" secondAttribute="leading" constant="20" id="uBX-MQ-JlA"/>
+                            <constraint firstItem="RMP-f0-dQb" firstAttribute="trailing" secondItem="r6K-be-DmK" secondAttribute="trailing" constant="20" id="zIG-K0-aGt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="RMP-f0-dQb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="d5V-10-vB0"/>
+                    <navigationItem key="navigationItem" title="Settings" id="hs8-bF-Snc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dailyFrequencyTaskButton" destination="Pgq-5H-Jd5" id="6ed-UU-9AZ"/>
+                        <outlet property="diaryFillingViewHeightConstraint" destination="jTO-rl-KSX" id="Xw9-3O-3xO"/>
+                        <outlet property="diaryLabel" destination="dNd-wY-f5y" id="OmH-yc-srw"/>
+                        <outlet property="firstTimeFillingDiaryButton" destination="eIG-ya-b6F" id="c6i-nN-q52"/>
+                        <outlet property="fourthTimeFillingDiaryButton" destination="XfM-0H-ePA" id="TD1-DO-NVH"/>
+                        <outlet property="frequencyBackgroundView" destination="Vl4-st-Cqp" id="DXj-UO-2DM"/>
+                        <outlet property="monthlyFrequencyTaskButton" destination="NDA-kR-gSb" id="ssA-f9-xSg"/>
+                        <outlet property="notificationLabel" destination="QVQ-Mw-Ff5" id="Rql-r2-xjK"/>
+                        <outlet property="secondTimeFillingDiaryButton" destination="TvM-vu-vCN" id="cG1-wZ-chh"/>
+                        <outlet property="tasksLabel" destination="6C2-Go-Nbv" id="t1l-Yg-tdd"/>
+                        <outlet property="tasksSettingViewHeightConstraint" destination="ETq-ae-jrh" id="bxE-eE-vnm"/>
+                        <outlet property="thirdTimeFillingDiaryButton" destination="Oji-KK-3i6" id="odo-33-XAl"/>
+                        <outlet property="timeBackgroundView" destination="UdK-ch-jZH" id="Trg-WX-GMX"/>
+                        <outlet property="weeklyFrequencyTaskButton" destination="SyV-cZ-uxZ" id="5op-N6-yPn"/>
+                        <outletCollection property="settingsViews" destination="ZZw-Vp-O0T" collectionClass="NSMutableArray" id="00a-4W-5Mc"/>
+                        <outletCollection property="settingsViews" destination="r6K-be-DmK" collectionClass="NSMutableArray" id="4wc-L8-9fd"/>
+                        <outletCollection property="switches" destination="T6C-mM-tm6" collectionClass="NSMutableArray" id="mAz-pF-ju5"/>
+                        <outletCollection property="switches" destination="kZZ-r1-dwr" collectionClass="NSMutableArray" id="YGg-tn-QcC"/>
+                        <outletCollection property="settingsSubtitles" destination="CTd-cN-NTO" collectionClass="NSMutableArray" id="sd0-1u-8ih"/>
+                        <outletCollection property="settingsTitles" destination="cDM-eK-3Tr" collectionClass="NSMutableArray" id="N4n-Bv-xW6"/>
+                        <outletCollection property="settingsSubtitles" destination="C5Z-yv-uga" collectionClass="NSMutableArray" id="7TT-D0-YpU"/>
+                        <outletCollection property="settingsTitles" destination="efk-Rk-9Pv" collectionClass="NSMutableArray" id="GQL-DH-vLz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tak-1L-exJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="823" y="389"/>
+            <point key="canvasLocation" x="822" y="1375"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="e5D-7T-FXu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CQc-lS-8Zg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="d5V-10-vB0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ph-g1-0pD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fR2-f2-9fs" kind="relationship" relationship="rootViewController" id="SYt-3C-Xwf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1K0-Qu-qbt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="388.39285714285711"/>
         </scene>
     </scenes>
 </document>

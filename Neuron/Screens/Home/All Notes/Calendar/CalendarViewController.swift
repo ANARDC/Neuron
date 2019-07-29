@@ -7,29 +7,36 @@
 //
 
 import UIKit
-import CoreData
 
+// MARK: - CalendarViewController
 
 final class CalendarViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var calendarCollectionView: UICollectionView!
     @IBOutlet weak var calendarView: UIView!
-    @IBOutlet weak var dayNoteView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dayNoteView: UIView!
+    @IBOutlet weak var dayNoteTitle: UILabel!
+    @IBOutlet weak var dayNoteText: UILabel!
     
     //     MARK: - Class Properties
     let currentMonthInfo = NoteCalendar().getDateInfo(of: .current)
     var daysList = [String]()
     var daysListStatus = [String]()
+    var daysDatesList = [String]()
     
     // MARK: - IBActions
     @IBAction func previousMonth(_ sender: UIButton) {
+        dayNoteTitle.text = "Empty"
+        dayNoteText.text! = "You didn't fill in the diary on this day"
         fillingDaysList(of: .previous)
         calendarCollectionView.reloadData()
     }
     
     @IBAction func nextMonth(_ sender: UIButton) {
+        dayNoteTitle.text = "Empty"
+        dayNoteText.text! = "You didn't fill in the diary on this day"
         fillingDaysList(of: .next)
         calendarCollectionView.reloadData()
     }
@@ -40,10 +47,12 @@ final class CalendarViewController: UIViewController {
         viewViewing(calendarView)
         viewViewing(dayNoteView)
         fillingDaysList(of: .current)
+        collectionViewSetting()
     }
 }
 
 // MARK: - CollectionView Functions
+
 extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 35
@@ -52,13 +61,68 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "day", for: indexPath) as! CalendarCollectionViewCell
         fillingDaysOfTheWeek(indexPath)
-        cellDayButtonViewing(cell, indexPath.row)
+        cellDayViewViewing(cell, indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
+        if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) || cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
+            UIView.animate(withDuration: 0.5) {
+                cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+                cell.dayView.borderWidth = 2
+                cell.dayView.shadowOpacity = 0
+            }
+        } else {
+            UIView.animate(withDuration: 0.5) {
+                cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+                cell.dayView.borderWidth = 2
+            }
+        }
+        
+        let notes = CoreDataProcesses.notesFromCoreData
+        for note in notes {
+            let day = note.date!.components(separatedBy: ".")[0]
+            let month = note.date!.components(separatedBy: ".")[2].prefix(3)
+            let year = note.date!.components(separatedBy: ".")[3]
+            if "\(day).\(month).\(year)" == daysDatesList[indexPath.row] {
+                dayNoteTitle.text = note.title!
+                dayNoteText.text! = note.text!
+                break
+            } else {
+                dayNoteTitle.text = "Empty"
+                dayNoteText.text! = "You didn't fill in the diary on this day"
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
+        
+        if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) || cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
+            UIView.animate(withDuration: 0.8) {
+                cell.dayView.borderWidth = 0
+                cell.dayView.shadowOpacity = 1
+            }
+        } else {
+            UIView.animate(withDuration: 0.8) {
+                cell.dayView.borderWidth = 0
+            }
+        }
+        
+    }
+    
+    func collectionViewSetting() {
+        calendarCollectionView.dataSource = self
+        calendarCollectionView.delegate = self
     }
 }
 
-// MARK: - Functions Customize The Appearance Of The Elements
+// MARK: - Customize Functions
+
 extension CalendarViewController {
+    
+    // MARK: - Appearance Of Some View
     func viewViewing(_ element: UIView) {
         element.layer.cornerRadius = 5
         element.layer.borderWidth = 1
@@ -70,26 +134,39 @@ extension CalendarViewController {
         element.shadowOffset = CGSize(width: 0, height: 11)
     }
     
-    func cellDayButtonViewing(_ cell: CalendarCollectionViewCell, _ index: Int) {
-        cell.dayButton.cornerRadius = 15
-        cell.dayButton.layer.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1).cgColor
+    // MARK: - Day Cell Appearance
+    func cellDayViewViewing(_ cell: CalendarCollectionViewCell, _ index: Int) {
+        cell.dayView.cornerRadius = 15
+        cell.dayView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1)
         
-        cell.dayButton.shadowColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
-        cell.dayButton.shadowOpacity = 1
-        cell.dayButton.shadowRadius = 5
-        cell.dayButton.shadowOffset = CGSize(width: 0, height: 0.5)
+        cell.dayView.borderWidth = 0
         
-        
-        cell.dayButton.setTitle(daysList[index], for: .normal)
+        cell.dayNumber.text = daysList[index]
         
         switch daysListStatus[index] {
         case "Current":
-            cell.dayButton.setTitleColor(UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9), for: .normal)
+            if NoteCalendar.offset == 0 && daysList[index] == String(currentMonthInfo.currentDay!) {
+                cell.dayView.shadowColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+                cell.dayView.shadowOpacity = 1
+                cell.dayView.shadowRadius = 5
+                cell.dayView.shadowOffset = CGSize(width: 0, height: 5)
+                cell.dayView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
+                cell.dayNumber.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+            } else {
+                cell.dayView.shadowOpacity = 0
+                cell.dayNumber.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
+            }
         default:
-            cell.dayButton.setTitleColor(UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.4), for: .normal)
+            if (NoteCalendar.offset == -1 || NoteCalendar.offset == 1) && daysDatesList.contains("\(currentMonthInfo.currentDay!).\(currentMonthInfo.month.prefix(3)).\(currentMonthInfo.year)") {
+                cell.dayView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6)
+                cell.dayNumber.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.6)
+            } else {
+                cell.dayNumber.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.4)
+            }
         }
     }
     
+    // MARK: - Filling Days Of The Week
     func fillingDaysOfTheWeek(_ indexPath: IndexPath) {
         switch indexPath.row {
         case ..<7:
@@ -116,16 +193,38 @@ extension CalendarViewController {
     }
 }
 
-// MARK: - Filling daysList
+// MARK: - Filling Data For Calendar
 extension CalendarViewController {
     func fillingDaysList(of position: NoteCalendar.position) {
         let month = NoteCalendar().getDateInfo(of: position)
         
+        // It's properties for daysDatesList
+        let previousMonthIndex = DateFormatter().monthSymbols.firstIndex(of: month.month)! - 1 < 1 ?
+            12 - DateFormatter().monthSymbols.firstIndex(of: month.month)! - 1
+            :
+            DateFormatter().monthSymbols.firstIndex(of: month.month)! - 1
+        let previousMonthName = DateFormatter().monthSymbols[previousMonthIndex]
+        let previousYear = DateFormatter().monthSymbols.firstIndex(of: month.month)! - 1 < 1 ?
+            Int(month.year)! - 1
+            :
+            Int(month.year)!
+        
+        let nextMonthIndex = DateFormatter().monthSymbols.firstIndex(of: month.month)! + 1 > 11 ?
+            (DateFormatter().monthSymbols.firstIndex(of: month.month)! + 1) % 12
+            :
+            DateFormatter().monthSymbols.firstIndex(of: month.month)! + 1
+        let nextMonthName = DateFormatter().monthSymbols[nextMonthIndex]
+        let nextYear = DateFormatter().monthSymbols.firstIndex(of: month.month)! + 1 > 12 ?
+            Int(month.year)! + 1
+            :
+            Int(month.year)!
         
         dateLabel.text = "\(month.month) \(month.year)"
         
+        
         daysList.removeAll()
         daysListStatus.removeAll()
+        daysDatesList.removeAll()
         
         let firstDayNumberInWeek = ("\(month.year)-\(month.month)-\(1)".date?.firstDayOfTheMonth.weekday)!
         
@@ -133,7 +232,9 @@ extension CalendarViewController {
         if firstDayNumberInWeek != 0 {
             let previousMonthInfo = NoteCalendar().getDateInfo(of: .previous)
             for i in 1...firstDayNumberInWeek {
-                daysList.append(String(previousMonthInfo.daysCount - (firstDayNumberInWeek - i)))
+                let day = String(previousMonthInfo.daysCount - (firstDayNumberInWeek - i))
+                daysList.append(day)
+                daysDatesList.append("\(day).\(previousMonthName.prefix(3)).\(previousYear)")
                 daysListStatus.append("NotCurrent")
             }
             NoteCalendar.offset += 1
@@ -142,14 +243,17 @@ extension CalendarViewController {
         // Filling second part
         for i in 1...month.daysCount {
             daysList.append(String(i))
+            daysDatesList.append("\(i).\(month.month.prefix(3)).\(previousYear)")
             daysListStatus.append("Current")
         }
         
         // Filling third part
-        for i in 0...6 - (firstDayNumberInWeek + month.daysCount) % 7 {
-            daysList.append(String(i + 1))
-            daysListStatus.append("NotCurrent")
+        if daysList.count < 35 {
+            for i in 0...6 - (firstDayNumberInWeek + month.daysCount) % 7 {
+                daysList.append(String(i + 1))
+                daysDatesList.append("\(i + 1).\(nextMonthName.prefix(3)).\(nextYear)")
+                daysListStatus.append("NotCurrent")
+            }
         }
     }
 }
-
