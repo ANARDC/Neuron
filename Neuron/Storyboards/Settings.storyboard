@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQc-lS-8Zg">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,20 +15,20 @@
             <objects>
                 <viewController id="fR2-f2-9fs" customClass="SettingsViewController" customModule="Neuron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Xo-vu-YGL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="21V-hc-0aI">
-                                <rect key="frame" x="20" y="75" width="95.5" height="39"/>
+                                <rect key="frame" x="19.999999999999993" y="99" width="95.333333333333314" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-Mw-Ff5">
-                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="20"/>
                                         <fontDescription key="fontDescription" name="NotoSansKannada-Bold" family="Noto Sans Kannada" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-wY-f5y">
-                                        <rect key="frame" x="0.0" y="25" width="28" height="14"/>
+                                        <rect key="frame" x="0.0" y="25" width="27.666666666666668" height="14"/>
                                         <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-Vp-O0T">
-                                <rect key="frame" x="20" y="124" width="280" height="100"/>
+                                <rect key="frame" x="20" y="148" width="335" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-ch-jZH">
                                         <rect key="frame" x="8" y="61" width="51" height="31"/>
@@ -44,16 +44,16 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="eax-BI-EvV">
-                                        <rect key="frame" x="8" y="10" width="151.5" height="33"/>
+                                        <rect key="frame" x="8" y="10" width="151.66666666666666" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Filling in the diary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cDM-eK-3Tr">
-                                                <rect key="frame" x="0.0" y="0.0" width="117" height="17.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="117" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сhoose a convenient time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CTd-cN-NTO">
-                                                <rect key="frame" x="0.0" y="17.5" width="151.5" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="17.666666666666657" width="151.66666666666666" height="15.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6C-mM-tm6" customClass="PWSwitch" customModule="PWSwitch">
-                                        <rect key="frame" x="221" y="8" width="51" height="31"/>
+                                        <rect key="frame" x="276" y="8" width="51" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="51" id="471-6j-Fea"/>
@@ -84,7 +84,7 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cMJ-oW-Jxi">
-                                        <rect key="frame" x="8" y="63" width="263" height="26"/>
+                                        <rect key="frame" x="8" y="63" width="318" height="26"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIG-ya-b6F">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="26"/>
@@ -97,7 +97,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvM-vu-vCN">
-                                                <rect key="frame" x="70.5" y="0.0" width="51" height="26"/>
+                                                <rect key="frame" x="89" y="0.0" width="51" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                                 <state key="normal" title="11:00 pm">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +107,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oji-KK-3i6">
-                                                <rect key="frame" x="141.5" y="0.0" width="51" height="26"/>
+                                                <rect key="frame" x="178" y="0.0" width="51" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                                 <state key="normal" title="11:30 pm">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,7 +117,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfM-0H-ePA">
-                                                <rect key="frame" x="212" y="0.0" width="51" height="26"/>
+                                                <rect key="frame" x="267" y="0.0" width="51" height="26"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                                 <state key="normal" title="12:00 am">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -147,13 +147,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C2-Go-Nbv">
-                                <rect key="frame" x="20" y="239" width="30.5" height="14"/>
+                                <rect key="frame" x="20" y="263" width="30.333333333333329" height="14"/>
                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-be-DmK">
-                                <rect key="frame" x="20" y="263" width="280" height="100"/>
+                                <rect key="frame" x="20" y="287" width="335" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-st-Cqp">
                                         <rect key="frame" x="8" y="61" width="51" height="31"/>
@@ -161,16 +161,16 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="t33-iO-Eqm">
-                                        <rect key="frame" x="8" y="10" width="187.5" height="33"/>
+                                        <rect key="frame" x="8" y="10" width="187.33333333333334" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Performance of tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efk-Rk-9Pv">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="17.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="143.33333333333334" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the notification frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5Z-yv-uga">
-                                                <rect key="frame" x="0.0" y="17.5" width="187.5" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="17.666666666666686" width="187.33333333333334" height="15.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -178,7 +178,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZZ-r1-dwr" customClass="PWSwitch" customModule="PWSwitch">
-                                        <rect key="frame" x="221" y="7.5" width="51" height="31"/>
+                                        <rect key="frame" x="276" y="7.6666666666666856" width="51" height="31"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="8HW-lZ-ZW6"/>
@@ -204,7 +204,7 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="uyw-8k-Vdl">
-                                        <rect key="frame" x="16" y="62" width="248" height="28"/>
+                                        <rect key="frame" x="16" y="62" width="303" height="28"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-5H-Jd5">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="28"/>
@@ -217,7 +217,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyV-cZ-uxZ">
-                                                <rect key="frame" x="94.5" y="0.0" width="42" height="28"/>
+                                                <rect key="frame" x="122" y="0.0" width="42" height="28"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
                                                 <state key="normal" title="Weekly">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -227,7 +227,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDA-kR-gSb">
-                                                <rect key="frame" x="201" y="0.0" width="47" height="28"/>
+                                                <rect key="frame" x="256" y="0.0" width="47" height="28"/>
                                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="13"/>
                                                 <state key="normal" title="Monthly">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -310,7 +310,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" id="d5V-10-vB0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ph-g1-0pD">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

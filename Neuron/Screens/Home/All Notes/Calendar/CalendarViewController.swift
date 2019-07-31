@@ -58,10 +58,13 @@ final class CalendarViewController: UIViewController {
 // MARK: - CollectionView Functions
 
 extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - Number Of Items In Section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 35
     }
     
+    // MARK: - Cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "day", for: indexPath) as! CalendarCollectionViewCell
         fillingDaysOfTheWeek(indexPath)
@@ -69,6 +72,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
+    // MARK: - Did Select Item At
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
         if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) || cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
@@ -123,6 +127,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         }
     }
     
+    // MARK: - Did Deselect Item At
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
         
@@ -194,6 +199,7 @@ extension CalendarViewController {
         cell.dayView.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.98, alpha: 1)
         
         cell.dayView.borderWidth = 0
+        cell.dayView.shadowOpacity = 0
         
         cell.dayNumber.text = daysList[index]
         
