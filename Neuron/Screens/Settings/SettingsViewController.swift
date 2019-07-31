@@ -8,6 +8,7 @@
 
 import UIKit
 import PWSwitch
+import QuartzCore
 
 // MARK: - SettingsViewController Class
 
@@ -23,7 +24,6 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var settingsTitles: [UILabel]!
     @IBOutlet var settingsSubtitles: [UILabel]!
     @IBOutlet var switches: [PWSwitch]!
-    
     
     // MARK: - FillingDiaryButtons
     @IBOutlet weak var firstTimeFillingDiaryButton: UIButton!
@@ -46,6 +46,12 @@ final class SettingsViewController: UIViewController {
     
     // MARK: - Class Properties
     let animationsDuration = 0.4
+    let diaryTimeSelectViewOriginalWidth = 60
+    let diaryTimeSelectViewOriginalHeight = 30
+    var diaryFillingTimeSelectedBackgroundViewPosition = 0
+    var tasksFillingTimeSelectedBackgroundViewPosition = 0
+    
+    var firstSwitchState = false
 }
 
 // MARK: - SettingsViewController Life Cycle
@@ -93,6 +99,8 @@ extension SettingsViewController {
         }
         diaryFillingViewHeightConstraint.constant = diaryFillingViewHeightConstraint.constant == 100 ? 55 : 100
         timeBackgroundView.isHidden = !timeBackgroundView.isHidden
+        
+        selectButtonsBackgroundViewing(for: timeBackgroundView)
     }
     
     @IBAction func firstSwitchTouchDown(_ sender: PWSwitch) {
@@ -128,6 +136,9 @@ extension SettingsViewController {
         }
         tasksSettingViewHeightConstraint.constant = tasksSettingViewHeightConstraint.constant == 100 ? 55 : 100
         frequencyBackgroundView.isHidden = !frequencyBackgroundView.isHidden
+        
+        
+        selectButtonsBackgroundViewing(for: frequencyBackgroundView)
     }
     
     @IBAction func secondSwitchTouchDown(_ sender: PWSwitch) {
@@ -148,49 +159,51 @@ extension SettingsViewController {
     
     // MARK: - Base Switch Actions
     func baseSwitchTouchDown(_ sender: PWSwitch) {
-        sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
         if sender.on {
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 0
-            }
+            let animation = CABasicAnimation(keyPath: "shadowOpacity")
+            animation.fromValue = sender.shadowOpacity
+            animation.toValue = 0
+            animation.duration = animationsDuration
+            sender.layer.add(animation, forKey: animation.keyPath)
+            sender.shadowOpacity = 0
         } else {
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 1
-            }
+            sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+            let animation = CABasicAnimation(keyPath: "shadowOpacity")
+            animation.fromValue = sender.shadowOpacity
+            animation.toValue = 1
+            animation.duration = animationsDuration
+            sender.layer.add(animation, forKey: animation.keyPath)
+            sender.shadowOpacity = 1
         }
     }
     
     func baseSwitchTouchUpInside(_ sender: PWSwitch) {
-        switch sender.on {
-        case true:
-            sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 1
-            }
-        case false:
-            if sender.layer.borderColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor {
-                sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
-            }
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 0
-            }
+        if sender.on {
+            sender.shadowOpacity = 1
+        } else {
+            sender.shadowOpacity = 0
+            sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
         }
     }
     
-    func baseSwitchTouchUpOutside(_ sender: PWSwitch) {
-        switch sender.on {
-        case true:
+    func baseSwitchTouchUpOutside(_ sender: PWSwitch) {if sender.on {
+            let animation = CABasicAnimation(keyPath: "shadowOpacity")
+            animation.fromValue = sender.shadowOpacity
             sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 1
-            }
-        case false:
+            animation.toValue = 1
+            animation.duration = animationsDuration
+            sender.layer.add(animation, forKey: animation.keyPath)
+            sender.shadowOpacity = 1
+        } else {
             if sender.layer.borderColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor {
                 sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
             }
-            UIView.animate(withDuration: animationsDuration) {
-                sender.shadowOpacity = 0
-            }
+            let animation = CABasicAnimation(keyPath: "shadowOpacity")
+            animation.fromValue = sender.shadowOpacity
+            animation.toValue = 0
+            animation.duration = animationsDuration
+            sender.layer.add(animation, forKey: animation.keyPath)
+            sender.shadowOpacity = 0
         }
     }
     
@@ -205,26 +218,198 @@ extension SettingsViewController {
 
 extension SettingsViewController {
     @IBAction func firstTimeFillingDiaryButton(_ sender: UIButton) {
+        diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 0)
     }
     
     @IBAction func secondTimeFillingDiaryButton(_ sender: UIButton) {
+        diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 1)
     }
     
     @IBAction func thirdTimeFillingDiaryButton(_ sender: UIButton) {
+        diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 2)
     }
     
     @IBAction func fourthTimeFillingDiaryButton(_ sender: UIButton) {
+        diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 3)
     }
     
+    
+    
+    
     @IBAction func dailyFrequencyTaskButton(_ sender: UIButton) {
+        tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 0)
     }
     
     @IBAction func weeklyFrequencyTaskButton(_ sender: UIButton) {
+        tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 1)
     }
     
     @IBAction func monthlyFrequencyTaskButton(_ sender: UIButton) {
+        tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 2)
+    }
+    
+    
+    
+    // MARK: - Diary Select Button Tapped Action
+    func diarySelectButtonTappedAction(from position: Int, to destination: Int) {
+        var buttonFrom: UIButton
+        var buttonTo: UIButton
+        var xPosition = 0
+        let yPosition = Int(62 + 7.5)
+        
+        switch position {
+        case 0:
+            buttonFrom = self.firstTimeFillingDiaryButton
+        case 1:
+            buttonFrom = self.secondTimeFillingDiaryButton
+        case 2:
+            buttonFrom = self.thirdTimeFillingDiaryButton
+        default:
+            buttonFrom = self.fourthTimeFillingDiaryButton
+        }
+        
+        switch destination {
+        case 0:
+            buttonTo = self.firstTimeFillingDiaryButton
+            xPosition = 20
+        case 1:
+            buttonTo = self.secondTimeFillingDiaryButton
+            switch UIScreen.main.bounds.height {
+            case 568: // iPhone SE
+                xPosition = 90
+            case 667: // iPhone 6/6s/7/8
+                xPosition = 108
+            case 736: // iPhone 6 Plus/6s Plus/7 Plus/8 Plus
+                xPosition = 121
+            case 812: // iPhone X/Xs
+                xPosition = 108
+            default:  // iPhone Xs Max/Xr
+                xPosition = 121
+            }
+        case 2:
+            buttonTo = self.thirdTimeFillingDiaryButton
+            switch UIScreen.main.bounds.height {
+            case 568: // iPhone SE
+                xPosition = 160
+            case 667: // iPhone 6/6s/7/8
+                xPosition = 197
+            case 736: // iPhone 6 Plus/6s Plus/7 Plus/8 Plus
+                xPosition = 223
+            case 812: // iPhone X/Xs
+                xPosition = 197
+            default:  // iPhone Xs Max/Xr
+                xPosition = 223
+            }
+        default:
+            buttonTo = self.fourthTimeFillingDiaryButton
+            switch UIScreen.main.bounds.height {
+            case 568: // iPhone SE
+                xPosition = 230
+            case 667: // iPhone 6/6s/7/8
+                xPosition = 286
+            case 736: // iPhone 6 Plus/6s Plus/7 Plus/8 Plus
+                xPosition = 324
+            case 812: // iPhone X/Xs
+                xPosition = 286
+            default:  // iPhone Xs Max/Xr
+                xPosition = 324
+            }
+        }
+        
+        selectingAnimation(timeBackgroundView, position, destination, animationsDuration, animationsDuration / 3, xPosition, yPosition, buttonFrom, buttonTo)
+        
+        self.diaryFillingTimeSelectedBackgroundViewPosition = destination
+    }
+    
+    // MARK: - Tasks Select Button Tapped Action
+    func tasksSelectButtonTappedAction(from position: Int, to destination: Int) {
+        var buttonFrom: UIButton
+        var buttonTo: UIButton
+        var xPosition = 0
+        let yPosition = Int(62 + 7.5)
+        
+        switch position {
+        case 0:
+            buttonFrom = self.dailyFrequencyTaskButton
+        case 1:
+            buttonFrom = self.weeklyFrequencyTaskButton
+        default:
+            buttonFrom = self.monthlyFrequencyTaskButton
+        }
+        
+        switch destination {
+        case 0:
+            buttonTo = self.dailyFrequencyTaskButton
+            xPosition = 20
+        case 1:
+            buttonTo = self.weeklyFrequencyTaskButton
+            switch UIScreen.main.bounds.height {
+            case 568: // iPhone SE
+                xPosition = 118
+            case 667: // iPhone 6/6s/7/8
+                xPosition = 145
+            case 736: // iPhone 6 Plus/6s Plus/7 Plus/8 Plus
+                xPosition = 164
+            case 812: // iPhone X/Xs
+                xPosition = 145
+            default:  // iPhone Xs Max/Xr
+                xPosition = 164
+            }
+        default:
+            buttonTo = self.monthlyFrequencyTaskButton
+            switch UIScreen.main.bounds.height {
+            case 568: // iPhone SE
+                xPosition = 226
+            case 667: // iPhone 6/6s/7/8
+                xPosition = 280
+            case 736: // iPhone 6 Plus/6s Plus/7 Plus/8 Plus
+                xPosition = 320
+            case 812: // iPhone X/Xs
+                xPosition = 280
+            default:  // iPhone Xs Max/Xr
+                xPosition = 320
+            }
+        }
+        
+        selectingAnimation(frequencyBackgroundView, position, destination, animationsDuration, animationsDuration / 3, xPosition, yPosition, buttonFrom, buttonTo)
+        
+        self.tasksFillingTimeSelectedBackgroundViewPosition = destination
+    }
+    
+    func selectingAnimation(_ view: UIView,
+                            _ position: Int,
+                            _ destination: Int,
+                            _ duration: TimeInterval,
+                            _ delay: TimeInterval,
+                            _ xPosition: Int,
+                            _ yPosition: Int,
+                            _ buttonFrom: UIButton,
+                            _ buttonTo: UIButton) {
+        if position != destination {
+            UIView.animate(withDuration: duration, animations: {
+                view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5) // Уменьшаем форму
+                
+                UIView.transition(with: buttonFrom, duration: duration / 2, options: .transitionCrossDissolve, animations: {
+                    buttonFrom.setTitleColor(UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9), for: .normal) // Меняем цвет шрифта текста той кнопки от которой вышли
+                })
+            })
+            
+            
+            UIView.animate(withDuration: duration, delay: delay, animations: {
+                view.frame = CGRect(x: xPosition, y: yPosition, width: 30, height: 15) // Передвигаем куда нужно
+            })
+            
+            UIView.animate(withDuration: duration, delay: duration, animations: {
+                view.transform = CGAffineTransform(scaleX: 1, y: 1) // Увеличиваем форму
+                
+                UIView.transition(with: buttonTo, duration: duration / 2, options: .transitionCrossDissolve, animations: {
+                    buttonTo.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal) // Меняем цвет шрифта текста той кнопки в которую пришли
+                })
+            })
+        }
     }
 }
+
 
 // MARK: - Viewing Functions
 
@@ -294,7 +479,6 @@ extension SettingsViewController {
             switchElement.shadowRadius = 5
             switchElement.shadowOffset = CGSize(width: 0, height: 5)
             
-            switchElement.layer.cornerRadius = 18
             switchElement.layer.borderWidth = 1.5
             switchElement.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
             
@@ -302,6 +486,7 @@ extension SettingsViewController {
             switchElement.thumbCornerRadius = 5
             switchElement.thumbDiameter = 20
             
+            switchElement.trackOffFillColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
             switchElement.trackOnFillColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
             switchElement.trackOnBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
             switchElement.trackOffPushBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
@@ -326,5 +511,39 @@ extension SettingsViewController {
             button!.titleLabel?.adjustsFontSizeToFitWidth = true
             button!.titleLabel?.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
         }
+    }
+    
+    // MARK: - Select Button Backgroung View
+    func selectButtonsBackgroundViewing(for view: UIView) {
+        var view = view
+        var buttonsList = [UIButton]()
+        var firstButton = firstTimeFillingDiaryButton!
+        
+        switch view {
+        case timeBackgroundView:
+            buttonsList = [secondTimeFillingDiaryButton!, thirdTimeFillingDiaryButton!, fourthTimeFillingDiaryButton!]
+            view.frame = CGRect(x: 4, y: 62, width: 60, height: 30)
+            diaryFillingTimeSelectedBackgroundViewPosition = 0
+        default:
+            view = frequencyBackgroundView
+            firstButton = dailyFrequencyTaskButton
+            buttonsList = [weeklyFrequencyTaskButton!, monthlyFrequencyTaskButton!]
+            view.frame = CGRect(x: 4, y: 62, width: 60, height: 30)
+            tasksFillingTimeSelectedBackgroundViewPosition = 0
+        }
+        
+        
+        firstButton.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
+        
+        buttonsList.forEach { (button) in
+            button.setTitleColor(UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9), for: .normal)
+        }
+        
+        view.cornerRadius = 5
+        view.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
+        view.shadowColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+        view.shadowOpacity = 1
+        view.shadowRadius = 5
+        view.shadowOffset = CGSize(width: 0, height: 5)
     }
 }

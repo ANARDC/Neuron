@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 // MARK: - CalendarViewController
 
@@ -20,11 +21,12 @@ final class CalendarViewController: UIViewController {
     @IBOutlet weak var dayNoteTitle: UILabel!
     @IBOutlet weak var dayNoteText: UILabel!
     
-    //     MARK: - Class Properties
+    // MARK: - Class Properties
     let currentMonthInfo = NoteCalendar().getDateInfo(of: .current)
     var daysList = [String]()
     var daysListStatus = [String]()
     var daysDatesList = [String]()
+    let animationsDuration = 0.4
     
     // MARK: - IBActions
     @IBAction func previousMonth(_ sender: UIButton) {
@@ -70,16 +72,39 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CalendarCollectionViewCell
         if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) || cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
-            UIView.animate(withDuration: 0.5) {
-                cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
-                cell.dayView.borderWidth = 2
-                cell.dayView.shadowOpacity = 0
-            }
+            let animation0 = CABasicAnimation(keyPath: "borderColor")
+            animation0.fromValue = cell.dayView.borderColor
+            animation0.toValue = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+            animation0.duration = animationsDuration
+            cell.dayView.layer.add(animation0, forKey: animation0.keyPath)
+            
+            let animation1 = CABasicAnimation(keyPath: "borderWidth")
+            animation1.fromValue = cell.dayView.borderWidth
+            animation1.toValue = 2
+            cell.dayView.layer.add(animation1, forKey: animation1.keyPath)
+            
+            let animation2 = CABasicAnimation(keyPath: "shadowOpacity")
+            animation2.fromValue = cell.dayView.shadowOpacity
+            animation2.toValue = 0
+            cell.dayView.layer.add(animation2, forKey: animation2.keyPath)
+            
+            cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+            cell.dayView.borderWidth = 2
+            cell.dayView.shadowOpacity = 0
         } else {
-            UIView.animate(withDuration: 0.5) {
-                cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
-                cell.dayView.borderWidth = 2
-            }
+            let animation0 = CABasicAnimation(keyPath: "borderColor")
+            animation0.fromValue = cell.dayView.borderColor
+            animation0.toValue = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+            animation0.duration = animationsDuration
+            cell.dayView.layer.add(animation0, forKey: animation0.keyPath)
+            
+            let animation1 = CABasicAnimation(keyPath: "borderWidth")
+            animation1.fromValue = cell.dayView.borderWidth
+            animation1.toValue = 2
+            cell.dayView.layer.add(animation1, forKey: animation1.keyPath)
+            
+            cell.dayView.borderColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+            cell.dayView.borderWidth = 2
         }
         
         let notes = CoreDataProcesses.notesFromCoreData
@@ -103,14 +128,40 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
         
         if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.6) {
             UIView.animate(withDuration: 0.8) {
+                let animation = CABasicAnimation(keyPath: "borderWidth")
+                animation.fromValue = cell.dayView.borderWidth
+                animation.toValue = 0
+                animation.duration = self.animationsDuration
+                cell.dayView.layer.add(animation, forKey: animation.keyPath)
+                
                 cell.dayView.borderWidth = 0
             }
         } else if cell.dayView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) {
+            UIView.animate(withDuration: 0.8) {
+                let animation0 = CABasicAnimation(keyPath: "borderWidth")
+                animation0.fromValue = cell.dayView.borderWidth
+                animation0.toValue = 0
+                animation0.duration = self.animationsDuration
+                cell.dayView.layer.add(animation0, forKey: animation0.keyPath)
+                
+                let animation1 = CABasicAnimation(keyPath: "shadowOpacity")
+                animation1.fromValue = cell.dayView.shadowOpacity
+                animation1.toValue = 1
+                animation1.duration = self.animationsDuration
+                cell.dayView.layer.add(animation1, forKey: animation1.keyPath)
+                
                 cell.dayView.borderWidth = 0
                 cell.dayView.shadowOpacity = 1
-            }  else {
-                UIView.animate(withDuration: 0.8) {
-                    cell.dayView.borderWidth = 0
+            }
+        } else {
+            UIView.animate(withDuration: 0.8) {
+                let animation = CABasicAnimation(keyPath: "borderWidth")
+                animation.fromValue = cell.dayView.borderColor
+                animation.toValue = 0
+                animation.duration = self.animationsDuration
+                cell.dayView.layer.add(animation, forKey: animation.keyPath)
+                
+                cell.dayView.borderWidth = 0
                 }
             }
         }

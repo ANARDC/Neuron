@@ -47,7 +47,6 @@ final class NoteViewController: UIViewController {
         object.symbolsAmount = Int32(noteText.text.count)
         object.text = noteText.text
         object.title = noteTitle.text
-        print("asdasdad")
         
         
         /// Сохранение контекста

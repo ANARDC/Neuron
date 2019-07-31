@@ -59,7 +59,6 @@ final class NoteCalendar {
         let month = DateFormatter().monthSymbols[index]
         let daysCount = range.count
         
-        print(NoteCalendar.offset)
         switch position {
         case .current:
             let date = Date()
