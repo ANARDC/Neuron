@@ -376,6 +376,7 @@ extension SettingsViewController {
         self.tasksFillingTimeSelectedBackgroundViewPosition = destination
     }
     
+    // MARK: - Selecting Animation
     func selectingAnimation(_ view: UIView,
                             _ position: Int,
                             _ destination: Int,
