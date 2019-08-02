@@ -9,9 +9,12 @@
 import UIKit
 
 final class AddNoteCellButton: UIButton {
+    
+    // MARK: - Class Properties
     @IBInspectable var fillColor: UIColor = UIColor.clear
     var isAddButton: Bool = true
     
+    // MARK: - Customize functions
     // Adding dashed border
     func addDashedBorder(_ rect: CGRect) {
         let color = UIColor.lightGray.cgColor

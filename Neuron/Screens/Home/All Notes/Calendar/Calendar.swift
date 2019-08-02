@@ -82,6 +82,7 @@ final class NoteCalendar {
     }
 }
 
+// MARK: - Returned Data
 struct MonthData {
     var year: String
     var month: String
@@ -90,6 +91,7 @@ struct MonthData {
     var currentDay: Int?
 }
 
+// MARK: - Getting number of first day in some month
 extension Date {
     var weekday: Int {
         return (Calendar.current.component(.weekday, from: self) - 2) % 7 < 0 ? 7 + (Calendar.current.component(.weekday, from: self) - 2) % 7 : (Calendar.current.component(.weekday, from: self) - 2) % 7
@@ -99,6 +101,7 @@ extension Date {
     }
 }
 
+// MARK: - From String To Date
 extension String {
     static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()

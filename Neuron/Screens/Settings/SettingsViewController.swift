@@ -8,7 +8,6 @@
 
 import UIKit
 import PWSwitch
-import QuartzCore
 
 // MARK: - SettingsViewController Class
 
@@ -46,8 +45,6 @@ final class SettingsViewController: UIViewController {
     
     // MARK: - Class Properties
     let animationsDuration = 0.4
-    let diaryTimeSelectViewOriginalWidth = 60
-    let diaryTimeSelectViewOriginalHeight = 30
     var diaryFillingTimeSelectedBackgroundViewPosition = 0
     var tasksFillingTimeSelectedBackgroundViewPosition = 0
     

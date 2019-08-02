@@ -7,29 +7,25 @@
 //
 
 import UIKit
-import CoreData
 
 final class NoteViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteText: UITextView!
     @IBOutlet weak var doneButton: UIButton!
     
-    
+    // MARK: - Class Properties
     var noteTitleText = ""
-    var noteTextText = ""
+    var noteTextText = "Enter something..."
     var noteTextUserInteractionStatus = true
     var noteTitleUserInteractionStatus = true
     var doneButtonHiddenStatus = false
-    
-    
-    
-    let userDefaults = UserDefaults.standard
-    var notesCount = UserDefaults.standard.integer(forKey: "notesCount")
-    
-    
-    
-    
+}
+
+// MARK: - Done Button IBAction
+
+extension NoteViewController {
     @IBAction func doneButton(_ sender: UIButton) {
         guard noteTitle.text != "" else {
             showAlert(for: "Title")
@@ -40,42 +36,9 @@ final class NoteViewController: UIViewController {
             return
         }
         
-        // Сохранение данных в CoreData
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
-        let object = NSManagedObject(entity: entity!, insertInto: context) as! Note
+        CoreDataProcesses.saveNoteToCoreData(text: noteText.text, title: noteTitle.text!)
         
-        // Получаем текущую дату
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.EEEE.MMM.yyyy"
-        let result = formatter.string(from: date)
-        
-        // Присваивание значения атрибутам
-        object.date = result
-        object.symbolsAmount = Int32(noteText.text.count)
-        object.text = noteText.text
-        object.title = noteTitle.text
-        
-        
-        /// Сохранение контекста
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        /// Увеличиваем количество записей и возвращаемся обратно в HomeViewController
-        self.userDefaults.set(notesCount + 1, forKey: "notesCount")
         performSegue(withIdentifier: "unwindSeque", sender: nil)
-    }
-    
-    
-    func noteTextViewSetting() {
-        noteText.delegate = self
-        noteText.text = "Enter something..."
-        noteText.backgroundColor?.withAlphaComponent(0)
-        noteText.textColor = .lightGray
     }
     
     func showAlert(for emptyElement: String) {
@@ -84,54 +47,70 @@ final class NoteViewController: UIViewController {
         ac.addAction(ok)
         present(ac, animated: true, completion: nil)
     }
-    
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+}
+
+// MARK: - Customize Functions
+
+extension NoteViewController {
+    func noteTextViewSetting() {
+        noteText.delegate = self
+        noteText.backgroundColor?.withAlphaComponent(0)
+        noteText.textColor = .lightGray
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        noteTextViewSetting()
-        navigationItem.title = "Note"
-        self.tabBarController?.tabBar.isHidden = true
-        BarDesign().addCustomizedBackBtn(navigationController: self.navigationController, navigationItem: self.navigationItem)
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+    func fieldsFilling() {
         noteTitle.text = noteTitleText
         noteText.text = noteTextText
         noteTitle.isUserInteractionEnabled = noteTitleUserInteractionStatus
         noteText.isUserInteractionEnabled = noteTextUserInteractionStatus
         doneButton.isHidden = doneButtonHiddenStatus
-        doneButton.isEnabled = doneButtonHiddenStatus
+        doneButton.isEnabled = !doneButtonHiddenStatus
+    }
+    
+    func navBarSetting() {
+        navigationItem.title = "Note"
+        self.tabBarController?.tabBar.isHidden = true
+        BarDesign().addCustomizedBackButton(navigationController: self.navigationController, navigationItem: self.navigationItem)
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 
+// MARK: - NoteViewController Life Cycle
+
+extension NoteViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        noteTextViewSetting()
+        navBarSetting()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fieldsFilling()
+    }
+}
+
+
 // MARK: - Placeholder Realization
+
 extension NoteViewController: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView)
-    {
-        if (textView.text == "Enter something..." && textView.textColor == .lightGray)
-        {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if (textView.text == "Enter something..." && textView.textColor == .lightGray) {
             textView.text = ""
             textView.textColor = .black
         }
     }
     
-    func textViewDidEndEditing(_ textView: UITextView)
-    {
-        if (textView.text == "")
-        {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if (textView.text == "") {
             textView.text = "Enter something..."
             textView.textColor = .lightGray
         }
     }
 }
-
-
-

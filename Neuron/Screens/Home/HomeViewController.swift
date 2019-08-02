@@ -27,12 +27,29 @@ final class HomeViewController: UIViewController {
     
     var selectedNoteTitle = ""
     var selectedNoteText = ""
-    
-    
-    // MARK: - IBActions
+    var noteTextUserInteractionStatus = false
+    var noteTitleUserInteractionStatus = false
+    var noteDoneButtonHiddenStatus = true
+}
+
+
+// MARK: - IBActions
+extension HomeViewController {
+    // MARK: - Add Note Cell
     @IBAction func addNoteCell(_ sender: UIButton) {
+        selectedNoteTitle = ""
+        selectedNoteText = "Enter something..."
+        noteTextUserInteractionStatus = true
+        noteTitleUserInteractionStatus = true
+        noteDoneButtonHiddenStatus = false
         performSegue(withIdentifier: "showNoteFromHome", sender: nil)
     }
+}
+
+
+// MARK: - Segue Processes
+
+extension HomeViewController {
     
     // MARK: - Unwind Segue
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
@@ -50,11 +67,25 @@ final class HomeViewController: UIViewController {
         
         showAllNotesViewing()
     }
+    
+    // MARK: - Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNoteFromHome" {
+            if let dvc = segue.destination as? NoteViewController {
+                dvc.noteTitleText = selectedNoteTitle
+                dvc.noteTextText = selectedNoteText
+                dvc.noteTextUserInteractionStatus = noteTextUserInteractionStatus
+                dvc.noteTitleUserInteractionStatus = noteTitleUserInteractionStatus
+                dvc.doneButtonHiddenStatus = noteDoneButtonHiddenStatus
+            }
+        }
+    }
 }
 
 // MARK: - Home View Controller Life Cycle
 
 extension HomeViewController {
+    
     // FIXME: - Переделай тут с UserDefaults на CoreData/
     // Вытащи мелкие вещи в отдельные функции (одна вещь - одна функция)
     override func viewDidLoad() {
@@ -63,7 +94,6 @@ extension HomeViewController {
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
         diaryCollectionViewing()
         showAllNotesViewing()
-        self.tabBarController?.tabBar.isHidden = false
         
         BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
         
@@ -131,9 +161,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         switch collectionView {
         case diaryCollectionView:
             let cell = collectionView.cellForItem(at: indexPath) as! DiaryCollectionViewCell
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
             selectedNoteTitle = cell.title.text!
             selectedNoteText = cell.text.text!
+            noteTextUserInteractionStatus = false
+            noteTitleUserInteractionStatus = false
+            noteDoneButtonHiddenStatus = true
             performSegue(withIdentifier: "showNoteFromHome", sender: nil)
         case lastExCollectionView:
             return
@@ -142,18 +174,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let dvc = segue.destination as? NoteViewController {
-            dvc.noteTitleText = self.selectedNoteTitle
-            dvc.noteTextText = self.selectedNoteText
-            print(self.selectedNoteTitle, self.selectedNoteText)
-            dvc.noteTextUserInteractionStatus = false
-            dvc.noteTitleUserInteractionStatus = false
-            dvc.doneButtonHiddenStatus = true
-        }
-    }
-    
-    
+    // MARK: - Assigning delegate and dataSource
     func collectionViewsSetting() {
         [diaryCollectionView, lastExCollectionView, allExCollectionView].forEach { (collectionView) in
             collectionView!.dataSource = self
