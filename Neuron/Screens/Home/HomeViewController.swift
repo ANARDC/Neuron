@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import CoreData
 import Hero
 
-final class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+final class HomeViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var diaryCollectionView: UICollectionView!
@@ -26,16 +25,20 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
     var viewColor = UIColor.white
     var notes = [Note]()
     
+    var selectedNoteTitle = ""
+    var selectedNoteText = ""
+    
     
     // MARK: - IBActions
     @IBAction func addNoteCell(_ sender: UIButton) {
+        performSegue(withIdentifier: "showNoteFromHome", sender: nil)
     }
     
     // MARK: - Unwind Segue
     @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
         self.tabBarController?.tabBar.isHidden = false
         
-        gettingNotesFromCoreData()
+        notes = CoreDataProcesses.notesFromCoreData
         
         diaryCollectionView?.reloadData()
         switch userDefaults.integer(forKey: "notesCount") {
@@ -47,8 +50,40 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
         
         showAllNotesViewing()
     }
+}
+
+// MARK: - Home View Controller Life Cycle
+
+extension HomeViewController {
+    // FIXME: - Переделай тут с UserDefaults на CoreData/
+    // Вытащи мелкие вещи в отдельные функции (одна вещь - одна функция)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
+        else { notesCount = userDefaults.integer(forKey: "notesCount") }
+        diaryCollectionViewing()
+        showAllNotesViewing()
+        self.tabBarController?.tabBar.isHidden = false
+        
+        BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
+        
+        collectionViewsSetting()
+    }
     
-    // MARK: - UICollectionView functions
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewDidLayoutSubviews() {
+        lastExCollectionView.scrollToItem(at: IndexPath(row: 14, section: 0), at: UICollectionView.ScrollPosition.right, animated: true)
+    }
+}
+
+// MARK: - UICollectionView functions
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    // MARK: - Number Of Items In Section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
@@ -63,16 +98,17 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    // MARK: - Cell For Item At
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case self.diaryCollectionView:
+        case diaryCollectionView:
             switch indexPath.row {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddNoteCell", for: indexPath) as! DiaryCollectionViewCell
                 addNoteCell = cell
                 return cell
             default:
-                gettingNotesFromCoreData()
+                notes = CoreDataProcesses.notesFromCoreData
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
                 let index = notes.count - indexPath.row
                 cell.title.text = notes[index].title
@@ -81,7 +117,7 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
                 cell.dateString.text = notes[index].date?.components(separatedBy: ".")[1]
                 return cell
             }
-        case self.lastExCollectionView:
+        case lastExCollectionView:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LastExercise", for: indexPath) as UICollectionViewCell
             return cell
         default:
@@ -90,18 +126,47 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    // MARK: - Getting data from CoreData functions
-    func gettingNotesFromCoreData() {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-        do {
-            notes = try context.fetch(fetchRequest)
-        } catch {
-            print(error.localizedDescription)
+    // MARK: - Did Select Item At
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case diaryCollectionView:
+            let cell = collectionView.cellForItem(at: indexPath) as! DiaryCollectionViewCell
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
+            selectedNoteTitle = cell.title.text!
+            selectedNoteText = cell.text.text!
+            performSegue(withIdentifier: "showNoteFromHome", sender: nil)
+        case lastExCollectionView:
+            return
+        default:
+            return
         }
     }
     
-    // MARK: - Viewing Functions
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? NoteViewController {
+            dvc.noteTitleText = self.selectedNoteTitle
+            dvc.noteTextText = self.selectedNoteText
+            print(self.selectedNoteTitle, self.selectedNoteText)
+            dvc.noteTextUserInteractionStatus = false
+            dvc.noteTitleUserInteractionStatus = false
+            dvc.doneButtonHiddenStatus = true
+        }
+    }
+    
+    
+    func collectionViewsSetting() {
+        [diaryCollectionView, lastExCollectionView, allExCollectionView].forEach { (collectionView) in
+            collectionView!.dataSource = self
+            collectionView!.delegate = self
+        }
+    }
+}
+
+// MARK: - Viewing Functions
+
+extension HomeViewController {
+    
+    // MARK: - Show All Notes Viewing
     func showAllNotesViewing() {
         // Создаем minimumFontScale для кнопки showAllNotes как у UILabel
         showAllNotes.titleLabel?.minimumScaleFactor = 0.65
@@ -114,6 +179,7 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
         showAllNotes.isHidden = userDefaults.integer(forKey: "notesCount") < 5 ? true : false
     }
     
+    // MARK: - Diary Collection View Height Vieweing
     func diaryCollectionViewHeightVieweing() {
         switch userDefaults.integer(forKey: "notesCount") {
         case ..<5:
@@ -123,32 +189,12 @@ final class HomeViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
+    // MARK: - Diary Collection Viewing
     func diaryCollectionViewing() {
         if let flowLayout = diaryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             let width = UIScreen.main.bounds.width - 20
             flowLayout.itemSize = CGSize(width: width, height: 90)
         }
         diaryCollectionViewHeightVieweing()
-    }
-    
-    // FIXME: - Переделай тут с UserDefaults на CoreData/
-    // Вытащи мелкие вещи в отдельные функции (одна вещь - одна функция)
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
-        else { notesCount = userDefaults.integer(forKey: "notesCount") }
-        diaryCollectionViewing()
-        showAllNotesViewing()
-        self.tabBarController?.tabBar.isHidden = false
-        
-        BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-    }
-    
-    override func viewDidLayoutSubviews() {
-        lastExCollectionView.scrollToItem(at: IndexPath(row: 14, section: 0), at: UICollectionView.ScrollPosition.right, animated: true)
     }
 }

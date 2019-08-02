@@ -16,7 +16,8 @@
 		9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20522E3F67900EED8FC /* SettingsViewController.swift */; };
 		9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */; };
 		9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E23C22E7A46800EED8FC /* CalendarViewController.swift */; };
-		9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */; };
+		997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997742BA22F40ADF00D763F5 /* AddNoteCellButton.swift */; };
+		9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* DiaryCollectionViewCell.swift */; };
 		999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */; };
 		99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
@@ -41,7 +42,8 @@
 		9974E20522E3F67900EED8FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewController.swift; sourceTree = "<group>"; };
 		9974E23C22E7A46800EED8FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift"; sourceTree = SOURCE_ROOT; };
-		9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryCollectionViewCell+AddNoteCellButton.swift"; sourceTree = "<group>"; };
+		997742BA22F40ADF00D763F5 /* AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCellButton.swift; sourceTree = "<group>"; };
+		9987AAD722DF81DD0047215F /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				99B0F51822DDDC1B0037A4CA /* HomeViewController.swift */,
-				9987AAD722DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift */,
+				9987AAD722DF81DD0047215F /* DiaryCollectionViewCell.swift */,
+				997742BA22F40ADF00D763F5 /* AddNoteCellButton.swift */,
 				996F4B1A22E36F8100B19478 /* Note */,
 				996F4B1B22E36FB600B19478 /* All Notes */,
 			);
@@ -329,9 +332,10 @@
 				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
+				997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
-				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell+AddNoteCellButton.swift in Sources */,
+				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

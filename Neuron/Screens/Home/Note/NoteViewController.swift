@@ -13,6 +13,15 @@ final class NoteViewController: UIViewController {
     
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteText: UITextView!
+    @IBOutlet weak var doneButton: UIButton!
+    
+    
+    var noteTitleText = ""
+    var noteTextText = ""
+    var noteTextUserInteractionStatus = true
+    var noteTitleUserInteractionStatus = true
+    var doneButtonHiddenStatus = false
+    
     
     
     let userDefaults = UserDefaults.standard
@@ -31,18 +40,18 @@ final class NoteViewController: UIViewController {
             return
         }
         
-        /// Сохранение данных в CoreData
+        // Сохранение данных в CoreData
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
         let object = NSManagedObject(entity: entity!, insertInto: context) as! Note
         
-        /// Получаем текущую дату
+        // Получаем текущую дату
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.EEEE.MMM.yyyy"
         let result = formatter.string(from: date)
         
-        /// Присваивание значения атрибутам
+        // Присваивание значения атрибутам
         object.date = result
         object.symbolsAmount = Int32(noteText.text.count)
         object.text = noteText.text
@@ -90,6 +99,15 @@ final class NoteViewController: UIViewController {
         navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        noteTitle.text = noteTitleText
+        noteText.text = noteTextText
+        noteTitle.isUserInteractionEnabled = noteTitleUserInteractionStatus
+        noteText.isUserInteractionEnabled = noteTextUserInteractionStatus
+        doneButton.isHidden = doneButtonHiddenStatus
+        doneButton.isEnabled = doneButtonHiddenStatus
     }
 }
 

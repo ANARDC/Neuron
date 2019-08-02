@@ -58,7 +58,6 @@
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="addNoteCell:" destination="c3k-gL-oML" eventType="touchUpInside" id="a9i-cA-ldl"/>
-                                                                <segue destination="dhs-4K-Leh" kind="show" id="Hkb-rq-RpF"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -89,13 +88,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-5g-rvj">
                                                                             <rect key="frame" x="7" y="3" width="44" height="44.333333333333336"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-aN-Jrd">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-aN-Jrd">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="27.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                                                                     <color key="textColor" red="0.51524770639999995" green="0.62875446049999995" blue="0.87850215519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBz-8W-aFA">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBz-8W-aFA">
                                                                                     <rect key="frame" x="0.0" y="32.666666666666664" width="44" height="11.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                                     <color key="textColor" red="0.4569675326" green="0.60822248459999995" blue="0.97924309970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -503,6 +502,7 @@
                         <outlet property="diaryCollectionView" destination="LAw-p9-uf0" id="06T-fn-zLZ"/>
                         <outlet property="lastExCollectionView" destination="ZFT-zI-rdL" id="peg-S0-4vz"/>
                         <outlet property="showAllNotes" destination="oZx-qx-qNW" id="HUU-55-i44"/>
+                        <segue destination="dhs-4K-Leh" kind="show" identifier="showNoteFromHome" id="RgC-pY-RVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScI-pj-ygg" sceneMemberID="firstResponder"/>
@@ -589,6 +589,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="Iam-kS-18e"/>
                     <connections>
+                        <outlet property="doneButton" destination="SEU-qk-HB5" id="6XM-2v-rQF"/>
                         <outlet property="noteText" destination="bRf-NX-X3c" id="3ls-Of-VgI"/>
                         <outlet property="noteTitle" destination="IRC-Fx-800" id="dij-Tv-0zH"/>
                         <segue destination="JH3-QQ-vhy" kind="unwind" identifier="unwindSeque" unwindAction="unwindToHome:" id="I0W-yg-aH3"/>
@@ -597,7 +598,7 @@
                 <exit id="JH3-QQ-vhy" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uz7-08-bTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="1871"/>
+            <point key="canvasLocation" x="-852" y="2616"/>
         </scene>
         <!--Diary-->
         <scene sceneID="eb3-AF-mrL">
@@ -731,11 +732,12 @@
                     <connections>
                         <outlet property="calendarButton" destination="ONY-Gx-82R" id="And-BP-v8P"/>
                         <outlet property="sortButton" destination="4av-en-RE6" id="ZQk-5l-SFe"/>
+                        <segue destination="dhs-4K-Leh" kind="show" identifier="showNoteFromAllNotes" id="Ujy-dI-OTn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39j-CU-NhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1250" y="1871"/>
+            <point key="canvasLocation" x="-1650" y="1851"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="JBe-np-jX9">
@@ -916,11 +918,12 @@
                         <outlet property="dayNoteText" destination="WGI-Tf-Zyy" id="gTk-YI-Cx5"/>
                         <outlet property="dayNoteTitle" destination="0bc-WE-LA8" id="EL6-Bp-yMD"/>
                         <outlet property="dayNoteView" destination="iDb-3X-hnT" id="bQv-i0-an4"/>
+                        <segue destination="dhs-4K-Leh" kind="show" identifier="showNoteFromCalender" id="aq0-WV-Wx9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k12-pN-wjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1250.4000000000001" y="2606.8965517241381"/>
+            <point key="canvasLocation" x="-2270" y="2616"/>
         </scene>
         <!--Home-->
         <scene sceneID="011-9u-ibU">
@@ -942,7 +945,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQP-vQ-Qmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852" y="388"/>
+            <point key="canvasLocation" x="-852" y="299"/>
         </scene>
     </scenes>
     <resources>
@@ -11988,4 +11991,7 @@ AAAAAAUKTw
         <image name="Назад_Календарь" width="6.6666665077209473" height="12"/>
         <image name="Сортировка" width="15" height="13"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="RgC-pY-RVQ"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import QuartzCore
 
 // MARK: - CalendarViewController
 
@@ -27,23 +26,11 @@ final class CalendarViewController: UIViewController {
     var daysListStatus = [String]()
     var daysDatesList = [String]()
     let animationsDuration = 0.4
-    
-    // MARK: - IBActions
-    @IBAction func previousMonth(_ sender: UIButton) {
-        dayNoteTitle.text = "Empty"
-        dayNoteText.text! = "You didn't fill in the diary on this day"
-        fillingDaysList(of: .previous)
-        calendarCollectionView.reloadData()
-    }
-    
-    @IBAction func nextMonth(_ sender: UIButton) {
-        dayNoteTitle.text = "Empty"
-        dayNoteText.text! = "You didn't fill in the diary on this day"
-        fillingDaysList(of: .next)
-        calendarCollectionView.reloadData()
-    }
-    
-    // MARK: - CalendarViewController Life Cycle
+}
+
+// MARK: - CalendarViewController Life Cycle
+
+extension CalendarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewViewing(calendarView)
@@ -167,13 +154,31 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
                 cell.dayView.layer.add(animation, forKey: animation.keyPath)
                 
                 cell.dayView.borderWidth = 0
-                }
             }
         }
+    }
     
     func collectionViewSetting() {
         calendarCollectionView.dataSource = self
         calendarCollectionView.delegate = self
+    }
+}
+
+// MARK: - IBActions
+
+extension CalendarViewController {
+    @IBAction func previousMonth(_ sender: UIButton) {
+        dayNoteTitle.text = "Empty"
+        dayNoteText.text! = "You didn't fill in the diary on this day"
+        fillingDaysList(of: .previous)
+        calendarCollectionView.reloadData()
+    }
+    
+    @IBAction func nextMonth(_ sender: UIButton) {
+        dayNoteTitle.text = "Empty"
+        dayNoteText.text! = "You didn't fill in the diary on this day"
+        fillingDaysList(of: .next)
+        calendarCollectionView.reloadData()
     }
 }
 
@@ -254,6 +259,7 @@ extension CalendarViewController {
 }
 
 // MARK: - Filling Data For Calendar
+
 extension CalendarViewController {
     func fillingDaysList(of position: NoteCalendar.position) {
         let month = NoteCalendar().getDateInfo(of: position)
