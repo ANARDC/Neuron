@@ -70,10 +70,7 @@ extension NoteViewController {
     func navBarSetting() {
         navigationItem.title = "Note"
         self.tabBarController?.tabBar.isHidden = true
-        BarDesign().addCustomizedBackButton(navigationController: self.navigationController, navigationItem: self.navigationItem)
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

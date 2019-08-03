@@ -34,8 +34,7 @@ extension AllNotesTableViewController {
         super.viewDidLoad()
         notesCount = UserDefaults.standard.integer(forKey: "notesCount")
         self.tabBarController?.tabBar.isHidden = true
-        navBarSettung()
-        
+        navBarSetting()
         self.tableView.separatorColor = .clear
     }
 }
@@ -73,6 +72,8 @@ extension AllNotesTableViewController {
         cell.mainView.shadowRadius = 14
         cell.mainView.shadowOffset = CGSize(width: 0, height: 11)
         
+        cell.selectionStyle = .none
+        
         return cell
     }
     
@@ -102,11 +103,9 @@ extension AllNotesTableViewController {
 // MARK: - Customize Functions
 
 extension AllNotesTableViewController {
-    func navBarSettung() {
-        BarDesign().addCustomizedBackButton(navigationController: self.navigationController, navigationItem: self.navigationItem)
+    func navBarSetting() {
+        BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
         calendarButton.image = UIImage(named: "Иконка календаря")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         sortButton.image = UIImage(named: "Сортировка")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
 }

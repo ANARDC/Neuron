@@ -814,7 +814,7 @@
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvN-dJ-2wF">
-                                        <rect key="frame" x="153" y="17" width="6.6666666666666572" height="12"/>
+                                        <rect key="frame" x="152.66666666666666" y="17" width="6.6666666666666572" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="6.6666666666666661" id="9Ds-r8-szY"/>
                                             <constraint firstAttribute="height" constant="12" id="OH6-eS-M5G"/>
@@ -836,7 +836,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G9A-Qq-PKT">
-                                        <rect key="frame" x="173" y="10" width="125.66666666666666" height="25"/>
+                                        <rect key="frame" x="172.33333333333334" y="10" width="125.66666666666666" height="25"/>
                                         <fontDescription key="fontDescription" name="NotoSansChakma-Regular" family="Noto Sans Chakma" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -882,6 +882,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="dq3-Pr-H0a" appends="YES" id="Mja-eT-rko"/>
+                                        </connections>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -928,6 +932,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k12-pN-wjt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dq3-Pr-H0a">
+                    <connections>
+                        <action selector="noteViewTapped:" destination="4Pj-Qs-1Z6" id="xSA-WP-UA1"/>
+                        <outlet property="delegate" destination="iDb-3X-hnT" id="3sk-Nk-jX6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2300" y="2594"/>
         </scene>

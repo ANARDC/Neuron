@@ -69,10 +69,11 @@ extension UIScrollView {
 
 // MARK: - Design of NavigationBar
 final class BarDesign {
-    func addCustomizedBackButton(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")
+    func customizeNavBar(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Назад")
         navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
     func makeNavigationBarTranslucent(navigationController: UINavigationController?) {

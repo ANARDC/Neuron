@@ -26,6 +26,12 @@ final class CalendarViewController: UIViewController {
     var daysListStatus = [String]()
     var daysDatesList = [String]()
     let animationsDuration = 0.4
+    
+    var selectedNoteTitle = ""
+    var selectedNoteText = ""
+    var noteTextUserInteractionStatus = false
+    var noteTitleUserInteractionStatus = false
+    var noteDoneButtonHiddenStatus = true
 }
 
 // MARK: - CalendarViewController Life Cycle
@@ -33,6 +39,7 @@ final class CalendarViewController: UIViewController {
 extension CalendarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
         viewViewing(calendarView)
         viewViewing(dayNoteView)
         fillingDaysList(of: .current)
@@ -180,6 +187,28 @@ extension CalendarViewController {
         dayNoteText.text! = "You didn't fill in the diary on this day"
         fillingDaysList(of: .next)
         calendarCollectionView.reloadData()
+    }
+    
+    @IBAction func noteViewTapped(_ sender: UITapGestureRecognizer) {
+        if dayNoteTitle.text! != "Empty" && dayNoteText.text! != "You didn't fill in the diary on this day" {
+            selectedNoteTitle = dayNoteTitle.text!
+            selectedNoteText = dayNoteText.text!
+            noteTextUserInteractionStatus = false
+            noteTitleUserInteractionStatus = false
+            noteDoneButtonHiddenStatus = true
+            performSegue(withIdentifier: "showNoteFromCalender", sender: nil)
+        }
+    }
+    
+    // MARK: - Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? NoteViewController {
+            dvc.noteTitleText = selectedNoteTitle
+            dvc.noteTextText = selectedNoteText
+            dvc.noteTextUserInteractionStatus = noteTextUserInteractionStatus
+            dvc.noteTitleUserInteractionStatus = noteTitleUserInteractionStatus
+            dvc.doneButtonHiddenStatus = noteDoneButtonHiddenStatus
+        }
     }
 }
 
