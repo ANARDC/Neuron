@@ -48,7 +48,7 @@ final class SettingsViewController: UIViewController {
     var diaryFillingTimeSelectedBackgroundViewPosition = 0
     var tasksFillingTimeSelectedBackgroundViewPosition = 0
     
-    var firstSwitchState = false
+    let notificationsProcesses = NotificationsProcesses()
 }
 
 // MARK: - SettingsViewController Life Cycle
@@ -56,7 +56,7 @@ final class SettingsViewController: UIViewController {
 extension SettingsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
+        BarDesign().makeNavigationBarTranslucent(self.navigationController)
         notificationLabelViewing()
         diaryLabelViewing()
         tasksLabelViewing()
@@ -78,9 +78,13 @@ extension SettingsViewController {
         case true:
             sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
             sender.shadowOpacity = 1
+            
+            notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
         default:
             sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
             sender.shadowOpacity = 0
+            
+            notificationsProcesses.removeNotification(notificationType: "DiaryFillingNotificationID")
         }
         
         [firstTimeFillingDiaryButton,
@@ -89,6 +93,7 @@ extension SettingsViewController {
          fourthTimeFillingDiaryButton].forEach { (button) in
             button?.isHidden = !button!.isHidden
         }
+        
         diaryFillingViewHeightConstraint.constant = diaryFillingViewHeightConstraint.constant == 100 ? 55 : 100
         timeBackgroundView.isHidden = !timeBackgroundView.isHidden
         
@@ -116,9 +121,13 @@ extension SettingsViewController {
         if sender.on {
             sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
             sender.shadowOpacity = 1
+            
+            notificationsProcesses.tasksNotificationsStatus = "daily"
         } else {
             sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
             sender.shadowOpacity = 0
+            
+            notificationsProcesses.tasksNotificationsStatus = "NONE"
         }
         
         [dailyFrequencyTaskButton,
@@ -126,9 +135,9 @@ extension SettingsViewController {
          monthlyFrequencyTaskButton].forEach { (button) in
             button?.isHidden = !button!.isHidden
         }
+        
         tasksSettingViewHeightConstraint.constant = tasksSettingViewHeightConstraint.constant == 100 ? 55 : 100
         frequencyBackgroundView.isHidden = !frequencyBackgroundView.isHidden
-        
         
         selectButtonsBackgroundViewing(for: frequencyBackgroundView)
     }
@@ -178,7 +187,8 @@ extension SettingsViewController {
         }
     }
     
-    func baseSwitchTouchUpOutside(_ sender: PWSwitch) {if sender.on {
+    func baseSwitchTouchUpOutside(_ sender: PWSwitch) {
+        if sender.on {
             let animation = CABasicAnimation(keyPath: "shadowOpacity")
             animation.fromValue = sender.shadowOpacity
             sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
@@ -211,33 +221,38 @@ extension SettingsViewController {
 extension SettingsViewController {
     @IBAction func firstTimeFillingDiaryButton(_ sender: UIButton) {
         diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 0)
+        notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
     }
     
     @IBAction func secondTimeFillingDiaryButton(_ sender: UIButton) {
         diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 1)
+        notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 00, frequency: nil)
     }
     
     @IBAction func thirdTimeFillingDiaryButton(_ sender: UIButton) {
         diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 2)
+        notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 30, frequency: nil)
     }
     
     @IBAction func fourthTimeFillingDiaryButton(_ sender: UIButton) {
         diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 3)
+        notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 0, minute: 0, frequency: nil)
     }
-    
-    
     
     
     @IBAction func dailyFrequencyTaskButton(_ sender: UIButton) {
         tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 0)
+        notificationsProcesses.tasksNotificationsStatus = "daily"
     }
     
     @IBAction func weeklyFrequencyTaskButton(_ sender: UIButton) {
         tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 1)
+        notificationsProcesses.tasksNotificationsStatus = "weekly"
     }
     
     @IBAction func monthlyFrequencyTaskButton(_ sender: UIButton) {
         tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 2)
+        notificationsProcesses.tasksNotificationsStatus = "monthly"
     }
     
     

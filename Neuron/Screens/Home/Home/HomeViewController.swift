@@ -86,17 +86,20 @@ extension HomeViewController {
 
 extension HomeViewController {
     
-    // FIXME: - Переделай тут с UserDefaults на CoreData/
-    // Вытащи мелкие вещи в отдельные функции (одна вещь - одна функция)
+    // FIXME: - Переделай тут с UserDefaults на CoreData
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if userDefaults.integer(forKey: "notesCount") == 0 { userDefaults.set(1, forKey: "notesCount") }
         else { notesCount = userDefaults.integer(forKey: "notesCount") }
+        
+        
+        
+        
+        
         diaryCollectionViewing()
         showAllNotesViewing()
-        
-        BarDesign().makeNavigationBarTranslucent(navigationController: self.navigationController)
-        
+        BarDesign().makeNavigationBarTranslucent(self.navigationController)
         collectionViewsSetting()
     }
     
@@ -170,7 +173,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         case lastExCollectionView:
             return
         default:
-            return
+            performSegue(withIdentifier: "showFruits", sender: nil)
         }
     }
     

@@ -449,7 +449,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="xiJ-nd-wdn" kind="show" identifier="showDiary" id="Tne-tu-A86"/>
+                                            <segue destination="xiJ-nd-wdn" kind="show" identifier="" id="Tne-tu-A86"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -505,6 +505,7 @@
                         <outlet property="lastExCollectionView" destination="ZFT-zI-rdL" id="peg-S0-4vz"/>
                         <outlet property="showAllNotes" destination="oZx-qx-qNW" id="HUU-55-i44"/>
                         <segue destination="dhs-4K-Leh" kind="show" identifier="showNoteFromHome" id="RgC-pY-RVQ"/>
+                        <segue destination="IcC-pD-9c4" kind="show" identifier="showFruits" id="S3i-mE-EF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ScI-pj-ygg" sceneMemberID="firstResponder"/>
@@ -742,7 +743,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39j-CU-NhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1575.2" y="1850.9852216748768"/>
+            <point key="canvasLocation" x="-1462" y="1851"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="buQ-U4-Fex">
+            <objects>
+                <viewController id="IcC-pD-9c4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bSv-Zx-RQz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MoU-AP-zZX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9Z-Ue-V8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186" y="1851"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="JBe-np-jX9">
@@ -939,7 +955,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2300" y="2594"/>
+            <point key="canvasLocation" x="-2031" y="2594"/>
         </scene>
         <!--Home-->
         <scene sceneID="011-9u-ibU">
@@ -961,7 +977,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQP-vQ-Qmz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-852" y="299"/>
+            <point key="canvasLocation" x="-852" y="355"/>
         </scene>
     </scenes>
     <resources>
@@ -12008,6 +12024,6 @@ AAAAAAUKTw
         <image name="Сортировка" width="15" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aq0-WV-Wx9"/>
+        <segue reference="RgC-pY-RVQ"/>
     </inferredMetricsTieBreakers>
 </document>

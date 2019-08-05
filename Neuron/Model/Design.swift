@@ -76,7 +76,7 @@ final class BarDesign {
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
     }
     
-    func makeNavigationBarTranslucent(navigationController: UINavigationController?) {
+    func makeNavigationBarTranslucent(_ navigationController: UINavigationController?) {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.isTranslucent = true
