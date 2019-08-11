@@ -74,6 +74,10 @@ final class BarDesign {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Назад")
         navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
     }
     
     func makeNavigationBarTranslucent(_ navigationController: UINavigationController?) {

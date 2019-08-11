@@ -99,6 +99,7 @@ extension HomeViewController {
         
         diaryCollectionViewing()
         showAllNotesViewing()
+        BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
         BarDesign().makeNavigationBarTranslucent(self.navigationController)
         collectionViewsSetting()
     }
