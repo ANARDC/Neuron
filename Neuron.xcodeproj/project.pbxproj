@@ -18,6 +18,7 @@
 		990DE80622F8B13C00D18A86 /* LevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990DE80522F8B13C00D18A86 /* LevelsCollectionViewCell.swift */; };
 		9923FA1B22F60FA500F33B0C /* FruitsStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923FA1A22F60FA500F33B0C /* FruitsStartViewController.swift */; };
 		9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */; };
+		9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928825823046AD40078664E /* FruitsGameViewController.swift */; };
 		992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BEF0C22E8BB0C00A9360A /* Calendar.swift */; };
 		994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Design.swift */; };
 		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
@@ -53,6 +54,7 @@
 		9923FA4022F872D900F33B0C /* NotoSerif-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-RegularItalic.ttf"; sourceTree = "<group>"; };
 		9923FA4122F872D900F33B0C /* NotoSerif-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerif-BoldItalic.ttf"; sourceTree = "<group>"; };
 		9923FA4222F872D900F33B0C /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		9928825823046AD40078664E /* FruitsGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGameViewController.swift; sourceTree = "<group>"; };
 		992BEF0C22E8BB0C00A9360A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		994CBBA522DF44A5007B5BD5 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -116,8 +118,8 @@
 		9923FA1922F60F5700F33B0C /* FruitsGame */ = {
 			isa = PBXGroup;
 			children = (
-				9923FA1A22F60FA500F33B0C /* FruitsStartViewController.swift */,
-				990DE80522F8B13C00D18A86 /* LevelsCollectionViewCell.swift */,
+				9928825723046AAD0078664E /* GameScreen */,
+				99288256230454A40078664E /* StartScreen */,
 			);
 			path = FruitsGame;
 			sourceTree = "<group>";
@@ -146,6 +148,23 @@
 			children = (
 			);
 			path = Statistics;
+			sourceTree = "<group>";
+		};
+		99288256230454A40078664E /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9923FA1A22F60FA500F33B0C /* FruitsStartViewController.swift */,
+				990DE80522F8B13C00D18A86 /* LevelsCollectionViewCell.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		9928825723046AAD0078664E /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9928825823046AD40078664E /* FruitsGameViewController.swift */,
+			);
+			path = GameScreen;
 			sourceTree = "<group>";
 		};
 		996F4B1822E36E6B00B19478 /* Home */ = {
@@ -397,6 +416,7 @@
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
 				997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */,
+				9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,

@@ -61,8 +61,6 @@ extension LevelsCollectionViewCell {
     
     // MARK: - Adding fruitsStackView
     func addFruitsStackView(_ cell: UICollectionViewCell, _ levelNumber: Int) {
-        //        print(levelNumber)
-        
         func stackViewAppearance(_ cell: UICollectionViewCell, _ fruitsCount: Int) {
             let fruits = ["Брокколи", "Банан", "Томат", "Виноград", "Яблоко", "Арбуз", "Кукуруза", "Апельсин", "Лимон", "Груша", "Морковь", "Лук"]
             var fruitsViews = [UIImageView]()

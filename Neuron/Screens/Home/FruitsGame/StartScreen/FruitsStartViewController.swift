@@ -12,7 +12,6 @@ final class FruitsStartViewController: UIViewController {
     @IBOutlet weak var statsButton: UIBarButtonItem!
     @IBOutlet weak var levelsCollectionView: UICollectionView!
     
-    
     @IBOutlet weak var chooseBackgroundView: UIView!
     @IBOutlet weak var leftArrow: UIImageView!
     @IBOutlet weak var rightArrow: UIImageView!
@@ -20,23 +19,37 @@ final class FruitsStartViewController: UIViewController {
     
     
     static var levelNumber = 1
+    var choosenLevelNumber = 1
+    
+    var selectedCell: UICollectionViewCell? = nil
+    
     let animationsDuration = 0.4
 }
 
+// MARK: - FruitsStartViewController Life Cycle
 
 extension FruitsStartViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         navBarSetting()
         collectionViewSetting()
         chooseButtonAppearance()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
 }
 
+// MARK: - IBActions
+
 extension FruitsStartViewController {
+    
+    // MARK: - Start View UITapGestureRecognizer
     @IBAction func startGame(_ sender: UITapGestureRecognizer) {
         guard chooseBackgroundView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) else { return }
+        FruitsGameViewController.levelNumber = choosenLevelNumber
         performSegue(withIdentifier: "startGameFruitSegue", sender: nil)
     }
 }
@@ -128,46 +141,53 @@ extension FruitsStartViewController: UICollectionViewDelegate, UICollectionViewD
         cell.borderWidth = 2
         cell.shadowOpacity = 0
         
-        
-        
-        
-        
         chooseBackgroundView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
         chooseBackgroundView.borderWidth = 0
         
         chooseViewLabel.text = "Start"
         chooseViewLabel.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
         
-        
         leftArrow.isHidden = true
-        rightArrow.image = UIImage(named: "БелаяСтрелка")
+        rightArrow.isHidden = true
         
-        rightArrow.frame = CGRect(x: 283, y: 18, width: 7, height: 12)
+        let nextArrow = UIImageView()
+        nextArrow.image = UIImage(named: "БелаяСтрелка")
+        nextArrow.frame = CGRect(x: 283, y: 18, width: 7, height: 12)
+        
+        chooseBackgroundView.addSubview(nextArrow)
+        
+        choosenLevelNumber = indexPath.row + 1
+        
+        cellDidDeselect(for: collectionView, selectedCellIndexPath: indexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+    func cellDidDeselect(for collectionView: UICollectionView, selectedCellIndexPath indexPath: IndexPath) {
+        if let selectedCell = selectedCell {
+            guard collectionView.indexPath(for: selectedCell) != indexPath else { return }
+            
+            let SCAnimation0 = CABasicAnimation(keyPath: "borderColor")
+            SCAnimation0.fromValue = selectedCell.borderColor
+            SCAnimation0.toValue = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
+            SCAnimation0.duration = animationsDuration
+            selectedCell.layer.add(SCAnimation0, forKey: SCAnimation0.keyPath)
+            
+            let SCAnimation1 = CABasicAnimation(keyPath: "borderWidth")
+            SCAnimation1.fromValue = selectedCell.borderWidth
+            SCAnimation1.toValue = 1
+            SCAnimation1.duration = animationsDuration
+            selectedCell.layer.add(SCAnimation1, forKey: SCAnimation1.keyPath)
+            
+            let SCAnimation2 = CABasicAnimation(keyPath: "shadowOpacity")
+            SCAnimation2.fromValue = selectedCell.shadowOpacity
+            SCAnimation2.toValue = 1
+            SCAnimation2.duration = animationsDuration
+            selectedCell.layer.add(SCAnimation2, forKey: SCAnimation2.keyPath)
+            
+            selectedCell.borderColor = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
+            selectedCell.borderWidth = 1
+            selectedCell.shadowOpacity = 1
+        }
         
-        let animation0 = CABasicAnimation(keyPath: "borderColor")
-        animation0.fromValue = cell.borderColor
-        animation0.toValue = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
-        animation0.duration = animationsDuration
-        cell.layer.add(animation0, forKey: animation0.keyPath)
-        
-        let animation1 = CABasicAnimation(keyPath: "borderWidth")
-        animation1.fromValue = cell.borderWidth
-        animation1.toValue = 1
-        animation1.duration = animationsDuration
-        cell.layer.add(animation1, forKey: animation1.keyPath)
-        
-        let animation2 = CABasicAnimation(keyPath: "shadowOpacity")
-        animation2.fromValue = cell.shadowOpacity
-        animation2.toValue = 1
-        animation2.duration = animationsDuration
-        cell.layer.add(animation2, forKey: animation2.keyPath)
-        
-        cell.borderColor = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
-        cell.borderWidth = 1
-        cell.shadowOpacity = 1
+        selectedCell = collectionView.cellForItem(at: indexPath)
     }
 }

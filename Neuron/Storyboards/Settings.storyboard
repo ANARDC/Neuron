@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="21V-hc-0aI">
-                                <rect key="frame" x="19.999999999999993" y="99" width="95.333333333333314" height="39"/>
+                                <rect key="frame" x="19.999999999999993" y="151" width="95.333333333333314" height="39"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVQ-Mw-Ff5">
                                         <rect key="frame" x="0.0" y="0.0" width="95.333333333333329" height="20"/>
@@ -36,7 +36,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZw-Vp-O0T">
-                                <rect key="frame" x="20" y="148" width="335" height="100"/>
+                                <rect key="frame" x="20" y="200" width="335" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdK-ch-jZH">
                                         <rect key="frame" x="8" y="61" width="51" height="31"/>
@@ -147,13 +147,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C2-Go-Nbv">
-                                <rect key="frame" x="20" y="263" width="30.333333333333329" height="14"/>
+                                <rect key="frame" x="20" y="315" width="30.333333333333329" height="14"/>
                                 <fontDescription key="fontDescription" name="NotoSansKannada-Regular" family="Noto Sans Kannada" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-be-DmK">
-                                <rect key="frame" x="20" y="287" width="335" height="100"/>
+                                <rect key="frame" x="20" y="339" width="335" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-st-Cqp">
                                         <rect key="frame" x="8" y="61" width="51" height="31"/>
@@ -272,7 +272,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RMP-f0-dQb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="hs8-bF-Snc"/>
+                    <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="hs8-bF-Snc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dailyFrequencyTaskButton" destination="Pgq-5H-Jd5" id="6ed-UU-9AZ"/>
@@ -309,8 +309,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CQc-lS-8Zg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="d5V-10-vB0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ph-g1-0pD">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="3ph-g1-0pD">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
