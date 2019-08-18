@@ -2,78 +2,115 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Вперед_Календарь.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Вперед_Календарь.imageset/Вперед_Календарь@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Вперед_Календарь.imageset/Вперед_Календарь@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Вперед_Календарь.imageset/Вперед_Календарь@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Иконка календаря.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Иконка календаря.imageset/Иконка календаря@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Иконка календаря.imageset/Иконка календаря@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Иконка календаря.imageset/Иконка календаря@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад.imageset/Назад@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад.imageset/Назад@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад.imageset/Назад@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад_Календарь.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад_Календарь.imageset/Назад_Календарь@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад_Календарь.imageset/Назад_Календарь@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Назад_Календарь.imageset/Назад_Календарь@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Сортировка.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Сортировка.imageset/Сортировка@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Сортировка.imageset/Сортировка@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/NavigationBarElements/Сортировка.imageset/Сортировка@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarCollectionViewCell.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@1x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/DesignableExtension.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Designable.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotesTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotesTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/HomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/HomeViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Settings/SettingsViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Settings/SettingsViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_emptyStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_emptyStar_2x.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_emptyStar_2x.imageset/ICC_emptyStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_emptyStar_2x.imageset/ICC_emptyStar_2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_filledStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_filledStar_2x.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_filledStar_2x.imageset/ICC_filledStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_filledStar_2x.imageset/ICC_filledStar_2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_highlightedStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_highlightedStar_2x.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_highlightedStar_2x.imageset/ICC_highlightedStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_highlightedStar_2x.imageset/ICC_highlightedStar_2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/RuslanAva.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/RuslanAva.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/RuslanAva.imageset/RuslanAva.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/RuslanAva.imageset/RuslanAva.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/domino.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/domino.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/domino.imageset/domino.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/domino.imageset/domino.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/mac.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/mac.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/mac.imageset/mac.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/mac.imageset/mac.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
-    <ignored path="$USER_HOME$/Library/Caches/AppCode2019.1/DerivedData/Neuron-auephottwbwepjgvbfzvmyymmusw/Build/Intermediates.noindex/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_7EFF622E-4FD8-4EF0-81E2-D6166863D159" />
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/NoteTableViewCell.swift">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotesTableViewController.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-              <folding>
-                <element signature="e#145#157#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarCollectionViewCell.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FavoritesManager">
+    <favorites_list name="Neuron" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -86,77 +123,12 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1400" />
-    <option name="height" value="782" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-              <item name="Screens" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-              <item name="Screens" type="fcab9f18:XcodeViewNode" />
-              <item name="Home" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-              <item name="Screens" type="fcab9f18:XcodeViewNode" />
-              <item name="Home" type="fcab9f18:XcodeViewNode" />
-              <item name="All Notes" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-              <item name="Screens" type="fcab9f18:XcodeViewNode" />
-              <item name="Home" type="fcab9f18:XcodeViewNode" />
-              <item name="All Notes" type="fcab9f18:XcodeViewNode" />
-              <item name="Calendar" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="Neuron" type="1d218c8b:XcodeProjectNode" />
-              <item name="Neuron" type="fcab9f18:XcodeViewNode" />
-              <item name="Screens" type="fcab9f18:XcodeViewNode" />
-              <item name="Home" type="fcab9f18:XcodeViewNode" />
-              <item name="Note" type="fcab9f18:XcodeViewNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Cidr.FilesView" />
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1PTYhAWRg2cXhLytYgxhUNpii26" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="CocoaPods" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -193,83 +165,27 @@
       <updated>1563956339899</updated>
       <workItem from="1563956343217" duration="444000" />
       <workItem from="1563957610499" duration="384000" />
+      <workItem from="1565899674957" duration="202000" />
+      <workItem from="1565899891462" duration="10352000" />
+      <workItem from="1565974827862" duration="4269000" />
+      <workItem from="1565979548185" duration="22280000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="828000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19670959" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289855" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/NoteTableViewCell.swift">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotesTableViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding>
-            <element signature="e#145#157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarCollectionViewCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

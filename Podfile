@@ -7,7 +7,7 @@ target 'Neuron' do
 
   pod "PWSwitch"
   pod "Hero"
-  # Pods for Neuron
+
   post_install do |installer|
     Dir.glob(installer.sandbox.target_support_files_root + "Pods-*/*.sh").each do |script|
       flag_name = File.basename(script, ".sh") + "-Installation-Flag"

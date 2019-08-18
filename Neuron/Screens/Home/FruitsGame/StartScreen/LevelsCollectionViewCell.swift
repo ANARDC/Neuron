@@ -23,7 +23,6 @@ class LevelsCollectionViewCell: UICollectionViewCell {
     }
 }
 
-
 // MARK: - Appearance Functions
 
 extension LevelsCollectionViewCell {
@@ -87,21 +86,15 @@ extension LevelsCollectionViewCell {
                                              stackView.rightAnchor.constraint(equalTo: cell.rightAnchor, constant: -8)])
             default:
                 let distribution = UIStackView.Distribution.equalSpacing
-                
-                //                print("let firstStackView = UIStackView(arrangedSubviews: Array(fruitsViews[0...\(fruitsCount - Int(fruitsCount/2) - 1)])")
-                
                 let firstStackView = UIStackView(arrangedSubviews: Array(fruitsViews[0...fruitsCount - Int(fruitsCount/2) - 1]))
                 firstStackView.axis = .horizontal
                 firstStackView.distribution = distribution
                 firstStackView.spacing = 1
-                
-                //                print("let secondStackView = UIStackView(arrangedSubviews: Array(fruitsViews[\(fruitsCount - Int(fruitsCount/2))...\(fruitsCount - 1)])")
+
                 let secondStackView = UIStackView(arrangedSubviews: Array(fruitsViews[fruitsCount - Int(fruitsCount/2)...fruitsCount - 1]))
                 secondStackView.axis = .horizontal
                 secondStackView.distribution = distribution
                 secondStackView.spacing = 2
-                
-                //            secondStackView.size
                 
                 let stackView = UIStackView(arrangedSubviews: [firstStackView, secondStackView])
                 stackView.axis = .vertical
@@ -111,10 +104,9 @@ extension LevelsCollectionViewCell {
                 
                 // autolayout constraint
                 stackView.translatesAutoresizingMaskIntoConstraints = false
-                
-                
+
                 addSubview(stackView)
-                
+
                 NSLayoutConstraint.activate([stackView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 3),
                                              stackView.rightAnchor.constraint(equalTo: cell.rightAnchor, constant: -8)])
             }

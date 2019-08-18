@@ -20,6 +20,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NotoSans-Bold.ttf</string>
+		<string>NotoSans-BoldItalic.ttf</string>
+		<string>NotoSans-Regular.ttf</string>
+		<string>NotoSans-RegularItalic.ttf</string>
+		<string>NotoSerif-Bold.ttf</string>
+		<string>NotoSerif-BoldItalic.ttf</string>
+		<string>NotoSerif-Regular.ttf</string>
+		<string>NotoSerif-RegularItalic.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -31,8 +42,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -40,17 +49,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>NotoSans-Bold.ttf</string>
-		<string>NotoSans-BoldItalic.ttf</string>
-		<string>NotoSans-Regular.ttf</string>
-		<string>NotoSans-RegularItalic.ttf</string>
-		<string>NotoSerif-Bold.ttf</string>
-		<string>NotoSerif-BoldItalic.ttf</string>
-		<string>NotoSerif-Regular.ttf</string>
-		<string>NotoSerif-RegularItalic.ttf</string>
 	</array>
 </dict>
 </plist>
