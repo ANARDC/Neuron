@@ -58,18 +58,27 @@ extension FruitsGameViewController {
     
     func addMenuElements(count: Int) {
         if count == 3 {
-            let broccoliFruitView = Fruits.broccoli.addFruitView(x: 36, y: 27, width: 59, height: 59)
-            let bananaFruitView   = Fruits.banana.addFruitView(x: 158, y: 27, width: 59, height: 59)
-            let tomatoFruitView   = Fruits.tomato.addFruitView(x: 280, y: 27, width: 59, height: 59)
+            let broccoliFruitView = Fruits.broccoli.getFruitView(width: 59, height: 59)
+            let bananaFruitView   = Fruits.banana.getFruitView(width: 59, height: 59)
+            let tomatoFruitView   = Fruits.tomato.getFruitView(width: 59, height: 59)
             
             self.menuFruits.append(contentsOf: [broccoliFruitView,
                                                 bananaFruitView,
                                                 tomatoFruitView])
             
             self.menuFruits.forEach { (fruit) in
-                self.fruitsMenuView.addSubview(fruit)
                 addTapGesture(for: fruit)
             }
+            
+            let stackView = UIStackView(arrangedSubviews: self.menuFruits)
+            stackView.axis = .horizontal
+            stackView.spacing = 63
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.view.addSubview(stackView)
+            
+            NSLayoutConstraint.activate([stackView.centerXAnchor.constraint(equalTo: fruitsMenuView.centerXAnchor),
+                                         stackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 17)])
         }
     }
     
@@ -78,9 +87,7 @@ extension FruitsGameViewController {
         case 1:
             let fruitsTypes: [Fruits] = [.broccoli, .banana, .tomato]
             for _ in 0..<8 {
-                let gameFruitView = fruitsTypes.randomElement()?.addFruitView(x: 0, y: 0, width: 40, height: 40)
-                NSLayoutConstraint.activate([(gameFruitView?.widthAnchor.constraint(equalToConstant: gameFruitView!.frame.width))!,
-                                             (gameFruitView?.heightAnchor.constraint(equalToConstant: gameFruitView!.frame.height))!])
+                let gameFruitView = fruitsTypes.randomElement()?.getFruitView(width: 40, height: 40)
                 self.gameFruits.append(gameFruitView!)
             }
             
@@ -99,7 +106,6 @@ extension FruitsGameViewController {
     }
     
     func editStarsStackView(rate: Int) {
-        
         var stars = [UIImage]()
         
         for _ in 0..<rate {
@@ -113,18 +119,6 @@ extension FruitsGameViewController {
         self.stars.enumerated().forEach { (index, view) in
             view.image = stars[index]
         }
-        
-        
-        
-        
-        
-        
-        //        for star in self.stars {
-        //            print(star.image?.cgImage)
-        //            star.isHidden = true
-        //        }
-        
-        //        stars[0].isHidden = true
     }
 }
 
@@ -145,7 +139,7 @@ extension FruitsGameViewController {
         case carrot     = "БольшаяМорковь"
         case onion      = "БольшойЛук"
         
-        func addFruitView(x: Double, y: Double, width: Double, height: Double) -> UIView {
+        func getFruitView(x: Double = 0, y: Double = 0, width: Double, height: Double) -> UIView {
             let fruitView = makeFruitView(x: x, y: y, width: width, height: height)
             let fruit     = makeFruit()
             fruitView.addSubview(fruit)
@@ -184,8 +178,10 @@ extension FruitsGameViewController {
             let trailingConstraint = view.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 0)
             let bottomConstraint   = view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 15)
             let leadingConstraint  = view.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 0)
+            let widthConstraint    = mainView.widthAnchor.constraint(equalToConstant: mainView.frame.width)
+            let heightConstraint   = mainView.heightAnchor.constraint(equalToConstant: mainView.frame.height)
             
-            NSLayoutConstraint.activate([topConstraint, trailingConstraint, bottomConstraint, leadingConstraint])
+            NSLayoutConstraint.activate([topConstraint, trailingConstraint, bottomConstraint, leadingConstraint, widthConstraint, heightConstraint])
         }
     }
 }
