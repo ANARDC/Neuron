@@ -91,7 +91,7 @@
 		0DCCB39D070CC57EC6459B3ABEBED9D9 /* HeroDebugView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugView.swift; path = "Sources/Debug Plugin/HeroDebugView.swift"; sourceTree = "<group>"; };
 		1154E162FA0F6FCF62DEC4FB59731CEA /* HeroAnimatorViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroAnimatorViewContext.swift; path = Sources/Animator/HeroAnimatorViewContext.swift; sourceTree = "<group>"; };
 		136507D5613F7C6E806573315566B550 /* Pods-Neuron-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Neuron-umbrella.h"; sourceTree = "<group>"; };
-		13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hero.framework; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AA5F994EE2D2B5413564F2AF6EE17F2 /* PWSwitch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PWSwitch.xcconfig; sourceTree = "<group>"; };
 		1CA7754924902335EC0403BE41B0B9B2 /* HeroStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroStringConvertible.swift; path = Sources/Parser/HeroStringConvertible.swift; sourceTree = "<group>"; };
 		21F4F2719D5B041BFD23102A7EB16611 /* IgnoreSubviewModifiersPreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IgnoreSubviewModifiersPreprocessor.swift; path = Sources/Preprocessors/IgnoreSubviewModifiersPreprocessor.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		8E2851137051A3086B8E2AE512E3C1C2 /* HeroTransitionState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransitionState.swift; path = Sources/Transition/HeroTransitionState.swift; sourceTree = "<group>"; };
 		93472C7FC07E0F8F70F36A423B2424D8 /* Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Sources/Parser/Parser.swift; sourceTree = "<group>"; };
 		97E0636042BD99CEA733BED44521B224 /* Pods-Neuron-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Neuron-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F0D9C4C669EB444288B46308E33D2B3 /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = Sources/SwiftSupport.swift; sourceTree = "<group>"; };
 		9F39C8743262CAA2DF3321EDEA162102 /* Hero.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hero.modulemap; sourceTree = "<group>"; };
 		A6938D42F63F498C95E0B65A8364A9F3 /* HeroTypes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTypes.swift; path = Sources/HeroTypes.swift; sourceTree = "<group>"; };
@@ -141,14 +141,14 @@
 		AD324AE8BC3EA15B11E70382704139A6 /* HeroTransition+UINavigationControllerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UINavigationControllerDelegate.swift"; path = "Sources/Transition/HeroTransition+UINavigationControllerDelegate.swift"; sourceTree = "<group>"; };
 		AF3FABAC9020249E4208E01F870ADD74 /* Pods-Neuron.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Neuron.modulemap"; sourceTree = "<group>"; };
 		AF815DBCD3C0AF290D3CF8B5EA24120A /* SourcePreprocessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourcePreprocessor.swift; path = Sources/Preprocessors/SourcePreprocessor.swift; sourceTree = "<group>"; };
-		AFD70720139D1C7867E4FFBB28702451 /* PWSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PWSwitch.framework; path = PWSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD70720139D1C7867E4FFBB28702451 /* PWSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PWSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FAB0C2CDCF6F53135C5B653A8A16AC /* HeroPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroPlugin.swift; path = Sources/HeroPlugin.swift; sourceTree = "<group>"; };
 		B53E9E488895010E465DF255B06B639A /* PWSwitch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PWSwitch-Info.plist"; sourceTree = "<group>"; };
 		B6272FBA1FE67D52C850B64C45BE7955 /* CAMediaTimingFunction+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CAMediaTimingFunction+Hero.swift"; path = "Sources/Extensions/CAMediaTimingFunction+Hero.swift"; sourceTree = "<group>"; };
 		B8C67F23AC29CA93684CADA4942C2CAA /* Hero-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-umbrella.h"; sourceTree = "<group>"; };
 		BF411C749B732D21DA1CBDBB2AC45ECF /* Pods-Neuron-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Neuron-frameworks.sh"; sourceTree = "<group>"; };
 		C0330ECC6A22F36B8FAB4418148FDAC0 /* HeroTransition+Interactive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+Interactive.swift"; path = "Sources/Transition/HeroTransition+Interactive.swift"; sourceTree = "<group>"; };
-		C6468A2E29A8D0EF291CBC3CB7892D6D /* Pods_Neuron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Neuron.framework; path = "Pods-Neuron.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6468A2E29A8D0EF291CBC3CB7892D6D /* Pods_Neuron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neuron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6FEB88F9C3A6EDB80E43B36E79ADFC /* HeroCoreAnimationViewContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroCoreAnimationViewContext.swift; path = Sources/Animator/HeroCoreAnimationViewContext.swift; sourceTree = "<group>"; };
 		CDD88974112618F2928F01B4EC694602 /* HeroTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroTransition.swift; path = Sources/Transition/HeroTransition.swift; sourceTree = "<group>"; };
 		D30C2DC7148602FD5438F20B5EE483CC /* Pods-Neuron-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Neuron-dummy.m"; sourceTree = "<group>"; };
@@ -259,7 +259,6 @@
 				7367F734B336F51BA18178B6ACFA5B5E /* UIViewController+Hero.swift */,
 				A4BA39ADC4309BBE3F8DD40EED4858FE /* Support Files */,
 			);
-			name = Hero;
 			path = Hero;
 			sourceTree = "<group>";
 		};
@@ -330,7 +329,6 @@
 				542C4ADF747CE6F2107D744DAE16B3AC /* PWSwitch.swift */,
 				F8D5D98ACB32C9CF4AD60E466ABC6673 /* Support Files */,
 			);
-			name = PWSwitch;
 			path = PWSwitch;
 			sourceTree = "<group>";
 		};
@@ -458,6 +456,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 97F734328F1AADB8048B5F67C52781FA /* Products */;

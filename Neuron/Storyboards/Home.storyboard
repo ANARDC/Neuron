@@ -819,7 +819,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39j-CU-NhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1340" y="1851"/>
+            <point key="canvasLocation" x="-1377" y="1851"/>
         </scene>
         <!--Fruits-->
         <scene sceneID="buQ-U4-Fex">
@@ -1576,7 +1576,7 @@ With increasing complexity increases the number of fruits and reduces the time t
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1778" y="2594"/>
+            <point key="canvasLocation" x="-1865" y="2594"/>
         </scene>
         <!--Home-->
         <scene sceneID="011-9u-ibU">

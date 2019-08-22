@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FruitsGameViewController: UIViewController {
+final class FruitsGameViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var restartButton: UIBarButtonItem!
     @IBOutlet var stars: [UIImageView]!
@@ -16,8 +16,14 @@ class FruitsGameViewController: UIViewController {
     
     static var levelNumber = 0
     
-    var gameFruits = [UIView]()
-    var menuFruits = [UIView]()
+    var gameFruits   = [UIView]()
+    var menuFruits   = [UIView]()
+    var gameFruitsStackView = UIStackView()
+    
+    var timer        = Timer()
+    var minutes      = 0
+    var seconds      = 0
+    var milliseconds = 0
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -25,19 +31,54 @@ class FruitsGameViewController: UIViewController {
 extension FruitsGameViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        assignRestartButtonImage()
-        fruitsMenuViewUserInteractionEnable()
-        addNavBarTitle()
-        addMenuElements(count: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-        addGameFruits()
-        makeFruitMenuView()
-        editStarsStackView(rate: 5)
+        self.assignRestartButtonImage()
+        self.fruitsMenuViewUserInteractionEnable()
+        self.addNavBarTitle()
+        self.addMenuElements(count: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+        self.addGameFruits()
+        self.makeFruitMenuView()
+        self.appearTimerLabel()
+        self.editStarsStackView(rate: 5)
+        self.startTimer()
+        
     }
 }
 
 // MARK: - Customize Functions
 
 extension FruitsGameViewController {
+    
+    func appearTimerLabel() {
+        self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
+        self.seconds = 30
+    }
+    
+    func startTimer() {
+        self.seconds = 3
+        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerSelectorMethod), userInfo: nil, repeats: true)
+    }
+    
+    @objc func timerSelectorMethod() {
+        self.seconds -= 1
+        self.timerLabel.text = "00.0\(seconds).00"
+        
+        if seconds == 0 {
+            self.timer.invalidate()
+            
+            self.gameFruits.forEach { (fruit) in
+                let unsolvedFruitView = UIImageView()
+                unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+                unsolvedFruitView.image = #imageLiteral(resourceName: "Неразгаданный фрукт")
+                
+                fruit.backgroundColor = .clear
+                fruit.shadowOpacity   = 0
+                fruit.borderWidth     = 0
+                fruit.subviews.last?.removeFromSuperview()
+                fruit.addSubview(unsolvedFruitView)
+            }
+        }
+    }
+    
     func assignRestartButtonImage() {
         restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
     }
@@ -143,19 +184,23 @@ extension FruitsGameViewController {
         mainStackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 21).isActive = true
     }
     
+    // FIXME: - Take in Fruits enum
     func addGameFruits() {
         switch FruitsGameViewController.levelNumber {
         case 1:
-            let fruitsTypes: [Fruits] = [.broccoli, .banana, .tomato]
+            let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<3])
             for _ in 0..<8 {
                 let gameFruitView = fruitsTypes.randomElement()?.getFruitView(width: 40, height: 40)
                 self.gameFruits.append(gameFruitView!)
             }
             
+            
             let stackView = UIStackView(arrangedSubviews: self.gameFruits)
             stackView.axis = .horizontal
             stackView.spacing = 2
             stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.gameFruitsStackView = stackView
             
             self.view.addSubview(stackView)
             
@@ -237,7 +282,7 @@ extension FruitsGameViewController {
         func addFruitViewAutolayout(for view: UIView, to mainView: UIView) {
             let topConstraint      = view.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 2)
             let trailingConstraint = view.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: 0)
-            let bottomConstraint   = view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 15)
+            let bottomConstraint   = view.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: 14)
             let leadingConstraint  = view.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 0)
             let widthConstraint    = mainView.widthAnchor.constraint(equalToConstant: mainView.frame.width)
             let heightConstraint   = mainView.heightAnchor.constraint(equalToConstant: mainView.frame.height)
@@ -258,10 +303,7 @@ extension FruitsGameViewController {
     }
     
     @objc func lol(_ fruitView: UIView) {
-        var lol = UIView()
-        lol = fruitView
-        lol.frame = CGRect(x: 50, y: 50, width: 59, height: 59)
-        self.view.addSubview(lol)
+        self.lolol()
     }
     
     func lolol() {
