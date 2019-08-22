@@ -18,9 +18,6 @@ class FruitsGameViewController: UIViewController {
     
     var gameFruits = [UIView]()
     var menuFruits = [UIView]()
-    
-    
-    
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -28,20 +25,27 @@ class FruitsGameViewController: UIViewController {
 extension FruitsGameViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
+        assignRestartButtonImage()
+        fruitsMenuViewUserInteractionEnable()
         addNavBarTitle()
-        addMenuElements(count: 3)
-        self.fruitsMenuView.isUserInteractionEnabled = true
+        addMenuElements(count: 3+Int((FruitsGameViewController.levelNumber-1)/5))
         addGameFruits()
         makeFruitMenuView()
         editStarsStackView(rate: 5)
-        
     }
 }
 
 // MARK: - Customize Functions
 
 extension FruitsGameViewController {
+    func assignRestartButtonImage() {
+        restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
+    }
+    
+    func fruitsMenuViewUserInteractionEnable() {
+        self.fruitsMenuView.isUserInteractionEnabled = true
+    }
+    
     func makeFruitMenuView() {
         let fruitMenuImage = FruitsGameViewController.levelNumber >= 1 && FruitsGameViewController.levelNumber <= 20 ? #imageLiteral(resourceName: "ФонФрукты1-20") : #imageLiteral(resourceName: "ФонФрукты21-50")
         self.fruitsMenuView.image = fruitMenuImage
@@ -57,29 +61,86 @@ extension FruitsGameViewController {
     }
     
     func addMenuElements(count: Int) {
-        if count == 3 {
-            let broccoliFruitView = Fruits.broccoli.getFruitView(width: 59, height: 59)
-            let bananaFruitView   = Fruits.banana.getFruitView(width: 59, height: 59)
-            let tomatoFruitView   = Fruits.tomato.getFruitView(width: 59, height: 59)
+        var mainStackView = UIStackView()
+        
+        for i in 0..<count {
+            let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59)
+            self.menuFruits.append(fruitView)
+        }
+        
+        self.menuFruits.enumerated().forEach { (index, fruit) in
+            addTapGesture(for: fruit, fruitName: Fruits.allCases[index].rawValue)
+        }
+        
+        switch count {
+        case 3...6:
+            let stackView          = UIStackView(arrangedSubviews: self.menuFruits)
+            stackView.axis         = .horizontal
+            stackView.distribution = .equalSpacing
             
-            self.menuFruits.append(contentsOf: [broccoliFruitView,
-                                                bananaFruitView,
-                                                tomatoFruitView])
+            mainStackView = stackView
             
-            self.menuFruits.forEach { (fruit) in
-                addTapGesture(for: fruit)
+            self.view.addSubview(mainStackView)
+            
+            var edgesConstraintsConstant: CGFloat
+            
+            switch count {
+            case 3, 4:
+                edgesConstraintsConstant = 36
+            case 5:
+                edgesConstraintsConstant = 23
+            case 6:
+                edgesConstraintsConstant = 3
+            default: return
             }
             
-            let stackView = UIStackView(arrangedSubviews: self.menuFruits)
-            stackView.axis = .horizontal
-            stackView.spacing = 63
+            let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+            let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
+            
             stackView.translatesAutoresizingMaskIntoConstraints = false
             
-            self.view.addSubview(stackView)
+            NSLayoutConstraint.activate([leadingConstraint,
+                                         trailingConstraint])
+        case 7...12:
+            let topStackView          = UIStackView(arrangedSubviews: Array(self.menuFruits[0..<count/2]))
+            topStackView.axis         = .horizontal
+            topStackView.distribution = .equalSpacing
             
-            NSLayoutConstraint.activate([stackView.centerXAnchor.constraint(equalTo: fruitsMenuView.centerXAnchor),
-                                         stackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 17)])
+            let bottomStackView          = UIStackView(arrangedSubviews: Array(self.menuFruits[Int(count/2)..<count]))
+            bottomStackView.axis         = .horizontal
+            bottomStackView.distribution = .equalSpacing
+            
+            let stackView = UIStackView(arrangedSubviews: [topStackView, bottomStackView])
+            stackView.axis = .vertical
+            stackView.spacing = 7
+            
+            mainStackView = stackView
+            
+            self.view.addSubview(mainStackView)
+            
+            var edgesConstraintsConstant: CGFloat
+            
+            switch count {
+            case 7, 8:
+                edgesConstraintsConstant = 36
+            case 9, 10:
+                edgesConstraintsConstant = 23
+            case 11, 12:
+                edgesConstraintsConstant = 3
+            default: return
+            }
+            
+            let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+            let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
+            
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([leadingConstraint,
+                                         trailingConstraint])
+        default: return
         }
+        
+        mainStackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 21).isActive = true
     }
     
     func addGameFruits() {
@@ -126,18 +187,18 @@ extension FruitsGameViewController {
 
 extension FruitsGameViewController {
     enum Fruits: String, CaseIterable {
-        case broccoli   = "БольшиеБрокколи"
-        case banana     = "БольшойБанан"
-        case tomato     = "БольшойТомат"
-        case grape      = "БольшойВиноград"
         case apple      = "БольшоеЯблоко"
-        case watermelon = "БольшойАрбуз"
-        case corn       = "БольшаяКукуруза"
-        case orange     = "БольшойАпельсин"
-        case lemon      = "БольшойЛимон"
-        case pear       = "БольшаяГруша"
+        case banana     = "БольшойБанан"
+        case broccoli   = "БольшиеБрокколи"
         case carrot     = "БольшаяМорковь"
+        case corn       = "БольшаяКукуруза"
+        case grape      = "БольшойВиноград"
+        case lemon      = "БольшойЛимон"
         case onion      = "БольшойЛук"
+        case orange     = "БольшойАпельсин"
+        case pear       = "БольшаяГруша"
+        case tomato     = "БольшойТомат"
+        case watermelon = "БольшойАрбуз"
         
         func getFruitView(x: Double = 0, y: Double = 0, width: Double, height: Double) -> UIView {
             let fruitView = makeFruitView(x: x, y: y, width: width, height: height)
@@ -149,7 +210,7 @@ extension FruitsGameViewController {
         }
         
         func makeFruitView(x: Double, y: Double, width: Double, height: Double) -> UIView {
-            let fruitView = UIView()
+            let fruitView             = UIView()
             fruitView.frame           = CGRect(x: x, y: y, width: width, height: height)
             fruitView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             fruitView.cornerRadius    = 8
@@ -189,14 +250,21 @@ extension FruitsGameViewController {
 // MARK: - Gesture Function
 
 extension FruitsGameViewController {
-    func addTapGesture(for view: UIView) {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(lol))
+    func addTapGesture(for view: UIView, fruitName: String) {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(lol(_:)))
         gesture.numberOfTapsRequired = 1
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(gesture)
     }
     
-    @objc func lol() {
-        print("button touched")
+    @objc func lol(_ fruitView: UIView) {
+        var lol = UIView()
+        lol = fruitView
+        lol.frame = CGRect(x: 50, y: 50, width: 59, height: 59)
+        self.view.addSubview(lol)
+    }
+    
+    func lolol() {
+        print("asdasdasd")
     }
 }
