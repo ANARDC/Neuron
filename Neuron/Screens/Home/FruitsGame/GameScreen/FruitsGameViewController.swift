@@ -35,7 +35,7 @@ extension FruitsGameViewController {
         self.fruitsMenuViewUserInteractionEnable()
         self.addNavBarTitle()
         self.addMenuElements(count: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-        self.addGameFruits()
+        self.addGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
         self.makeFruitMenuView()
         self.appearTimerLabel()
         self.editStarsStackView(rate: 5)
@@ -185,30 +185,90 @@ extension FruitsGameViewController {
     }
     
     // FIXME: - Take in Fruits enum
-    func addGameFruits() {
-        switch FruitsGameViewController.levelNumber {
-        case 1:
-            let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<3])
-            for _ in 0..<8 {
+    func addGameFruits(typesCount: Int) {
+        let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<typesCount])
+        
+        let preFruitsCount = FruitsGameViewController.levelNumber + 7
+        let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+        
+        let gameFruitsList = self.getGameFruitsList() // [8, 1, 8, 1, 5]
+        
+        var mainStackViewArrangedSubviews = [UIStackView]() // [gameFruitsStackSubviews]
+        
+        for i in gameFruitsList {
+            var intermediateGameFruits = [UIView]()
+            
+            // Create fruits views
+            for _ in 0..<i {
                 let gameFruitView = fruitsTypes.randomElement()?.getFruitView(width: 40, height: 40)
                 self.gameFruits.append(gameFruitView!)
+                intermediateGameFruits.append(gameFruitView!)
             }
             
+            // Create gameFruitsStackSubview
+            let gameFruitsStackSubview = UIStackView(arrangedSubviews: intermediateGameFruits)
+            gameFruitsStackSubview.axis = .horizontal
+            gameFruitsStackSubview.spacing = 2
             
-            let stackView = UIStackView(arrangedSubviews: self.gameFruits)
-            stackView.axis = .horizontal
-            stackView.spacing = 2
-            stackView.translatesAutoresizingMaskIntoConstraints = false
-            
-            self.gameFruitsStackView = stackView
-            
-            self.view.addSubview(stackView)
-            
-            NSLayoutConstraint.activate([stackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                                         stackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)])
-        default:
-            return
+            // Add gameFruitsStackSubview in mainStackViewArrangedSubviews
+            mainStackViewArrangedSubviews.append(gameFruitsStackSubview)
         }
+        
+        var groupedMainStackViewArrangedSubviews = [UIStackView]()
+        
+        
+        // FIXME: - Take out in a separate function
+        if fruitsCount % 9 == 0 {
+            var alignment = UIStackView.Alignment.trailing
+            
+            for i in stride(from: 0, to: mainStackViewArrangedSubviews.count, by: 2) {
+                let groupedStackView = UIStackView(arrangedSubviews: [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
+                groupedStackView.axis = .vertical
+                groupedStackView.alignment = alignment
+                groupedStackView.spacing = 2
+                
+                groupedMainStackViewArrangedSubviews.append(groupedStackView)
+                alignment = alignment == .trailing ? .leading : .trailing
+            }
+        } else {
+            groupedMainStackViewArrangedSubviews.append(mainStackViewArrangedSubviews.first!)
+            
+            var alignment = UIStackView.Alignment.trailing
+            
+            for i in stride(from: 1, to: mainStackViewArrangedSubviews.count, by: 2) {
+                let groupedStackView = UIStackView(arrangedSubviews: [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
+                groupedStackView.axis = .vertical
+                groupedStackView.alignment = alignment
+                groupedStackView.spacing = 2
+                
+                groupedMainStackViewArrangedSubviews.append(groupedStackView)
+                alignment = alignment == .trailing ? .leading : .trailing
+            }
+        }
+        
+        let mainStackView = UIStackView(arrangedSubviews: groupedMainStackViewArrangedSubviews)
+        mainStackView.axis = .vertical
+        mainStackView.spacing = 2
+        mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(mainStackView)
+        
+        NSLayoutConstraint.activate([mainStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                                     mainStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -20)])
+    }
+    
+    func getGameFruitsList() -> [Int] {
+        var gameFruitsList = [Int]()
+        let preFruitsCount = FruitsGameViewController.levelNumber + 7
+        var fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+        while fruitsCount >= 9 {
+            fruitsCount -= 9
+            gameFruitsList.append(contentsOf: [8, 1])
+        }
+        guard fruitsCount > 0 else { return gameFruitsList }
+        gameFruitsList.append(fruitsCount)
+        
+        return gameFruitsList
     }
     
     func editStarsStackView(rate: Int) {
