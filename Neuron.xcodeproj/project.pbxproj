@@ -208,11 +208,11 @@
 		996F4B1C22E3740000B19478 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				996F4B1D22E3741900B19478 /* Home.storyboard */,
 				99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */,
 				99B0F51A22DDDC1B0037A4CA /* Main.storyboard */,
-				996F4B1D22E3741900B19478 /* Home.storyboard */,
-				996F4B1F22E3768900B19478 /* Stats.storyboard */,
 				996F4B2122E376A000B19478 /* Settings.storyboard */,
+				996F4B1F22E3768900B19478 /* Stats.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -257,24 +257,24 @@
 			isa = PBXGroup;
 			children = (
 				996F4B1C22E3740000B19478 /* Storyboards */,
-				99CDB50022EDF8B6007660BE /* Model */,
+				99CDB50022EDF8B6007660BE /* Helpers */,
 				996F4B1922E36F1300B19478 /* Screens */,
 				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
 				9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */,
+				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
 				99B0F52522DDDC1C0037A4CA /* Info.plist */,
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
-				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
 			);
 			path = Neuron;
 			sourceTree = "<group>";
 		};
-		99CDB50022EDF8B6007660BE /* Model */ = {
+		99CDB50022EDF8B6007660BE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				99F8320022EBA184004275BB /* CoreDataProcesses.swift */,
 				994CBBA522DF44A5007B5BD5 /* Design.swift */,
 			);
-			path = Model;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

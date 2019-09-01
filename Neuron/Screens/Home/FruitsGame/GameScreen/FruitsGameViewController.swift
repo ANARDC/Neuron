@@ -16,14 +16,17 @@ final class FruitsGameViewController: UIViewController {
     
     static var levelNumber = 0
     
-    var gameFruits   = [UIView]()
-    var menuFruits   = [UIView]()
+    var gameFruits          = [Fruits]()
+    var gameFruitsViews     = [UIView]()
+    var menuFruits          = [UIView]()
     var gameFruitsStackView = UIStackView()
     
     var timer        = Timer()
     var minutes      = 0
     var seconds      = 0
     var milliseconds = 0
+    
+    var currentFruitIndex = 0
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -65,17 +68,21 @@ extension FruitsGameViewController {
         if seconds == 0 {
             self.timer.invalidate()
             
-            self.gameFruits.forEach { (fruit) in
-                let unsolvedFruitView = UIImageView()
-                unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-                unsolvedFruitView.image = #imageLiteral(resourceName: "Неразгаданный фрукт")
-                
-                fruit.backgroundColor = .clear
-                fruit.shadowOpacity   = 0
-                fruit.borderWidth     = 0
-                fruit.subviews.last?.removeFromSuperview()
-                fruit.addSubview(unsolvedFruitView)
-            }
+            addGrayCross()
+        }
+    }
+    
+    func addGrayCross() {
+        self.gameFruitsViews.forEach { (fruit) in
+            let unsolvedFruitView = UIImageView()
+            unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            unsolvedFruitView.image = #imageLiteral(resourceName: "Неразгаданный фрукт")
+            
+            fruit.backgroundColor = .clear
+            fruit.shadowOpacity   = 0
+            fruit.borderWidth     = 0
+            fruit.subviews.last?.isHidden = true
+            fruit.addSubview(unsolvedFruitView)
         }
     }
     
@@ -110,7 +117,7 @@ extension FruitsGameViewController {
         }
         
         self.menuFruits.enumerated().forEach { (index, fruit) in
-            addTapGesture(for: fruit, fruitName: Fruits.allCases[index].rawValue)
+            addTapGesture(for: fruit, fruit: Fruits.allCases[index])
         }
         
         switch count {
@@ -200,8 +207,10 @@ extension FruitsGameViewController {
             
             // Create fruits views
             for _ in 0..<i {
-                let gameFruitView = fruitsTypes.randomElement()?.getFruitView(width: 40, height: 40)
-                self.gameFruits.append(gameFruitView!)
+                let gameFruit = fruitsTypes.randomElement()
+                let gameFruitView = gameFruit?.getFruitView(width: 40, height: 40)
+                self.gameFruits.append(gameFruit!)
+                self.gameFruitsViews.append(gameFruitView!)
                 intermediateGameFruits.append(gameFruitView!)
             }
             
@@ -355,18 +364,108 @@ extension FruitsGameViewController {
 // MARK: - Gesture Function
 
 extension FruitsGameViewController {
-    func addTapGesture(for view: UIView, fruitName: String) {
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(lol(_:)))
+    func addTapGesture(for view: UIView, fruit: Fruits) {
+        var gestureAction: Selector? = nil
+        
+        switch fruit {
+        case .apple:      gestureAction = #selector(appleSelector)
+        case .banana:     gestureAction = #selector(bananaSelector)
+        case .broccoli:   gestureAction = #selector(broccoliSelector)
+        case .carrot:     gestureAction = #selector(carrotSelector)
+        case .corn:       gestureAction = #selector(cornSelector)
+        case .grape:      gestureAction = #selector(grapeSelector)
+        case .lemon:      gestureAction = #selector(lemonSelector)
+        case .onion:      gestureAction = #selector(onionSelector)
+        case .orange:     gestureAction = #selector(orangeSelector)
+        case .pear:       gestureAction = #selector(pearSelector)
+        case .tomato:     gestureAction = #selector(tomatoSelector)
+        case .watermelon: gestureAction = #selector(watermelonSelector)
+        }
+        
+        let gesture = UITapGestureRecognizer(target: self, action: gestureAction)
         gesture.numberOfTapsRequired = 1
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(gesture)
     }
     
-    @objc func lol(_ fruitView: UIView) {
-        self.lolol()
+    @objc func appleSelector() {
+        fillGameFruits(for: .apple)
     }
     
-    func lolol() {
-        print("asdasdasd")
+    @objc func bananaSelector() {
+        fillGameFruits(for: .banana)
+    }
+    
+    @objc func broccoliSelector() {
+        fillGameFruits(for: .broccoli)
+    }
+    
+    @objc func carrotSelector() {
+        fillGameFruits(for: .carrot)
+    }
+    
+    @objc func cornSelector() {
+        fillGameFruits(for: .corn)
+    }
+    
+    @objc func grapeSelector() {
+        fillGameFruits(for: .grape)
+    }
+    
+    @objc func lemonSelector() {
+        fillGameFruits(for: .lemon)
+    }
+    
+    @objc func onionSelector() {
+        fillGameFruits(for: .onion)
+    }
+    
+    @objc func orangeSelector() {
+        fillGameFruits(for: .orange)
+    }
+    
+    @objc func pearSelector() {
+        fillGameFruits(for: .pear)
+    }
+    
+    @objc func tomatoSelector() {
+        fillGameFruits(for: .tomato)
+    }
+    
+    @objc func watermelonSelector() {
+        fillGameFruits(for: .watermelon)
+    }
+    
+    func fillGameFruits(for fruit: Fruits) {
+        // Проверяем верно ли тапнул юзер
+        guard gameFruits[self.currentFruitIndex] == fruit else {
+            addRedCross()
+            changeTimerLabel()
+            return
+        }
+        
+        let currentGameFruit = self.gameFruitsViews[self.currentFruitIndex]
+        
+        currentGameFruit.subviews.last?.removeFromSuperview()
+        currentGameFruit.subviews.last?.isHidden = false
+        currentGameFruit.shadowOpacity = 1
+        currentGameFruit.borderWidth = 1
+        
+        self.currentFruitIndex += 1
+    }
+    
+    func addRedCross() {
+        self.gameFruitsViews[self.currentFruitIndex...].forEach { (fruit) in
+            let errorFruitView = UIImageView()
+            errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
+            
+            fruit.subviews.last?.removeFromSuperview()
+            fruit.addSubview(errorFruitView)
+        }
+    }
+    
+    func changeTimerLabel() {
+        self.timerLabel.text = "Error!"
     }
 }

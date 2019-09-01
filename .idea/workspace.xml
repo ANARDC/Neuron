@@ -2,83 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяГруша.imageset/БольшаяГруша@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяКукуруза.imageset/БольшаяКукуруза@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшаяМорковь.imageset/БольшаяМорковь@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшиеБрокколи.imageset/БольшиеБрокколи@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшоеЯблоко.imageset/БольшоеЯблоко@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАпельсин.imageset/БольшойАпельсин@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойАрбуз.imageset/БольшойАрбуз@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойБанан.imageset/БольшойБанан@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойВиноград.imageset/БольшойВиноград@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛимон.imageset/БольшойЛимон@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойЛук.imageset/БольшойЛук@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/Contents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@1x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Fruits/БольшойТомат.imageset/БольшойТомат@3x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/Contents.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_emptyStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_emptyStar_2x.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_emptyStar_2x.imageset/ICC_emptyStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_emptyStar_2x.imageset/ICC_emptyStar_2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_filledStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_filledStar_2x.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_filledStar_2x.imageset/ICC_filledStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_filledStar_2x.imageset/ICC_filledStar_2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_highlightedStar_2x.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_highlightedStar_2x.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ICC_highlightedStar_2x.imageset/ICC_highlightedStar_2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ICC_highlightedStar_2x.imageset/ICC_highlightedStar_2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/RuslanAva.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/RuslanAva.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/RuslanAva.imageset/RuslanAva.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/RuslanAva.imageset/RuslanAva.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/domino.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/domino.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/domino.imageset/domino.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/domino.imageset/domino.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/mac.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/mac.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/mac.imageset/mac.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/mac.imageset/mac.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты1-20.imageset/ФонФрукты1-20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты1-20.imageset/ФонФрукты1-20@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/Contents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@1x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Assets.xcassets/ФонФрукты21-50.imageset/ФонФрукты21-50@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Assets.xcassets/Other/ФонФрукты21-50.imageset/ФонФрукты21-50@3x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/Neuron.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/Neuron.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +54,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -169,6 +95,7 @@
       <workItem from="1565899891462" duration="10352000" />
       <workItem from="1565974827862" duration="4269000" />
       <workItem from="1565979548185" duration="22280000" />
+      <workItem from="1566991032972" duration="1868000" />
     </task>
     <servers />
   </component>
