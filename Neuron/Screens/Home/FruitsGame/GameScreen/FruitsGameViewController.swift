@@ -53,22 +53,30 @@ extension FruitsGameViewController {
     
     func appearTimerLabel() {
         self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
-        self.seconds = 30
     }
     
     func startTimer() {
-        self.seconds = 3
-        self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerSelectorMethod), userInfo: nil, repeats: true)
+        self.seconds = 2
+        self.milliseconds = 60
+        self.timer = Timer.scheduledTimer(timeInterval: 1/60,
+                                          target: self,
+                                          selector: #selector(timerSelectorMethod),
+                                          userInfo: nil,
+                                          repeats: true)
     }
     
     @objc func timerSelectorMethod() {
-        self.seconds -= 1
-        self.timerLabel.text = "00.0\(seconds).00"
+        self.milliseconds -= 1
+        self.timerLabel.text = "00.0\(self.seconds).\(self.milliseconds)"
         
-        if seconds == 0 {
+        if self.seconds == 0 && self.milliseconds == 0 {
             self.timer.invalidate()
-            
             addGrayCross()
+        }
+        
+        if self.milliseconds == 0 {
+            self.seconds -= 1
+            self.milliseconds = 60
         }
     }
     
