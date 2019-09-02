@@ -16,17 +16,21 @@ final class FruitsGameViewController: UIViewController {
     
     static var levelNumber = 0
     
+    var fruitsIsHidden = false
+    
     var gameFruits          = [Fruits]()
     var gameFruitsViews     = [UIView]()
-    var menuFruits          = [UIView]()
+    var menuFruitsViews     = [UIView]()
     var gameFruitsStackView = UIStackView()
     
     var timer        = Timer()
     var minutes      = 0
     var seconds      = 0
     var milliseconds = 0
-    
-    var currentFruitIndex = 0
+
+    var globalCurrentFruitIndex = 0
+    var gameFruitsFillingJump = 7
+    var gameFruitsFillingTerm = 7
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -35,7 +39,6 @@ extension FruitsGameViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.assignRestartButtonImage()
-        self.fruitsMenuViewUserInteractionEnable()
         self.addNavBarTitle()
         self.addMenuElements(count: 3+Int((FruitsGameViewController.levelNumber-1)/5))
         self.addGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
@@ -43,7 +46,7 @@ extension FruitsGameViewController {
         self.appearTimerLabel()
         self.editStarsStackView(rate: 5)
         self.startTimer()
-        
+        self.switchMenuFruitsViewsUserInteractionState()
     }
 }
 
@@ -56,31 +59,64 @@ extension FruitsGameViewController {
     }
     
     func startTimer() {
-        self.seconds = 2
+        self.seconds = 4
         self.milliseconds = 60
         self.timer = Timer.scheduledTimer(timeInterval: 1/60,
                                           target: self,
-                                          selector: #selector(timerSelectorMethod),
+                                          selector: #selector(self.timerSelectorMethod),
                                           userInfo: nil,
                                           repeats: true)
     }
     
     @objc func timerSelectorMethod() {
-        self.milliseconds -= 1
-        self.timerLabel.text = "00.0\(self.seconds).\(self.milliseconds)"
-        
-        if self.seconds == 0 && self.milliseconds == 0 {
-            self.timer.invalidate()
-            addGrayCross()
-        }
-        
-        if self.milliseconds == 0 {
-            self.seconds -= 1
-            self.milliseconds = 60
+        if !self.fruitsIsHidden {
+            self.milliseconds -= 1
+            
+            let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
+            
+            self.timerLabel.text = "00.0\(self.seconds).\(milliseconds)"
+            
+            if self.seconds == 0 && self.milliseconds == 0 {
+                self.fruitsIsHidden = true
+                self.addGrayCrosses()
+                self.switchMenuFruitsViewsUserInteractionState()
+                return
+            }
+            
+            if self.milliseconds == 0 {
+                self.seconds -= 1
+                self.milliseconds = 60
+            }
+        } else {
+            
+            self.milliseconds += 1
+            
+            let minutes      = self.minutes < 10 ? "0\(self.minutes)" : "\(self.minutes)"
+            let seconds      = self.seconds < 10 ? "0\(self.seconds)" : "\(self.seconds)"
+            let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
+            
+            self.timerLabel.text = "\(minutes).\(seconds).\(milliseconds)"
+            self.timerLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
+            
+            if self.milliseconds == 60 {
+                self.seconds += 1
+                self.milliseconds = 0
+            }
+            
+            if self.seconds == 60 {
+                self.minutes += 1
+                self.seconds = 0
+            }
+            
+            if self.minutes == 60 {
+                self.invalidateTimer()
+                self.addRedCrosses()
+                self.changeTimerLabel()
+            }
         }
     }
     
-    func addGrayCross() {
+    func addGrayCrosses() {
         self.gameFruitsViews.forEach { (fruit) in
             let unsolvedFruitView = UIImageView()
             unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
@@ -98,8 +134,12 @@ extension FruitsGameViewController {
         restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
     }
     
-    func fruitsMenuViewUserInteractionEnable() {
-        self.fruitsMenuView.isUserInteractionEnabled = true
+    func switchMenuFruitsViewsUserInteractionState() {
+        self.menuFruitsViews.forEach { fruit in
+            fruit.isUserInteractionEnabled = fruit.isUserInteractionEnabled ? false : true
+        }
+        
+//        print(self.menuFruitsViews[0].isUserInteractionEnabled)
     }
     
     func makeFruitMenuView() {
@@ -121,16 +161,16 @@ extension FruitsGameViewController {
         
         for i in 0..<count {
             let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59)
-            self.menuFruits.append(fruitView)
+            self.menuFruitsViews.append(fruitView)
         }
         
-        self.menuFruits.enumerated().forEach { (index, fruit) in
+        self.menuFruitsViews.enumerated().forEach { (index, fruit) in
             addTapGesture(for: fruit, fruit: Fruits.allCases[index])
         }
         
         switch count {
         case 3...6:
-            let stackView          = UIStackView(arrangedSubviews: self.menuFruits)
+            let stackView          = UIStackView(arrangedSubviews: self.menuFruitsViews)
             stackView.axis         = .horizontal
             stackView.distribution = .equalSpacing
             
@@ -158,11 +198,11 @@ extension FruitsGameViewController {
             NSLayoutConstraint.activate([leadingConstraint,
                                          trailingConstraint])
         case 7...12:
-            let topStackView          = UIStackView(arrangedSubviews: Array(self.menuFruits[0..<count/2]))
+            let topStackView          = UIStackView(arrangedSubviews: Array(self.menuFruitsViews[0..<count/2]))
             topStackView.axis         = .horizontal
             topStackView.distribution = .equalSpacing
             
-            let bottomStackView          = UIStackView(arrangedSubviews: Array(self.menuFruits[Int(count/2)..<count]))
+            let bottomStackView          = UIStackView(arrangedSubviews: Array(self.menuFruitsViews[Int(count/2)..<count]))
             bottomStackView.axis         = .horizontal
             bottomStackView.distribution = .equalSpacing
             
@@ -232,7 +272,6 @@ extension FruitsGameViewController {
         }
         
         var groupedMainStackViewArrangedSubviews = [UIStackView]()
-        
         
         // FIXME: - Take out in a separate function
         if fruitsCount % 9 == 0 {
@@ -392,88 +431,204 @@ extension FruitsGameViewController {
         
         let gesture = UITapGestureRecognizer(target: self, action: gestureAction)
         gesture.numberOfTapsRequired = 1
-        view.isUserInteractionEnabled = true
         view.addGestureRecognizer(gesture)
     }
     
-    @objc func appleSelector() {
-        fillGameFruits(for: .apple)
-    }
+    @objc func appleSelector() { fillGameFruits(for: .apple) }
     
-    @objc func bananaSelector() {
-        fillGameFruits(for: .banana)
-    }
+    @objc func bananaSelector() { fillGameFruits(for: .banana) }
     
-    @objc func broccoliSelector() {
-        fillGameFruits(for: .broccoli)
-    }
+    @objc func broccoliSelector() { fillGameFruits(for: .broccoli) }
     
-    @objc func carrotSelector() {
-        fillGameFruits(for: .carrot)
-    }
+    @objc func carrotSelector() { fillGameFruits(for: .carrot) }
     
-    @objc func cornSelector() {
-        fillGameFruits(for: .corn)
-    }
+    @objc func cornSelector() { fillGameFruits(for: .corn) }
     
-    @objc func grapeSelector() {
-        fillGameFruits(for: .grape)
-    }
+    @objc func grapeSelector() { fillGameFruits(for: .grape) }
     
-    @objc func lemonSelector() {
-        fillGameFruits(for: .lemon)
-    }
+    @objc func lemonSelector() { fillGameFruits(for: .lemon) }
     
-    @objc func onionSelector() {
-        fillGameFruits(for: .onion)
-    }
+    @objc func onionSelector() { fillGameFruits(for: .onion) }
     
-    @objc func orangeSelector() {
-        fillGameFruits(for: .orange)
-    }
+    @objc func orangeSelector() { fillGameFruits(for: .orange) }
     
-    @objc func pearSelector() {
-        fillGameFruits(for: .pear)
-    }
+    @objc func pearSelector() { fillGameFruits(for: .pear) }
     
-    @objc func tomatoSelector() {
-        fillGameFruits(for: .tomato)
-    }
+    @objc func tomatoSelector() { fillGameFruits(for: .tomato) }
     
-    @objc func watermelonSelector() {
-        fillGameFruits(for: .watermelon)
-    }
+    @objc func watermelonSelector() { fillGameFruits(for: .watermelon) }
     
     func fillGameFruits(for fruit: Fruits) {
+        var localCurrentFruitIndex = 0
+
+        // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
+        // Проверяем входит ли индекс текущего фрукта в диапазоны [9...16], [27...34], [45...52]
+        if [9, 27, 45].contains(self.globalCurrentFruitIndex - 7 + self.gameFruitsFillingTerm) {
+            // В зависимости от оставшегося количества фруктов задаем размер прыжка
+            if [9, 27, 45].contains(self.globalCurrentFruitIndex) {
+                let preFruitsCount = FruitsGameViewController.levelNumber + 7
+                let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+                let lastFruitsCount = fruitsCount - self.globalCurrentFruitIndex
+
+                self.gameFruitsFillingJump = lastFruitsCount > 8 ? 7 : lastFruitsCount - 1
+            }
+            // Присваиваем currentFruitIndex нужное значение
+            localCurrentFruitIndex = self.globalCurrentFruitIndex + self.gameFruitsFillingJump
+            // Уменьшаем шаг на 2 во всех случаях
+            self.gameFruitsFillingJump -= 2
+            // Чтобы не выходить за рамки [9...16], [27...34], [45...52] останавливаем вычитание в проверке выше
+            self.gameFruitsFillingTerm -= self.gameFruitsFillingTerm > 0 ? 1 : 0
+        } else if [17, 35].contains(self.globalCurrentFruitIndex) {
+            // Присваиваем currentFruitIndex нужное значение
+            localCurrentFruitIndex = self.globalCurrentFruitIndex
+            // Установка значений
+            self.gameFruitsFillingJump = 7
+            self.gameFruitsFillingTerm = 7
+        } else {
+            // Присваиваем currentFruitIndex нужное значение
+            localCurrentFruitIndex = self.globalCurrentFruitIndex
+        }
+
+//        print(localCurrentFruitIndex)
+
+
         // Проверяем верно ли тапнул юзер
-        guard gameFruits[self.currentFruitIndex] == fruit else {
-            addRedCross()
-            changeTimerLabel()
+        guard gameFruits[localCurrentFruitIndex] == fruit else {
+            self.invalidateTimer()
+            self.changeTimerLabel()
+            self.switchMenuFruitsViewsUserInteractionState()
+
+            // Меняем текущий фрукт на красный крестик
+            let currentGameFruit = self.gameFruitsViews[localCurrentFruitIndex]
+
+            let errorFruitView = UIImageView()
+            errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
+
+            currentGameFruit.subviews.last?.removeFromSuperview()
+            currentGameFruit.addSubview(errorFruitView)
+
+            
+            /* Так как сюда мы попадаем только если
+             * пользователь неправильно ввел фрукт, то
+             * нам необходимо довыполнить необходимую
+             * операцию self.globalCurrentFruitIndex += 1
+             */
+            self.globalCurrentFruitIndex += 1
+            // Меняем оставшиеся фрукты на красные крестики
+            self.addRedCrosses()
             return
         }
-        
-        let currentGameFruit = self.gameFruitsViews[self.currentFruitIndex]
+
+        let currentGameFruit = self.gameFruitsViews[localCurrentFruitIndex]
         
         currentGameFruit.subviews.last?.removeFromSuperview()
         currentGameFruit.subviews.last?.isHidden = false
         currentGameFruit.shadowOpacity = 1
         currentGameFruit.borderWidth = 1
+
         
-        self.currentFruitIndex += 1
+        let preFruitsCount = FruitsGameViewController.levelNumber + 7
+        let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+        
+        switch fruitsCount {
+        case 10...17:
+            if currentGameFruit == self.gameFruitsViews[9] {
+                self.invalidateTimer()
+                self.switchMenuFruitsViewsUserInteractionState()
+            }
+        case 28...35:
+            if currentGameFruit == self.gameFruitsViews[27] {
+                self.invalidateTimer()
+                self.switchMenuFruitsViewsUserInteractionState()
+            }
+        case 46...53:
+            if currentGameFruit == self.gameFruitsViews[45] {
+                self.invalidateTimer()
+                self.switchMenuFruitsViewsUserInteractionState()
+            }
+        default:
+            if currentGameFruit == self.gameFruitsViews.last {
+                self.invalidateTimer()
+                self.switchMenuFruitsViewsUserInteractionState()
+            }
+        }
+        
+        self.globalCurrentFruitIndex += 1
     }
     
-    func addRedCross() {
-        self.gameFruitsViews[self.currentFruitIndex...].forEach { (fruit) in
+    func addRedCrosses() {
+        let preFruitsCount = FruitsGameViewController.levelNumber + 7
+        let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+        let lastFruitsCount = fruitsCount - self.globalCurrentFruitIndex
+
+        for _ in 0..<lastFruitsCount {
+            var localCurrentFruitIndex = 0
+
+            // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
+            // Проверяем входит ли индекс текущего фрукта в диапазоны [9...16], [27...34], [45...52]
+            print(self.globalCurrentFruitIndex, -7, self.gameFruitsFillingTerm)
+            if [9, 27, 45].contains(self.globalCurrentFruitIndex - 7 + self.gameFruitsFillingTerm) {
+                // В зависимости от оставшегося количества фруктов задаем размер прыжка
+                if [9, 27, 45].contains(self.globalCurrentFruitIndex) {
+                    let preFruitsCount = FruitsGameViewController.levelNumber + 7
+                    let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+                    let lastFruitsCount = fruitsCount - self.globalCurrentFruitIndex
+
+                    self.gameFruitsFillingJump = lastFruitsCount > 8 ? 7 : lastFruitsCount - 1
+                }
+                // Присваиваем currentFruitIndex нужное значение
+                print(self.globalCurrentFruitIndex, self.gameFruitsFillingJump)
+                localCurrentFruitIndex = self.globalCurrentFruitIndex + self.gameFruitsFillingJump
+                // Уменьшаем шаг на 2 во всех случаях
+                self.gameFruitsFillingJump -= 2
+                // Чтобы не выходить за рамки [9...16], [27...34], [45...52] останавливаем вычитание в проверке выше
+                self.gameFruitsFillingTerm -= self.gameFruitsFillingTerm > 0 ? 1 : 0
+            } else if [17, 35].contains(self.globalCurrentFruitIndex) {
+                // Присваиваем currentFruitIndex нужное значение
+                localCurrentFruitIndex = self.globalCurrentFruitIndex
+                // Установка значений
+                self.gameFruitsFillingJump = 7
+                self.gameFruitsFillingTerm = 7
+            } else {
+                // Присваиваем currentFruitIndex нужное значение
+                localCurrentFruitIndex = self.globalCurrentFruitIndex
+            }
+
+//            print(localCurrentFruitIndex)
+
+            print(localCurrentFruitIndex)
+            let currentGameFruit = self.gameFruitsViews[localCurrentFruitIndex]
+
             let errorFruitView = UIImageView()
             errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
             errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
-            
-            fruit.subviews.last?.removeFromSuperview()
-            fruit.addSubview(errorFruitView)
+
+            currentGameFruit.subviews.last?.removeFromSuperview()
+            currentGameFruit.addSubview(errorFruitView)
+
+            self.globalCurrentFruitIndex += 1
         }
+
+//        self.gameFruitsViews[self.globalCurrentFruitIndex...].forEach { (fruit) in
+//            let errorFruitView = UIImageView()
+//            errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+//            errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
+//
+//            fruit.subviews.last?.removeFromSuperview()
+//            fruit.addSubview(errorFruitView)
+//        }
     }
+
+
     
     func changeTimerLabel() {
-        self.timerLabel.text = "Error!"
+        self.timerLabel.text = "Wrong!"
+        self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
+    }
+    
+    func invalidateTimer() {
+        self.timer.invalidate()
     }
 }
+
