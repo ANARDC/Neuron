@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Helpers/CoreDataProcesses.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Helpers/CoreDataProcesses.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Helpers/Design.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Helpers/Design.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotes/AllNotesTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotes/AllNotesTableViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotes/NoteTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/AllNotes/NoteTableViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/Calendar.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/Calendar.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarCollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/FruitsStartViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/FruitsStartViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Home/AddNoteCellButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Home/AddNoteCellButton.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Home/DiaryCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Home/DiaryCollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Home/HomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Home/HomeViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,8 +71,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.27124563" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -107,6 +121,8 @@
       <workItem from="1567401850804" duration="981000" />
       <workItem from="1567405757695" duration="80000" />
       <workItem from="1567406503064" duration="9579000" />
+      <workItem from="1567450750352" duration="556000" />
+      <workItem from="1567535786357" duration="1316000" />
     </task>
     <servers />
   </component>

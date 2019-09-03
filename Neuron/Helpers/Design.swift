@@ -10,79 +10,79 @@ import UIKit
 
 // MARK: - IBInspectable properties of UIView
 extension UIView {
-    
-    // Радиус скругления
-    @IBInspectable var cornerRadius: CGFloat {
-        set { layer.cornerRadius = newValue  }
-        get { return layer.cornerRadius }
-    }
-    
-    // Ширина границы
-    @IBInspectable var borderWidth: CGFloat {
-        set { layer.borderWidth = newValue }
-        get { return layer.borderWidth }
-    }
-    
-    // Цвет границы
-    @IBInspectable var borderColor: CGColor? {
-        set { layer.borderColor = newValue  }
-        get { return layer.borderColor! }
-    }
-    
-    // Смещение тени
-    @IBInspectable var shadowOffset: CGSize {
-        set { layer.shadowOffset = newValue  }
-        get { return layer.shadowOffset }
-    }
-    
-    // Прозрачность тени
-    @IBInspectable var shadowOpacity: Float {
-        set { layer.shadowOpacity = newValue }
-        get { return layer.shadowOpacity }
-    }
-    
-    // Радиус блура тени
-    @IBInspectable var shadowRadius: CGFloat {
-        set { layer.shadowRadius = newValue }
-        get { return layer.shadowRadius }
-    }
-    
-    // Цвет тени
-    @IBInspectable var shadowColor: CGColor {
-        set { layer.shadowColor = newValue }
-        get { return layer.shadowColor! }
-    }
-    
-    // Отсекание по границе
-    @IBInspectable var _clipsToBounds: Bool {
-        set { clipsToBounds = newValue }
-        get { return clipsToBounds }
-    }
+
+  // Радиус скругления
+  @IBInspectable var cornerRadius: CGFloat {
+    set { layer.cornerRadius = newValue  }
+    get { return layer.cornerRadius }
+  }
+
+  // Ширина границы
+  @IBInspectable var borderWidth: CGFloat {
+    set { layer.borderWidth = newValue }
+    get { return layer.borderWidth }
+  }
+
+  // Цвет границы
+  @IBInspectable var borderColor: CGColor? {
+    set { layer.borderColor = newValue  }
+    get { return layer.borderColor! }
+  }
+
+  // Смещение тени
+  @IBInspectable var shadowOffset: CGSize {
+    set { layer.shadowOffset = newValue  }
+    get { return layer.shadowOffset }
+  }
+
+  // Прозрачность тени
+  @IBInspectable var shadowOpacity: Float {
+    set { layer.shadowOpacity = newValue }
+    get { return layer.shadowOpacity }
+  }
+
+  // Радиус блура тени
+  @IBInspectable var shadowRadius: CGFloat {
+    set { layer.shadowRadius = newValue }
+    get { return layer.shadowRadius }
+  }
+
+  // Цвет тени
+  @IBInspectable var shadowColor: CGColor {
+    set { layer.shadowColor = newValue }
+    get { return layer.shadowColor! }
+  }
+
+  // Отсекание по границе
+  @IBInspectable var _clipsToBounds: Bool {
+    set { clipsToBounds = newValue }
+    get { return clipsToBounds }
+  }
 }
 
 // MARK: - Extension of UIScrollView to work touchesBegan method
 extension UIScrollView {
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.next?.touchesBegan(touches, with: event)
-    }
+  override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.next?.touchesBegan(touches, with: event)
+  }
 }
 
 // MARK: - Design of NavigationBar
 final class BarDesign {
-    func customizeNavBar(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
-        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Назад")
-        navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-        
-        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)]
-        navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
-    }
-    
-    func makeNavigationBarTranslucent(_ navigationController: UINavigationController?) {
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.isTranslucent = true
-    }
+  func customizeNavBar(navigationController: UINavigationController?, navigationItem: UINavigationItem?) {
+    navigationController?.navigationBar.backIndicatorImage = UIImage(named: "Назад")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+    navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "Назад")
+    navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+
+    let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)]
+    navigationController?.navigationBar.titleTextAttributes = textAttributes
+    navigationController?.navigationBar.largeTitleTextAttributes = textAttributes
+  }
+
+  func makeNavigationBarTranslucent(_ navigationController: UINavigationController?) {
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true
+  }
 }
