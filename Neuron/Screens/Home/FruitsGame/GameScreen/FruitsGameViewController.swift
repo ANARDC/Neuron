@@ -566,6 +566,13 @@ extension FruitsGameViewController {
     visualEffectView.translatesAutoresizingMaskIntoConstraints = false
     visualEffectView.alpha = 0
 
+    /* Добавляем visualEffectView
+     * в self.navigationController?.navigationBar
+     * потому что добавляя по отдельности
+     * блюр в self.view и navigationBar
+     * в navigationBar радиус двух блюров складывается
+     * и получается уродство
+     */
     self.navigationController?.navigationBar.addSubview(visualEffectView)
 
     let topViewConstraint    = visualEffectView.topAnchor.constraint(equalTo: self.view.topAnchor)
@@ -646,8 +653,6 @@ extension FruitsGameViewController {
 //        }
   }
 
-
-
   func changeTimerLabel() {
     self.timerLabel.text = "Wrong!"
     self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
@@ -659,12 +664,14 @@ extension FruitsGameViewController {
 }
 
 class CustomIntensityVisualEffectView: UIVisualEffectView {
-
-  /// Create visual effect view with given effect and its intensity
-  ///
-  /// - Parameters:
-  ///   - effect: visual effect, eg UIBlurEffect(style: .dark)
-  ///   - intensity: custom intensity from 0.0 (no effect) to 1.0 (full effect) using linear scale
+  /* Создание вида визуального эффекта с заданным эффектом и его интенсивностью
+   *
+   * - Параметры:
+   *   - effect: визуальный эффект, например: UIBlurEffect(style: .dark)
+   *   - intensity: пользовательская интенсивность
+   *                от 0.0 (без эффекта) до 1.0 (полный эффект)
+   *                с использованием линейной шкалы
+   */
   init(effect: UIVisualEffect, intensity: CGFloat) {
     super.init(effect: nil)
     animator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [unowned self] in self.effect = effect }

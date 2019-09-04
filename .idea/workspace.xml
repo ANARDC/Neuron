@@ -4,7 +4,6 @@
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +30,12 @@
     <favorites_list name="Neuron" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -110,8 +115,16 @@
       <workItem from="1567406503064" duration="9579000" />
       <workItem from="1567450750352" duration="556000" />
       <workItem from="1567535786357" duration="8077000" />
-      <workItem from="1567614212703" duration="5938000" />
+      <workItem from="1567614212703" duration="7709000" />
     </task>
+    <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
+      <created>1567623485418</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567623485418</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,5 +142,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="perf(fruit_game): добавил появление блюра" />
+    <option name="LAST_COMMIT_MESSAGE" value="perf(fruit_game): добавил появление блюра" />
   </component>
 </project>
