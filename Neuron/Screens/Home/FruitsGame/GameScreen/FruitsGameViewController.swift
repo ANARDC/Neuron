@@ -21,7 +21,6 @@ final class FruitsGameViewController: UIViewController {
   var gameFruits          = [Fruits]()
   var gameFruitsViews     = [UIView]()
   var menuFruitsViews     = [UIView]()
-  var gameFruitsStackView = UIStackView()
 
   var timer        = Timer()
   var minutes      = 0
@@ -535,26 +534,53 @@ extension FruitsGameViewController {
     case 10...17:
       if currentGameFruit == self.gameFruitsViews[9] {
         self.invalidateTimer()
+        self.makeBlur()
         self.switchMenuFruitsViewsUserInteractionState()
       }
     case 28...35:
       if currentGameFruit == self.gameFruitsViews[27] {
         self.invalidateTimer()
+        self.makeBlur()
         self.switchMenuFruitsViewsUserInteractionState()
       }
     case 46...53:
       if currentGameFruit == self.gameFruitsViews[45] {
         self.invalidateTimer()
+        self.makeBlur()
         self.switchMenuFruitsViewsUserInteractionState()
       }
     default:
       if currentGameFruit == self.gameFruitsViews.last {
         self.invalidateTimer()
+        self.makeBlur()
         self.switchMenuFruitsViewsUserInteractionState()
       }
     }
 
     self.globalCurrentFruitIndex += 1
+  }
+
+  func makeBlur() {
+    let blurEffect = UIBlurEffect(style: .light)
+    let visualEffectView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.2)
+    visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+    visualEffectView.alpha = 0
+
+    self.navigationController?.navigationBar.addSubview(visualEffectView)
+
+    let topViewConstraint    = visualEffectView.topAnchor.constraint(equalTo: self.view.topAnchor)
+    let rightViewConstraint  = visualEffectView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+    let bottomViewConstraint = visualEffectView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+    let leftViewConstraint   = visualEffectView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
+
+    NSLayoutConstraint.activate([topViewConstraint,
+                                 rightViewConstraint,
+                                 bottomViewConstraint,
+                                 leftViewConstraint])
+
+    UIView.animate(withDuration: 0.6) {
+      visualEffectView.alpha = 1
+    }
   }
 
   func addRedCrosses() {
@@ -630,5 +656,26 @@ extension FruitsGameViewController {
   func invalidateTimer() {
     self.timer.invalidate()
   }
+}
+
+class CustomIntensityVisualEffectView: UIVisualEffectView {
+
+  /// Create visual effect view with given effect and its intensity
+  ///
+  /// - Parameters:
+  ///   - effect: visual effect, eg UIBlurEffect(style: .dark)
+  ///   - intensity: custom intensity from 0.0 (no effect) to 1.0 (full effect) using linear scale
+  init(effect: UIVisualEffect, intensity: CGFloat) {
+    super.init(effect: nil)
+    animator = UIViewPropertyAnimator(duration: 1, curve: .linear) { [unowned self] in self.effect = effect }
+    animator.fractionComplete = intensity
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    fatalError()
+  }
+
+  // MARK: Private
+  private var animator: UIViewPropertyAnimator!
 }
 
