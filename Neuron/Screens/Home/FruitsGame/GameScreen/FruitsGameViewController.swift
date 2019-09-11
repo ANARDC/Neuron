@@ -30,6 +30,8 @@ final class FruitsGameViewController: UIViewController {
   var globalCurrentFruitIndex = 0
   var gameFruitsFillingJump = 7
   var gameFruitsFillingTerm = 7
+
+  var visualEffectNavBarView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light), intensity: 0.2)
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -47,6 +49,12 @@ extension FruitsGameViewController {
     self.startTimer()
     self.switchMenuFruitsViewsUserInteractionState()
   }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    self.visualEffectNavBarView.constraints.forEach { $0.isActive = false }
+    self.visualEffectNavBarView.removeFromSuperview()
+  }
 }
 
 // MARK: - Customize Functions
@@ -58,13 +66,13 @@ extension FruitsGameViewController {
   }
 
   func startTimer() {
-    self.seconds = 4
+    self.seconds = 1
     self.milliseconds = 60
     self.timer = Timer.scheduledTimer(timeInterval: 1/60,
-            target: self,
-            selector: #selector(self.timerSelectorMethod),
-            userInfo: nil,
-            repeats: true)
+                                      target: self,
+                                      selector: #selector(self.timerSelectorMethod),
+                                      userInfo: nil,
+                                      repeats: true)
   }
 
   @objc func timerSelectorMethod() {
@@ -458,6 +466,8 @@ extension FruitsGameViewController {
   @objc func watermelonSelector() { fillGameFruits(for: .watermelon) }
 
   func fillGameFruits(for fruit: Fruits) {
+
+    self.makeBlur()
     var localCurrentFruitIndex = 0
 
     // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
@@ -562,20 +572,34 @@ extension FruitsGameViewController {
 
   func makeBlur() {
     let blurEffect = UIBlurEffect(style: .light)
+
+    // NavBar Blur
+    let visualEffectNavBarView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.2)
+    visualEffectNavBarView.translatesAutoresizingMaskIntoConstraints = false
+    visualEffectNavBarView.alpha = 0
+
+    self.navigationController?.navigationBar.addSubview(visualEffectNavBarView)
+
+    let topNavBarConstraint    = visualEffectNavBarView.topAnchor.constraint(equalTo: self.view.topAnchor)
+    let rightNavBarConstraint  = visualEffectNavBarView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+    let bottomNavBarConstraint = visualEffectNavBarView.bottomAnchor.constraint(equalTo: self.navigationController!.navigationBar.bottomAnchor)
+    let leftNavBarConstraint   = visualEffectNavBarView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
+
+    NSLayoutConstraint.activate([topNavBarConstraint,
+                                 rightNavBarConstraint,
+                                 bottomNavBarConstraint,
+                                 leftNavBarConstraint])
+
+    self.visualEffectNavBarView = visualEffectNavBarView
+
+    // View Blur Without NavBar
     let visualEffectView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.2)
     visualEffectView.translatesAutoresizingMaskIntoConstraints = false
     visualEffectView.alpha = 0
 
-    /* Добавляем visualEffectView
-     * в self.navigationController?.navigationBar
-     * потому что добавляя по отдельности
-     * блюр в self.view и navigationBar
-     * в navigationBar радиус двух блюров складывается
-     * и получается уродство
-     */
-    self.navigationController?.navigationBar.addSubview(visualEffectView)
+    self.view.addSubview(visualEffectView)
 
-    let topViewConstraint    = visualEffectView.topAnchor.constraint(equalTo: self.view.topAnchor)
+    let topViewConstraint    = visualEffectView.topAnchor.constraint(equalTo: self.navigationController!.navigationBar.bottomAnchor)
     let rightViewConstraint  = visualEffectView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
     let bottomViewConstraint = visualEffectView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
     let leftViewConstraint   = visualEffectView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
@@ -585,9 +609,57 @@ extension FruitsGameViewController {
                                  bottomViewConstraint,
                                  leftViewConstraint])
 
-    UIView.animate(withDuration: 0.6) {
+    UIView.animate(withDuration: 0.6, animations: {
+      visualEffectNavBarView.alpha = 1
       visualEffectView.alpha = 1
-    }
+    }, completion: { finished in
+      self.makeTestPopUp(to: visualEffectView)
+    })
+  }
+
+  func makeTestPopUp(to blurView: CustomIntensityVisualEffectView) {
+    let popUp: FluidCardView = FluidCardView()
+
+    let centerX = UIScreen.main.bounds.width / 2
+    popUp.frame = CGRect(x: 0, y: 204, width: 297, height: 297)
+    popUp.center.x = centerX
+
+    let topNib = UINib(nibName: "TopView", bundle: nil)
+    let topView = topNib.instantiate(withOwner: self, options: nil).first as! UIView
+    let bottomNib = UINib(nibName: "BottomView", bundle: nil)
+    let bottomView = bottomNib.instantiate(withOwner: self, options: nil).first as! UIView
+    popUp.topContentView = topView
+    popUp.bottomContentView = bottomView
+
+    popUp.isUserInteractionEnabled = true
+    blurView.contentView.addSubview(popUp)
+  }
+
+  func makePopUp(to view: CustomIntensityVisualEffectView) {
+    let popUp = FluidCardView(frame: CGRect(x: 0, y: 0, width: 297, height: 297))
+    popUp.translatesAutoresizingMaskIntoConstraints = false
+
+    let topNib = UINib(nibName: "TopView", bundle: nil)
+    let topView = topNib.instantiate(withOwner: self, options: nil).first as! UIView
+    let bottomNib = UINib(nibName: "BottomView", bundle: nil)
+    let bottomView = bottomNib.instantiate(withOwner: self, options: nil).first as! UIView
+
+    popUp.topContentView = topView
+    popUp.bottomContentView = bottomView
+
+    view.addSubview(popUp)
+
+    let topViewConstraint     = popUp.topAnchor.constraint(equalTo: view.topAnchor)
+    let rightViewConstraint   = popUp.rightAnchor.constraint(equalTo: view.rightAnchor)
+    let leftViewConstraint    = popUp.leftAnchor.constraint(equalTo: view.leftAnchor)
+    let widthViewConstraint   = popUp.widthAnchor.constraint(equalToConstant: 297)
+    let centerXViewConstraint = popUp.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
+    NSLayoutConstraint.activate([topViewConstraint,
+                                 rightViewConstraint,
+                                 leftViewConstraint,
+                                 widthViewConstraint,
+                                 centerXViewConstraint])
   }
 
   func addRedCrosses() {
@@ -663,7 +735,7 @@ extension FruitsGameViewController {
   }
 }
 
-class CustomIntensityVisualEffectView: UIVisualEffectView {
+final class CustomIntensityVisualEffectView: UIVisualEffectView {
   /* Создание вида визуального эффекта с заданным эффектом и его интенсивностью
    *
    * - Параметры:
@@ -685,4 +757,3 @@ class CustomIntensityVisualEffectView: UIVisualEffectView {
   // MARK: Private
   private var animator: UIViewPropertyAnimator!
 }
-

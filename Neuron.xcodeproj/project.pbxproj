@@ -39,6 +39,13 @@
 		99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52022DDDC1C0037A4CA /* Assets.xcassets */; };
 		99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */; };
 		99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8320022EBA184004275BB /* CoreDataProcesses.swift */; };
+		99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */; };
+		99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BF2321525500FEEA69 /* ExpandButton.swift */; };
+		99F9B2C22321527200FEEA69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2C12321527200FEEA69 /* Extensions.swift */; };
+		99F9B2C42321528C00FEEA69 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2C32321528C00FEEA69 /* TimingFunction.swift */; };
+		99F9B2C6232152B800FEEA69 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2C5232152B800FEEA69 /* UnitBezier.swift */; };
+		99F9B2C9232156BC00FEEA69 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2C8232156BC00FEEA69 /* TopView.xib */; };
+		99F9B2CB23219B1D00FEEA69 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2CA23219B1D00FEEA69 /* BottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +84,13 @@
 		99B0F52322DDDC1C0037A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B0F52522DDDC1C0037A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99F8320022EBA184004275BB /* CoreDataProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProcesses.swift; sourceTree = "<group>"; };
+		99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
+		99F9B2BF2321525500FEEA69 /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
+		99F9B2C12321527200FEEA69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		99F9B2C32321528C00FEEA69 /* TimingFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		99F9B2C5232152B800FEEA69 /* UnitBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		99F9B2C8232156BC00FEEA69 /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		99F9B2CA23219B1D00FEEA69 /* BottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
 		D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.release.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				9928825823046AD40078664E /* FruitsGameViewController.swift */,
+				99F9B2BA2321516900FEEA69 /* FluidCard */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -256,6 +271,7 @@
 		99B0F51522DDDC1B0037A4CA /* Neuron */ = {
 			isa = PBXGroup;
 			children = (
+				99F9B2C72321568900FEEA69 /* Xibs */,
 				996F4B1C22E3740000B19478 /* Storyboards */,
 				99CDB50022EDF8B6007660BE /* Helpers */,
 				996F4B1922E36F1300B19478 /* Screens */,
@@ -275,6 +291,43 @@
 				994CBBA522DF44A5007B5BD5 /* Design.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		99F9B2BA2321516900FEEA69 /* FluidCard */ = {
+			isa = PBXGroup;
+			children = (
+				99F9B2BC2321518300FEEA69 /* Extensions */,
+				99F9B2BB2321517700FEEA69 /* TimingFunctions */,
+				99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */,
+				99F9B2BF2321525500FEEA69 /* ExpandButton.swift */,
+			);
+			path = FluidCard;
+			sourceTree = "<group>";
+		};
+		99F9B2BB2321517700FEEA69 /* TimingFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				99F9B2C32321528C00FEEA69 /* TimingFunction.swift */,
+				99F9B2C5232152B800FEEA69 /* UnitBezier.swift */,
+			);
+			path = TimingFunctions;
+			sourceTree = "<group>";
+		};
+		99F9B2BC2321518300FEEA69 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				99F9B2C12321527200FEEA69 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		99F9B2C72321568900FEEA69 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				99F9B2C8232156BC00FEEA69 /* TopView.xib */,
+				99F9B2CA23219B1D00FEEA69 /* BottomView.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				990DE7FF22F8742500D18A86 /* NotoSans-Regular.ttf in Resources */,
+				99F9B2C9232156BC00FEEA69 /* TopView.xib in Resources */,
 				990DE80422F8742500D18A86 /* NotoSerif-RegularItalic.ttf in Resources */,
 				99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */,
 				990DE80122F8742500D18A86 /* NotoSerif-Bold.ttf in Resources */,
@@ -351,6 +405,7 @@
 				99B0F51C22DDDC1B0037A4CA /* Main.storyboard in Resources */,
 				990DE80022F8742500D18A86 /* NotoSans-RegularItalic.ttf in Resources */,
 				996F4B1E22E3741900B19478 /* Home.storyboard in Resources */,
+				99F9B2CB23219B1D00FEEA69 /* BottomView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,13 +463,18 @@
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
 				99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */,
 				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
+				99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */,
 				9923FA1B22F60FA500F33B0C /* FruitsStartViewController.swift in Sources */,
+				99F9B2C42321528C00FEEA69 /* TimingFunction.swift in Sources */,
 				990DE80622F8B13C00D18A86 /* LevelsCollectionViewCell.swift in Sources */,
 				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
 				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
+				99F9B2C6232152B800FEEA69 /* UnitBezier.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
+				99F9B2C22321527200FEEA69 /* Extensions.swift in Sources */,
+				99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */,
 				997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */,
 				9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
