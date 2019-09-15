@@ -623,13 +623,13 @@
                                 <rect key="frame" x="0.0" y="692" width="375" height="120"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.03.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dO-6L-LIu">
-                                <rect key="frame" x="139" y="92" width="97" height="34.333333333333329"/>
+                                <rect key="frame" x="139" y="92" width="97" height="34.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="zhY-eg-Odj">
-                                <rect key="frame" x="126" y="131" width="123" height="22"/>
+                                <rect key="frame" x="126" y="131.33333333333334" width="123" height="22"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="A3P-Si-jdm">
                                         <rect key="frame" x="0.0" y="0.0" width="23" height="22"/>
@@ -662,7 +662,7 @@
                         <viewLayoutGuide key="safeArea" id="6YZ-ma-tlm"/>
                     </view>
                     <navigationItem key="navigationItem" title="Level 1" largeTitleDisplayMode="never" id="m0N-Qg-6ga">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="G75-PN-MY6"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Рестарт" id="G75-PN-MY6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="fruitsMenuView" destination="nCT-mA-PXL" id="b4U-Pl-Upo"/>
@@ -677,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3Y-6k-yRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.599999999999994" y="2593.5960591133007"/>
+            <point key="canvasLocation" x="127" y="2594"/>
         </scene>
         <!--Diary-->
         <scene sceneID="eb3-AF-mrL">
@@ -12645,6 +12645,7 @@ AAAAAAUKTw
         <image name="Иконка календаря" width="15" height="15"/>
         <image name="Назад_Календарь" width="6.6666665077209473" height="12"/>
         <image name="Плоды" width="347" height="241"/>
+        <image name="Рестарт" width="13.666666984558105" height="16.333333969116211"/>
         <image name="Сортировка" width="15" height="13"/>
         <image name="ФонФрукты1-20" width="375" height="120"/>
     </resources>

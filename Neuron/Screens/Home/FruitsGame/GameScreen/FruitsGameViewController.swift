@@ -57,7 +57,7 @@ extension FruitsGameViewController {
   }
 }
 
-// MARK: - Customize Functions
+// MARK: - Customize Functions and Timer
 
 extension FruitsGameViewController {
 
@@ -613,53 +613,29 @@ extension FruitsGameViewController {
       visualEffectNavBarView.alpha = 1
       visualEffectView.alpha = 1
     }, completion: { finished in
-      self.makeTestPopUp(to: visualEffectView)
+      self.makePopUp()
     })
   }
 
-  func makeTestPopUp(to blurView: CustomIntensityVisualEffectView) {
-    let popUp: FluidCardView = FluidCardView()
-
-    let centerX = UIScreen.main.bounds.width / 2
-    popUp.frame = CGRect(x: 0, y: 204, width: 297, height: 297)
-    popUp.center.x = centerX
-
-    let topNib = UINib(nibName: "TopView", bundle: nil)
-    let topView = topNib.instantiate(withOwner: self, options: nil).first as! UIView
-    let bottomNib = UINib(nibName: "BottomView", bundle: nil)
-    let bottomView = bottomNib.instantiate(withOwner: self, options: nil).first as! UIView
-    popUp.topContentView = topView
-    popUp.bottomContentView = bottomView
-
-    popUp.isUserInteractionEnabled = true
-    blurView.contentView.addSubview(popUp)
-  }
-
-  func makePopUp(to view: CustomIntensityVisualEffectView) {
+  func makePopUp() {
     let popUp = FluidCardView(frame: CGRect(x: 0, y: 0, width: 297, height: 297))
+    view.addSubview(popUp)
+    
     popUp.translatesAutoresizingMaskIntoConstraints = false
 
     let topNib = UINib(nibName: "TopView", bundle: nil)
     let topView = topNib.instantiate(withOwner: self, options: nil).first as! UIView
     let bottomNib = UINib(nibName: "BottomView", bundle: nil)
     let bottomView = bottomNib.instantiate(withOwner: self, options: nil).first as! UIView
-
     popUp.topContentView = topView
     popUp.bottomContentView = bottomView
 
-    view.addSubview(popUp)
 
-    let topViewConstraint     = popUp.topAnchor.constraint(equalTo: view.topAnchor)
-    let rightViewConstraint   = popUp.rightAnchor.constraint(equalTo: view.rightAnchor)
-    let leftViewConstraint    = popUp.leftAnchor.constraint(equalTo: view.leftAnchor)
+    let topViewConstraint     = popUp.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 204)
     let widthViewConstraint   = popUp.widthAnchor.constraint(equalToConstant: 297)
     let centerXViewConstraint = popUp.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
 
-    NSLayoutConstraint.activate([topViewConstraint,
-                                 rightViewConstraint,
-                                 leftViewConstraint,
-                                 widthViewConstraint,
-                                 centerXViewConstraint])
+    NSLayoutConstraint.activate([topViewConstraint, widthViewConstraint, centerXViewConstraint])
   }
 
   func addRedCrosses() {
