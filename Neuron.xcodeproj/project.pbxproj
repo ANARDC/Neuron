@@ -24,6 +24,9 @@
 		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
 		996F4B2022E3768900B19478 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1F22E3768900B19478 /* Stats.storyboard */; };
 		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
+		9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CD2337CAA4004B639A /* Fruits.swift */; };
+		9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */; };
+		9971E2D323380EE9004B639A /* PopUpBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2D223380EE9004B639A /* PopUpBottomView.swift */; };
 		9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */; };
 		9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20522E3F67900EED8FC /* SettingsViewController.swift */; };
 		9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */; };
@@ -38,6 +41,8 @@
 		99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */; };
 		99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52022DDDC1C0037A4CA /* Assets.xcassets */; };
 		99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */; };
+		99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCA232E45B300156597 /* PopUpTopView.swift */; };
+		99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */; };
 		99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8320022EBA184004275BB /* CoreDataProcesses.swift */; };
 		99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */; };
 		99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BF2321525500FEEA69 /* ExpandButton.swift */; };
@@ -46,6 +51,7 @@
 		99F9B2C6232152B800FEEA69 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2C5232152B800FEEA69 /* UnitBezier.swift */; };
 		99F9B2C9232156BC00FEEA69 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2C8232156BC00FEEA69 /* TopView.xib */; };
 		99F9B2CB23219B1D00FEEA69 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2CA23219B1D00FEEA69 /* BottomView.xib */; };
+		CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +73,9 @@
 		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		996F4B1F22E3768900B19478 /* Stats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9971E2CD2337CAA4004B639A /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
+		9971E2D223380EE9004B639A /* PopUpBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBottomView.swift; sourceTree = "<group>"; };
 		9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		9974E20522E3F67900EED8FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +92,8 @@
 		99B0F52022DDDC1C0037A4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B0F52322DDDC1C0037A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B0F52522DDDC1C0037A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99B46DCA232E45B300156597 /* PopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTopView.swift; sourceTree = "<group>"; };
+		99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePresenter.swift; sourceTree = "<group>"; };
 		99F8320022EBA184004275BB /* CoreDataProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProcesses.swift; sourceTree = "<group>"; };
 		99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
 		99F9B2BF2321525500FEEA69 /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
@@ -91,6 +102,7 @@
 		99F9B2C5232152B800FEEA69 /* UnitBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		99F9B2C8232156BC00FEEA69 /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
 		99F9B2CA23219B1D00FEEA69 /* BottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
+		CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitsGameConfigurator.swift; sourceTree = "<group>"; };
 		D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.release.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,8 +188,12 @@
 		9928825723046AAD0078664E /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9928825823046AD40078664E /* FruitsGameViewController.swift */,
+				9971E2D12337FCAC004B639A /* Entity */,
+				99B46DCC232FB21800156597 /* Model */,
+				99B46DCD232FB72200156597 /* View */,
+				99B46DCE232FB72F00156597 /* Presenter */,
 				99F9B2BA2321516900FEEA69 /* FluidCard */,
+				CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -232,6 +248,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		9971E2D12337FCAC004B639A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				9971E2CD2337CAA4004B639A /* Fruits.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		9974E20422E3F5F400EED8FC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +306,32 @@
 				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
 			);
 			path = Neuron;
+			sourceTree = "<group>";
+		};
+		99B46DCC232FB21800156597 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99B46DCD232FB72200156597 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9928825823046AD40078664E /* FruitsGameViewController.swift */,
+				9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */,
+				99B46DCA232E45B300156597 /* PopUpTopView.swift */,
+				9971E2D223380EE9004B639A /* PopUpBottomView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		99B46DCE232FB72F00156597 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		99CDB50022EDF8B6007660BE /* Helpers */ = {
@@ -463,6 +513,8 @@
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
 				99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */,
 				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
+				9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */,
+				9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */,
 				99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */,
 				9923FA1B22F60FA500F33B0C /* FruitsStartViewController.swift in Sources */,
 				99F9B2C42321528C00FEEA69 /* TimingFunction.swift in Sources */,
@@ -470,9 +522,11 @@
 				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
 				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */,
+				9971E2D323380EE9004B639A /* PopUpBottomView.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
 				99F9B2C6232152B800FEEA69 /* UnitBezier.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
+				99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */,
 				99F9B2C22321527200FEEA69 /* Extensions.swift in Sources */,
 				99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */,
 				997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */,
@@ -480,7 +534,9 @@
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,
+				99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */,
+				CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

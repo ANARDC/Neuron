@@ -1,7 +1,7 @@
 import UIKit
 
 @IBDesignable
-class FluidCardView: UIView {
+final class FluidCardView: UIView {
   var expandDuration: TimeInterval = 0.6
   var collapseDuration: TimeInterval = 0.35
   

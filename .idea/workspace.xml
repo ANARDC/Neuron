@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameConfigurator.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/Presenter/FruitsGamePresenter.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/TopView.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/ExpandButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/ExpandButton.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Xibs/TopView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/TopView.xib" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,7 +47,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/Calendar.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" root0="SKIP_INSPECTION" />
@@ -63,6 +67,7 @@
   </component>
   <component name="ProjectId" id="1PTYhAWRg2cXhLytYgxhUNpii26" />
   <component name="PropertiesComponent">
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Neuron" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -121,7 +126,13 @@
       <workItem from="1567614212703" duration="8333000" />
       <workItem from="1567675839476" duration="26279000" />
       <workItem from="1568226462697" duration="474000" />
-      <workItem from="1568229964858" duration="11999000" />
+      <workItem from="1568229964858" duration="19720000" />
+      <workItem from="1568633943620" duration="1387000" />
+      <workItem from="1568901544125" duration="2522000" />
+      <workItem from="1568978903467" duration="3121000" />
+      <workItem from="1569001150245" duration="188000" />
+      <workItem from="1569049207790" duration="388000" />
+      <workItem from="1569066200286" duration="5543000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>

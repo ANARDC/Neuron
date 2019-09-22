@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExpandButton: UIButton {
+final class ExpandButton: UIButton {
   
   let size: CGFloat = 52.0
   
@@ -30,7 +30,7 @@ class ExpandButton: UIButton {
   
   private func configure() {
     layer.cornerRadius = 19.0
-    backgroundColor = .white
+    backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
     layer.shadowColor = UIColor.black.withAlphaComponent(0.14).cgColor
     layer.shadowOpacity = 1.0
     layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -46,7 +46,7 @@ class ExpandButton: UIButton {
     path.addLine(to: CGPoint(x: markSize.width, y: 0))
     cLayer.lineWidth = 2.0
     cLayer.fillColor = nil
-    cLayer.strokeColor = UIColor.black.cgColor
+    cLayer.strokeColor = UIColor.white.cgColor
     cLayer.path = path.cgPath
     markView.translatesAutoresizingMaskIntoConstraints = false
     markView.isUserInteractionEnabled = false
