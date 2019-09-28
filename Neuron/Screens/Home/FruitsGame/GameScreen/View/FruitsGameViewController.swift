@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - Delegate
 protocol FruitsGameViewDelegate {
   var gameFruits: [Fruits] { get set }
   var gameFruitsViews: [UIView] { get set }
@@ -35,6 +36,7 @@ protocol FruitsGameViewDelegate {
   func invalidateTimer()
 }
 
+// MARK: - View
 final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   var configurator = FruitsGameConfiguratorImplementation()
   var presenter: FruitsGamePresenterDelegate!
@@ -83,6 +85,8 @@ extension FruitsGameViewController {
 // MARK: - Timer
 
 extension FruitsGameViewController {
+  
+  // MARK: - startTimer
   func startTimer(seconds: Int) {
     self.seconds = seconds
     self.milliseconds = 0
@@ -93,6 +97,7 @@ extension FruitsGameViewController {
                                       repeats: true)
   }
   
+  // MARK: - @objc timer
   @objc func timerSelectorMethod() {
     if !self.fruitsIsHidden {
       self.milliseconds -= self.milliseconds > 0 ? 1 : 0
@@ -141,6 +146,7 @@ extension FruitsGameViewController {
     }
   }
   
+  // MARK: - makeGrayCrosses
   func makeGrayCrosses() {
     self.gameFruitsViews.forEach { (fruit) in
       let unsolvedFruitView = UIImageView()
@@ -160,25 +166,30 @@ extension FruitsGameViewController {
 
 extension FruitsGameViewController {
 
+  // MARK: - makeTimerLabel
   func makeTimerLabel() {
     self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
   }
 
+  // MARL - makeRestartButtonImage
   func makeRestartButtonImage() {
     self.restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
   }
 
+  // MARK: - switchMenuFruitsViewsUserInteractionState
   func switchMenuFruitsViewsUserInteractionState(for views: [UIView]) {
     views.forEach { fruit in
       fruit.isUserInteractionEnabled = fruit.isUserInteractionEnabled ? false : true
     }
   }
 
+  // MARK: - makeFruitMenuView
   func makeFruitMenuView() {
     let fruitMenuImage = FruitsGameViewController.levelNumber >= 1 && FruitsGameViewController.levelNumber <= 20 ? #imageLiteral(resourceName: "ФонФрукты1-20") : #imageLiteral(resourceName: "ФонФрукты21-50")
     self.fruitsMenuView.image = fruitMenuImage
   }
 
+  // MARK: - makeNavBarTitle
   func makeNavBarTitle() {
     let navBarTitleFont      = UIFont(name: "NotoSans-Bold", size: 23)!
     let navBarTitleFontColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
@@ -188,6 +199,7 @@ extension FruitsGameViewController {
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
   }
 
+  // MARK: - makeMenuElements
   func makeMenuElements(typesCount: Int) {
     var mainStackView = UIStackView()
 
@@ -270,8 +282,10 @@ extension FruitsGameViewController {
 
     mainStackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 21).isActive = true
   }
-
+  
+  // MARK: - makeGameFruits
   // FIXME: - Take in Fruits enum
+  #warning("Take in Fruits enum")
   func makeGameFruits(typesCount: Int) {
     let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<typesCount])
 
@@ -343,7 +357,8 @@ extension FruitsGameViewController {
                                  mainStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -20)])
   }
 
-   // [8, 1, 8, 1, 5]
+  // MARK: - var getGameFruitsList
+  // [8, 1, 8, 1, 5]
   var getGameFruitsList: [Int] {
     var gameFruitsList = [Int]()
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
@@ -358,7 +373,7 @@ extension FruitsGameViewController {
     return gameFruitsList
   }
 
-  // View
+  // MARK: - makeStarsStackView
   func makeStarsStackView(rate: Int) {
     var stars = [UIImage]()
 
@@ -430,6 +445,8 @@ extension FruitsGameViewController {
 // MARK: - Blur/PopUp
 
 extension FruitsGameViewController {
+  
+  // MARK: - makeBlur
   func makeBlur() {
     let blurEffect = UIBlurEffect(style: .light)
 
@@ -477,23 +494,19 @@ extension FruitsGameViewController {
     })
   }
 
+  // MARK: - makePopUp
   func makePopUp() {
     let popUp = FluidCardView(frame: CGRect(x: 0, y: 0, width: 297, height: 297))
-    view.addSubview(popUp)
     
     popUp.translatesAutoresizingMaskIntoConstraints = false
-
-//    let topNib = UINib(nibName: "TopView", bundle: nil)
-//    let topView = topNib.instantiate(withOwner: self, options: nil).first as! UIView
-//    let bottomNib = UINib(nibName: "BottomView", bundle: nil)
-//    let bottomView = bottomNib.instantiate(withOwner: self, options: nil).first as! UIView
     
     let topView = PopUpTopView(frame: CGRect(x: 0, y: 0, width: 297, height: 189))
-    let bottomView = PopUpBottomView(frame: CGRect(x: 0, y: 0, width: 297, height: 26))
+    let bottomView = PopUpBottomView(frame: CGRect(x: 0, y: 0, width: 297, height: 104))
     
     popUp.topContentView = topView
     popUp.bottomContentView = bottomView
-
+    
+    view.addSubview(popUp)
 
     let topViewConstraint     = popUp.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 204)
     let widthViewConstraint   = popUp.widthAnchor.constraint(equalToConstant: 297)
@@ -502,6 +515,7 @@ extension FruitsGameViewController {
     NSLayoutConstraint.activate([topViewConstraint, widthViewConstraint, centerXViewConstraint])
   }
 
+  // MARK: - makeRedCrosses
   func makeRedCrosses() {
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
     let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
@@ -564,12 +578,14 @@ extension FruitsGameViewController {
 //            fruit.addSubview(errorFruitView)
 //        }
   }
-
+  
+  // MARK: - changeTimerLabel
   func changeTimerLabel() {
     self.timerLabel.text = "Wrong!"
     self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
   }
 
+  // MARK: - invalidateTimer
   func invalidateTimer() {
     self.timer.invalidate()
   }

@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameConfigurator.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/Presenter/FruitsGamePresenter.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/TopView.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/ExpandButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/ExpandButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/TopView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/TopView.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/PopUpBottomView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/PopUpBottomView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +27,7 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_7EFF622E-4FD8-4EF0-81E2-D6166863D159" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
   <component name="FavoritesManager">
     <favorites_list name="Neuron" />
   </component>
@@ -71,7 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunDashboard">
@@ -133,6 +127,9 @@
       <workItem from="1569001150245" duration="188000" />
       <workItem from="1569049207790" duration="388000" />
       <workItem from="1569066200286" duration="5543000" />
+      <workItem from="1569458275058" duration="166000" />
+      <workItem from="1569458468532" duration="819000" />
+      <workItem from="1569459559373" duration="414000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>

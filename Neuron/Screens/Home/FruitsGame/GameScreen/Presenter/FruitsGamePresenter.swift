@@ -29,7 +29,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     view?.makeFruitMenuView()
     view?.makeTimerLabel()
     view?.makeStarsStackView(rate: 5)
-    view?.startTimer(seconds: 5)
+    view?.startTimer(seconds: 1)
     view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
   }
   
@@ -40,7 +40,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   
   func fillGameFruits(for fruit: Fruits) {
     
-    //    self.makeBlur()
+    view?.makeBlur()
     var localCurrentFruitIndex = 0
     
     // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
