@@ -12,6 +12,7 @@ protocol FruitsGamePresenterDelegate: class {
   func viewDidLoad()
   func viewDidDisappear()
   func fillGameFruits(for fruit: Fruits)
+  func restartGame()
 }
 
 final class FruitsGamePresenter: FruitsGamePresenterDelegate {
@@ -29,7 +30,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     view?.makeFruitMenuView()
     view?.makeTimerLabel()
     view?.makeStarsStackView(rate: 5)
-    view?.startTimer(seconds: 1)
+    view?.startTimer(seconds: 4)
     view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
   }
   
@@ -38,9 +39,10 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     view!.visualEffectNavBarView.removeFromSuperview()
   }
   
+  // MARK: - fillGameFruits
   func fillGameFruits(for fruit: Fruits) {
     
-    view?.makeBlur()
+//    view?.makeBlur()
     var localCurrentFruitIndex = 0
     
     // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
@@ -141,5 +143,39 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     }
     
     view!.globalCurrentFruitIndex += 1
+  }
+  
+  // MARK: - restartGame()
+  func restartGame() {
+    UIView.animate(withDuration: 0.6, animations: {
+      self.view!.visualEffectNavBarView.alpha = 0
+      self.view!.visualEffectView.alpha = 0
+      self.view!.popUp.alpha = 0
+    }, completion: { finished in
+      self.view!.fruitsIsHidden = false
+      
+      self.view!.timer        = Timer()
+      self.view!.minutes      = 0
+      self.view!.seconds      = 0
+      self.view!.milliseconds = 0
+      
+      self.view!.globalCurrentFruitIndex = 0
+      self.view!.gameFruitsFillingJump   = 7
+      self.view!.gameFruitsFillingTerm   = 7
+      
+      self.view!.visualEffectNavBarView.removeFromSuperview()
+      self.view!.visualEffectView.removeFromSuperview()
+      self.view!.popUp.removeFromSuperview()
+      
+      self.view!.gameFruits.removeAll()
+      self.view!.gameFruitsViews.removeAll()
+      
+      self.view!.clearFruits()
+      self.view!.makeTimerLabel()
+      self.view!.startTimer(seconds: 4)
+      self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+      
+      
+    })
   }
 }

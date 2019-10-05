@@ -6,14 +6,20 @@
 import Foundation
 
 protocol FruitsGameConfigurator {
-  func configure(of: FruitsGameViewController)
+  func configure(_: FruitsGameViewController)
+  func configure(_: PopUpTopView)
 }
 
 final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
-
-  func configure(of fruitsGameViewController: FruitsGameViewController) {
-    let presenter = FruitsGamePresenter(view: fruitsGameViewController)
-
-    fruitsGameViewController.presenter = presenter
+  var presenter: FruitsGamePresenterDelegate?
+  
+  func configure(_ fruitsGameViewController: FruitsGameViewController) {
+    self.presenter = FruitsGamePresenter(view: fruitsGameViewController)
+    
+    fruitsGameViewController.presenter = self.presenter
+  }
+  
+  func configure(_ popUpTopView: PopUpTopView) {
+    popUpTopView.presenter = self.presenter
   }
 }

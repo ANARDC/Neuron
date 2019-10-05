@@ -10,15 +10,24 @@ import UIKit
 
 // MARK: - Delegate
 protocol FruitsGameViewDelegate {
+  var fruitsIsHidden: Bool { get set }
+  
   var gameFruits: [Fruits] { get set }
   var gameFruitsViews: [UIView] { get set }
   var menuFruitsViews: [UIView] { get set }
+  
+  var timer: Timer { get set }
+  var minutes: Int { get set }
+  var seconds: Int { get set }
+  var milliseconds: Int { get set }
   
   var globalCurrentFruitIndex: Int { get set }
   var gameFruitsFillingJump: Int { get set }
   var gameFruitsFillingTerm: Int { get set }
   
+  var popUp: FluidCardView! { get set }
   var visualEffectNavBarView: CustomIntensityVisualEffectView { get set }
+  var visualEffectView: CustomIntensityVisualEffectView { get set }
   
   func makeRestartButtonImage()
   func makeNavBarTitle()
@@ -29,6 +38,7 @@ protocol FruitsGameViewDelegate {
   func makeStarsStackView(rate: Int)
   func startTimer(seconds: Int)
   func switchMenuFruitsViewsUserInteractionState(for views: [UIView])
+  func clearFruits()
   
   func makeBlur()
   func makeRedCrosses()
@@ -63,8 +73,11 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   var gameFruitsFillingJump   = 7
   var gameFruitsFillingTerm   = 7
 
+  var popUp: FluidCardView!
   var visualEffectNavBarView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light),
                                                                intensity: 0.2)
+  var visualEffectView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light),
+                                                         intensity: 0.2)
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -72,13 +85,28 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
 extension FruitsGameViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    configurator.configure(of: self)
-    presenter.viewDidLoad()
+    self.configurator.configure(self)
+    self.presenter.viewDidLoad()
   }
-
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    if #available(iOS 13.0, *) {
+      navigationController?.navigationBar.setNeedsLayout()
+    }
+  }
+  
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    presenter.viewDidDisappear()
+    self.presenter.viewDidDisappear()
+  }
+}
+
+// MARK: - RestartNavBarButton
+
+extension FruitsGameViewController {
+  @IBAction func restartButton(_ sender: UIBarButtonItem) {
+//    presenter.restartGame()
   }
 }
 
@@ -389,6 +417,13 @@ extension FruitsGameViewController {
       view.image = stars[index]
     }
   }
+  
+  // MARK: - clearFruits
+  func clearFruits() {
+    self.gameFruitsViews.forEach { (fruit) in
+      fruit.removeFromSuperview()
+    }
+  }
 }
 
 // MARK: - Gesture
@@ -485,6 +520,8 @@ extension FruitsGameViewController {
                                  rightViewConstraint,
                                  bottomViewConstraint,
                                  leftViewConstraint])
+    
+    self.visualEffectView = visualEffectView
 
     UIView.animate(withDuration: 0.6, animations: {
       visualEffectNavBarView.alpha = 1
@@ -505,6 +542,10 @@ extension FruitsGameViewController {
     
     popUp.topContentView = topView
     popUp.bottomContentView = bottomView
+    
+    configurator.configure(topView)
+    
+    self.popUp = popUp
     
     view.addSubview(popUp)
 
