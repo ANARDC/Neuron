@@ -106,7 +106,7 @@ extension FruitsGameViewController {
 
 extension FruitsGameViewController {
   @IBAction func restartButton(_ sender: UIBarButtonItem) {
-//    presenter.restartGame()
+    self.presenter.restartGame()
   }
 }
 

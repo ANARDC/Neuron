@@ -150,7 +150,9 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     UIView.animate(withDuration: 0.6, animations: {
       self.view!.visualEffectNavBarView.alpha = 0
       self.view!.visualEffectView.alpha = 0
-      self.view!.popUp.alpha = 0
+      if let popUp = self.view!.popUp {
+        popUp.alpha = 0
+      }
     }, completion: { finished in
       self.view!.fruitsIsHidden = false
       
@@ -165,7 +167,13 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       
       self.view!.visualEffectNavBarView.removeFromSuperview()
       self.view!.visualEffectView.removeFromSuperview()
-      self.view!.popUp.removeFromSuperview()
+      if let popUp = self.view!.popUp {
+        popUp.removeFromSuperview()
+      }
+      
+      self.view!.gameFruitsViews.forEach { (fruitView) in
+        fruitView.removeFromSuperview()
+      }
       
       self.view!.gameFruits.removeAll()
       self.view!.gameFruitsViews.removeAll()
@@ -174,8 +182,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       self.view!.makeTimerLabel()
       self.view!.startTimer(seconds: 4)
       self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-      
-      
+      self.view!.makeStarsStackView(rate: 5)
     })
   }
 }
