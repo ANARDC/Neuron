@@ -830,7 +830,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Плоды" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-nS-8xb">
-                                <rect key="frame" x="14" y="88" width="347.00000000000006" height="241"/>
+                                <rect key="frame" x="14" y="88" width="347" height="241"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e5s-nS-8xb" secondAttribute="height" multiplier="347:241" id="k70-qU-XTH"/>
                                 </constraints>
@@ -853,7 +853,7 @@
                                 <rect key="frame" x="34" y="730" width="307" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjO-Ir-eZy">
-                                        <rect key="frame" x="93.333333333333314" y="12.333333333333369" width="120.66666666666669" height="23.333333333333329"/>
+                                        <rect key="frame" x="97.666666666666657" y="14" width="112" height="20"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -891,13 +891,13 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdP-KC-iHi">
-                                <rect key="frame" x="20.000000000000004" y="337" width="46.333333333333343" height="23.333333333333314"/>
+                                <rect key="frame" x="19.999999999999996" y="337" width="42.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGg-ey-HUT">
-                                <rect key="frame" x="20" y="573" width="335" height="1"/>
+                                <rect key="frame" x="20" y="582" width="335" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="vtD-0I-sHp"/>
@@ -907,7 +907,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please do not take screenshots and other tricks to pass. So you are only deceiving yourself!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vBD-0j-ihR">
-                                <rect key="frame" x="20" y="577" width="335" height="38.333333333333371"/>
+                                <rect key="frame" x="20" y="586" width="335" height="32.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="yzq-R8-eih"/>
                                 </constraints>
@@ -916,7 +916,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ajN-lk-IcC">
-                                <rect key="frame" x="20" y="360.33333333333331" width="335" height="204.66666666666669"/>
+                                <rect key="frame" x="20" y="357" width="335" height="217"/>
                                 <string key="text">For a limited time you will need to place fruits and vegetables in the order in which they were originally presented. 
 With increasing complexity increases the number of fruits and reduces the time to memorize the order. To unlock subsequent difficulty levels, complete the last available level with 3 stars or higher.</string>
                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
@@ -924,7 +924,7 @@ With increasing complexity increases the number of fruits and reduces the time t
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Levels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21C-SJ-9Fk">
-                                <rect key="frame" x="20" y="621" width="53" height="23.333333333333371"/>
+                                <rect key="frame" x="19.999999999999996" y="624.33333333333337" width="48.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
