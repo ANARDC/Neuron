@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - PresenterDelegate
 protocol FruitsGamePresenterDelegate: class {
   func viewDidLoad()
   func viewDidDisappear()
@@ -15,6 +16,7 @@ protocol FruitsGamePresenterDelegate: class {
   func restartGame()
 }
 
+// MARK: - FruitsGamePresenter
 final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   var view: FruitsGameViewDelegate?
 
@@ -23,20 +25,27 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   }
 
   func viewDidLoad() {
-    view?.makeRestartButtonImage()
-    view?.makeNavBarTitle()
-    view?.makeMenuElements(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-    view?.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-    view?.makeFruitMenuView()
-    view?.makeTimerLabel()
-    view?.makeStarsStackView(rate: 5)
-    view?.startTimer(seconds: 4)
-    view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
+    self.view?.makeRestartButtonImage()
+    self.view?.makeNavBarTitle()
+    self.view?.makeMenuElements(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+    self.view?.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+    self.view?.makeFruitMenuView()
+    self.view?.makeTimerLabel()
+    self.view?.makeStarsStackView(rate: 5)
+    self.view?.startTimer(seconds: 4)
+    /*
+     * Пока фрукты у нас не скрыты
+     * мы не даем доступа к фруктам
+     * меню для пользователя
+     */
+    self.view?.switchMenuFruitsViewsUserInteractionState(for: self.view!.menuFruitsViews)
   }
   
   func viewDidDisappear() {
-    view!.visualEffectNavBarView.constraints.forEach { $0.isActive = false }
-    view!.visualEffectNavBarView.removeFromSuperview()
+    if let visualEffectNavBarView = self.view!.visualEffectNavBarView {
+      visualEffectNavBarView.constraints.forEach { $0.isActive = false }
+      visualEffectNavBarView.removeFromSuperview()
+    }
   }
   
   // MARK: - fillGameFruits
@@ -47,116 +56,115 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     
     // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
     // Проверяем входит ли индекс текущего фрукта в диапазоны [9...16], [27...34], [45...52]
-    if [9, 27, 45].contains(view!.globalCurrentFruitIndex - 7 + view!.gameFruitsFillingTerm) {
+    if [9, 27, 45].contains(self.view!.globalCurrentFruitIndex - 7 + self.view!.gameFruitsFillingTerm) {
       // В зависимости от оставшегося количества фруктов задаем размер прыжка
-      if [9, 27, 45].contains(view!.globalCurrentFruitIndex) {
+      if [9, 27, 45].contains(self.view!.globalCurrentFruitIndex) {
         let preFruitsCount = FruitsGameViewController.levelNumber + 7
         let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
-        let lastFruitsCount = fruitsCount - view!.globalCurrentFruitIndex
+        let lastFruitsCount = fruitsCount - self.view!.globalCurrentFruitIndex
         
-        view!.gameFruitsFillingJump = lastFruitsCount > 8 ? 7 : lastFruitsCount - 1
+        self.view!.gameFruitsFillingJump = lastFruitsCount > 8 ? 7 : lastFruitsCount - 1
       }
       // Присваиваем currentFruitIndex нужное значение
-      localCurrentFruitIndex = view!.globalCurrentFruitIndex + view!.gameFruitsFillingJump
+      localCurrentFruitIndex = self.view!.globalCurrentFruitIndex + self.view!.gameFruitsFillingJump
       // Уменьшаем шаг на 2 во всех случаях
-      view!.gameFruitsFillingJump -= 2
+      self.view!.gameFruitsFillingJump -= 2
       // Чтобы не выходить за рамки [9...16], [27...34], [45...52] останавливаем вычитание в проверке выше
-      view!.gameFruitsFillingTerm -= view!.gameFruitsFillingTerm > 0 ? 1 : 0
-    } else if [17, 35].contains(view!.globalCurrentFruitIndex) {
+      self.view!.gameFruitsFillingTerm -= self.view!.gameFruitsFillingTerm > 0 ? 1 : 0
+    } else if [17, 35].contains(self.view!.globalCurrentFruitIndex) {
       // Присваиваем currentFruitIndex нужное значение
-      localCurrentFruitIndex = view!.globalCurrentFruitIndex
+      localCurrentFruitIndex = self.view!.globalCurrentFruitIndex
       // Установка значений
-      view!.gameFruitsFillingJump = 7
-      view!.gameFruitsFillingTerm = 7
+      self.view!.gameFruitsFillingJump = 7
+      self.view!.gameFruitsFillingTerm = 7
     } else {
       // Присваиваем currentFruitIndex нужное значение
-      localCurrentFruitIndex = view!.globalCurrentFruitIndex
+      localCurrentFruitIndex = self.view!.globalCurrentFruitIndex
     }
     
     //        print(localCurrentFruitIndex)
     
     
     // Проверяем верно ли тапнул юзер
-    guard view!.gameFruits[localCurrentFruitIndex] == fruit else {
-      view?.invalidateTimer()
-      view?.changeTimerLabel()
-      view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
+    guard self.view!.gameFruits[localCurrentFruitIndex] == fruit else {
+      self.view!.invalidateTimer()
+      self.view!.changeTimerLabel()
+      /*
+       * Когда юзер ошибся
+       * выключаем доступ
+       * к меню фруктов
+       */
+      self.view!.switchMenuFruitsViewsUserInteractionState(for: self.view!.menuFruitsViews)
+      self.view!.gamePassed = false
       
-      // Меняем текущий фрукт на красный крестик
-      let currentGameFruit = view!.gameFruitsViews[localCurrentFruitIndex]
+      // Получаем текущий фрукт в змейке (!!!)
+      let currentGameFruit = self.view!.gameFruitsViews[localCurrentFruitIndex]
       
       let errorFruitView = UIImageView()
       errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
       errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
       
+      // Меняем серый крестик на красный
       currentGameFruit.subviews.last?.removeFromSuperview()
       currentGameFruit.addSubview(errorFruitView)
       
-      
-      /* Так как сюда мы попадаем только если
+      /*
+       * Так как сюда мы попадаем только если
        * пользователь неправильно ввел фрукт, то
        * нам необходимо довыполнить необходимую
        * операцию self.globalCurrentFruitIndex += 1
        */
-      view!.globalCurrentFruitIndex += 1
+      self.view!.globalCurrentFruitIndex += 1
       // Меняем оставшиеся фрукты на красные крестики
-      view?.makeRedCrosses()
+      self.view!.makeRedCrosses()
       return
     }
     
-    let currentGameFruit = view!.gameFruitsViews[localCurrentFruitIndex]
+    // Получаем текущий фрукт в змейке (!!!)
+    let currentGameFruit = self.view!.gameFruitsViews[localCurrentFruitIndex]
     
+    // Убираем с него серую звезду
     currentGameFruit.subviews.last?.removeFromSuperview()
     currentGameFruit.subviews.last?.isHidden = false
     currentGameFruit.shadowOpacity = 1
     currentGameFruit.borderWidth = 1
     
-    
+    // Находим количество фруктов на данном уровне
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
     let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
     
+    // Если фрукт равен последнему в змейке (!!!), то заканчиваем
     switch fruitsCount {
-    case 10...17:
-      if currentGameFruit == view!.gameFruitsViews[9] {
-        view?.invalidateTimer()
-        view?.makeBlur()
-        view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
-      }
-    case 28...35:
-      if currentGameFruit == view!.gameFruitsViews[27] {
-        view?.invalidateTimer()
-        view?.makeBlur()
-        view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
-      }
-    case 46...53:
-      if currentGameFruit == view!.gameFruitsViews[45] {
-        view?.invalidateTimer()
-        view?.makeBlur()
-        view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
-      }
-    default:
-      if currentGameFruit == view!.gameFruitsViews.last {
-        view?.invalidateTimer()
-        view?.makeBlur()
-        view?.switchMenuFruitsViewsUserInteractionState(for: view!.menuFruitsViews)
-      }
+    case 10...17: if currentGameFruit == self.view!.gameFruitsViews[9]   { self.finishGame() }
+    case 28...35: if currentGameFruit == self.view!.gameFruitsViews[27]  { self.finishGame() }
+    case 46...53: if currentGameFruit == self.view!.gameFruitsViews[45]  { self.finishGame() }
+    default:      if currentGameFruit == self.view!.gameFruitsViews.last { self.finishGame() }
     }
     
-    view!.globalCurrentFruitIndex += 1
+    self.view!.globalCurrentFruitIndex += 1
+  }
+  
+  func finishGame() {
+    self.view?.invalidateTimer()
+    self.view?.makeBlur()
+    /*
+     * Когда игра закончена
+     * выключаем доступ юзеру
+     * к меню фруктов
+     */
+    self.view?.switchMenuFruitsViewsUserInteractionState(for: self.view!.menuFruitsViews)
+    self.view?.gamePassed = true
   }
   
   // MARK: - restartGame()
   func restartGame() {
     UIView.animate(withDuration: 0.6, animations: {
-      self.view!.visualEffectNavBarView.alpha = 0
-      self.view!.visualEffectView.alpha = 0
-      if let popUp = self.view!.popUp {
-        popUp.alpha = 0
+      if let gamePassed = self.view!.gamePassed, gamePassed {
+        self.view!.visualEffectNavBarView!.alpha = 0
+        self.view!.visualEffectView!.alpha = 0
+        self.view!.popUp!.alpha = 0
       }
     }, completion: { finished in
-      self.view!.fruitsIsHidden = false
-      
-      self.view!.timer        = Timer()
       self.view!.minutes      = 0
       self.view!.seconds      = 0
       self.view!.milliseconds = 0
@@ -165,24 +173,93 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       self.view!.gameFruitsFillingJump   = 7
       self.view!.gameFruitsFillingTerm   = 7
       
-      self.view!.visualEffectNavBarView.removeFromSuperview()
-      self.view!.visualEffectView.removeFromSuperview()
-      if let popUp = self.view!.popUp {
-        popUp.removeFromSuperview()
-      }
-      
-      self.view!.gameFruitsViews.forEach { (fruitView) in
-        fruitView.removeFromSuperview()
-      }
+      self.view!.clearFruits()
       
       self.view!.gameFruits.removeAll()
       self.view!.gameFruitsViews.removeAll()
       
-      self.view!.clearFruits()
-      self.view!.makeTimerLabel()
-      self.view!.startTimer(seconds: 4)
       self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
       self.view!.makeStarsStackView(rate: 5)
+      
+      // Логика рестарта
+      if let gamePassed = self.view!.gamePassed {
+        switch gamePassed {
+        case true:
+          /*
+           * Если игра пройдена, то
+           * убираем PopUp и Blur
+           * перезагружаем таймер
+           * сохраняем данные
+           * меняем gamePassed с true на nil
+           */
+          self.view!.visualEffectNavBarView!.removeFromSuperview()
+          self.view!.visualEffectView!.removeFromSuperview()
+          self.view!.popUp!.removeFromSuperview()
+          
+          self.view!.invalidateTimer()
+          self.view!.makeTimerLabel()
+          self.view!.startTimer(seconds: 4)
+          
+          self.view!.gamePassed = nil
+          
+          self.view!.fruitsIsHidden = false
+        case false:
+          /*
+           * Если был нажат неверный фрукт, то
+           * перезагружаем таймер
+           * сохраняем данные
+           * меняем gamePassed с false на nil
+           */
+          self.view!.invalidateTimer()
+          self.view!.startTimer(seconds: 4)
+          
+          self.view!.gamePassed = nil
+          
+          self.view!.fruitsIsHidden = false
+        }
+      } else {
+        switch self.view!.fruitsIsHidden {
+        case true:
+          /*
+           * Если фрукты спрятаны, то
+           * меняем свойство fruitsIsHidden
+           * делаем таймер красным
+           * ставим дефолтные значения измерений таймера
+           */
+          self.view!.fruitsIsHidden = false
+          self.view!.makeTimerLabel()
+          self.view!.minutes = 0
+          self.view!.seconds = 4
+          self.view!.milliseconds = 0
+          
+          /*
+           * Так как доступ к меню
+           * для пользователя чередуется,
+           * то необходимо тут выключать
+           * доступ перед рестартом
+           */
+          self.view!.menuFruitsViews.forEach { fruit in
+            fruit.isUserInteractionEnabled = false
+          }
+        case false:
+          /*
+           * Если фрукты еще видны, то
+           * ставим дефолтные значения измерений таймера
+           */
+          self.view!.seconds = 4
+          self.view!.milliseconds = 0
+          
+          /*
+           * Так как доступ к меню
+           * для пользователя чередуется,
+           * то необходимо тут выключать
+           * доступ перед рестартом
+           */
+          self.view!.menuFruitsViews.forEach { fruit in
+            fruit.isUserInteractionEnabled = false
+          }
+        }
+      }
     })
   }
 }

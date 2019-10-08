@@ -12,6 +12,8 @@ import UIKit
 protocol FruitsGameViewDelegate {
   var fruitsIsHidden: Bool { get set }
   
+  var gamePassed: Bool? { get set }
+  
   var gameFruits: [Fruits] { get set }
   var gameFruitsViews: [UIView] { get set }
   var menuFruitsViews: [UIView] { get set }
@@ -25,9 +27,9 @@ protocol FruitsGameViewDelegate {
   var gameFruitsFillingJump: Int { get set }
   var gameFruitsFillingTerm: Int { get set }
   
-  var popUp: FluidCardView! { get set }
-  var visualEffectNavBarView: CustomIntensityVisualEffectView { get set }
-  var visualEffectView: CustomIntensityVisualEffectView { get set }
+  var popUp: FluidCardView? { get set }
+  var visualEffectNavBarView: CustomIntensityVisualEffectView? { get set }
+  var visualEffectView: CustomIntensityVisualEffectView? { get set }
   
   func makeRestartButtonImage()
   func makeNavBarTitle()
@@ -59,6 +61,8 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   static var levelNumber = 0
 
   var fruitsIsHidden = false
+  
+  var gamePassed: Bool? = nil
 
   var gameFruits      = [Fruits]()
   var gameFruitsViews = [UIView]()
@@ -73,11 +77,9 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   var gameFruitsFillingJump   = 7
   var gameFruitsFillingTerm   = 7
 
-  var popUp: FluidCardView!
-  var visualEffectNavBarView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light),
-                                                               intensity: 0.2)
-  var visualEffectView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light),
-                                                         intensity: 0.2)
+  var popUp: FluidCardView? = nil
+  var visualEffectNavBarView: CustomIntensityVisualEffectView? = nil
+  var visualEffectView: CustomIntensityVisualEffectView? = nil
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -98,7 +100,7 @@ extension FruitsGameViewController {
   
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    self.presenter.viewDidDisappear()
+//    self.presenter.viewDidDisappear()
   }
 }
 
@@ -116,6 +118,7 @@ extension FruitsGameViewController {
   
   // MARK: - startTimer
   func startTimer(seconds: Int) {
+    self.minutes = 0
     self.seconds = seconds
     self.milliseconds = 0
     self.timer = Timer.scheduledTimer(timeInterval: 1/60,
@@ -137,6 +140,11 @@ extension FruitsGameViewController {
       if self.seconds == 0 && self.milliseconds == 0 {
         self.fruitsIsHidden = true
         self.makeGrayCrosses()
+        /*
+         * Как только фрукты скрылись
+         * даем пользователю возможность
+         * вводить фрукты
+         */
         self.switchMenuFruitsViewsUserInteractionState(for: self.menuFruitsViews)
         return
       }
@@ -176,16 +184,16 @@ extension FruitsGameViewController {
   
   // MARK: - makeGrayCrosses
   func makeGrayCrosses() {
-    self.gameFruitsViews.forEach { (fruit) in
+    self.gameFruitsViews.forEach { (fruitView) in
       let unsolvedFruitView = UIImageView()
       unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
       unsolvedFruitView.image = #imageLiteral(resourceName: "Неразгаданный фрукт")
       
-      fruit.backgroundColor = .clear
-      fruit.shadowOpacity   = 0
-      fruit.borderWidth     = 0
-      fruit.subviews.last?.isHidden = true
-      fruit.addSubview(unsolvedFruitView)
+      fruitView.backgroundColor = .clear
+      fruitView.shadowOpacity   = 0
+      fruitView.borderWidth     = 0
+      fruitView.subviews.last?.isHidden = true
+      fruitView.addSubview(unsolvedFruitView)
     }
   }
 }
@@ -207,7 +215,7 @@ extension FruitsGameViewController {
   // MARK: - switchMenuFruitsViewsUserInteractionState
   func switchMenuFruitsViewsUserInteractionState(for views: [UIView]) {
     views.forEach { fruit in
-      fruit.isUserInteractionEnabled = fruit.isUserInteractionEnabled ? false : true
+      fruit.isUserInteractionEnabled = !fruit.isUserInteractionEnabled
     }
   }
 
@@ -237,7 +245,7 @@ extension FruitsGameViewController {
     }
 
     self.menuFruitsViews.enumerated().forEach { (index, fruit) in
-      addTapGesture(for: fruit, fruit: Fruits.allCases[index])
+      self.addTapGesture(for: fruit, fruit: Fruits.allCases[index])
     }
 
     switch typesCount {
@@ -420,8 +428,8 @@ extension FruitsGameViewController {
   
   // MARK: - clearFruits
   func clearFruits() {
-    self.gameFruitsViews.forEach { (fruit) in
-      fruit.removeFromSuperview()
+    self.gameFruitsViews.forEach { (fruitView) in
+      fruitView.removeFromSuperview()
     }
   }
 }
@@ -452,27 +460,27 @@ extension FruitsGameViewController {
     view.addGestureRecognizer(gesture)
   }
 
-  @objc func appleSelector() { presenter.fillGameFruits(for: .apple) }
+  @objc func appleSelector()      { presenter.fillGameFruits(for: .apple) }
 
-  @objc func bananaSelector() { presenter.fillGameFruits(for: .banana) }
+  @objc func bananaSelector()     { presenter.fillGameFruits(for: .banana) }
 
-  @objc func broccoliSelector() { presenter.fillGameFruits(for: .broccoli) }
+  @objc func broccoliSelector()   { presenter.fillGameFruits(for: .broccoli) }
 
-  @objc func carrotSelector() { presenter.fillGameFruits(for: .carrot) }
+  @objc func carrotSelector()     { presenter.fillGameFruits(for: .carrot) }
 
-  @objc func cornSelector() { presenter.fillGameFruits(for: .corn) }
+  @objc func cornSelector()       { presenter.fillGameFruits(for: .corn) }
 
-  @objc func grapeSelector() { presenter.fillGameFruits(for: .grape) }
+  @objc func grapeSelector()      { presenter.fillGameFruits(for: .grape) }
 
-  @objc func lemonSelector() { presenter.fillGameFruits(for: .lemon) }
+  @objc func lemonSelector()      { presenter.fillGameFruits(for: .lemon) }
 
-  @objc func onionSelector() { presenter.fillGameFruits(for: .onion) }
+  @objc func onionSelector()      { presenter.fillGameFruits(for: .onion) }
 
-  @objc func orangeSelector() { presenter.fillGameFruits(for: .orange) }
+  @objc func orangeSelector()     { presenter.fillGameFruits(for: .orange) }
 
-  @objc func pearSelector() { presenter.fillGameFruits(for: .pear) }
+  @objc func pearSelector()       { presenter.fillGameFruits(for: .pear) }
 
-  @objc func tomatoSelector() { presenter.fillGameFruits(for: .tomato) }
+  @objc func tomatoSelector()     { presenter.fillGameFruits(for: .tomato) }
 
   @objc func watermelonSelector() { presenter.fillGameFruits(for: .watermelon) }
 }
