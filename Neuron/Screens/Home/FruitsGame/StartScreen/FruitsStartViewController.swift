@@ -17,13 +17,14 @@ final class FruitsStartViewController: UIViewController {
   @IBOutlet weak var rightArrow: UIImageView!
   @IBOutlet weak var chooseViewLabel: UILabel!
 
-
   static var levelNumber = 1
   var choosenLevelNumber = 1
 
   var selectedCell: UICollectionViewCell? = nil
 
   let animationsDuration = 0.4
+  
+  private var accessLevel: Int!
 }
 
 // MARK: - FruitsStartViewController Life Cycle
@@ -31,14 +32,17 @@ final class FruitsStartViewController: UIViewController {
 extension FruitsStartViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    navBarSetting()
-    collectionViewSetting()
-    chooseButtonAppearance()
+    self.navBarSetting()
+    self.collectionViewSetting()
+    self.chooseButtonAppearance()
+    self.getAccessLevel()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     self.tabBarController?.tabBar.isHidden = true
+    self.getAccessLevel()
+    self.levelsCollectionView.reloadData()
   }
 }
 
@@ -51,6 +55,23 @@ extension FruitsStartViewController {
     guard chooseBackgroundView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) else { return }
     FruitsGameViewController.levelNumber = choosenLevelNumber
     performSegue(withIdentifier: "startGameFruitSegue", sender: nil)
+  }
+}
+
+// MARK: - CheckAccessLevel
+
+extension FruitsStartViewController {
+  
+  func getAccessLevel() {
+    let userDefaults = UserDefaults.standard
+    let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
+    
+    if userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey) == 0 {
+      userDefaults.set(4, forKey: userDefaultsFruitsGameAccessLevelKey)
+      self.accessLevel = 4
+    } else {
+      self.accessLevel = userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey)
+    }
   }
 }
 
@@ -86,7 +107,7 @@ extension FruitsStartViewController {
 
 extension FruitsStartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 50
+    return self.accessLevel
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

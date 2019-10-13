@@ -8,6 +8,7 @@ import Foundation
 protocol FruitsGameConfigurator {
   func configure(_: FruitsGameViewController)
   func configure(_: PopUpTopView)
+  func configure(_: PopUpBottomView)
 }
 
 final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
@@ -21,5 +22,9 @@ final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
   
   func configure(_ popUpTopView: PopUpTopView) {
     popUpTopView.presenter = self.presenter
+  }
+  
+  func configure(_ popUpBottomView: PopUpBottomView) {
+    popUpBottomView.presenter = self.presenter
   }
 }

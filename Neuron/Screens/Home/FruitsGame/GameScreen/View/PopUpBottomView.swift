@@ -9,6 +9,7 @@
 import UIKit
 
 final class PopUpBottomView: UIView {
+  private var accessLevel: Int!
   
   // MARK: - Properties
   @IBOutlet weak var levelsCollectionView: UICollectionView!
@@ -25,20 +26,21 @@ final class PopUpBottomView: UIView {
   // MARK: - init
   override init(frame: CGRect) {
     super.init(frame: frame)
-    start()
+    self.start()
   }
   
   // MARK: - required init
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    start()
+    self.start()
   }
   
   // MARK: - start
-  func start() {
-    setup()
-    collectionViewSetting()
-    chooseButtonAppearance()
+  private func start() {
+    self.setup()
+    self.collectionViewSetting()
+    self.chooseButtonAppearance()
+    self.getAccessLevel()
   }
   
   // MARK: - startGame IBAction
@@ -46,6 +48,18 @@ final class PopUpBottomView: UIView {
     guard chooseBackgroundView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) else { return }
     FruitsGameViewController.levelNumber = choosenLevelNumber
     print("\(choosenLevelNumber)")
+  }
+}
+
+// MARK: - CheckAccessLevel
+
+extension PopUpBottomView {
+  
+  func getAccessLevel() {
+    let userDefaults = UserDefaults.standard
+    let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
+    
+    self.accessLevel = userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey)
   }
 }
 
@@ -68,27 +82,27 @@ extension PopUpBottomView {
     view.frame = bounds
     view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     
-    addSubview(view)
+    self.addSubview(view)
   }
 }
 
 // MARK: - chooseButtonAppearance
 extension PopUpBottomView {
   func chooseButtonAppearance() {
-    chooseBackgroundView.backgroundColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
-    chooseBackgroundView.shadowColor     = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
-    chooseBackgroundView.shadowOpacity   = 1
-    chooseBackgroundView.shadowRadius    = 14
-    chooseBackgroundView.shadowOffset    = CGSize(width: 0, height: 11)
-    chooseBackgroundView.cornerRadius    = 8
-    chooseBackgroundView.borderWidth     = 2
-    chooseBackgroundView.borderColor     = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
+    self.chooseBackgroundView.backgroundColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
+    self.chooseBackgroundView.shadowColor     = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
+    self.chooseBackgroundView.shadowOpacity   = 1
+    self.chooseBackgroundView.shadowRadius    = 14
+    self.chooseBackgroundView.shadowOffset    = CGSize(width: 0, height: 11)
+    self.chooseBackgroundView.cornerRadius    = 8
+    self.chooseBackgroundView.borderWidth     = 2
+    self.chooseBackgroundView.borderColor     = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1).cgColor
     
-    (leftArrow.image, rightArrow.image) = (UIImage(named: "Далее"), UIImage(named: "Далее"))
+    (self.leftArrow.image, self.rightArrow.image) = (UIImage(named: "Далее"), UIImage(named: "Далее"))
     
-    chooseViewLabel.text      = "Choose a level"
-    chooseViewLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1)
-    chooseViewLabel.font      = UIFont(name: "NotoSans-Bold", size: 20)
+    self.chooseViewLabel.text      = "Choose a level"
+    self.chooseViewLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 1)
+    self.chooseViewLabel.font      = UIFont(name: "NotoSans-Bold", size: 20)
   }
 }
 
@@ -98,7 +112,7 @@ extension PopUpBottomView: UICollectionViewDelegate, UICollectionViewDataSource,
   
   // MARK: - numberOfItemsInSection
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 50
+    return self.accessLevel
   }
   
   // MARK: - cellForItemAt

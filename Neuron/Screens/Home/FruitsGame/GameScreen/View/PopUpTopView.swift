@@ -10,6 +10,7 @@ import UIKit
 
 final class PopUpTopView: UIView {
   var presenter: FruitsGamePresenterDelegate?
+  var accessLevel: Int!
   
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet var stars: [UIImageView]!
@@ -24,6 +25,7 @@ final class PopUpTopView: UIView {
   }
   
   @IBAction func nextButton(_ sender: UIButton) {
+    self.presenter?.startNextLevel()
   }
   
   // MARK: - init

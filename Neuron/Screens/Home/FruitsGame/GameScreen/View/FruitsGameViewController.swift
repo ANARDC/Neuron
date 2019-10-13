@@ -33,7 +33,7 @@ protocol FruitsGameViewDelegate {
   
   func makeRestartButtonImage()
   func makeNavBarTitle()
-  func makeMenuElements(typesCount: Int)
+  func makeMenuFruits(typesCount: Int)
   func makeGameFruits(typesCount: Int)
   func makeFruitMenuView()
   func makeTimerLabel()
@@ -235,8 +235,8 @@ extension FruitsGameViewController {
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
   }
 
-  // MARK: - makeMenuElements
-  func makeMenuElements(typesCount: Int) {
+  // MARK: - makeMenuFruits
+  func makeMenuFruits(typesCount: Int) {
     var mainStackView = UIStackView()
 
     for i in 0..<typesCount {
@@ -551,11 +551,12 @@ extension FruitsGameViewController {
     popUp.topContentView = topView
     popUp.bottomContentView = bottomView
     
-    configurator.configure(topView)
+    self.configurator.configure(topView)
+    self.configurator.configure(bottomView)
     
     self.popUp = popUp
     
-    view.addSubview(popUp)
+    self.view.addSubview(popUp)
 
     let topViewConstraint     = popUp.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 204)
     let widthViewConstraint   = popUp.widthAnchor.constraint(equalToConstant: 297)
