@@ -428,8 +428,12 @@ extension FruitsGameViewController {
   
   // MARK: - clearFruits
   func clearFruits() {
-    self.gameFruitsViews.forEach { (fruitView) in
-      fruitView.removeFromSuperview()
+    self.gameFruitsViews.forEach { (gameFruitView) in
+      gameFruitView.removeFromSuperview()
+    }
+    
+    self.menuFruitsViews.forEach { (menuFruitView) in
+      menuFruitView.removeFromSuperview()
     }
   }
 }

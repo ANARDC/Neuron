@@ -15,6 +15,7 @@ protocol FruitsGamePresenterDelegate: class {
   func fillGameFruits(for fruit: Fruits)
   func restartGame()
   func startNextLevel()
+  func startNewGame(choosenLevelNumber: Int)
 }
 
 // MARK: - FruitsGamePresenter
@@ -191,7 +192,9 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       
       self.view!.gameFruits.removeAll()
       self.view!.gameFruitsViews.removeAll()
+      self.view!.menuFruitsViews.removeAll()
       
+      self.view!.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
       self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
       self.view!.makeStarsStackView(rate: 5)
       
@@ -203,7 +206,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
            * Если игра пройдена, то
            * убираем PopUp и Blur
            * перезагружаем таймер
-           * сохраняем данные
+           * TODO: - сохраняем данные
            * меняем gamePassed с true на nil
            */
           self.view!.visualEffectNavBarView!.removeFromSuperview()
@@ -221,7 +224,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
           /*
            * Если был нажат неверный фрукт, то
            * перезагружаем таймер
-           * сохраняем данные
+           * TODO: - сохраняем данные
            * меняем gamePassed с false на nil
            */
           self.view!.invalidateTimer()
@@ -274,6 +277,10 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
           }
         }
       }
+      
+      self.view!.menuFruitsViews.forEach { fruit in
+        fruit.isUserInteractionEnabled = false
+      }
     })
   }
   
@@ -284,7 +291,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * только с окна PopUp,
      * поэтому убираем PopUp и Blur
      * перезагружаем таймер
-     * сохраняем данные
+     * TODO: - сохраняем данные
      * меняем gamePassed с true на nil,
      * но при этом еще меняем
      * уровень доступа
@@ -309,6 +316,61 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       self.view!.menuFruitsViews.removeAll()
       
       FruitsGameViewController.levelNumber += 1
+      
+      self.view!.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+      self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+      self.view!.makeStarsStackView(rate: 5)
+      
+      self.view!.visualEffectNavBarView!.removeFromSuperview()
+      self.view!.visualEffectView!.removeFromSuperview()
+      self.view!.popUp!.removeFromSuperview()
+      
+      self.view!.invalidateTimer()
+      self.view!.makeTimerLabel()
+      self.view!.startTimer(seconds: 4)
+      
+      self.view!.makeNavBarTitle()
+      
+      self.view!.gamePassed = nil
+      
+      self.view!.fruitsIsHidden = false
+      
+      self.view!.menuFruitsViews.forEach { fruit in
+        fruit.isUserInteractionEnabled = false
+      }
+    })
+  }
+  
+  // MARK: - startNewGame()
+  func startNewGame(choosenLevelNumber: Int) {
+    /*
+     * Эта функция срабатывает
+     * только с окна PopUp,
+     * поэтому убираем PopUp и Blur
+     * перезагружаем таймер
+     * TODO: - сохраняем данные
+     * меняем gamePassed с true на nil
+     */
+    UIView.animate(withDuration: 0.6, animations: {
+      self.view!.visualEffectNavBarView!.alpha = 0
+      self.view!.visualEffectView!.alpha = 0
+      self.view!.popUp!.alpha = 0
+    }, completion: { finished in
+      self.view!.minutes      = 0
+      self.view!.seconds      = 0
+      self.view!.milliseconds = 0
+      
+      self.view!.globalCurrentFruitIndex = 0
+      self.view!.gameFruitsFillingJump   = 7
+      self.view!.gameFruitsFillingTerm   = 7
+      
+      self.view!.clearFruits()
+      
+      self.view!.gameFruits.removeAll()
+      self.view!.gameFruitsViews.removeAll()
+      self.view!.menuFruitsViews.removeAll()
+      
+      FruitsGameViewController.levelNumber = choosenLevelNumber
       
       self.view!.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
       self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))

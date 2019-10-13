@@ -9,6 +9,7 @@
 import UIKit
 
 final class PopUpBottomView: UIView {
+  var presenter: FruitsGamePresenterDelegate?
   private var accessLevel: Int!
   
   // MARK: - Properties
@@ -46,12 +47,11 @@ final class PopUpBottomView: UIView {
   // MARK: - startGame IBAction
   @IBAction func starsGame(_ sender: UITapGestureRecognizer) {
     guard chooseBackgroundView.backgroundColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1) else { return }
-    FruitsGameViewController.levelNumber = choosenLevelNumber
-    print("\(choosenLevelNumber)")
+    self.presenter!.startNewGame(choosenLevelNumber: choosenLevelNumber)
   }
 }
 
-// MARK: - CheckAccessLevel
+// MARK: - getAccessLevel()
 
 extension PopUpBottomView {
   
