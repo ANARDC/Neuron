@@ -41,6 +41,15 @@ protocol FruitsGameViewDelegate {
   func startTimer(seconds: Int)
   func switchMenuFruitsViewsUserInteractionState(for views: [UIView])
   func clearFruits()
+  func increaseAccessLevel()
+  func clearPopUp()
+  func hidePopUp()
+  func returnTimerValues()
+  func returnFillingValues()
+  func removeFruits()
+  func makeFruits()
+  func makeTimer()
+  func disableMenuFruitsViews()
   
   func makeBlur()
   func makeRedCrosses()
@@ -434,6 +443,70 @@ extension FruitsGameViewController {
     
     self.menuFruitsViews.forEach { (menuFruitView) in
       menuFruitView.removeFromSuperview()
+    }
+  }
+  
+  // MARK: - increaseAccessLevel()
+  func increaseAccessLevel() {
+    let userDefaults = UserDefaults.standard
+    let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
+    let currentAccessLevel = userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey)
+    
+    userDefaults.set(currentAccessLevel+1, forKey: userDefaultsFruitsGameAccessLevelKey)
+  }
+  
+  // MARK: clearPopUp()
+  func clearPopUp() {
+    self.visualEffectNavBarView!.removeFromSuperview()
+    self.visualEffectView!.removeFromSuperview()
+    self.popUp!.removeFromSuperview()
+  }
+  
+  // MARK: - hidePopUp()
+  func hidePopUp() {
+    self.visualEffectNavBarView!.alpha = 0
+    self.visualEffectView!.alpha = 0
+    self.popUp!.alpha = 0
+  }
+  
+  // MARK: - returnTimerValues()
+  func returnTimerValues() {
+    self.minutes      = 0
+    self.seconds      = 0
+    self.milliseconds = 0
+  }
+  
+  // MARK: - returnFillingValues()
+  func returnFillingValues() {
+    self.globalCurrentFruitIndex = 0
+    self.gameFruitsFillingJump   = 7
+    self.gameFruitsFillingTerm   = 7
+  }
+  
+  // MARK: - removeFruits()
+  func removeFruits() {
+    self.gameFruits.removeAll()
+    self.gameFruitsViews.removeAll()
+    self.menuFruitsViews.removeAll()
+  }
+  
+  // MARK: - makeFruits()
+  func makeFruits() {
+    self.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+    self.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
+  }
+  
+  // MARK: - makeTimer()
+  func makeTimer() {
+    self.invalidateTimer()
+    self.makeTimerLabel()
+    self.startTimer(seconds: 4)
+  }
+  
+  // MARK: - disableMenuFruitsViews()
+  func disableMenuFruitsViews() {
+    self.menuFruitsViews.forEach { fruit in
+      fruit.isUserInteractionEnabled = false
     }
   }
 }

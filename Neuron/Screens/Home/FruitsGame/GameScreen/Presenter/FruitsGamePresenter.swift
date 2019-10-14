@@ -158,7 +158,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * если был пройден последний уровень
      */
     if UserDefaults.standard.integer(forKey: "fruitsGameAccessLevel") == FruitsGameViewController.levelNumber && UserDefaults.standard.integer(forKey: "fruitsGameAccessLevel") <= 50 {
-      self.increaseAccessLevel()
+      self.view!.increaseAccessLevel()
     }
   }
   
@@ -166,14 +166,14 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   func restartGame() {
     UIView.animate(withDuration: 0.6, animations: {
       if let gamePassed = self.view!.gamePassed, gamePassed {
-        self.hidePopUp()
+        self.view!.hidePopUp()
       }
     }, completion: { finished in
-      self.returnTimerValues()
-      self.returnFillingValues()
+      self.view!.returnTimerValues()
+      self.view!.returnFillingValues()
       self.view!.clearFruits()
-      self.removeFruits()
-      self.makeFruits()
+      self.view!.removeFruits()
+      self.view!.makeFruits()
       self.view!.makeStarsStackView(rate: 5)
       
       // Логика рестарта
@@ -187,8 +187,8 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
            * TODO: - сохраняем данные
            * меняем gamePassed с true на nil
            */
-          self.clearPopUp()
-          self.makeTimer()
+          self.view!.clearPopUp()
+          self.view!.makeTimer()
           self.view!.gamePassed = nil
           self.view!.fruitsIsHidden = false
         case false:
@@ -198,7 +198,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
            * TODO: - сохраняем данные
            * меняем gamePassed с false на nil
            */
-          self.makeTimer()
+          self.view!.makeTimer()
           self.view!.gamePassed = nil
           self.view!.fruitsIsHidden = false
         }
@@ -232,7 +232,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
        * то необходимо тут выключать
        * доступ перед рестартом
        */
-      self.disableMenuFruitsViews()
+      self.view!.disableMenuFruitsViews()
     })
   }
   
@@ -249,21 +249,21 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * уровень доступа
      */
     UIView.animate(withDuration: 0.6, animations: {
-      self.hidePopUp()
+      self.view!.hidePopUp()
     }, completion: { finished in
-      self.returnTimerValues()
-      self.returnFillingValues()
+      self.view!.returnTimerValues()
+      self.view!.returnFillingValues()
       self.view!.clearFruits()
-      self.removeFruits()
+      self.view!.removeFruits()
       FruitsGameViewController.levelNumber += 1
-      self.makeFruits()
+      self.view!.makeFruits()
       self.view!.makeStarsStackView(rate: 5)
-      self.clearPopUp()
-      self.makeTimer()
+      self.view!.clearPopUp()
+      self.view!.makeTimer()
       self.view!.makeNavBarTitle()
       self.view!.gamePassed = nil
       self.view!.fruitsIsHidden = false
-      self.disableMenuFruitsViews()
+      self.view!.disableMenuFruitsViews()
     })
   }
   
@@ -278,91 +278,21 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * меняем gamePassed с true на nil
      */
     UIView.animate(withDuration: 0.6, animations: {
-      self.hidePopUp()
+      self.view!.hidePopUp()
     }, completion: { finished in
-      self.returnTimerValues()
-      self.returnFillingValues()
+      self.view!.returnTimerValues()
+      self.view!.returnFillingValues()
       self.view!.clearFruits()
-      self.removeFruits()
+      self.view!.removeFruits()
       FruitsGameViewController.levelNumber = choosenLevelNumber
-      self.makeFruits()
+      self.view!.makeFruits()
       self.view!.makeStarsStackView(rate: 5)
-      self.clearPopUp()
-      self.makeTimer()
+      self.view!.clearPopUp()
+      self.view!.makeTimer()
       self.view!.makeNavBarTitle()
       self.view!.gamePassed = nil
       self.view!.fruitsIsHidden = false
-      self.disableMenuFruitsViews()
+      self.view!.disableMenuFruitsViews()
     })
-  }
-}
-
-// TODO: - Take it in view
-// MARK: - Helpers
-
-private extension FruitsGamePresenter {
-  
-  // MARK: - increaseAccessLevel()
-  func increaseAccessLevel() {
-    let userDefaults = UserDefaults.standard
-    let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
-    let currentAccessLevel = userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey)
-    
-    userDefaults.set(currentAccessLevel+1, forKey: userDefaultsFruitsGameAccessLevelKey)
-  }
-  
-  // MARK: clearPopUp()
-  func clearPopUp() {
-    self.view!.visualEffectNavBarView!.removeFromSuperview()
-    self.view!.visualEffectView!.removeFromSuperview()
-    self.view!.popUp!.removeFromSuperview()
-  }
-  
-  // MARK: - hidePopUp()
-  func hidePopUp() {
-    self.view!.visualEffectNavBarView!.alpha = 0
-    self.view!.visualEffectView!.alpha = 0
-    self.view!.popUp!.alpha = 0
-  }
-  
-  // MARK: - returnTimerValues()
-  func returnTimerValues() {
-    self.view!.minutes      = 0
-    self.view!.seconds      = 0
-    self.view!.milliseconds = 0
-  }
-  
-  // MARK: - returnFillingValues()
-  func returnFillingValues() {
-    self.view!.globalCurrentFruitIndex = 0
-    self.view!.gameFruitsFillingJump   = 7
-    self.view!.gameFruitsFillingTerm   = 7
-  }
-  
-  // MARK: - removeFruits()
-  func removeFruits() {
-    self.view!.gameFruits.removeAll()
-    self.view!.gameFruitsViews.removeAll()
-    self.view!.menuFruitsViews.removeAll()
-  }
-  
-  // MARK: - makeFruits()
-  func makeFruits() {
-    self.view!.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-    self.view!.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
-  }
-  
-  // MARK: - makeTimer()
-  func makeTimer() {
-    self.view!.invalidateTimer()
-    self.view!.makeTimerLabel()
-    self.view!.startTimer(seconds: 4)
-  }
-  
-  // MARK: - disableMenuFruitsViews()
-  func disableMenuFruitsViews() {
-    self.view!.menuFruitsViews.forEach { fruit in
-      fruit.isUserInteractionEnabled = false
-    }
   }
 }
