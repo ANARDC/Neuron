@@ -11,6 +11,9 @@ import UIKit
 // MARK: - Delegate
 protocol FruitsGameViewDelegate {
   var fruitsIsHidden: Bool { get set }
+  var filledFruitsCount: Int16 { get set }
+  
+  var rate: Int16 { get set }
   
   var gamePassed: Bool? { get set }
   
@@ -59,7 +62,7 @@ protocol FruitsGameViewDelegate {
 
 // MARK: - View
 final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
-  var configurator = FruitsGameConfiguratorImplementation()
+  var configurator: FruitsGameConfigurator!
   var presenter: FruitsGamePresenterDelegate!
   
   @IBOutlet weak var timerLabel: UILabel!
@@ -70,6 +73,9 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   static var levelNumber = 0
 
   var fruitsIsHidden = false
+  var filledFruitsCount: Int16 = 0
+  
+  var rate: Int16 = 5
   
   var gamePassed: Bool? = nil
 
@@ -96,6 +102,7 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
 extension FruitsGameViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.configurator = FruitsGameConfiguratorImplementation(self)
     self.configurator.configure(self)
     self.presenter.viewDidLoad()
   }
@@ -130,7 +137,7 @@ extension FruitsGameViewController {
     self.minutes = 0
     self.seconds = seconds
     self.milliseconds = 0
-    self.timer = Timer.scheduledTimer(timeInterval: 1/60,
+    self.timer = Timer.scheduledTimer(timeInterval: 1/1000,
                                       target: self,
                                       selector: #selector(self.timerSelectorMethod),
                                       userInfo: nil,
@@ -139,10 +146,19 @@ extension FruitsGameViewController {
   
   // MARK: - @objc timer
   @objc func timerSelectorMethod() {
+    // Пока фрукты не скрыты мы уменьшаем время
     if !self.fruitsIsHidden {
       self.milliseconds -= self.milliseconds > 0 ? 1 : 0
       
-      let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
+//      var milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
+      var milliseconds: String
+      
+      switch self.milliseconds {
+      case 100..<1000: milliseconds = "\(self.milliseconds)"
+      case 10..<100:   milliseconds = "0\(self.milliseconds)"
+      case ..<10:      milliseconds = "00\(self.milliseconds)"
+      default: return
+      }
       
       self.timerLabel.text = "00.0\(self.seconds).\(milliseconds)"
       
@@ -160,23 +176,33 @@ extension FruitsGameViewController {
       
       if self.milliseconds == 0 {
         self.seconds -= 1
-        self.milliseconds = 60
+        self.milliseconds = 1000
       }
     } else {
+      // Когда фрукты скрыты мы увеличиваем время и уменьшаем рейтинг
       
       self.milliseconds += 1
       
-      let minutes      = self.minutes < 10 ? "0\(self.minutes)" : "\(self.minutes)"
-      let seconds      = self.seconds < 10 ? "0\(self.seconds)" : "\(self.seconds)"
-      let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
-      
-      self.timerLabel.text = "\(minutes).\(seconds).\(milliseconds)"
-      self.timerLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
-      
-      if self.milliseconds == 60 {
+      if self.milliseconds == 1000 {
         self.seconds += 1
         self.milliseconds = 0
       }
+      
+      let minutes = self.minutes < 10 ? "0\(self.minutes)" : "\(self.minutes)"
+      let seconds = self.seconds < 10 ? "0\(self.seconds)" : "\(self.seconds)"
+//      let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
+      
+      var milliseconds: String
+      
+      switch self.milliseconds {
+      case 100..<1000: milliseconds = "\(self.milliseconds)"
+      case 10..<100:   milliseconds = "0\(self.milliseconds)"
+      case ..<10:      milliseconds = "00\(self.milliseconds)"
+      default: return
+      }
+      
+      self.timerLabel.text = "\(minutes).\(seconds).\(milliseconds)"
+      self.timerLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
       
       if self.seconds == 60 {
         self.minutes += 1

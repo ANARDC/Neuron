@@ -3,7 +3,7 @@
 // Copyright (c) 2019 Commodo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol FruitsGameConfigurator {
   func configure(_: FruitsGameViewController)
@@ -14,9 +14,12 @@ protocol FruitsGameConfigurator {
 final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
   var presenter: FruitsGamePresenterDelegate?
   
+  init(_ fruitsGameViewController: FruitsGameViewController) {
+    let model = FruitsGameModel(useCases: UseCases(), fruitsDataCore: FruitsDataCore())
+    self.presenter = FruitsGamePresenter(view: fruitsGameViewController, model: model)
+  }
+  
   func configure(_ fruitsGameViewController: FruitsGameViewController) {
-    self.presenter = FruitsGamePresenter(view: fruitsGameViewController)
-    
     fruitsGameViewController.presenter = self.presenter
   }
   

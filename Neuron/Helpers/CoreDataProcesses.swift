@@ -24,26 +24,32 @@ final class CoreDataProcesses {
     return notes
   }
 
+  /* 
+   * TODO: - Создай структуру для заметки
+   *         как в фруктах
+   *         и организуй работу с данными
+   *         через нее
+   */
   static func saveNoteToCoreData(text: String, title: String) {
-    // Getting require properties
+    // Получаем необходимые свойства
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
     let object = NSManagedObject(entity: entity!, insertInto: context) as! Note
 
-    // Getting current date
+    // Получаем текующую дату
     let date = Date()
     let formatter = DateFormatter()
-    formatter.dateFormat = "d.EEEE.MMM.yyyy"
+    formatter.dateFormat = "d.EEEE.MMM.yyyy" // "17.Thursday.Oct.2019"
     let currentDate = formatter.string(from: date)
 
-    // Assigning values to entity properties
-    object.date = currentDate
+    // Присваивание значений свойствам объекта
+    object.date          = currentDate
     object.symbolsAmount = Int32(text.count)
-    object.text = text
-    object.title = title
+    object.text          = text
+    object.title         = title
 
 
-    // Context saving
+    // Сохранение контекста
     do {
       try context.save()
     } catch {

@@ -21,11 +21,14 @@ protocol FruitsGamePresenterDelegate: class {
 // MARK: - FruitsGamePresenter
 final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   var view: FruitsGameViewDelegate?
+  var model: FruitsGameModel?
 
-  init(view: FruitsGameViewDelegate) {
+  init(view: FruitsGameViewDelegate, model: FruitsGameModel) {
     self.view = view
+    self.model = model
   }
 
+  // MARK: viewDidLoad()
   func viewDidLoad() {
     self.view?.makeRestartButtonImage()
     self.view?.makeNavBarTitle()
@@ -41,6 +44,9 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * меню для пользователя
      */
     self.view?.switchMenuFruitsViewsUserInteractionState(for: self.view!.menuFruitsViews)
+    self.model?.fruitsDataCore.getFruitsGameData().forEach({ (session) in
+      print(session)
+    })
   }
   
   func viewDidDisappear() {
@@ -116,6 +122,8 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       self.view!.makeRedCrosses()
       return
     }
+    // Так как проверка пройдена, мы можем увеличить переменную filledFruitsCount
+    self.view!.filledFruitsCount += 1
     
     // Получаем текущий фрукт в змейке (!!!)
     let currentGameFruit = self.view!.gameFruitsViews[localCurrentFruitIndex]
@@ -143,6 +151,9 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   
   // MARK: - finishGame()
   func finishGame() {
+    // Сохраняем данные так как игра пройдена
+    self.saveGameSession()
+    
     self.view?.invalidateTimer()
     self.view?.makeBlur()
     /*
@@ -157,10 +168,47 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
      * необходимо увеличить уровень доступа
      * если был пройден последний уровень
      */
-    if UserDefaults.standard.integer(forKey: "fruitsGameAccessLevel") == FruitsGameViewController.levelNumber && UserDefaults.standard.integer(forKey: "fruitsGameAccessLevel") <= 50 {
+    let fruitsGameAccessLevel = UserDefaults.standard.integer(forKey: "fruitsGameAccessLevel")
+    if fruitsGameAccessLevel == FruitsGameViewController.levelNumber && fruitsGameAccessLevel <= 50 {
       self.view!.increaseAccessLevel()
     }
   }
+  
+  private func saveGameSession() {
+    let gameSessionTime: Int32 = {
+      let milliseconds          = self.view!.milliseconds
+      let secondsToMilliseconds = 1_000 * self.view!.seconds
+      let minutesToMilliseconds = 60_000 * self.view!.minutes
+      return Int32(milliseconds + secondsToMilliseconds + minutesToMilliseconds)
+    }()
+    
+    let filledFruits = self.view!.filledFruitsCount
+    
+    let fruitsTypes: Int16 = Int16(3+Int((FruitsGameViewController.levelNumber-1)/5))
+    
+    let rate = self.view!.rate
+    
+    let levelNumber = Int16(FruitsGameViewController.levelNumber)
+    
+    let currentDate: String = {
+      let date             = Date()
+      let formatter        = DateFormatter()
+      formatter.dateFormat = "H:m:s.d.M.yyyy" // "18:35:10.17.10.2019"
+      let currentDate      = formatter.string(from : date)
+      
+      return currentDate
+    }()
+
+    let fruitsGameSessionModel = FruitsGameSessionModel(time: gameSessionTime,
+                                                        filledFruits: filledFruits,
+                                                        fruitsTypes: fruitsTypes,
+                                                        rate: rate,
+                                                        levelNumber: levelNumber,
+                                                        date: currentDate)
+    self.model?.fruitsDataCore.saveFruitsGameData(fruitsGameSessionModel: fruitsGameSessionModel)
+    print(fruitsGameSessionModel)
+  }
+  
   
   // MARK: - restartGame()
   func restartGame() {
@@ -175,6 +223,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
       self.view!.removeFruits()
       self.view!.makeFruits()
       self.view!.makeStarsStackView(rate: 5)
+      self.view!.filledFruitsCount = 0
       
       // Логика рестарта
       if let gamePassed = self.view!.gamePassed {
@@ -236,6 +285,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
     })
   }
   
+  #warning("Положи эти две функции в одну используя enum для states нажатия")
   // MARK: - startNextLevel()
   func startNextLevel() {
     /*
