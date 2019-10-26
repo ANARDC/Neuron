@@ -256,7 +256,13 @@ extension FruitsGameViewController {
 
   // MARK: - makeFruitMenuView
   func makeFruitMenuView() {
-    let fruitMenuImage = FruitsGameViewController.levelNumber >= 1 && FruitsGameViewController.levelNumber <= 20 ? #imageLiteral(resourceName: "ФонФрукты1-20") : #imageLiteral(resourceName: "ФонФрукты21-50")
+    var fruitMenuImage: UIImage
+    switch FruitsGameViewController.levelNumber {
+    case ...15:   fruitMenuImage = UIImage(named: "ФонФруктыМеню1-15")!
+    case 16...20: fruitMenuImage = UIImage(named: "ФонФруктыМеню16-20")!
+    case 21...40: fruitMenuImage = UIImage(named: "ФонФруктыМеню21-40")!
+    default:      fruitMenuImage = UIImage(named: "ФонФруктыМеню41-50")!
+    }
     self.fruitsMenuView.image = fruitMenuImage
   }
 
@@ -272,7 +278,7 @@ extension FruitsGameViewController {
 
   // MARK: - makeMenuFruits
   func makeMenuFruits(typesCount: Int) {
-    var mainStackView = UIStackView()
+    var mainStackView: UIStackView
 
     for i in 0..<typesCount {
       let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59)
@@ -305,8 +311,8 @@ extension FruitsGameViewController {
       default: return
       }
 
-      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
-      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
+      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: self.fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
 
       stackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -341,8 +347,8 @@ extension FruitsGameViewController {
       default: return
       }
 
-      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
-      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
+      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: self.fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
 
       stackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -351,7 +357,7 @@ extension FruitsGameViewController {
     default: return
     }
 
-    mainStackView.topAnchor.constraint(equalTo: fruitsMenuView.topAnchor, constant: 21).isActive = true
+    mainStackView.topAnchor.constraint(equalTo: self.fruitsMenuView.topAnchor, constant: 38).isActive = true
   }
   
   // MARK: - makeGameFruits
