@@ -11,28 +11,29 @@ import UIKit
 // MARK: - Delegate
 protocol FruitsGameViewDelegate {
   var fruitsIsHidden: Bool { get set }
+  
   var filledFruitsCount: Int16 { get set }
   
   var rate: Int16 { get set }
   
   var gamePassed: Bool? { get set }
   
-  var gameFruits: [Fruits] { get set }
-  var gameFruitsViews: [UIView] { get set }
-  var menuFruitsViews: [UIView] { get set }
+  var gameFruits      : [Fruits] { get set }
+  var gameFruitsViews : [UIView] { get set }
+  var menuFruitsViews : [UIView] { get set }
   
-  var timer: Timer { get set }
-  var minutes: Int { get set }
-  var seconds: Int { get set }
-  var milliseconds: Int { get set }
+  var timer        : Timer { get set }
+  var minutes      : Int { get set }
+  var seconds      : Int { get set }
+  var milliseconds : Int { get set }
   
-  var globalCurrentFruitIndex: Int { get set }
-  var gameFruitsFillingJump: Int { get set }
-  var gameFruitsFillingTerm: Int { get set }
+  var globalCurrentFruitIndex : Int { get set }
+  var gameFruitsFillingJump   : Int { get set }
+  var gameFruitsFillingTerm   : Int { get set }
   
-  var popUp: FluidCardView? { get set }
-  var visualEffectNavBarView: CustomIntensityVisualEffectView? { get set }
-  var visualEffectView: CustomIntensityVisualEffectView? { get set }
+  var popUp                  : FluidCardView? { get set }
+  var visualEffectNavBarView : CustomIntensityVisualEffectView? { get set }
+  var visualEffectView       : CustomIntensityVisualEffectView? { get set }
   
   func makeRestartButtonImage()
   func makeNavBarTitle()
@@ -62,17 +63,18 @@ protocol FruitsGameViewDelegate {
 
 // MARK: - View
 final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
-  var configurator: FruitsGameConfigurator!
-  var presenter: FruitsGamePresenterDelegate!
+  var configurator : FruitsGameConfigurator!
+  var presenter    : FruitsGamePresenterDelegate!
   
-  @IBOutlet weak var timerLabel: UILabel!
-  @IBOutlet weak var restartButton: UIBarButtonItem!
-  @IBOutlet var stars: [UIImageView]!
-  @IBOutlet weak var fruitsMenuView: UIImageView!
+  @IBOutlet weak var timerLabel     : UILabel!
+  @IBOutlet weak var restartButton  : UIBarButtonItem!
+  @IBOutlet var stars               : [UIImageView]!
+  @IBOutlet weak var fruitsMenuView : UIImageView!
 
   static var levelNumber = 0
 
   var fruitsIsHidden = false
+  
   var filledFruitsCount: Int16 = 0
   
   var rate: Int16 = 5
@@ -92,9 +94,9 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   var gameFruitsFillingJump   = 7
   var gameFruitsFillingTerm   = 7
 
-  var popUp: FluidCardView? = nil
-  var visualEffectNavBarView: CustomIntensityVisualEffectView? = nil
-  var visualEffectView: CustomIntensityVisualEffectView? = nil
+  var popUp                  : FluidCardView?                    = nil
+  var visualEffectNavBarView : CustomIntensityVisualEffectView?  = nil
+  var visualEffectView       : CustomIntensityVisualEffectView?  = nil
 }
 
 // MARK: - FruitsGameViewController Life Cycle
@@ -134,14 +136,14 @@ extension FruitsGameViewController {
   
   // MARK: - startTimer
   func startTimer(seconds: Int) {
-    self.minutes = 0
-    self.seconds = seconds
+    self.minutes      = 0
+    self.seconds      = seconds
     self.milliseconds = 0
-    self.timer = Timer.scheduledTimer(timeInterval: 1/1000,
-                                      target: self,
-                                      selector: #selector(self.timerSelectorMethod),
-                                      userInfo: nil,
-                                      repeats: true)
+    self.timer        = Timer.scheduledTimer(timeInterval : 1/1000,
+                                             target       : self,
+                                             selector     : #selector(self.timerSelectorMethod),
+                                             userInfo     : nil,
+                                             repeats      : true)
   }
   
   // MARK: - @objc timer
@@ -220,13 +222,13 @@ extension FruitsGameViewController {
   // MARK: - makeGrayCrosses
   func makeGrayCrosses() {
     self.gameFruitsViews.forEach { (fruitView) in
-      let unsolvedFruitView = UIImageView()
+      let unsolvedFruitView   = UIImageView()
       unsolvedFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
       unsolvedFruitView.image = #imageLiteral(resourceName: "Неразгаданный фрукт")
       
-      fruitView.backgroundColor = .clear
-      fruitView.shadowOpacity   = 0
-      fruitView.borderWidth     = 0
+      fruitView.backgroundColor         = .clear
+      fruitView.shadowOpacity           = 0
+      fruitView.borderWidth             = 0
       fruitView.subviews.last?.isHidden = true
       fruitView.addSubview(unsolvedFruitView)
     }
@@ -272,6 +274,7 @@ extension FruitsGameViewController {
     let navBarTitleFontColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
 
     self.navigationItem.title = "Level \(FruitsGameViewController.levelNumber)"
+    
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
   }
@@ -302,16 +305,13 @@ extension FruitsGameViewController {
       var edgesConstraintsConstant: CGFloat
 
       switch typesCount {
-      case 3, 4:
-        edgesConstraintsConstant = 36
-      case 5:
-        edgesConstraintsConstant = 23
-      case 6:
-        edgesConstraintsConstant = 3
+      case 3, 4: edgesConstraintsConstant = 36
+      case 5:    edgesConstraintsConstant = 23
+      case 6:    edgesConstraintsConstant = 3
       default: return
       }
 
-      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+      let leadingConstraint  = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
       let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: self.fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
 
       stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -327,8 +327,8 @@ extension FruitsGameViewController {
       bottomStackView.axis         = .horizontal
       bottomStackView.distribution = .equalSpacing
 
-      let stackView = UIStackView(arrangedSubviews: [topStackView, bottomStackView])
-      stackView.axis = .vertical
+      let stackView     = UIStackView(arrangedSubviews : [topStackView, bottomStackView])
+      stackView.axis    = .vertical
       stackView.spacing = 7
 
       mainStackView = stackView
@@ -338,17 +338,14 @@ extension FruitsGameViewController {
       var edgesConstraintsConstant: CGFloat
 
       switch typesCount {
-      case 7, 8:
-        edgesConstraintsConstant = 36
-      case 9, 10:
-        edgesConstraintsConstant = 23
-      case 11, 12:
-        edgesConstraintsConstant = 3
+      case 7, 8:   edgesConstraintsConstant = 36
+      case 9, 10:  edgesConstraintsConstant = 23
+      case 11, 12: edgesConstraintsConstant = 3
       default: return
       }
 
-      let leadingConstraint = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
-      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: self.fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
+      let leadingConstraint  = stackView.leadingAnchor.constraint(equalTo   : self.fruitsMenuView.leadingAnchor, constant   : edgesConstraintsConstant)
+      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo : self.fruitsMenuView.trailingAnchor, constant : -edgesConstraintsConstant)
 
       stackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -367,7 +364,7 @@ extension FruitsGameViewController {
     let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<typesCount])
 
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
-    let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+    let fruitsCount    = preFruitsCount <= 53 ? preFruitsCount : 53
 
     var mainStackViewArrangedSubviews = [UIStackView]() // [gameFruitsStackSubviews]
 
@@ -376,16 +373,16 @@ extension FruitsGameViewController {
 
       // Создание вью фруктов
       for _ in 0..<i {
-        let gameFruit = fruitsTypes.randomElement()
-        let gameFruitView = gameFruit?.getFruitView(width: 40, height: 40)
+        let gameFruit     = fruitsTypes.randomElement()
+        let gameFruitView = gameFruit?.getFruitView(width : 40, height : 40)
         self.gameFruits.append(gameFruit!)
         self.gameFruitsViews.append(gameFruitView!)
         intermediateGameFruits.append(gameFruitView!)
       }
 
       // Create gameFruitsStackSubview
-      let gameFruitsStackSubview = UIStackView(arrangedSubviews: intermediateGameFruits)
-      gameFruitsStackSubview.axis = .horizontal
+      let gameFruitsStackSubview     = UIStackView(arrangedSubviews : intermediateGameFruits)
+      gameFruitsStackSubview.axis    = .horizontal
       gameFruitsStackSubview.spacing = 2
 
       // Add gameFruitsStackSubview in mainStackViewArrangedSubviews
@@ -399,10 +396,10 @@ extension FruitsGameViewController {
       var alignment = UIStackView.Alignment.trailing
 
       for i in stride(from: 0, to: mainStackViewArrangedSubviews.count, by: 2) {
-        let groupedStackView = UIStackView(arrangedSubviews: [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
-        groupedStackView.axis = .vertical
+        let groupedStackView       = UIStackView(arrangedSubviews : [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
+        groupedStackView.axis      = .vertical
         groupedStackView.alignment = alignment
-        groupedStackView.spacing = 2
+        groupedStackView.spacing   = 2
 
         groupedMainStackViewArrangedSubviews.append(groupedStackView)
         alignment = alignment == .trailing ? .leading : .trailing
@@ -413,18 +410,18 @@ extension FruitsGameViewController {
       var alignment = UIStackView.Alignment.trailing
 
       for i in stride(from: 1, to: mainStackViewArrangedSubviews.count, by: 2) {
-        let groupedStackView = UIStackView(arrangedSubviews: [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
-        groupedStackView.axis = .vertical
+        let groupedStackView       = UIStackView(arrangedSubviews : [mainStackViewArrangedSubviews[i], mainStackViewArrangedSubviews[i+1]])
+        groupedStackView.axis      = .vertical
         groupedStackView.alignment = alignment
-        groupedStackView.spacing = 2
+        groupedStackView.spacing   = 2
 
         groupedMainStackViewArrangedSubviews.append(groupedStackView)
         alignment = alignment == .trailing ? .leading : .trailing
       }
     }
 
-    let mainStackView = UIStackView(arrangedSubviews: groupedMainStackViewArrangedSubviews)
-    mainStackView.axis = .vertical
+    let mainStackView     = UIStackView(arrangedSubviews : groupedMainStackViewArrangedSubviews)
+    mainStackView.axis    = .vertical
     mainStackView.spacing = 2
     mainStackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -439,12 +436,15 @@ extension FruitsGameViewController {
   var getGameFruitsList: [Int] {
     var gameFruitsList = [Int]()
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
-    var fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+    var fruitsCount    = preFruitsCount <= 53 ? preFruitsCount : 53
+    
     while fruitsCount >= 9 {
       fruitsCount -= 9
       gameFruitsList.append(contentsOf: [8, 1])
     }
+    
     guard fruitsCount > 0 else { return gameFruitsList }
+    
     gameFruitsList.append(fruitsCount)
 
     return gameFruitsList
@@ -480,9 +480,9 @@ extension FruitsGameViewController {
   
   // MARK: - increaseAccessLevel()
   func increaseAccessLevel() {
-    let userDefaults = UserDefaults.standard
+    let userDefaults                         = UserDefaults.standard
     let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
-    let currentAccessLevel = userDefaults.integer(forKey: userDefaultsFruitsGameAccessLevelKey)
+    let currentAccessLevel                   = userDefaults.integer(forKey : userDefaultsFruitsGameAccessLevelKey)
     
     userDefaults.set(currentAccessLevel+1, forKey: userDefaultsFruitsGameAccessLevelKey)
   }
@@ -654,10 +654,10 @@ extension FruitsGameViewController {
     
     popUp.translatesAutoresizingMaskIntoConstraints = false
     
-    let topView = PopUpTopView(frame: CGRect(x: 0, y: 0, width: 297, height: 189))
-    let bottomView = PopUpBottomView(frame: CGRect(x: 0, y: 0, width: 297, height: 104))
+    let topView    = PopUpTopView(frame       : CGRect(x       : 0, y       : 0, width       : 297, height       : 189))
+    let bottomView = PopUpBottomView(frame : CGRect(x : 0, y : 0, width : 297, height : 104))
     
-    popUp.topContentView = topView
+    popUp.topContentView    = topView
     popUp.bottomContentView = bottomView
     
     self.configurator.configure(topView)
@@ -676,8 +676,8 @@ extension FruitsGameViewController {
 
   // MARK: - makeRedCrosses
   func makeRedCrosses() {
-    let preFruitsCount = FruitsGameViewController.levelNumber + 7
-    let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+    let preFruitsCount  = FruitsGameViewController.levelNumber + 7
+    let fruitsCount     = preFruitsCount <= 53 ? preFruitsCount : 53
     let lastFruitsCount = fruitsCount - self.globalCurrentFruitIndex
 
     for _ in 0..<lastFruitsCount {
@@ -685,18 +685,16 @@ extension FruitsGameViewController {
 
       // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево
       // Проверяем входит ли индекс текущего фрукта в диапазоны [9...16], [27...34], [45...52]
-      print(self.globalCurrentFruitIndex, -7, self.gameFruitsFillingTerm)
       if [9, 27, 45].contains(self.globalCurrentFruitIndex - 7 + self.gameFruitsFillingTerm) {
         // В зависимости от оставшегося количества фруктов задаем размер прыжка
         if [9, 27, 45].contains(self.globalCurrentFruitIndex) {
-          let preFruitsCount = FruitsGameViewController.levelNumber + 7
-          let fruitsCount = preFruitsCount <= 53 ? preFruitsCount : 53
+          let preFruitsCount  = FruitsGameViewController.levelNumber + 7
+          let fruitsCount     = preFruitsCount <= 53 ? preFruitsCount : 53
           let lastFruitsCount = fruitsCount - self.globalCurrentFruitIndex
 
           self.gameFruitsFillingJump = lastFruitsCount > 8 ? 7 : lastFruitsCount - 1
         }
         // Присваиваем currentFruitIndex нужное значение
-        print(self.globalCurrentFruitIndex, self.gameFruitsFillingJump)
         localCurrentFruitIndex = self.globalCurrentFruitIndex + self.gameFruitsFillingJump
         // Уменьшаем шаг на 2 во всех случаях
         self.gameFruitsFillingJump -= 2
@@ -713,34 +711,22 @@ extension FruitsGameViewController {
         localCurrentFruitIndex = self.globalCurrentFruitIndex
       }
 
-//            print(localCurrentFruitIndex)
-
-      print(localCurrentFruitIndex)
       let currentGameFruit = self.gameFruitsViews[localCurrentFruitIndex]
 
-      let errorFruitView = UIImageView()
+      let errorFruitView   = UIImageView()
       errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-      errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
+      errorFruitView.image = #imageLiteral(resourceName : "Неправильный фрукт")
 
       currentGameFruit.subviews.last?.removeFromSuperview()
       currentGameFruit.addSubview(errorFruitView)
 
       self.globalCurrentFruitIndex += 1
     }
-
-//        self.gameFruitsViews[self.globalCurrentFruitIndex...].forEach { (fruit) in
-//            let errorFruitView = UIImageView()
-//            errorFruitView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-//            errorFruitView.image = #imageLiteral(resourceName: "Неправильный фрукт")
-//
-//            fruit.subviews.last?.removeFromSuperview()
-//            fruit.addSubview(errorFruitView)
-//        }
   }
   
   // MARK: - changeTimerLabel
   func changeTimerLabel() {
-    self.timerLabel.text = "Wrong!"
+    self.timerLabel.text      = "Wrong!"
     self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
   }
 
