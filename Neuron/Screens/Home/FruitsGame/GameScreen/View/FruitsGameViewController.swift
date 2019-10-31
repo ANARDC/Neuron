@@ -260,10 +260,11 @@ extension FruitsGameViewController {
   func makeFruitMenuView() {
     var fruitMenuImage: UIImage
     switch FruitsGameViewController.levelNumber {
-    case ...15:   fruitMenuImage = UIImage(named: "ФонФруктыМеню1-15")!
+    case 1...15:  fruitMenuImage = UIImage(named: "ФонФруктыМеню1-15")!
     case 16...20: fruitMenuImage = UIImage(named: "ФонФруктыМеню16-20")!
     case 21...40: fruitMenuImage = UIImage(named: "ФонФруктыМеню21-40")!
-    default:      fruitMenuImage = UIImage(named: "ФонФруктыМеню41-50")!
+    case 41...50: fruitMenuImage = UIImage(named: "ФонФруктыМеню41-50")!
+    default: return
     }
     self.fruitsMenuView.image = fruitMenuImage
   }
@@ -284,7 +285,7 @@ extension FruitsGameViewController {
     var mainStackView: UIStackView
 
     for i in 0..<typesCount {
-      let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59)
+      let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59, space: .menu)
       self.menuFruitsViews.append(fruitView)
     }
 
@@ -358,8 +359,6 @@ extension FruitsGameViewController {
   }
   
   // MARK: - makeGameFruits
-  // FIXME: - Take in Fruits enum
-  #warning("Take in Fruits enum")
   func makeGameFruits(typesCount: Int) {
     let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<typesCount])
 
@@ -374,7 +373,7 @@ extension FruitsGameViewController {
       // Создание вью фруктов
       for _ in 0..<i {
         let gameFruit     = fruitsTypes.randomElement()
-        let gameFruitView = gameFruit?.getFruitView(width : 40, height : 40)
+        let gameFruitView = gameFruit?.getFruitView(width: 40, height: 40, space: .game)
         self.gameFruits.append(gameFruit!)
         self.gameFruitsViews.append(gameFruitView!)
         intermediateGameFruits.append(gameFruitView!)
