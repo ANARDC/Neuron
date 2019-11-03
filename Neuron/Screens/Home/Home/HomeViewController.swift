@@ -174,7 +174,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     case lastExCollectionView:
       return
     default:
-      performSegue(withIdentifier: "showFruits", sender: nil)
+      if indexPath.row == 0 {
+        performSegue(withIdentifier: "showFruitsGame", sender: nil)
+      } else {
+        performSegue(withIdentifier: "showSchulteTableGame", sender: nil)
+      }
     }
   }
   

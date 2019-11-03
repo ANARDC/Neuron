@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990C2688236E215500836AC6 /* SchulteTableStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */; };
 		990DE7FD22F8742500D18A86 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9923FA4222F872D900F33B0C /* NotoSans-Bold.ttf */; };
 		990DE7FE22F8742500D18A86 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9923FA3E22F872D900F33B0C /* NotoSans-BoldItalic.ttf */; };
 		990DE7FF22F8742500D18A86 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9923FA3B22F872D800F33B0C /* NotoSans-Regular.ttf */; };
@@ -20,6 +21,8 @@
 		9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */; };
 		9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928825823046AD40078664E /* FruitsGameViewController.swift */; };
 		992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BEF0C22E8BB0C00A9360A /* Calendar.swift */; };
+		992EEE4C236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */; };
+		992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */; };
 		994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Design.swift */; };
 		9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7252350A5B900C6CAB1 /* UseCases.swift */; };
 		9966A7282354997800C6CAB1 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7272354997800C6CAB1 /* DataBase.swift */; };
@@ -59,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.debug.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig"; sourceTree = "<group>"; };
+		990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartViewController.swift; sourceTree = "<group>"; };
 		990DE80522F8B13C00D18A86 /* LevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9923FA1A22F60FA500F33B0C /* FruitsStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsStartViewController.swift; sourceTree = "<group>"; };
 		9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsProcesses.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		9923FA4222F872D900F33B0C /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
 		9928825823046AD40078664E /* FruitsGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGameViewController.swift; sourceTree = "<group>"; };
 		992BEF0C22E8BB0C00A9360A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartConfigurator.swift; sourceTree = "<group>"; };
+		992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartPresenter.swift; sourceTree = "<group>"; };
 		994CBBA522DF44A5007B5BD5 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		9966A7252350A5B900C6CAB1 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
 		9966A7272354997800C6CAB1 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -130,6 +136,24 @@
 				D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		990C2685236E20EC00836AC6 /* SchulteTableGame */ = {
+			isa = PBXGroup;
+			children = (
+				990C2686236E211000836AC6 /* StartScreen */,
+			);
+			path = SchulteTableGame;
+			sourceTree = "<group>";
+		};
+		990C2686236E211000836AC6 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */,
+				992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */,
+				992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */,
+			);
+			path = StartScreen;
 			sourceTree = "<group>";
 		};
 		990DE7FC22F8740B00D18A86 /* Fonts */ = {
@@ -211,6 +235,7 @@
 				996F4B1A22E36F8100B19478 /* Note */,
 				996F4B1B22E36FB600B19478 /* All Notes */,
 				9923FA1922F60F5700F33B0C /* FruitsGame */,
+				990C2685236E20EC00836AC6 /* SchulteTableGame */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -534,6 +559,7 @@
 				9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */,
 				9971E2D323380EE9004B639A /* PopUpBottomView.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
+				992EEE4C236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift in Sources */,
 				99F9B2C6232152B800FEEA69 /* UnitBezier.swift in Sources */,
 				9966A7282354997800C6CAB1 /* DataBase.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
@@ -545,7 +571,9 @@
 				9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
+				992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,
+				990C2688236E215500836AC6 /* SchulteTableStartViewController.swift in Sources */,
 				99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */,
 				CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */,

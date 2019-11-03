@@ -328,7 +328,7 @@ extension FruitsGameViewController {
       bottomStackView.axis         = .horizontal
       bottomStackView.distribution = .equalSpacing
 
-      let stackView     = UIStackView(arrangedSubviews : [topStackView, bottomStackView])
+      let stackView     = UIStackView(arrangedSubviews: [topStackView, bottomStackView])
       stackView.axis    = .vertical
       stackView.spacing = 7
 
@@ -345,8 +345,8 @@ extension FruitsGameViewController {
       default: return
       }
 
-      let leadingConstraint  = stackView.leadingAnchor.constraint(equalTo   : self.fruitsMenuView.leadingAnchor, constant   : edgesConstraintsConstant)
-      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo : self.fruitsMenuView.trailingAnchor, constant : -edgesConstraintsConstant)
+      let leadingConstraint  = stackView.leadingAnchor.constraint(equalTo: self.fruitsMenuView.leadingAnchor, constant: edgesConstraintsConstant)
+      let trailingConstraint = stackView.trailingAnchor.constraint(equalTo: self.fruitsMenuView.trailingAnchor, constant: -edgesConstraintsConstant)
 
       stackView.translatesAutoresizingMaskIntoConstraints = false
 
