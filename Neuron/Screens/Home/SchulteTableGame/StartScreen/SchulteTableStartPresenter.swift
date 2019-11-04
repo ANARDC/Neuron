@@ -22,5 +22,6 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   func viewDidLoad() {
     self.view?.makeNavBarTitle()
     self.view?.navBarSetting()
+    self.view?.makeRulesTitleLabel()
   }
 }
