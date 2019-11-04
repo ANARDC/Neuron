@@ -16,6 +16,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func viewDidLoad()
   func viewWillAppear(_ animated: Bool)
   func makeNavBarTitle()
+  func navBarSetting()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -69,5 +70,11 @@ extension SchulteTableStartViewController {
     
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
+  }
+  
+  // MARK: - navBarSetting
+  func navBarSetting() {
+    BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
+    statsButton.image = UIImage(named: "Статистика")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
   }
 }
