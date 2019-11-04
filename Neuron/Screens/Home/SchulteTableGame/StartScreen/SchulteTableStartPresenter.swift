@@ -23,5 +23,6 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeNavBarTitle()
     self.view?.navBarSetting()
     self.view?.makeRulesTitleLabel()
+    self.view?.makeRulesTextLabel()
   }
 }
