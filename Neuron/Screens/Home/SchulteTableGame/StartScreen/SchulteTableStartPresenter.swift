@@ -6,4 +6,20 @@
 //  Copyright © 2019 Commodo. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol SchulteTableStartPresenterDelegate {
+  func viewDidLoad()
+}
+
+final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
+  var view: SchulteTableStartViewControllerDelegate?
+  
+  init(view: SchulteTableStartViewControllerDelegate) {
+    self.view = view
+  }
+  
+  func viewDidLoad() {
+    self.view?.makeNavBarTitle()
+  }
+}
