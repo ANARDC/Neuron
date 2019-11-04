@@ -25,5 +25,6 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeRulesTitleLabel()
     self.view?.makeRulesTextLabel()
     self.view?.makeSettingBackgroundView()
+    self.view?.makeMixingShadesOptionTitle()
   }
 }

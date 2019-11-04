@@ -10,16 +10,15 @@ import UIKit
 import PWSwitch
 
 protocol SchulteTableStartViewControllerDelegate {
-  var configurator: SchulteTableStartConfigurator! { get set }
-  var presenter  : SchulteTableStartPresenterDelegate! { get set }
+  var configurator : SchulteTableStartConfigurator!      { get set }
+  var presenter    : SchulteTableStartPresenterDelegate! { get set }
   
-  func viewDidLoad()
-  func viewWillAppear(_ animated: Bool)
   func makeNavBarTitle()
   func navBarSetting()
   func makeRulesTitleLabel()
   func makeRulesTextLabel()
   func makeSettingBackgroundView()
+  func makeMixingShadesOptionTitle()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -106,5 +105,12 @@ extension SchulteTableStartViewController {
     self.settingBackgroundView.borderWidth     = 1
     self.settingBackgroundView.borderColor     = UIColor(red: 0.896, green: 0.926, blue: 0.931, alpha: 1).cgColor
     self.settingBackgroundView.cornerRadius    = 20
+  }
+  
+  // MARK: - makeMixingShadesOptionTitle
+  func makeMixingShadesOptionTitle() {
+    self.mixingShadesOptionTitle.font      = UIFont(name: "NotoSans-Regular", size: 15)
+    self.mixingShadesOptionTitle.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
+    self.mixingShadesOptionTitle.text      = "Mixing shades"
   }
 }
