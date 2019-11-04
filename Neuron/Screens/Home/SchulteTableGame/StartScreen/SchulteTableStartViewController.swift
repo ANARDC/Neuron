@@ -19,6 +19,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func navBarSetting()
   func makeRulesTitleLabel()
   func makeRulesTextLabel()
+  func makeSettingBackgroundView()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -93,5 +94,17 @@ extension SchulteTableStartViewController {
     self.rulesTextLabel.textColor     = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.8)
     self.rulesTextLabel.numberOfLines = 0
     self.rulesTextLabel.text          = "Line 1\nLine 2\nLine 3\nLine 4\nLine 5\nLine 6"
+  }
+  
+  // MARK: - makeSettingBackgroundView
+  func makeSettingBackgroundView() {
+    self.settingBackgroundView.backgroundColor = .white
+    self.settingBackgroundView.shadowColor     = UIColor(red: 0.898, green: 0.925, blue: 0.929, alpha: 1).cgColor
+    self.settingBackgroundView.shadowOpacity   = 1
+    self.settingBackgroundView.shadowRadius    = 14
+    self.settingBackgroundView.shadowOffset    = CGSize(width: 0, height: 11)
+    self.settingBackgroundView.borderWidth     = 1
+    self.settingBackgroundView.borderColor     = UIColor(red: 0.896, green: 0.926, blue: 0.931, alpha: 1).cgColor
+    self.settingBackgroundView.cornerRadius    = 20
   }
 }
