@@ -19,6 +19,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeRulesTextLabel()
   func makeSettingBackgroundView()
   func makeMixingShadesOptionTitle()
+  func makeMixingShadesSwitch()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -45,6 +46,27 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var leftArrow            : UIImageView!
   @IBOutlet weak var rightArrow           : UIImageView!
   @IBOutlet weak var chooseViewLabel      : UILabel!
+  
+  
+  @IBAction func mixingShadesSwitchValueChanged(_ sender: PWSwitch) {
+    self.presenter.mixingShadesSwitchValueChanged(sender)
+  }
+  
+  @IBAction func mixingShadesSwitchTouchDown(_ sender: PWSwitch) {
+    self.presenter.mixingShadesSwitchTouchDown(sender)
+  }
+  
+  @IBAction func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch) {
+    self.presenter.mixingShadesSwitchTouchUpInside(sender)
+  }
+  
+  @IBAction func mixingShadesSwitchTouchUpOutside(_ sender: PWSwitch) {
+    self.presenter.mixingShadesSwitchTouchUpOutside(sender)
+  }
+  
+  @IBAction func mixingShadesSwitchTouchDragExit(_ sender: PWSwitch) {
+    self.presenter.mixingShadesSwitchTouchDragExit(sender)
+  }
 }
 
 extension SchulteTableStartViewController {
@@ -112,5 +134,29 @@ extension SchulteTableStartViewController {
     self.mixingShadesOptionTitle.font      = UIFont(name: "NotoSans-Regular", size: 15)
     self.mixingShadesOptionTitle.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
     self.mixingShadesOptionTitle.text      = "Mixing shades"
+  }
+  
+  // MARK: - makeMixingShadesSwitch
+  func makeMixingShadesSwitch() {
+    self.mixingShadesSwitch.shadowColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+    self.mixingShadesSwitch.shadowOpacity = 0
+    self.mixingShadesSwitch.shadowRadius = 5
+    self.mixingShadesSwitch.shadowOffset = CGSize(width: 0, height: 5)
+
+    self.mixingShadesSwitch.layer.borderWidth = 1.5
+    self.mixingShadesSwitch.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+
+    self.mixingShadesSwitch.layer.cornerRadius = 15.5
+    self.mixingShadesSwitch.thumbCornerRadius = 5
+    self.mixingShadesSwitch.thumbDiameter = 20
+
+    self.mixingShadesSwitch.trackOffFillColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
+    self.mixingShadesSwitch.trackOnFillColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
+    self.mixingShadesSwitch.trackOnBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
+    self.mixingShadesSwitch.trackOffPushBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
+
+    self.mixingShadesSwitch.thumbOnBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+    self.mixingShadesSwitch.thumbOffBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+    self.mixingShadesSwitch.thumbOnFillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
   }
 }
