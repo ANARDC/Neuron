@@ -20,6 +20,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeSettingBackgroundView()
   func makeMixingShadesOptionTitle()
   func makeMixingShadesSwitch()
+  func makeOrderCountSelectingButtons()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -34,13 +35,14 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var settingBackgroundView   : UIView!
   @IBOutlet weak var mixingShadesOptionTitle : UILabel!
   @IBOutlet weak var mixingShadesSwitch      : PWSwitch!
-  @IBOutlet weak var oneOrderLabel           : UILabel!
-  @IBOutlet weak var twoOrdersLabel          : UILabel!
-  @IBOutlet weak var threeOrdersLabel        : UILabel!
-  @IBOutlet weak var settingsCollectionView  : UICollectionView!
-  @IBOutlet weak var recordTitleLabel        : UILabel!
-  @IBOutlet weak var recordTimeLabel         : UILabel!
-  @IBOutlet var recordStars                  : [UIImageView]!
+  @IBOutlet weak var oneOrderButton          : UIButton!
+  @IBOutlet weak var twoOrdersButton         : UIButton!
+  @IBOutlet weak var threeOrdersButton       : UIButton!
+  
+  @IBOutlet weak var settingsCollectionView : UICollectionView!
+  @IBOutlet weak var recordTitleLabel       : UILabel!
+  @IBOutlet weak var recordTimeLabel        : UILabel!
+  @IBOutlet var recordStars                 : [UIImageView]!
   
   @IBOutlet weak var chooseBackgroundView : UIView!
   @IBOutlet weak var leftArrow            : UIImageView!
@@ -158,5 +160,17 @@ extension SchulteTableStartViewController {
     self.mixingShadesSwitch.thumbOnBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     self.mixingShadesSwitch.thumbOffBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     self.mixingShadesSwitch.thumbOnFillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+  }
+  
+  // MARK: - makeOrderCountSelectingButtons
+  func makeOrderCountSelectingButtons() {
+    [self.oneOrderButton,
+     self.twoOrdersButton,
+     self.threeOrdersButton].forEach { (button) in
+      button!.titleLabel?.minimumScaleFactor = 0.1
+      button!.titleLabel?.numberOfLines = 1
+      button!.titleLabel?.adjustsFontSizeToFitWidth = true
+      button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
+    }
   }
 }
