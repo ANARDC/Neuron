@@ -21,6 +21,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeMixingShadesOptionTitle()
   func makeMixingShadesSwitch()
   func makeOrderCountSelectingButtons()
+  func makeOrdersButtonsBackgroundView()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -32,17 +33,17 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var rulesTitleLabel : UILabel!
   @IBOutlet weak var rulesTextLabel  : UILabel!
   
-  @IBOutlet weak var settingBackgroundView   : UIView!
-  @IBOutlet weak var mixingShadesOptionTitle : UILabel!
-  @IBOutlet weak var mixingShadesSwitch      : PWSwitch!
-  @IBOutlet weak var oneOrderButton          : UIButton!
-  @IBOutlet weak var twoOrdersButton         : UIButton!
-  @IBOutlet weak var threeOrdersButton       : UIButton!
-  
-  @IBOutlet weak var settingsCollectionView : UICollectionView!
-  @IBOutlet weak var recordTitleLabel       : UILabel!
-  @IBOutlet weak var recordTimeLabel        : UILabel!
-  @IBOutlet var recordStars                 : [UIImageView]!
+  @IBOutlet weak var settingBackgroundView       : UIView!
+  @IBOutlet weak var mixingShadesOptionTitle     : UILabel!
+  @IBOutlet weak var mixingShadesSwitch          : PWSwitch!
+  @IBOutlet weak var oneOrderButton              : UIButton!
+  @IBOutlet weak var twoOrdersButton             : UIButton!
+  @IBOutlet weak var threeOrdersButton           : UIButton!
+  @IBOutlet weak var ordersButtonsBackgroundView : UIView!
+  @IBOutlet weak var settingsCollectionView      : UICollectionView!
+  @IBOutlet weak var recordTitleLabel            : UILabel!
+  @IBOutlet weak var recordTimeLabel             : UILabel!
+  @IBOutlet var recordStars                      : [UIImageView]!
   
   @IBOutlet weak var chooseBackgroundView : UIView!
   @IBOutlet weak var leftArrow            : UIImageView!
@@ -172,5 +173,17 @@ extension SchulteTableStartViewController {
       button!.titleLabel?.adjustsFontSizeToFitWidth = true
       button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
     }
+  }
+  
+  // MARK: - makeOrdersButtonsBackgroundView
+  func makeOrdersButtonsBackgroundView() {
+    self.ordersButtonsBackgroundView.shadowColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
+    self.ordersButtonsBackgroundView.shadowOpacity = 1
+    self.ordersButtonsBackgroundView.shadowRadius = 5
+    self.ordersButtonsBackgroundView.shadowOffset = CGSize(width: 0, height: 5)
+    
+    self.ordersButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
+    
+    self.ordersButtonsBackgroundView.cornerRadius = 5
   }
 }

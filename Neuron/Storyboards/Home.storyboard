@@ -1026,7 +1026,7 @@ Line 6</string>
                                 <rect key="frame" x="20" y="502" width="335" height="190"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-HZ-Y72">
-                                        <rect key="frame" x="10" y="57" width="82" height="32"/>
+                                        <rect key="frame" x="13" y="54" width="82" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
@@ -1235,6 +1235,7 @@ Line 6</string>
                         <outlet property="mixingShadesOptionTitle" destination="Etj-hi-6Gq" id="wPz-2p-9pK"/>
                         <outlet property="mixingShadesSwitch" destination="60o-aq-5Jx" id="pAA-n6-vXH"/>
                         <outlet property="oneOrderButton" destination="kq7-yO-CG9" id="6mU-Js-V0h"/>
+                        <outlet property="ordersButtonsBackgroundView" destination="ujb-HZ-Y72" id="7ke-gk-PXJ"/>
                         <outlet property="recordTimeLabel" destination="eoG-tU-MVc" id="y7D-qO-DHb"/>
                         <outlet property="recordTitleLabel" destination="lYu-yp-hbR" id="LBY-5v-AzQ"/>
                         <outlet property="rightArrow" destination="afd-q3-RdQ" id="rcn-Hc-7aV"/>
