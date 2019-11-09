@@ -36,6 +36,7 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeMixingShadesSwitch()
     self.view?.makeOrderCountSelectingButtons()
     self.view?.makeOrdersButtonsBackgroundView()
+    self.view?.collectionViewSetting()
   }
 }
 

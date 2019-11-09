@@ -855,7 +855,7 @@
                                 <rect key="frame" x="34" y="730" width="307" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjO-Ir-eZy">
-                                        <rect key="frame" x="93" y="12.666666666666629" width="121" height="23"/>
+                                        <rect key="frame" x="93.333333333333314" y="12.333333333333369" width="120.66666666666669" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -893,7 +893,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdP-KC-iHi">
-                                <rect key="frame" x="19.999999999999996" y="337" width="46.666666666666657" height="23.666666666666686"/>
+                                <rect key="frame" x="20.000000000000004" y="337" width="46.333333333333343" height="23.333333333333314"/>
                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -918,7 +918,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ajN-lk-IcC">
-                                <rect key="frame" x="20" y="360.66666666666669" width="335" height="204.33333333333331"/>
+                                <rect key="frame" x="20" y="360.33333333333331" width="335" height="204.66666666666669"/>
                                 <string key="text">For a limited time you will need to place fruits and vegetables in the order in which they were originally presented. 
 With increasing complexity increases the number of fruits and reduces the time to memorize the order. To unlock subsequent difficulty levels, complete the last available level with 3 stars or higher.</string>
                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
@@ -1059,25 +1059,57 @@ Line 6</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-hY-1Gx">
-                                        <rect key="frame" x="0.0" y="98" width="335" height="40.666666666666657"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-hY-1Gx">
+                                        <rect key="frame" x="0.0" y="100" width="335" height="71"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E2b-rE-aLB">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="71" id="gEe-A0-iXl"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="7" id="E2b-rE-aLB">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="30" maxY="20"/>
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NkH-XQ-fyl">
+                                        <rect key="frame" x="23" y="55" width="289" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-yO-CG9">
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="63" id="Pif-U8-Yf6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                                                <state key="normal" title="One order"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhs-9j-oGh">
+                                                <rect key="frame" x="102" y="0.0" width="69" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="69" id="grL-Xr-Om5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                                                <state key="normal" title="Two orders"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buF-xE-fFa">
+                                                <rect key="frame" x="210" y="0.0" width="79" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="79" id="kFw-SJ-ZbQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                                                <state key="normal" title="Three orders"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-yp-hbR">
-                                        <rect key="frame" x="19.000000000000004" y="154.33333333333337" width="56.333333333333343" height="19.333333333333343"/>
+                                        <rect key="frame" x="19.000000000000004" y="164" width="56.333333333333343" height="19.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-he-OQP">
-                                        <rect key="frame" x="94" y="156" width="97" height="16"/>
+                                        <rect key="frame" x="94" y="165" width="97" height="16"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="8Kf-QI-tjP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="16"/>
@@ -1117,64 +1149,35 @@ Line 6</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-tU-MVc">
-                                        <rect key="frame" x="198" y="148.66666666666663" width="126" height="31.333333333333343"/>
+                                        <rect key="frame" x="198" y="158" width="126" height="31.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NkH-XQ-fyl">
-                                        <rect key="frame" x="23" y="55" width="289" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kq7-yO-CG9">
-                                                <rect key="frame" x="0.0" y="0.0" width="63" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="63" id="Pif-U8-Yf6"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="One order"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhs-9j-oGh">
-                                                <rect key="frame" x="102" y="0.0" width="69" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="69" id="grL-Xr-Om5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="Two orders"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buF-xE-fFa">
-                                                <rect key="frame" x="210" y="0.0" width="79" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="79" id="kFw-SJ-ZbQ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="Three orders"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Fic-hY-1Gx" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" id="2KR-dj-kYs"/>
-                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="15.666666666666515" id="6zQ-Ni-a67"/>
-                                    <constraint firstAttribute="bottom" secondItem="2WO-he-OQP" secondAttribute="bottom" constant="18" id="7Fk-Xe-QQK"/>
+                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-7" id="6zQ-Ni-a67"/>
+                                    <constraint firstAttribute="bottom" secondItem="2WO-he-OQP" secondAttribute="bottom" constant="9" id="7Fk-Xe-QQK"/>
                                     <constraint firstItem="eoG-tU-MVc" firstAttribute="leading" secondItem="2WO-he-OQP" secondAttribute="trailing" constant="7" id="7go-Rv-CJY"/>
                                     <constraint firstAttribute="trailing" secondItem="NkH-XQ-fyl" secondAttribute="trailing" constant="23" id="BOr-fp-5sZ"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="8" id="BVM-9g-LYf"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="23" id="Dhx-s8-1fT"/>
-                                    <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="16.333333333333485" id="GUj-pg-3PE"/>
+                                    <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="6.6666666666666572" id="GUj-pg-3PE"/>
                                     <constraint firstAttribute="trailing" secondItem="60o-aq-5Jx" secondAttribute="trailing" constant="19" id="Pwt-fj-9xv"/>
                                     <constraint firstAttribute="trailing" secondItem="eoG-tU-MVc" secondAttribute="trailing" constant="11" id="TsU-LM-A7O"/>
-                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="17.333333333333343" id="Ulj-0V-h1K"/>
+                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-6" id="Ulj-0V-h1K"/>
                                     <constraint firstAttribute="width" secondItem="f34-ph-6ng" secondAttribute="height" multiplier="67:38" id="XwS-dy-5U1"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Y7X-Yv-O0C"/>
                                     <constraint firstItem="60o-aq-5Jx" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Yz8-DE-gSc"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="top" secondItem="60o-aq-5Jx" secondAttribute="bottom" constant="12" id="b0i-B2-GEj"/>
-                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="9.9999999999999716" id="faW-ND-pLS"/>
-                                    <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="10" id="mgF-Hz-6Q2"/>
+                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-13" id="faW-ND-pLS"/>
+                                    <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="0.66666666666665719" id="mgF-Hz-6Q2"/>
                                     <constraint firstItem="2WO-he-OQP" firstAttribute="leading" secondItem="lYu-yp-hbR" secondAttribute="trailing" constant="18.666666666666657" id="rVU-6N-Ous"/>
                                     <constraint firstItem="lYu-yp-hbR" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="19" id="waJ-4Z-xb6"/>
                                     <constraint firstAttribute="trailing" secondItem="Fic-hY-1Gx" secondAttribute="trailing" id="wp2-pe-QkR"/>
-                                    <constraint firstItem="Fic-hY-1Gx" firstAttribute="top" secondItem="NkH-XQ-fyl" secondAttribute="bottom" constant="13" id="zcQ-YM-ysn"/>
+                                    <constraint firstItem="Fic-hY-1Gx" firstAttribute="top" secondItem="NkH-XQ-fyl" secondAttribute="bottom" constant="15" id="zcQ-YM-ysn"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-Sv-tdJ">

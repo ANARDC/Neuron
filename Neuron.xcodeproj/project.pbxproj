@@ -49,6 +49,7 @@
 		99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */; };
 		99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCA232E45B300156597 /* PopUpTopView.swift */; };
 		99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */; };
+		99DC16272376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */; };
 		99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8320022EBA184004275BB /* CoreDataProcesses.swift */; };
 		99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */; };
 		99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BF2321525500FEEA69 /* ExpandButton.swift */; };
@@ -106,6 +107,7 @@
 		99B0F52522DDDC1C0037A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99B46DCA232E45B300156597 /* PopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTopView.swift; sourceTree = "<group>"; };
 		99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePresenter.swift; sourceTree = "<group>"; };
+		99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartLevelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		99F8320022EBA184004275BB /* CoreDataProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProcesses.swift; sourceTree = "<group>"; };
 		99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
 		99F9B2BF2321525500FEEA69 /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */,
+				99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */,
 				992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */,
 				992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */,
 			);
@@ -564,6 +567,7 @@
 				9966A7282354997800C6CAB1 /* DataBase.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
 				99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */,
+				99DC16272376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift in Sources */,
 				99F9B2C22321527200FEEA69 /* Extensions.swift in Sources */,
 				99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */,
 				9966A72A23590AA900C6CAB1 /* Model.swift in Sources */,
