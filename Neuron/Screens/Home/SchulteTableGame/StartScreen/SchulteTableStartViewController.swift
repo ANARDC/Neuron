@@ -148,26 +148,26 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeMixingShadesSwitch
   func makeMixingShadesSwitch() {
-    self.mixingShadesSwitch.shadowColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+    self.mixingShadesSwitch.shadowColor   = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
     self.mixingShadesSwitch.shadowOpacity = 0
-    self.mixingShadesSwitch.shadowRadius = 5
-    self.mixingShadesSwitch.shadowOffset = CGSize(width: 0, height: 5)
+    self.mixingShadesSwitch.shadowRadius  = 5
+    self.mixingShadesSwitch.shadowOffset  = CGSize(width: 0, height: 5)
 
     self.mixingShadesSwitch.layer.borderWidth = 1.5
     self.mixingShadesSwitch.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
 
     self.mixingShadesSwitch.layer.cornerRadius = 15.5
-    self.mixingShadesSwitch.thumbCornerRadius = 5
-    self.mixingShadesSwitch.thumbDiameter = 20
+    self.mixingShadesSwitch.thumbCornerRadius  = 5
+    self.mixingShadesSwitch.thumbDiameter      = 20
 
-    self.mixingShadesSwitch.trackOffFillColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
-    self.mixingShadesSwitch.trackOnFillColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
-    self.mixingShadesSwitch.trackOnBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
+    self.mixingShadesSwitch.trackOffFillColor       = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
+    self.mixingShadesSwitch.trackOnFillColor        = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
+    self.mixingShadesSwitch.trackOnBorderColor      = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
     self.mixingShadesSwitch.trackOffPushBorderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37)
 
-    self.mixingShadesSwitch.thumbOnBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+    self.mixingShadesSwitch.thumbOnBorderColor  = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
     self.mixingShadesSwitch.thumbOffBorderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    self.mixingShadesSwitch.thumbOnFillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+    self.mixingShadesSwitch.thumbOnFillColor    = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
   }
   
   // MARK: - makeOrderCountSelectingButtons
@@ -175,8 +175,8 @@ extension SchulteTableStartViewController {
     [self.oneOrderButton,
      self.twoOrdersButton,
      self.threeOrdersButton].forEach { (button) in
-      button!.titleLabel?.minimumScaleFactor = 0.1
-      button!.titleLabel?.numberOfLines = 1
+      button!.titleLabel?.minimumScaleFactor        = 0.1
+      button!.titleLabel?.numberOfLines             = 1
       button!.titleLabel?.adjustsFontSizeToFitWidth = true
       button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
     }
@@ -184,10 +184,10 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeOrdersButtonsBackgroundView
   func makeOrdersButtonsBackgroundView() {
-    self.ordersButtonsBackgroundView.shadowColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
+    self.ordersButtonsBackgroundView.shadowColor   = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
     self.ordersButtonsBackgroundView.shadowOpacity = 1
-    self.ordersButtonsBackgroundView.shadowRadius = 5
-    self.ordersButtonsBackgroundView.shadowOffset = CGSize(width: 0, height: 5)
+    self.ordersButtonsBackgroundView.shadowRadius  = 5
+    self.ordersButtonsBackgroundView.shadowOffset  = CGSize(width: 0, height: 5)
     
     self.ordersButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
     
@@ -224,38 +224,38 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) else { return }
 
-    let animation0 = CABasicAnimation(keyPath: "borderColor")
+    let animation0       = CABasicAnimation(keyPath: "borderColor")
     animation0.fromValue = cell.borderColor
-    animation0.toValue = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1).cgColor
-    animation0.duration = self.animationsDuration
+    animation0.toValue   = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1).cgColor
+    animation0.duration  = self.animationsDuration
     cell.layer.add(animation0, forKey: animation0.keyPath)
 
-    let animation1 = CABasicAnimation(keyPath: "borderWidth")
+    let animation1       = CABasicAnimation(keyPath: "borderWidth")
     animation1.fromValue = cell.borderWidth
-    animation1.toValue = 2
-    animation1.duration = self.animationsDuration
+    animation1.toValue   = 2
+    animation1.duration  = self.animationsDuration
     cell.layer.add(animation1, forKey: animation1.keyPath)
 
-    let animation2 = CABasicAnimation(keyPath: "shadowOpacity")
+    let animation2       = CABasicAnimation(keyPath: "shadowOpacity")
     animation2.fromValue = cell.shadowOpacity
-    animation2.toValue = 0
-    animation2.duration = self.animationsDuration
+    animation2.toValue   = 0
+    animation2.duration  = self.animationsDuration
     cell.layer.add(animation2, forKey: animation2.keyPath)
 
-    cell.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1).cgColor
-    cell.borderWidth = 2
+    cell.borderColor   = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1).cgColor
+    cell.borderWidth   = 2
     cell.shadowOpacity = 0
 
     self.chooseBackgroundView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
-    self.chooseBackgroundView.borderWidth = 0
+    self.chooseBackgroundView.borderWidth     = 0
 
-    chooseViewLabel.text = "Start"
+    chooseViewLabel.text      = "Start"
     chooseViewLabel.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
 
-    leftArrow.isHidden = true
+    leftArrow.isHidden  = true
     rightArrow.isHidden = true
 
-    let nextArrow = UIImageView()
+    let nextArrow   = UIImageView()
     nextArrow.image = UIImage(named: "БелаяСтрелка")
     nextArrow.frame = CGRect(x: 283, y: 18, width: 7, height: 12)
 
@@ -271,26 +271,26 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
     if let selectedCell = self.selectedCell {
       guard collectionView.indexPath(for: selectedCell) != indexPath else { return }
 
-      let SCAnimation0 = CABasicAnimation(keyPath: "borderColor")
+      let SCAnimation0       = CABasicAnimation(keyPath: "borderColor")
       SCAnimation0.fromValue = selectedCell.borderColor
-      SCAnimation0.toValue = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
-      SCAnimation0.duration = self.animationsDuration
+      SCAnimation0.toValue   = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
+      SCAnimation0.duration  = self.animationsDuration
       selectedCell.layer.add(SCAnimation0, forKey: SCAnimation0.keyPath)
 
-      let SCAnimation1 = CABasicAnimation(keyPath: "borderWidth")
+      let SCAnimation1       = CABasicAnimation(keyPath: "borderWidth")
       SCAnimation1.fromValue = selectedCell.borderWidth
-      SCAnimation1.toValue = 1
-      SCAnimation1.duration = self.animationsDuration
+      SCAnimation1.toValue   = 1
+      SCAnimation1.duration  = self.animationsDuration
       selectedCell.layer.add(SCAnimation1, forKey: SCAnimation1.keyPath)
 
-      let SCAnimation2 = CABasicAnimation(keyPath: "shadowOpacity")
+      let SCAnimation2       = CABasicAnimation(keyPath: "shadowOpacity")
       SCAnimation2.fromValue = selectedCell.shadowOpacity
-      SCAnimation2.toValue = 1
-      SCAnimation2.duration = self.animationsDuration
+      SCAnimation2.toValue   = 1
+      SCAnimation2.duration  = self.animationsDuration
       selectedCell.layer.add(SCAnimation2, forKey: SCAnimation2.keyPath)
 
-      selectedCell.borderColor = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
-      selectedCell.borderWidth = 1
+      selectedCell.borderColor   = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
+      selectedCell.borderWidth   = 1
       selectedCell.shadowOpacity = 1
     }
 
