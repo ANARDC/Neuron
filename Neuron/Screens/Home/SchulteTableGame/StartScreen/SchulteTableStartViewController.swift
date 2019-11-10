@@ -218,10 +218,10 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeChooseBackgroundView
   func makeChooseBackgroundView() {
-    self.chooseBackgroundView.shadowColor = UIColor(red: 0.898, green: 0.925, blue: 0.929, alpha: 1).cgColor
+    self.chooseBackgroundView.shadowColor   = UIColor(red: 0.898, green: 0.925, blue: 0.929, alpha: 1).cgColor
     self.chooseBackgroundView.shadowOpacity = 1
-    self.chooseBackgroundView.shadowRadius = 14
-    self.chooseBackgroundView.shadowOffset = CGSize(width: 0, height: 11)
+    self.chooseBackgroundView.shadowRadius  = 14
+    self.chooseBackgroundView.shadowOffset  = CGSize(width: 0, height: 11)
     
     self.chooseBackgroundView.backgroundColor = UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)
     
@@ -292,11 +292,11 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
     self.chooseBackgroundView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
     self.chooseBackgroundView.borderWidth     = 0
 
-    chooseViewLabel.text      = "Start"
-    chooseViewLabel.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
+    self.chooseViewLabel.text      = "Start"
+    self.chooseViewLabel.textColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
 
-    leftArrow.isHidden  = true
-    rightArrow.isHidden = true
+    self.leftArrow.isHidden  = true
+    self.rightArrow.isHidden = true
 
     let nextArrow   = UIImageView()
     nextArrow.image = UIImage(named: "БелаяСтрелка")
