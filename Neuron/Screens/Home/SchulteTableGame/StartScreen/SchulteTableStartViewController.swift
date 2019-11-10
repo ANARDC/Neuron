@@ -25,6 +25,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func collectionViewSetting()
   func makeRecordTitleLabel()
   func makeRecordTimeLabel()
+  func makeChooseBackgroundView()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -212,6 +213,18 @@ extension SchulteTableStartViewController {
     self.recordTimeLabel.adjustsFontSizeToFitWidth = true
     self.recordTimeLabel.numberOfLines             = 1
     self.recordTimeLabel.minimumScaleFactor        = 0.5
+  }
+  
+  // MARK: - makeChooseBackgroundView
+  func makeChooseBackgroundView() {
+    self.chooseBackgroundView.shadowColor = UIColor(red: 0.898, green: 0.925, blue: 0.929, alpha: 1).cgColor
+    self.chooseBackgroundView.shadowOpacity = 1
+    self.chooseBackgroundView.shadowRadius = 14
+    self.chooseBackgroundView.shadowOffset = CGSize(width: 0, height: 11)
+    
+    self.chooseBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
+    
+    self.chooseBackgroundView.cornerRadius = 24
   }
 }
 

@@ -39,6 +39,7 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.collectionViewSetting()
     self.view?.makeRecordTitleLabel()
     self.view?.makeRecordTimeLabel()
+    self.view?.makeChooseBackgroundView()
   }
 }
 
