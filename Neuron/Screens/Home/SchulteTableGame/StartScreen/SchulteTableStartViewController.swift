@@ -26,6 +26,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeRecordTitleLabel()
   func makeRecordTimeLabel()
   func makeChooseBackgroundView()
+  func makeChooseViewLabel()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -228,6 +229,12 @@ extension SchulteTableStartViewController {
     
     self.chooseBackgroundView.borderWidth = 2
     self.chooseBackgroundView.borderColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 1).cgColor
+  }
+  
+  // MARK: - makeChooseViewLabel
+  func makeChooseViewLabel() {
+    self.chooseViewLabel.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 1)
+    self.chooseViewLabel.font      = UIFont(name: "NotoSans-Bold", size: 20)
   }
 }
 
