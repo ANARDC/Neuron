@@ -23,6 +23,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeOrderCountSelectingButtons()
   func makeOrdersButtonsBackgroundView()
   func collectionViewSetting()
+  func makeRecordTitleLabel()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -192,6 +193,15 @@ extension SchulteTableStartViewController {
     self.ordersButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
     
     self.ordersButtonsBackgroundView.cornerRadius = 5
+  }
+  
+  // MARK: - makeRecordTitleLabel
+  func makeRecordTitleLabel() {
+    self.recordTitleLabel.font                      = UIFont(name: "NotoSans-Regular", size: 16)
+    self.recordTitleLabel.textColor                 = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.6)
+    self.recordTitleLabel.minimumScaleFactor        = 0.5
+    self.recordTitleLabel.numberOfLines             = 1
+    self.recordTitleLabel.adjustsFontSizeToFitWidth = true
   }
 }
 

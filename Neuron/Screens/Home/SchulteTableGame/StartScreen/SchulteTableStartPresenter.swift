@@ -37,6 +37,7 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeOrderCountSelectingButtons()
     self.view?.makeOrdersButtonsBackgroundView()
     self.view?.collectionViewSetting()
+    self.view?.makeRecordTitleLabel()
   }
 }
 
