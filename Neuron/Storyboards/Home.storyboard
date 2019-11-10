@@ -832,7 +832,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Плоды" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-nS-8xb">
-                                <rect key="frame" x="14" y="88" width="347.00000000000006" height="241"/>
+                                <rect key="frame" x="14" y="88" width="347" height="241"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e5s-nS-8xb" secondAttribute="height" multiplier="347:241" id="k70-qU-XTH"/>
                                 </constraints>
@@ -1103,13 +1103,13 @@ Line 6</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-yp-hbR">
-                                        <rect key="frame" x="19.000000000000004" y="164" width="56.333333333333343" height="19.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="17.999999999999996" y="158" width="57.666666666666657" height="22"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-he-OQP">
-                                        <rect key="frame" x="94" y="165" width="97" height="16"/>
+                                        <rect key="frame" x="95" y="161" width="97" height="16"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="8Kf-QI-tjP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="16"/>
@@ -1149,8 +1149,8 @@ Line 6</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-tU-MVc">
-                                        <rect key="frame" x="198" y="158" width="126" height="31.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <rect key="frame" x="208.00000000000003" y="150" width="114.33333333333334" height="31.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1158,26 +1158,26 @@ Line 6</string>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Fic-hY-1Gx" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" id="2KR-dj-kYs"/>
-                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-7" id="6zQ-Ni-a67"/>
-                                    <constraint firstAttribute="bottom" secondItem="2WO-he-OQP" secondAttribute="bottom" constant="9" id="7Fk-Xe-QQK"/>
-                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="leading" secondItem="2WO-he-OQP" secondAttribute="trailing" constant="7" id="7go-Rv-CJY"/>
+                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-13" id="6zQ-Ni-a67"/>
+                                    <constraint firstAttribute="bottom" secondItem="2WO-he-OQP" secondAttribute="bottom" constant="13" id="7Fk-Xe-QQK"/>
+                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="leading" secondItem="2WO-he-OQP" secondAttribute="trailing" constant="16" id="7go-Rv-CJY"/>
                                     <constraint firstAttribute="trailing" secondItem="NkH-XQ-fyl" secondAttribute="trailing" constant="23" id="BOr-fp-5sZ"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="8" id="BVM-9g-LYf"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="23" id="Dhx-s8-1fT"/>
-                                    <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="6.6666666666666572" id="GUj-pg-3PE"/>
+                                    <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="10" id="GUj-pg-3PE"/>
                                     <constraint firstAttribute="trailing" secondItem="60o-aq-5Jx" secondAttribute="trailing" constant="19" id="Pwt-fj-9xv"/>
-                                    <constraint firstAttribute="trailing" secondItem="eoG-tU-MVc" secondAttribute="trailing" constant="11" id="TsU-LM-A7O"/>
-                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-6" id="Ulj-0V-h1K"/>
+                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-10" id="Ulj-0V-h1K"/>
                                     <constraint firstAttribute="width" secondItem="f34-ph-6ng" secondAttribute="height" multiplier="67:38" id="XwS-dy-5U1"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Y7X-Yv-O0C"/>
                                     <constraint firstItem="60o-aq-5Jx" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Yz8-DE-gSc"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="top" secondItem="60o-aq-5Jx" secondAttribute="bottom" constant="12" id="b0i-B2-GEj"/>
-                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-13" id="faW-ND-pLS"/>
-                                    <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="0.66666666666665719" id="mgF-Hz-6Q2"/>
-                                    <constraint firstItem="2WO-he-OQP" firstAttribute="leading" secondItem="lYu-yp-hbR" secondAttribute="trailing" constant="18.666666666666657" id="rVU-6N-Ous"/>
-                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="19" id="waJ-4Z-xb6"/>
+                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-21" id="faW-ND-pLS"/>
+                                    <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="8.6666666666666572" id="mgF-Hz-6Q2"/>
+                                    <constraint firstAttribute="trailing" secondItem="eoG-tU-MVc" secondAttribute="trailing" constant="12.666666666666629" id="mwX-XD-nBJ"/>
+                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="18" id="waJ-4Z-xb6"/>
                                     <constraint firstAttribute="trailing" secondItem="Fic-hY-1Gx" secondAttribute="trailing" id="wp2-pe-QkR"/>
                                     <constraint firstItem="Fic-hY-1Gx" firstAttribute="top" secondItem="NkH-XQ-fyl" secondAttribute="bottom" constant="15" id="zcQ-YM-ysn"/>
+                                    <constraint firstItem="2WO-he-OQP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="lYu-yp-hbR" secondAttribute="trailing" constant="18" id="zdM-DA-7O2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGh-Sv-tdJ">

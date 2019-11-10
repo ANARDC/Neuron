@@ -24,6 +24,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeOrdersButtonsBackgroundView()
   func collectionViewSetting()
   func makeRecordTitleLabel()
+  func makeRecordTimeLabel()
 }
 
 final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
@@ -197,11 +198,20 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeRecordTitleLabel
   func makeRecordTitleLabel() {
-    self.recordTitleLabel.font                      = UIFont(name: "NotoSans-Regular", size: 16)
+    self.recordTitleLabel.font                      = UIFont(name: "NotoSans", size: 16)
     self.recordTitleLabel.textColor                 = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.6)
-    self.recordTitleLabel.minimumScaleFactor        = 0.5
-    self.recordTitleLabel.numberOfLines             = 1
     self.recordTitleLabel.adjustsFontSizeToFitWidth = true
+    self.recordTitleLabel.numberOfLines             = 1
+    self.recordTitleLabel.minimumScaleFactor        = 0.1
+  }
+  
+  // MARK: - makeRecordTimeLabel
+  func makeRecordTimeLabel() {
+    self.recordTimeLabel.font                      = UIFont(name: "NotoSans", size: 26)
+    self.recordTimeLabel.textColor                 = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
+    self.recordTimeLabel.adjustsFontSizeToFitWidth = true
+    self.recordTimeLabel.numberOfLines             = 1
+    self.recordTimeLabel.minimumScaleFactor        = 0.5
   }
 }
 
