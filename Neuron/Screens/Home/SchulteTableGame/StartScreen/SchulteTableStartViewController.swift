@@ -222,9 +222,12 @@ extension SchulteTableStartViewController {
     self.chooseBackgroundView.shadowRadius = 14
     self.chooseBackgroundView.shadowOffset = CGSize(width: 0, height: 11)
     
-    self.chooseBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
+    self.chooseBackgroundView.backgroundColor = UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)
     
     self.chooseBackgroundView.cornerRadius = 24
+    
+    self.chooseBackgroundView.borderWidth = 2
+    self.chooseBackgroundView.borderColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 1).cgColor
   }
 }
 
