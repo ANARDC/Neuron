@@ -125,7 +125,7 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeRulesTextLabel
   func makeRulesTextLabel() {
-    self.rulesTextLabel.font          = UIFont(name: "NotoSans-Regular", size: 14)
+    self.rulesTextLabel.font          = UIFont(name: "NotoSans", size: 14)
     self.rulesTextLabel.textColor     = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.8)
     self.rulesTextLabel.numberOfLines = 0
     self.rulesTextLabel.text          = "Line 1\nLine 2\nLine 3\nLine 4\nLine 5\nLine 6"
@@ -145,7 +145,7 @@ extension SchulteTableStartViewController {
   
   // MARK: - makeMixingShadesOptionTitle
   func makeMixingShadesOptionTitle() {
-    self.mixingShadesOptionTitle.font      = UIFont(name: "NotoSans-Regular", size: 15)
+    self.mixingShadesOptionTitle.font      = UIFont(name: "NotoSans", size: 15)
     self.mixingShadesOptionTitle.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
     self.mixingShadesOptionTitle.text      = "Mixing shades"
   }
