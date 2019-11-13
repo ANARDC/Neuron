@@ -1031,7 +1031,7 @@ Line 6</string>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60o-aq-5Jx" customClass="PWSwitch" customModule="PWSwitch">
-                                        <rect key="frame" x="265" y="12" width="51" height="31"/>
+                                        <rect key="frame" x="277" y="7" width="51" height="31"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Iq6-3i-hbP"/>
@@ -1165,12 +1165,12 @@ Line 6</string>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="8" id="BVM-9g-LYf"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="23" id="Dhx-s8-1fT"/>
                                     <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="10" id="GUj-pg-3PE"/>
-                                    <constraint firstAttribute="trailing" secondItem="60o-aq-5Jx" secondAttribute="trailing" constant="19" id="Pwt-fj-9xv"/>
+                                    <constraint firstAttribute="trailing" secondItem="60o-aq-5Jx" secondAttribute="trailing" constant="7" id="Pwt-fj-9xv"/>
                                     <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-10" id="Ulj-0V-h1K"/>
                                     <constraint firstAttribute="width" secondItem="f34-ph-6ng" secondAttribute="height" multiplier="67:38" id="XwS-dy-5U1"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Y7X-Yv-O0C"/>
-                                    <constraint firstItem="60o-aq-5Jx" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Yz8-DE-gSc"/>
-                                    <constraint firstItem="NkH-XQ-fyl" firstAttribute="top" secondItem="60o-aq-5Jx" secondAttribute="bottom" constant="12" id="b0i-B2-GEj"/>
+                                    <constraint firstItem="60o-aq-5Jx" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="7" id="Yz8-DE-gSc"/>
+                                    <constraint firstItem="NkH-XQ-fyl" firstAttribute="top" secondItem="60o-aq-5Jx" secondAttribute="bottom" constant="17" id="b0i-B2-GEj"/>
                                     <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-21" id="faW-ND-pLS"/>
                                     <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="8.6666666666666572" id="mgF-Hz-6Q2"/>
                                     <constraint firstAttribute="trailing" secondItem="eoG-tU-MVc" secondAttribute="trailing" constant="12.666666666666629" id="mwX-XD-nBJ"/>
