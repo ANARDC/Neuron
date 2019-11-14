@@ -303,9 +303,12 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
     self.leftArrow.isHidden  = true
     self.rightArrow.isHidden = true
 
-    let nextArrow   = UIImageView()
-    nextArrow.image = UIImage(named: "БелаяСтрелка")
-    nextArrow.frame = CGRect(x: 283, y: 18, width: 7, height: 12)
+    // Making white arrow
+    let nextArrow               = UIImageView()
+    nextArrow.image             = UIImage(named: "БелаяСтрелка")
+    nextArrow.frame.size.width  = 7
+    nextArrow.frame.size.height = 12
+    nextArrow.center            = rightArrow.center
 
     self.chooseBackgroundView.addSubview(nextArrow)
 
