@@ -33,6 +33,7 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   func viewDidLoad() {
     self.view?.getOrdersCountChoose()
     
+    self.view?.makeView()
     self.view?.makeNavBarTitle()
     self.view?.navBarSetting()
     self.view?.makeRulesTitleLabel()

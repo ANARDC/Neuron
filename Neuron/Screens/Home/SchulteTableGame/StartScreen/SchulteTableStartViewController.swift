@@ -22,6 +22,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func saveOrdersButtonsBackgroundViewFrame()
   func setOrdersButtonsBackgroundViewFrame()
   
+  func makeView()
   func makeNavBarTitle()
   func navBarSetting()
   func makeRulesTitleLabel()
@@ -219,6 +220,11 @@ extension SchulteTableStartViewController {
 // MARK: - UI Making Functions
 
 extension SchulteTableStartViewController {
+  
+  // MARK: - makeView
+  func makeView() {
+    self.view.backgroundColor = UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)
+  }
   
   // MARK: - makeNavBarTitle
   func makeNavBarTitle() {
