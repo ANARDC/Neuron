@@ -13,6 +13,15 @@ protocol SchulteTableStartViewControllerDelegate {
   var configurator : SchulteTableStartConfigurator!      { get set }
   var presenter    : SchulteTableStartPresenterDelegate! { get set }
   
+  var ordersCountChoose : Int! { get set }
+  
+  func selectingAnimation(_ position    : Int,
+                          _ destination : Int)
+  func setOrdersCountChoose(_: Int)
+  func getOrdersCountChoose()
+  func saveOrdersButtonsBackgroundViewFrame()
+  func setOrdersButtonsBackgroundViewFrame()
+  
   func makeNavBarTitle()
   func navBarSetting()
   func makeRulesTitleLabel()
@@ -20,7 +29,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeSettingBackgroundView()
   func makeMixingShadesOptionTitle()
   func makeMixingShadesSwitch()
-  func makeOrderCountSelectingButtons()
+  func makeOrdersCountSelectingButtons()
   func makeOrdersButtonsBackgroundView()
   func collectionViewSetting()
   func makeRecordTitleLabel()
@@ -55,13 +64,137 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var rightArrow           : UIImageView!
   @IBOutlet weak var chooseViewLabel      : UILabel!
   
+  var ordersCountChoose : Int!
+  
   static var levelNumber = 1
   var choosenLevelNumber = 1
   
   var selectedCell: UICollectionViewCell? = nil
   
   let animationsDuration = 0.4
+}
+
+// MARK: - Life Cycle
+
+extension SchulteTableStartViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.configurator = SchulteTableStartConfiguratorImplementation(self)
+    self.configurator.configure(self)
+    self.presenter.viewDidLoad()
+  }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    self.tabBarController?.tabBar.isHidden = true
+  }
+}
+
+// MARK: - Orders Count Selecting
+
+extension SchulteTableStartViewController {
+  
+  // MARK: - oneOrderButton
+  @IBAction func oneOrderButton(_ sender: UIButton) {
+    self.presenter.oneOrderSelected()
+  }
+  
+  // MARK: - twoOrdersButton
+  @IBAction func twoOrdersButton(_ sender: UIButton) {
+    self.presenter.twoOrdersSelected()
+  }
+  
+  // MARK: - threeOrdersButton
+  @IBAction func threeOrdersButton(_ sender: UIButton) {
+    self.presenter.threeOrdersSelected()
+  }
+  
+  // MARK: - selectingAnimation
+  func selectingAnimation(_ position    : Int,
+                          _ destination : Int) {
+    if position != destination {
+      let buttons    = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+      let buttonFrom = buttons[position - 1]!
+      let buttonTo   = buttons[destination - 1]!
+      
+      UIView.animate(withDuration: self.animationsDuration, animations: {
+        self.ordersButtonsBackgroundView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5) // Уменьшаем форму
+
+        UIView.transition(with: buttonFrom, duration: self.animationsDuration / 2, options: .transitionCrossDissolve, animations: {
+          buttonFrom.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal) // Меняем цвет шрифта текста той кнопки от которой вышли
+        })
+      })
+
+      UIView.animate(withDuration: self.animationsDuration, delay: self.animationsDuration / 3, animations: {
+//        self.ordersButtonsBackgroundView.frame = CGRect(x: xPosition, y: yPosition, width: 30, height: 15) // Передвигаем куда нужно
+        
+        // Получаем координаты выбранной в прошлый раз кнопки относительно settingBackgroundView, а не своего UIStackView
+        let settingBackgroundViewConvertedFrame = self.settingBackgroundView.convert(buttonTo.frame, from: buttonTo.superview)
+        
+//        // Сначала задаем размеры
+//        self.ordersButtonsBackgroundView.frame.size.width  = 82
+//        self.ordersButtonsBackgroundView.frame.size.height = 32
+        
+        // И только затем устанавливаем координаты центра
+        self.ordersButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + buttonTo.frame.size.width / 2,
+                                                          y: settingBackgroundViewConvertedFrame.minY + buttonTo.frame.size.height / 2)
+      })
+
+      UIView.animate(withDuration: self.animationsDuration, delay: self.animationsDuration, animations: {
+        self.ordersButtonsBackgroundView.transform = CGAffineTransform(scaleX: 1, y: 1) // Увеличиваем форму
+
+        UIView.transition(with: buttonTo, duration: self.animationsDuration / 2, options: .transitionCrossDissolve, animations: {
+          buttonTo.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.9), for: .normal) // Меняем цвет шрифта текста той кнопки в которую пришли
+        })
+      })
+    }
+  }
+  
+  // MARK: - setOrdersCountChoose
+  func setOrdersCountChoose(_ ordersCount: Int) {
+    UserDefaults.standard.set(ordersCount, forKey: "schulteTableGameOrdersCountChooseKey")
+    self.ordersCountChoose = ordersCount
+  }
+  
+  // MARK: - getOrdersCountChoose
+  func getOrdersCountChoose() {
+    guard UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey") != 0 else {
+      UserDefaults.standard.set(1, forKey: "schulteTableGameOrdersCountChooseKey")
+      self.ordersCountChoose = 1
+      return
+    }
+    self.ordersCountChoose = UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey")
+  }
+  
+  // MARK: - saveOrdersButtonsBackgroundViewFrame
+  func saveOrdersButtonsBackgroundViewFrame() {
+    let viewFrameX      = self.ordersButtonsBackgroundView.frame.minX
+    let viewFrameY      = self.ordersButtonsBackgroundView.frame.minY
+    let viewFrameWidth  = self.ordersButtonsBackgroundView.frame.size.width
+    let viewFrameHeight = self.ordersButtonsBackgroundView.frame.size.height
+    
+    UserDefaults.standard.set(viewFrameX, forKey: "ordersButtonsBackgroundViewFrameX")
+    UserDefaults.standard.set(viewFrameY, forKey: "ordersButtonsBackgroundViewFrameY")
+    UserDefaults.standard.set(viewFrameWidth, forKey: "ordersButtonsBackgroundViewFrameWidth")
+    UserDefaults.standard.set(viewFrameHeight, forKey: "ordersButtonsBackgroundViewFrameHeight")
+  }
+  
+  // MARK: - setOrdersButtonsBackgroundViewFrame
+  func setOrdersButtonsBackgroundViewFrame() {
+    let viewFrameX      = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameX"))
+    let viewFrameY      = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameY"))
+    let viewFrameWidth  = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameWidth"))
+    let viewFrameHeight = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameHeight"))
+    
+    guard viewFrameX != 0 || viewFrameY != 0 || viewFrameWidth != 0 || viewFrameHeight != 0 else { return }
+    
+    self.ordersButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
+  }
+}
+
+// MARK: - Switch IBActions
+
+extension SchulteTableStartViewController {
   @IBAction func mixingShadesSwitchValueChanged(_ sender: PWSwitch) {
     self.presenter.mixingShadesSwitchValueChanged(sender)
   }
@@ -83,19 +216,7 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   }
 }
 
-extension SchulteTableStartViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    self.configurator = SchulteTableStartConfiguratorImplementation(self)
-    self.configurator.configure(self)
-    self.presenter.viewDidLoad()
-  }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(true)
-    self.tabBarController?.tabBar.isHidden = true
-  }
-}
+// MARK: - UI Making Functions
 
 extension SchulteTableStartViewController {
   
@@ -106,8 +227,10 @@ extension SchulteTableStartViewController {
 
     self.navigationItem.title = "Schulte Table"
     
-    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
-                                                                    NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
+//    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
+//                                                                    NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
+    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
+                                                        NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
   }
   
   // MARK: - navBarSetting
@@ -179,20 +302,44 @@ extension SchulteTableStartViewController {
     self.mixingShadesSwitch.thumbOnFillColor    = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
   }
   
-  // MARK: - makeOrderCountSelectingButtons
-  func makeOrderCountSelectingButtons() {
-    [self.oneOrderButton,
-     self.twoOrdersButton,
-     self.threeOrdersButton].forEach { (button) in
+  // MARK: - makeOrdersCountSelectingButtons
+  func makeOrdersCountSelectingButtons() {
+    let buttons = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+    
+    for (index, button) in buttons.enumerated() {
+      /*
+       * Цвет шрифта кнопки, которая была нажата
+       * при прошлом заходе на этот экран делаем белой,
+       * а остальные темными
+       */
+      if index + 1 == self.ordersCountChoose {
+        button!.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.9), for: .normal)
+      } else {
+        button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
+      }
+      button!.titleLabel?.font                      = UIFont(name: "NotoSans", size: 13)
       button!.titleLabel?.minimumScaleFactor        = 0.1
       button!.titleLabel?.numberOfLines             = 1
       button!.titleLabel?.adjustsFontSizeToFitWidth = true
-      button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
     }
   }
   
   // MARK: - makeOrdersButtonsBackgroundView
   func makeOrdersButtonsBackgroundView() {
+//    let buttons       = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+//    let choosedButton = buttons[self.ordersCountChoose - 1]! // Получили нажатую при прошлом заходе кнопку
+//
+//    // Получаем координаты выбранной в прошлый раз кнопки относительно settingBackgroundView, а не своего UIStackView
+//    let settingBackgroundViewConvertedFrame = self.settingBackgroundView.convert(choosedButton.frame, from: choosedButton.superview)
+//
+//    // Сначала задаем размеры
+//    self.ordersButtonsBackgroundView.frame.size.width  = 82
+//    self.ordersButtonsBackgroundView.frame.size.height = 32
+//
+//    // И только затем устанавливаем координаты центра
+//    self.ordersButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + choosedButton.frame.size.width / 2,
+//                                                      y: settingBackgroundViewConvertedFrame.minY + choosedButton.frame.size.height / 2)
+    
     self.ordersButtonsBackgroundView.shadowColor   = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
     self.ordersButtonsBackgroundView.shadowOpacity = 1
     self.ordersButtonsBackgroundView.shadowRadius  = 5

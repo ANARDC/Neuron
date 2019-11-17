@@ -12,6 +12,10 @@ import PWSwitch
 protocol SchulteTableStartPresenterDelegate {
   func viewDidLoad()
   
+  func oneOrderSelected()
+  func twoOrdersSelected()
+  func threeOrdersSelected()
+  
   func mixingShadesSwitchValueChanged(_: PWSwitch)
   func mixingShadesSwitchTouchDown(_: PWSwitch)
   func mixingShadesSwitchTouchUpInside(_: PWSwitch)
@@ -27,6 +31,8 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   }
   
   func viewDidLoad() {
+    self.view?.getOrdersCountChoose()
+    
     self.view?.makeNavBarTitle()
     self.view?.navBarSetting()
     self.view?.makeRulesTitleLabel()
@@ -34,7 +40,8 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeSettingBackgroundView()
     self.view?.makeMixingShadesOptionTitle()
     self.view?.makeMixingShadesSwitch()
-    self.view?.makeOrderCountSelectingButtons()
+    self.view?.makeOrdersCountSelectingButtons()
+    self.view?.setOrdersButtonsBackgroundViewFrame()
     self.view?.makeOrdersButtonsBackgroundView()
     self.view?.collectionViewSetting()
     self.view?.makeRecordTitleLabel()
@@ -44,7 +51,40 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   }
 }
 
+// MARK: - Orders Count Selecting Buttons
+
 extension SchulteTableStartPresenter {
+  
+  // MARK: - oneOrderSelected
+  func oneOrderSelected() {
+    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+                                  1)
+    self.view?.setOrdersCountChoose(1)
+    self.view?.saveOrdersButtonsBackgroundViewFrame()
+  }
+  
+  // MARK: - twoOrdersSelected
+  func twoOrdersSelected() {
+    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+                                  2)
+    self.view?.setOrdersCountChoose(2)
+    self.view?.saveOrdersButtonsBackgroundViewFrame()
+  }
+  
+  // MARK: - threeOrdersSelected
+  func threeOrdersSelected() {
+    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+                                  3)
+    self.view?.setOrdersCountChoose(3)
+    self.view?.saveOrdersButtonsBackgroundViewFrame()
+  }
+}
+
+// MARK: - Switch Functions
+
+extension SchulteTableStartPresenter {
+  
+  // MARK: - mixingShadesSwitchValueChanged
   func mixingShadesSwitchValueChanged(_ sender: PWSwitch) {
     switch sender.on {
     case true:
@@ -56,6 +96,7 @@ extension SchulteTableStartPresenter {
     }
   }
   
+  // MARK: - mixingShadesSwitchTouchDown
   func mixingShadesSwitchTouchDown(_ sender: PWSwitch) {
     if sender.on {
       let animation            = CABasicAnimation(keyPath: "shadowOpacity")
@@ -75,6 +116,7 @@ extension SchulteTableStartPresenter {
     }
   }
   
+  // MARK: - mixingShadesSwitchTouchUpInside
   func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch) {
     if sender.on {
       sender.shadowOpacity = 1
@@ -84,6 +126,7 @@ extension SchulteTableStartPresenter {
     }
   }
   
+  // MARK: - mixingShadesSwitchTouchUpOutside
   func mixingShadesSwitchTouchUpOutside(_ sender: PWSwitch) {
     if sender.on {
       let animation            = CABasicAnimation(keyPath: "shadowOpacity")
@@ -106,6 +149,7 @@ extension SchulteTableStartPresenter {
     }
   }
   
+  // MARK: - mixingShadesSwitchTouchDragExit
   func mixingShadesSwitchTouchDragExit(_ sender: PWSwitch) {
     if sender.on {
       sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
