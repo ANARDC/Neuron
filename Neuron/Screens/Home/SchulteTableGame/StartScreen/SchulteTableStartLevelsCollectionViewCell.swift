@@ -30,7 +30,7 @@ extension SchulteTableStartLevelsCollectionViewCell {
     
     self.layer.shadowColor   = UIColor(red: 0.898, green: 0.925, blue: 0.929, alpha: 1).cgColor
     self.layer.shadowOpacity = 1
-    self.layer.shadowRadius  = 14
+    self.layer.shadowRadius  = 6
     self.layer.shadowOffset  = CGSize(width: 0, height: 11)
     
     self.layer.cornerRadius = 8
