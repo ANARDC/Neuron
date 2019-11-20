@@ -1060,16 +1060,16 @@ Line 6</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-hY-1Gx">
-                                        <rect key="frame" x="0.0" y="100" width="335" height="71"/>
+                                        <rect key="frame" x="0.0" y="100" width="335" height="90"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="71" id="gEe-A0-iXl"/>
+                                            <constraint firstAttribute="height" constant="90" id="gEe-A0-iXl"/>
                                         </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="7" id="E2b-rE-aLB">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="30" maxY="20"/>
+                                            <inset key="sectionInset" minX="10" minY="0.0" maxX="30" maxY="70"/>
                                         </collectionViewFlowLayout>
                                         <cells/>
                                     </collectionView>
@@ -1170,7 +1170,7 @@ Line 6</string>
                                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Fic-hY-1Gx" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" id="2KR-dj-kYs"/>
-                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-13" id="6zQ-Ni-a67"/>
+                                    <constraint firstItem="lYu-yp-hbR" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-32" id="6zQ-Ni-a67"/>
                                     <constraint firstAttribute="bottom" secondItem="2WO-he-OQP" secondAttribute="bottom" constant="13" id="7Fk-Xe-QQK"/>
                                     <constraint firstItem="eoG-tU-MVc" firstAttribute="leading" secondItem="2WO-he-OQP" secondAttribute="trailing" constant="16" id="7go-Rv-CJY"/>
                                     <constraint firstAttribute="trailing" secondItem="NkH-XQ-fyl" secondAttribute="trailing" constant="23" id="BOr-fp-5sZ"/>
@@ -1178,12 +1178,12 @@ Line 6</string>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="23" id="Dhx-s8-1fT"/>
                                     <constraint firstAttribute="bottom" secondItem="lYu-yp-hbR" secondAttribute="bottom" constant="10" id="GUj-pg-3PE"/>
                                     <constraint firstAttribute="trailing" secondItem="60o-aq-5Jx" secondAttribute="trailing" constant="12" id="Pwt-fj-9xv"/>
-                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-10" id="Ulj-0V-h1K"/>
+                                    <constraint firstItem="2WO-he-OQP" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-29" id="Ulj-0V-h1K"/>
                                     <constraint firstAttribute="width" secondItem="f34-ph-6ng" secondAttribute="height" multiplier="67:38" id="XwS-dy-5U1"/>
                                     <constraint firstItem="Etj-hi-6Gq" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="16" id="Y7X-Yv-O0C"/>
                                     <constraint firstItem="60o-aq-5Jx" firstAttribute="top" secondItem="f34-ph-6ng" secondAttribute="top" constant="12" id="Yz8-DE-gSc"/>
                                     <constraint firstItem="NkH-XQ-fyl" firstAttribute="top" secondItem="60o-aq-5Jx" secondAttribute="bottom" constant="12" id="b0i-B2-GEj"/>
-                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-21" id="faW-ND-pLS"/>
+                                    <constraint firstItem="eoG-tU-MVc" firstAttribute="top" secondItem="Fic-hY-1Gx" secondAttribute="bottom" constant="-40" id="faW-ND-pLS"/>
                                     <constraint firstAttribute="bottom" secondItem="eoG-tU-MVc" secondAttribute="bottom" constant="8.6666666666666572" id="mgF-Hz-6Q2"/>
                                     <constraint firstAttribute="trailing" secondItem="eoG-tU-MVc" secondAttribute="trailing" constant="12.666666666666629" id="mwX-XD-nBJ"/>
                                     <constraint firstItem="lYu-yp-hbR" firstAttribute="leading" secondItem="f34-ph-6ng" secondAttribute="leading" constant="18" id="waJ-4Z-xb6"/>

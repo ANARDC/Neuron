@@ -32,6 +32,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeMixingShadesSwitch()
   func makeOrdersCountSelectingButtons()
   func makeOrdersButtonsBackgroundView()
+  func makeSettingsCollectionView()
   func collectionViewSetting()
   func makeRecordTitleLabel()
   func makeRecordTimeLabel()
@@ -354,6 +355,11 @@ extension SchulteTableStartViewController {
     self.ordersButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
     
     self.ordersButtonsBackgroundView.cornerRadius = 5
+  }
+  
+  // MARK: - makeSettingsCollectionView
+  func makeSettingsCollectionView() {
+    self.settingsCollectionView.cornerRadius = 20
   }
   
   // MARK: - makeRecordTitleLabel
