@@ -1284,7 +1284,7 @@ Line 6</string>
         <!--Level 1-->
         <scene sceneID="kjV-IL-XYf">
             <objects>
-                <viewController id="Z09-8h-N2M" sceneMemberID="viewController">
+                <viewController id="Z09-8h-N2M" customClass="SchulteTableGameViewController" customModule="Neuron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n2p-If-E5l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1355,6 +1355,16 @@ Line 6</string>
                     <navigationItem key="navigationItem" title="Level 1" id="s4C-VV-27j">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Рестарт" id="2gi-Ji-tUj"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="restartButton" destination="2gi-Ji-tUj" id="OOC-J2-s8O"/>
+                        <outlet property="tableCollectionView" destination="rcV-c9-exv" id="zSJ-bP-UUN"/>
+                        <outlet property="timerLabel" destination="B7m-TR-x3f" id="WVf-Px-LIt"/>
+                        <outletCollection property="stars" destination="No5-SB-PWH" collectionClass="NSMutableArray" id="ApH-Ut-aiH"/>
+                        <outletCollection property="stars" destination="qvQ-AT-E1E" collectionClass="NSMutableArray" id="S37-oE-zxA"/>
+                        <outletCollection property="stars" destination="cD5-fs-CTZ" collectionClass="NSMutableArray" id="quI-ou-0mz"/>
+                        <outletCollection property="stars" destination="lzb-GP-VV1" collectionClass="NSMutableArray" id="jkq-hc-YQx"/>
+                        <outletCollection property="stars" destination="eb5-6q-fuD" collectionClass="NSMutableArray" id="aTS-rF-a5x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xik-9e-CNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
