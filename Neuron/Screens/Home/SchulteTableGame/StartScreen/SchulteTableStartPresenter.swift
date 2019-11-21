@@ -34,8 +34,8 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.getOrdersCountChoose()
     
     self.view?.makeView()
-    self.view?.makeNavBarTitle()
     self.view?.navBarSetting()
+    self.view?.makeNavBarTitle()
     self.view?.makeRulesTitleLabel()
     self.view?.makeRulesTextLabel()
     self.view?.makeSettingBackgroundView()

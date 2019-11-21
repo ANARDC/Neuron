@@ -227,6 +227,12 @@ extension SchulteTableStartViewController {
     self.view.backgroundColor = UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)
   }
   
+  // MARK: - navBarSetting
+  func navBarSetting() {
+    BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
+    statsButton.image = UIImage(named: "Статистика")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+  }
+  
   // MARK: - makeNavBarTitle
   func makeNavBarTitle() {
     let navBarTitleFont      = UIFont(name: "NotoSans-Bold", size: 23)!
@@ -234,16 +240,8 @@ extension SchulteTableStartViewController {
 
     self.navigationItem.title = "Schulte Table"
     
-//    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
-//                                                                    NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
-    UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
-                                                        NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
-  }
-  
-  // MARK: - navBarSetting
-  func navBarSetting() {
-    BarDesign().customizeNavBar(navigationController: self.navigationController, navigationItem: self.navigationItem)
-    statsButton.image = UIImage(named: "Статистика")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
+                                                                    NSAttributedString.Key.foregroundColor: navBarTitleFontColor]
   }
   
   // MARK: - makeRulesTitleLabel
