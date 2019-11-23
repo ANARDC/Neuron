@@ -12,9 +12,9 @@ import PWSwitch
 protocol SchulteTableStartPresenterDelegate {
   func viewDidLoad()
   
-  func oneOrderSelected()
-  func twoOrdersSelected()
-  func threeOrdersSelected()
+  func oneColorSelected()
+  func twoColorsSelected()
+  func threeColorsSelected()
   
   func startGame(data: SchulteTableGameSettings)
   func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -34,7 +34,7 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   }
   
   func viewDidLoad() {
-    self.view?.getOrdersCountChoose()
+    self.view?.getColorsCountChoose()
     
     self.view?.makeView()
     self.view?.navBarSetting()
@@ -44,9 +44,9 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeSettingBackgroundView()
     self.view?.makeMixingShadesOptionTitle()
     self.view?.makeMixingShadesSwitch()
-    self.view?.makeOrdersCountSelectingButtons()
-    self.view?.setOrdersButtonsBackgroundViewFrame()
-    self.view?.makeOrdersButtonsBackgroundView()
+    self.view?.makeColorsCountSelectingButtons()
+    self.view?.setColorsButtonsBackgroundViewFrame()
+    self.view?.makeColorsButtonsBackgroundView()
     self.view?.makeSettingsCollectionView()
     self.view?.collectionViewSetting()
     self.view?.makeRecordTitleLabel()
@@ -76,32 +76,32 @@ extension SchulteTableStartPresenter {
   }
 }
 
-// MARK: - Orders Count Selecting Buttons
+// MARK: - Colors Count Selecting Buttons
 
 extension SchulteTableStartPresenter {
   
-  // MARK: - oneOrderSelected
-  func oneOrderSelected() {
+  // MARK: - oneColorSelected
+  func oneColorSelected() {
     self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   1)
-    self.view?.setOrdersCountChoose(1)
-    self.view?.saveOrdersButtonsBackgroundViewFrame()
+    self.view?.setColorsCountChoose(1)
+    self.view?.saveColorsButtonsBackgroundViewFrame()
   }
   
-  // MARK: - twoOrdersSelected
-  func twoOrdersSelected() {
+  // MARK: - twoColorsSelected
+  func twoColorsSelected() {
     self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   2)
-    self.view?.setOrdersCountChoose(2)
-    self.view?.saveOrdersButtonsBackgroundViewFrame()
+    self.view?.setColorsCountChoose(2)
+    self.view?.saveColorsButtonsBackgroundViewFrame()
   }
   
-  // MARK: - threeOrdersSelected
-  func threeOrdersSelected() {
+  // MARK: - threeColorsSelected
+  func threeColorsSelected() {
     self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   3)
-    self.view?.setOrdersCountChoose(3)
-    self.view?.saveOrdersButtonsBackgroundViewFrame()
+    self.view?.setColorsCountChoose(3)
+    self.view?.saveColorsButtonsBackgroundViewFrame()
   }
 }
 

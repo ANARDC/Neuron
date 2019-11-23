@@ -22,10 +22,10 @@ protocol SchulteTableStartViewControllerDelegate {
   
   func selectingAnimation(_ position    : Int,
                           _ destination : Int)
-  func setOrdersCountChoose(_: Int)
-  func getOrdersCountChoose()
-  func saveOrdersButtonsBackgroundViewFrame()
-  func setOrdersButtonsBackgroundViewFrame()
+  func setColorsCountChoose(_: Int)
+  func getColorsCountChoose()
+  func saveColorsButtonsBackgroundViewFrame()
+  func setColorsButtonsBackgroundViewFrame()
   
   func goToGameScreen(data: SchulteTableGameSettings)
   
@@ -37,8 +37,8 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeSettingBackgroundView()
   func makeMixingShadesOptionTitle()
   func makeMixingShadesSwitch()
-  func makeOrdersCountSelectingButtons()
-  func makeOrdersButtonsBackgroundView()
+  func makeColorsCountSelectingButtons()
+  func makeColorsButtonsBackgroundView()
   func makeSettingsCollectionView()
   func collectionViewSetting()
   func makeRecordTitleLabel()
@@ -59,10 +59,10 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var settingBackgroundView       : UIView!
   @IBOutlet weak var mixingShadesOptionTitle     : UILabel!
   @IBOutlet weak var mixingShadesSwitch          : PWSwitch!
-  @IBOutlet weak var oneOrderButton              : UIButton!
-  @IBOutlet weak var twoOrdersButton             : UIButton!
-  @IBOutlet weak var threeOrdersButton           : UIButton!
-  @IBOutlet weak var ordersButtonsBackgroundView : UIView!
+  @IBOutlet weak var oneColorButton              : UIButton!
+  @IBOutlet weak var twoColorsButton             : UIButton!
+  @IBOutlet weak var threeColorsButton           : UIButton!
+  @IBOutlet weak var colorsButtonsBackgroundView : UIView!
   @IBOutlet weak var settingsCollectionView      : UICollectionView!
   @IBOutlet weak var recordTitleLabel            : UILabel!
   @IBOutlet weak var recordTimeLabel             : UILabel!
@@ -104,35 +104,35 @@ extension SchulteTableStartViewController {
   }
 }
 
-// MARK: - Orders Count Selecting
+// MARK: - Colors Count Selecting
 
 extension SchulteTableStartViewController {
   
-  // MARK: - oneOrderButton
-  @IBAction func oneOrderButton(_ sender: UIButton) {
-    self.presenter.oneOrderSelected()
+  // MARK: - oneColorButton
+  @IBAction func oneColorButton(_ sender: UIButton) {
+    self.presenter.oneColorSelected()
   }
   
-  // MARK: - twoOrdersButton
-  @IBAction func twoOrdersButton(_ sender: UIButton) {
-    self.presenter.twoOrdersSelected()
+  // MARK: - twoColorsButton
+  @IBAction func twoColorsButton(_ sender: UIButton) {
+    self.presenter.twoColorsSelected()
   }
   
-  // MARK: - threeOrdersButton
-  @IBAction func threeOrdersButton(_ sender: UIButton) {
-    self.presenter.threeOrdersSelected()
+  // MARK: - threeColorsButton
+  @IBAction func threeColorsButton(_ sender: UIButton) {
+    self.presenter.threeColorsSelected()
   }
   
   // MARK: - selectingAnimation
   func selectingAnimation(_ position    : Int,
                           _ destination : Int) {
     if position != destination {
-      let buttons    = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+      let buttons    = [self.oneColorButton, self.twoColorsButton, self.threeColorsButton]
       let buttonFrom = buttons[position - 1]!
       let buttonTo   = buttons[destination - 1]!
       
       UIView.animate(withDuration: self.animationsDuration, animations: {
-        self.ordersButtonsBackgroundView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5) // Уменьшаем форму
+        self.colorsButtonsBackgroundView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5) // Уменьшаем форму
 
         UIView.transition(with: buttonFrom, duration: self.animationsDuration / 2, options: .transitionCrossDissolve, animations: {
           buttonFrom.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal) // Меняем цвет шрифта текста той кнопки от которой вышли
@@ -140,22 +140,22 @@ extension SchulteTableStartViewController {
       })
 
       UIView.animate(withDuration: self.animationsDuration, delay: self.animationsDuration / 3, animations: {
-//        self.ordersButtonsBackgroundView.frame = CGRect(x: xPosition, y: yPosition, width: 30, height: 15) // Передвигаем куда нужно
+//        self.colorsButtonsBackgroundView.frame = CGRect(x: xPosition, y: yPosition, width: 30, height: 15) // Передвигаем куда нужно
         
         // Получаем координаты выбранной в прошлый раз кнопки относительно settingBackgroundView, а не своего UIStackView
         let settingBackgroundViewConvertedFrame = self.settingBackgroundView.convert(buttonTo.frame, from: buttonTo.superview)
         
 //        // Сначала задаем размеры
-//        self.ordersButtonsBackgroundView.frame.size.width  = 82
-//        self.ordersButtonsBackgroundView.frame.size.height = 32
+//        self.colorsButtonsBackgroundView.frame.size.width  = 82
+//        self.colorsButtonsBackgroundView.frame.size.height = 32
         
         // И только затем устанавливаем координаты центра
-        self.ordersButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + buttonTo.frame.size.width / 2,
+        self.colorsButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + buttonTo.frame.size.width / 2,
                                                           y: settingBackgroundViewConvertedFrame.minY + buttonTo.frame.size.height / 2)
       })
 
       UIView.animate(withDuration: self.animationsDuration, delay: self.animationsDuration, animations: {
-        self.ordersButtonsBackgroundView.transform = CGAffineTransform(scaleX: 1, y: 1) // Увеличиваем форму
+        self.colorsButtonsBackgroundView.transform = CGAffineTransform(scaleX: 1, y: 1) // Увеличиваем форму
 
         UIView.transition(with: buttonTo, duration: self.animationsDuration / 2, options: .transitionCrossDissolve, animations: {
           buttonTo.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.9), for: .normal) // Меняем цвет шрифта текста той кнопки в которую пришли
@@ -164,45 +164,45 @@ extension SchulteTableStartViewController {
     }
   }
   
-  // MARK: - setOrdersCountChoose
-  func setOrdersCountChoose(_ ordersCount: Int) {
-    UserDefaults.standard.set(ordersCount, forKey: "schulteTableGameOrdersCountChooseKey")
-    self.colorsCountChoose = ordersCount
+  // MARK: - setColorsCountChoose
+  func setColorsCountChoose(_ colorsCount: Int) {
+    UserDefaults.standard.set(colorsCount, forKey: "schulteTableGameColorsCountChooseKey")
+    self.colorsCountChoose = colorsCount
   }
   
-  // MARK: - getOrdersCountChoose
-  func getOrdersCountChoose() {
-    guard UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey") != 0 else {
-      UserDefaults.standard.set(1, forKey: "schulteTableGameOrdersCountChooseKey")
+  // MARK: - getColorsCountChoose
+  func getColorsCountChoose() {
+    guard UserDefaults.standard.integer(forKey: "schulteTableGameColorsCountChooseKey") != 0 else {
+      UserDefaults.standard.set(1, forKey: "schulteTableGameColorsCountChooseKey")
       self.colorsCountChoose = 1
       return
     }
-    self.colorsCountChoose = UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey")
+    self.colorsCountChoose = UserDefaults.standard.integer(forKey: "schulteTableGameColorsCountChooseKey")
   }
   
-  // MARK: - saveOrdersButtonsBackgroundViewFrame
-  func saveOrdersButtonsBackgroundViewFrame() {
-    let viewFrameX      = self.ordersButtonsBackgroundView.frame.minX
-    let viewFrameY      = self.ordersButtonsBackgroundView.frame.minY
-    let viewFrameWidth  = self.ordersButtonsBackgroundView.frame.size.width
-    let viewFrameHeight = self.ordersButtonsBackgroundView.frame.size.height
+  // MARK: - saveColorsButtonsBackgroundViewFrame
+  func saveColorsButtonsBackgroundViewFrame() {
+    let viewFrameX      = self.colorsButtonsBackgroundView.frame.minX
+    let viewFrameY      = self.colorsButtonsBackgroundView.frame.minY
+    let viewFrameWidth  = self.colorsButtonsBackgroundView.frame.size.width
+    let viewFrameHeight = self.colorsButtonsBackgroundView.frame.size.height
     
-    UserDefaults.standard.set(viewFrameX, forKey: "ordersButtonsBackgroundViewFrameX")
-    UserDefaults.standard.set(viewFrameY, forKey: "ordersButtonsBackgroundViewFrameY")
-    UserDefaults.standard.set(viewFrameWidth, forKey: "ordersButtonsBackgroundViewFrameWidth")
-    UserDefaults.standard.set(viewFrameHeight, forKey: "ordersButtonsBackgroundViewFrameHeight")
+    UserDefaults.standard.set(viewFrameX, forKey: "colorsButtonsBackgroundViewFrameX")
+    UserDefaults.standard.set(viewFrameY, forKey: "colorsButtonsBackgroundViewFrameY")
+    UserDefaults.standard.set(viewFrameWidth, forKey: "colorsButtonsBackgroundViewFrameWidth")
+    UserDefaults.standard.set(viewFrameHeight, forKey: "colorsButtonsBackgroundViewFrameHeight")
   }
   
-  // MARK: - setOrdersButtonsBackgroundViewFrame
-  func setOrdersButtonsBackgroundViewFrame() {
-    let viewFrameX      = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameX"))
-    let viewFrameY      = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameY"))
-    let viewFrameWidth  = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameWidth"))
-    let viewFrameHeight = CGFloat(UserDefaults.standard.float(forKey: "ordersButtonsBackgroundViewFrameHeight"))
+  // MARK: - setColorsButtonsBackgroundViewFrame
+  func setColorsButtonsBackgroundViewFrame() {
+    let viewFrameX      = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameX"))
+    let viewFrameY      = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameY"))
+    let viewFrameWidth  = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameWidth"))
+    let viewFrameHeight = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameHeight"))
     
     guard viewFrameX != 0 || viewFrameY != 0 || viewFrameWidth != 0 || viewFrameHeight != 0 else { return }
     
-    self.ordersButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
+    self.colorsButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
   }
 }
 
@@ -342,9 +342,9 @@ extension SchulteTableStartViewController {
     self.mixingShadesSwitch.thumbOnFillColor    = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
   }
   
-  // MARK: - makeOrdersCountSelectingButtons
-  func makeOrdersCountSelectingButtons() {
-    let buttons = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+  // MARK: - makeColorsCountSelectingButtons
+  func makeColorsCountSelectingButtons() {
+    let buttons = [self.oneColorButton, self.twoColorsButton, self.threeColorsButton]
     
     for (index, button) in buttons.enumerated() {
       /*
@@ -364,30 +364,30 @@ extension SchulteTableStartViewController {
     }
   }
   
-  // MARK: - makeOrdersButtonsBackgroundView
-  func makeOrdersButtonsBackgroundView() {
-//    let buttons       = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
+  // MARK: - makeColorsButtonsBackgroundView
+  func makeColorsButtonsBackgroundView() {
+//    let buttons       = [self.oneColorButton, self.twoColorsButton, self.threeColorsButton]
 //    let choosedButton = buttons[self.colorsCountChoose - 1]! // Получили нажатую при прошлом заходе кнопку
 //
 //    // Получаем координаты выбранной в прошлый раз кнопки относительно settingBackgroundView, а не своего UIStackView
 //    let settingBackgroundViewConvertedFrame = self.settingBackgroundView.convert(choosedButton.frame, from: choosedButton.superview)
 //
 //    // Сначала задаем размеры
-//    self.ordersButtonsBackgroundView.frame.size.width  = 82
-//    self.ordersButtonsBackgroundView.frame.size.height = 32
+//    self.colorsButtonsBackgroundView.frame.size.width  = 82
+//    self.colorsButtonsBackgroundView.frame.size.height = 32
 //
 //    // И только затем устанавливаем координаты центра
-//    self.ordersButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + choosedButton.frame.size.width / 2,
+//    self.colorsButtonsBackgroundView.center = CGPoint(x: settingBackgroundViewConvertedFrame.minX + choosedButton.frame.size.width / 2,
 //                                                      y: settingBackgroundViewConvertedFrame.minY + choosedButton.frame.size.height / 2)
     
-    self.ordersButtonsBackgroundView.shadowColor   = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
-    self.ordersButtonsBackgroundView.shadowOpacity = 1
-    self.ordersButtonsBackgroundView.shadowRadius  = 5
-    self.ordersButtonsBackgroundView.shadowOffset  = CGSize(width: 0, height: 5)
+    self.colorsButtonsBackgroundView.shadowColor   = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 0.37).cgColor
+    self.colorsButtonsBackgroundView.shadowOpacity = 1
+    self.colorsButtonsBackgroundView.shadowRadius  = 5
+    self.colorsButtonsBackgroundView.shadowOffset  = CGSize(width: 0, height: 5)
     
-    self.ordersButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
+    self.colorsButtonsBackgroundView.backgroundColor = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
     
-    self.ordersButtonsBackgroundView.cornerRadius = 5
+    self.colorsButtonsBackgroundView.cornerRadius = 5
   }
   
   // MARK: - makeSettingsCollectionView

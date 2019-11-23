@@ -1083,9 +1083,9 @@ Line 6</string>
                                                     <constraint firstAttribute="width" constant="63" id="Pif-U8-Yf6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="One order"/>
+                                                <state key="normal" title="One color"/>
                                                 <connections>
-                                                    <action selector="oneOrderButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="6Ej-H7-NFk"/>
+                                                    <action selector="oneColorButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="6Ej-H7-NFk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhs-9j-oGh">
@@ -1094,9 +1094,9 @@ Line 6</string>
                                                     <constraint firstAttribute="width" constant="69" id="grL-Xr-Om5"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="Two orders"/>
+                                                <state key="normal" title="Two colors"/>
                                                 <connections>
-                                                    <action selector="twoOrdersButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="LLN-KR-xJB"/>
+                                                    <action selector="twoColorsButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="LLN-KR-xJB"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="buF-xE-fFa">
@@ -1105,9 +1105,9 @@ Line 6</string>
                                                     <constraint firstAttribute="width" constant="79" id="kFw-SJ-ZbQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
-                                                <state key="normal" title="Three orders"/>
+                                                <state key="normal" title="Three colors"/>
                                                 <connections>
-                                                    <action selector="threeOrdersButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="3Ud-dy-Cte"/>
+                                                    <action selector="threeColorsButton:" destination="TJ7-Qh-5SF" eventType="touchUpInside" id="3Ud-dy-Cte"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1257,11 +1257,11 @@ Line 6</string>
                     <connections>
                         <outlet property="chooseBackgroundView" destination="FGh-Sv-tdJ" id="gPF-73-Ocg"/>
                         <outlet property="chooseViewLabel" destination="AHN-gg-DUX" id="2jX-Jh-5kO"/>
+                        <outlet property="colorsButtonsBackgroundView" destination="ujb-HZ-Y72" id="7ke-gk-PXJ"/>
                         <outlet property="leftArrow" destination="PYM-GF-tRG" id="7sy-lV-IlD"/>
                         <outlet property="mixingShadesOptionTitle" destination="Etj-hi-6Gq" id="wPz-2p-9pK"/>
                         <outlet property="mixingShadesSwitch" destination="60o-aq-5Jx" id="pAA-n6-vXH"/>
-                        <outlet property="oneOrderButton" destination="kq7-yO-CG9" id="6mU-Js-V0h"/>
-                        <outlet property="ordersButtonsBackgroundView" destination="ujb-HZ-Y72" id="7ke-gk-PXJ"/>
+                        <outlet property="oneColorButton" destination="kq7-yO-CG9" id="6mU-Js-V0h"/>
                         <outlet property="recordTimeLabel" destination="eoG-tU-MVc" id="y7D-qO-DHb"/>
                         <outlet property="recordTitleLabel" destination="lYu-yp-hbR" id="LBY-5v-AzQ"/>
                         <outlet property="rightArrow" destination="afd-q3-RdQ" id="rcn-Hc-7aV"/>
@@ -1270,8 +1270,8 @@ Line 6</string>
                         <outlet property="settingBackgroundView" destination="f34-ph-6ng" id="05s-cT-Zch"/>
                         <outlet property="settingsCollectionView" destination="Fic-hY-1Gx" id="Ph0-kb-nDY"/>
                         <outlet property="statsButton" destination="hvj-Ul-ksG" id="eDZ-jr-4ng"/>
-                        <outlet property="threeOrdersButton" destination="buF-xE-fFa" id="Ga2-hq-pkM"/>
-                        <outlet property="twoOrdersButton" destination="Xhs-9j-oGh" id="zA0-Zz-Z1U"/>
+                        <outlet property="threeColorsButton" destination="buF-xE-fFa" id="Ga2-hq-pkM"/>
+                        <outlet property="twoColorsButton" destination="Xhs-9j-oGh" id="zA0-Zz-Z1U"/>
                         <outletCollection property="recordStars" destination="8Kf-QI-tjP" collectionClass="NSMutableArray" id="N8L-gZ-e5j"/>
                         <outletCollection property="recordStars" destination="zoK-RX-H2l" collectionClass="NSMutableArray" id="aWN-wv-bSG"/>
                         <outletCollection property="recordStars" destination="MnZ-6j-cnd" collectionClass="NSMutableArray" id="6GN-tG-MKa"/>
