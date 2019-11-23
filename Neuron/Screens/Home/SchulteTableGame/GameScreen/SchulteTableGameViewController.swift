@@ -12,6 +12,7 @@ protocol SchulteTableGameViewControllerDelegate {
   var settingsData : SchulteTableGameSettings! { get }
   
   func makeRestartButtonImage()
+  func makeTimerLabel()
 }
 
 final class SchulteTableGameViewController: UIViewController, SchulteTableGameViewControllerDelegate {
@@ -40,5 +41,10 @@ extension SchulteTableGameViewController {
   // MARK: - makeRestartButtonImage
   func makeRestartButtonImage() {
     self.restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
+  }
+  
+  // MARK: - makeTimerLabel
+  func makeTimerLabel() {
+    self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
   }
 }
