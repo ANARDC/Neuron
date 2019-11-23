@@ -9,12 +9,16 @@
 import UIKit
 
 protocol SchulteTableGameViewControllerDelegate {
+  var settingsData : SchulteTableGameSettings! { get }
+  
   func viewDidLoad()
 }
 
 final class SchulteTableGameViewController: UIViewController, SchulteTableGameViewControllerDelegate {
   var configurator : SchulteTableGameConfigurator!
   var presenter    : SchulteTableGamePresenterDelegate!
+  
+  var settingsData : SchulteTableGameSettings!
   
   @IBOutlet weak var timerLabel          : UILabel!
   @IBOutlet weak var restartButton       : UIBarButtonItem!

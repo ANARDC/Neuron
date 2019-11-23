@@ -44,7 +44,7 @@ extension SchulteTableStartLevelsCollectionViewCell {
   // MARK: - makeLevelLabel
   func makeLevelLabel() {
     let label           = UILabel()
-    label.text          = "\(SchulteTableStartViewController.levelNumber)×\(SchulteTableStartViewController.levelNumber)"
+    label.text          = "\(SchulteTableStartViewController.levelNumberForSettingsCollectionViewCellsAppear)×\(SchulteTableStartViewController.levelNumberForSettingsCollectionViewCellsAppear)"
     label.textColor     = UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1)
     label.font          = UIFont(name: "NotoSans-Bold", size: 22)
     label.textAlignment = .center

@@ -13,7 +13,12 @@ protocol SchulteTableStartViewControllerDelegate {
   var configurator : SchulteTableStartConfigurator!      { get set }
   var presenter    : SchulteTableStartPresenterDelegate! { get set }
   
-  var ordersCountChoose : Int! { get set }
+  var mixingShades      : Bool! { get set }
+  var colorsCountChoose : Int! { get }
+
+  var settingsData : SchulteTableGameSettings! { get set }
+  
+  var settingsIsReady : Bool! { get }
   
   func selectingAnimation(_ position    : Int,
                           _ destination : Int)
@@ -21,6 +26,8 @@ protocol SchulteTableStartViewControllerDelegate {
   func getOrdersCountChoose()
   func saveOrdersButtonsBackgroundViewFrame()
   func setOrdersButtonsBackgroundViewFrame()
+  
+  func goToGameScreen(data: SchulteTableGameSettings)
   
   func makeView()
   func makeNavBarTitle()
@@ -66,10 +73,15 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   @IBOutlet weak var rightArrow           : UIImageView!
   @IBOutlet weak var chooseViewLabel      : UILabel!
   
-  var ordersCountChoose : Int!
+  var mixingShades      : Bool! = false
+  var colorsCountChoose : Int!
+  var levelNumber       : Int = 1
+
+  var settingsData : SchulteTableGameSettings!
   
-  static var levelNumber = 1
-  var choosenLevelNumber = 1
+  var settingsIsReady : Bool! = false
+  
+  static var levelNumberForSettingsCollectionViewCellsAppear = 1
   
   var selectedCell: UICollectionViewCell? = nil
   
@@ -155,17 +167,17 @@ extension SchulteTableStartViewController {
   // MARK: - setOrdersCountChoose
   func setOrdersCountChoose(_ ordersCount: Int) {
     UserDefaults.standard.set(ordersCount, forKey: "schulteTableGameOrdersCountChooseKey")
-    self.ordersCountChoose = ordersCount
+    self.colorsCountChoose = ordersCount
   }
   
   // MARK: - getOrdersCountChoose
   func getOrdersCountChoose() {
     guard UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey") != 0 else {
       UserDefaults.standard.set(1, forKey: "schulteTableGameOrdersCountChooseKey")
-      self.ordersCountChoose = 1
+      self.colorsCountChoose = 1
       return
     }
-    self.ordersCountChoose = UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey")
+    self.colorsCountChoose = UserDefaults.standard.integer(forKey: "schulteTableGameOrdersCountChooseKey")
   }
   
   // MARK: - saveOrdersButtonsBackgroundViewFrame
@@ -191,6 +203,29 @@ extension SchulteTableStartViewController {
     guard viewFrameX != 0 || viewFrameY != 0 || viewFrameWidth != 0 || viewFrameHeight != 0 else { return }
     
     self.ordersButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
+  }
+}
+
+// MARK: - Start Game
+
+extension SchulteTableStartViewController {
+  
+  // MARK: - startGame
+  @IBAction func startGame(_ sender: UITapGestureRecognizer) {
+    let settingsData = SchulteTableGameSettings(mixingShades: self.mixingShades,
+                                                levelNumber: self.levelNumber,
+                                                colorsCount: self.colorsCountChoose)
+    self.presenter.startGame(data: settingsData)
+  }
+  
+  // MARK: - goToGameScreen
+  func goToGameScreen(data: SchulteTableGameSettings) {
+    performSegue(withIdentifier: "startGameSchulteTableSegue", sender: data)
+  }
+  
+  // MARK: - prepareSegue
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    self.presenter.prepare(for: segue, sender: sender)
   }
 }
 
@@ -317,7 +352,7 @@ extension SchulteTableStartViewController {
        * при прошлом заходе на этот экран делаем белой,
        * а остальные темными
        */
-      if index + 1 == self.ordersCountChoose {
+      if index + 1 == self.colorsCountChoose {
         button!.setTitleColor(UIColor(red: 1, green: 1, blue: 1, alpha: 0.9), for: .normal)
       } else {
         button!.setTitleColor(UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9), for: .normal)
@@ -332,7 +367,7 @@ extension SchulteTableStartViewController {
   // MARK: - makeOrdersButtonsBackgroundView
   func makeOrdersButtonsBackgroundView() {
 //    let buttons       = [self.oneOrderButton, self.twoOrdersButton, self.threeOrdersButton]
-//    let choosedButton = buttons[self.ordersCountChoose - 1]! // Получили нажатую при прошлом заходе кнопку
+//    let choosedButton = buttons[self.colorsCountChoose - 1]! // Получили нажатую при прошлом заходе кнопку
 //
 //    // Получаем координаты выбранной в прошлый раз кнопки относительно settingBackgroundView, а не своего UIStackView
 //    let settingBackgroundViewConvertedFrame = self.settingBackgroundView.convert(choosedButton.frame, from: choosedButton.superview)
@@ -408,7 +443,7 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    SchulteTableStartViewController.levelNumber = indexPath.row + 3
+    SchulteTableStartViewController.levelNumberForSettingsCollectionViewCellsAppear = indexPath.row + 3
     self.settingsCollectionView.register(SchulteTableStartLevelsCollectionViewCell.self, forCellWithReuseIdentifier: "level\(indexPath.row)")
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "level\(indexPath.row)", for: indexPath)
     return cell
@@ -451,6 +486,7 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
     cell.borderWidth   = 2
     cell.shadowOpacity = 0
 
+    // Changing chooseBackgroundView properties
     self.chooseBackgroundView.backgroundColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 1)
     self.chooseBackgroundView.borderWidth     = 0
 
@@ -469,9 +505,13 @@ extension SchulteTableStartViewController: UICollectionViewDelegate, UICollectio
 
     self.chooseBackgroundView.addSubview(nextArrow)
 
-    self.choosenLevelNumber = indexPath.row + 1
-
     self.cellDidDeselect(for: collectionView, selectedCellIndexPath: indexPath)
+    
+    // Set levelNumber
+    self.levelNumber = indexPath.row + 1
+    
+    // Change settingsIsReady status
+    self.settingsIsReady = true
   }
   
   // MARK: - cellDidDeselect

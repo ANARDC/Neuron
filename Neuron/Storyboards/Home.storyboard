@@ -1228,6 +1228,9 @@ Line 6</string>
                                     <constraint firstItem="PYM-GF-tRG" firstAttribute="centerY" secondItem="FGh-Sv-tdJ" secondAttribute="centerY" id="qFi-Od-WLK"/>
                                     <constraint firstAttribute="trailing" secondItem="afd-q3-RdQ" secondAttribute="trailing" constant="15.333333333333314" id="wJK-0G-Y5i"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fC1-Yr-FQo" appends="YES" id="aF0-11-2UV"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1278,6 +1281,11 @@ Line 6</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgZ-mS-DpW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fC1-Yr-FQo">
+                    <connections>
+                        <action selector="startGame:" destination="TJ7-Qh-5SF" id="2b3-4j-Jn7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1360.8" y="1850.9852216748768"/>
         </scene>

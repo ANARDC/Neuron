@@ -30,6 +30,7 @@
 		9969C3692386AF7300F8D222 /* SchulteTableGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969C3682386AF7300F8D222 /* SchulteTableGameViewController.swift */; };
 		9969C36B2387076500F8D222 /* SchulteTableGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969C36A2387076500F8D222 /* SchulteTableGamePresenter.swift */; };
 		9969C36D2387077E00F8D222 /* SchulteTableGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969C36C2387077E00F8D222 /* SchulteTableGameConfigurator.swift */; };
+		9969C36F2388048600F8D222 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969C36E2388048600F8D222 /* Settings.swift */; };
 		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
 		996F4B2022E3768900B19478 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1F22E3768900B19478 /* Stats.storyboard */; };
 		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
@@ -89,6 +90,7 @@
 		9969C3682386AF7300F8D222 /* SchulteTableGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGameViewController.swift; sourceTree = "<group>"; };
 		9969C36A2387076500F8D222 /* SchulteTableGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGamePresenter.swift; sourceTree = "<group>"; };
 		9969C36C2387077E00F8D222 /* SchulteTableGameConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGameConfigurator.swift; sourceTree = "<group>"; };
+		9969C36E2388048600F8D222 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		996F4B1F22E3768900B19478 /* Stats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */,
 				992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */,
 				992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */,
+				9969C36E2388048600F8D222 /* Settings.swift */,
 			);
 			path = StartScreen;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */,
+				9969C36F2388048600F8D222 /* Settings.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,
 				990C2688236E215500836AC6 /* SchulteTableStartViewController.swift in Sources */,
 				99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */,

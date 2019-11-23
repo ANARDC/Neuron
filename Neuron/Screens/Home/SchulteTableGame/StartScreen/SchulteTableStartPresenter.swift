@@ -16,6 +16,9 @@ protocol SchulteTableStartPresenterDelegate {
   func twoOrdersSelected()
   func threeOrdersSelected()
   
+  func startGame(data: SchulteTableGameSettings)
+  func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  
   func mixingShadesSwitchValueChanged(_: PWSwitch)
   func mixingShadesSwitchTouchDown(_: PWSwitch)
   func mixingShadesSwitchTouchUpInside(_: PWSwitch)
@@ -53,13 +56,33 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
   }
 }
 
+// MARK: - Start Game
+
+extension SchulteTableStartPresenter {
+  
+  // MARK: - startGame
+  func startGame(data: SchulteTableGameSettings) {
+    guard self.view!.settingsIsReady else { return }
+    self.view?.goToGameScreen(data: data)
+  }
+  
+  func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard segue.identifier == "startGameSchulteTableSegue" else { return }
+    
+    if let settingsData = sender as? SchulteTableGameSettings {
+      let destination = segue.destination as! SchulteTableGameViewController
+      destination.settingsData = settingsData
+    }
+  }
+}
+
 // MARK: - Orders Count Selecting Buttons
 
 extension SchulteTableStartPresenter {
   
   // MARK: - oneOrderSelected
   func oneOrderSelected() {
-    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+    self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   1)
     self.view?.setOrdersCountChoose(1)
     self.view?.saveOrdersButtonsBackgroundViewFrame()
@@ -67,7 +90,7 @@ extension SchulteTableStartPresenter {
   
   // MARK: - twoOrdersSelected
   func twoOrdersSelected() {
-    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+    self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   2)
     self.view?.setOrdersCountChoose(2)
     self.view?.saveOrdersButtonsBackgroundViewFrame()
@@ -75,7 +98,7 @@ extension SchulteTableStartPresenter {
   
   // MARK: - threeOrdersSelected
   func threeOrdersSelected() {
-    self.view?.selectingAnimation(self.view!.ordersCountChoose,
+    self.view?.selectingAnimation(self.view!.colorsCountChoose,
                                   3)
     self.view?.setOrdersCountChoose(3)
     self.view?.saveOrdersButtonsBackgroundViewFrame()
@@ -92,10 +115,12 @@ extension SchulteTableStartPresenter {
     case true:
       sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
       sender.shadowOpacity = 1
-    default:
+    case false:
       sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
       sender.shadowOpacity = 0
     }
+    
+    self.view!.mixingShades = sender.on
   }
   
   // MARK: - mixingShadesSwitchTouchDown
