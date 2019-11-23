@@ -45,6 +45,6 @@ extension SchulteTableGameViewController {
   
   // MARK: - makeTimerLabel
   func makeTimerLabel() {
-    self.timerLabel.textColor = UIColor(red: 0.92, green: 0.34, blue: 0.34, alpha: 0.9)
+    self.timerLabel.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
   }
 }
