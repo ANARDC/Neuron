@@ -11,7 +11,7 @@ import UIKit
 protocol SchulteTableGameViewControllerDelegate {
   var settingsData : SchulteTableGameSettings! { get }
   
-  func viewDidLoad()
+  func makeRestartButtonImage()
 }
 
 final class SchulteTableGameViewController: UIViewController, SchulteTableGameViewControllerDelegate {
@@ -30,5 +30,15 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
     self.configurator = SchulteTableGameConfiguratorImplementation(self)
     self.configurator.configure(self)
     self.presenter.viewDidload()
+  }
+}
+
+// MARK: - UI Making Functions
+
+extension SchulteTableGameViewController {
+  
+  // MARK: - makeRestartButtonImage
+  func makeRestartButtonImage() {
+    self.restartButton.image = #imageLiteral(resourceName: "Рестарт").withRenderingMode(.alwaysOriginal)
   }
 }

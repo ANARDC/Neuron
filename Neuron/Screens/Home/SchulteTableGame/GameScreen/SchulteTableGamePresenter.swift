@@ -20,6 +20,6 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
   }
   
   func viewDidload() {
-    
+    self.view?.makeRestartButtonImage()
   }
 }
