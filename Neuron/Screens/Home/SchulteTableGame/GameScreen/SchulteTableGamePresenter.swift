@@ -20,7 +20,10 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
   }
   
   func viewDidload() {
+    self.view?.generateRandomUniqueNumbers()
+    
     self.view?.makeRestartButtonImage()
     self.view?.makeTimerLabel()
+    self.view?.collectionViewSetting()
   }
 }

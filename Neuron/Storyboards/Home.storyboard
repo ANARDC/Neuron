@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -1323,28 +1322,19 @@ Line 6</string>
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-c9-exv">
-                                <rect key="frame" x="22" y="267.66666666666669" width="331" height="331.00000000000006"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-c9-exv">
+                                <rect key="frame" x="22" y="268.33333333333331" width="330" height="329.99999999999994"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rcV-c9-exv" secondAttribute="height" multiplier="330:330" id="knZ-qE-XPg"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1YR-zH-Pn2">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1YR-zH-Pn2">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GDT-fv-DJX">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UBf-eZ-fjL">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1352,9 +1342,8 @@ Line 6</string>
                             <constraint firstItem="5dB-fa-cgq" firstAttribute="top" secondItem="B7m-TR-x3f" secondAttribute="bottom" constant="5" id="ASf-Dw-0dA"/>
                             <constraint firstItem="5dB-fa-cgq" firstAttribute="centerX" secondItem="u9B-3i-yrq" secondAttribute="centerX" id="AXH-Le-eF8"/>
                             <constraint firstItem="B7m-TR-x3f" firstAttribute="top" secondItem="u9B-3i-yrq" secondAttribute="top" constant="3" id="E0a-p1-hak"/>
-                            <constraint firstAttribute="trailing" secondItem="rcV-c9-exv" secondAttribute="trailing" constant="22" id="LsV-dk-BUl"/>
-                            <constraint firstItem="rcV-c9-exv" firstAttribute="centerX" secondItem="n2p-If-E5l" secondAttribute="centerX" id="MYZ-ak-UMN"/>
                             <constraint firstItem="rcV-c9-exv" firstAttribute="leading" secondItem="n2p-If-E5l" secondAttribute="leading" constant="22" id="NjU-TR-090"/>
+                            <constraint firstAttribute="trailing" secondItem="rcV-c9-exv" secondAttribute="trailing" constant="23" id="QDt-XB-CMo"/>
                             <constraint firstItem="rcV-c9-exv" firstAttribute="centerY" secondItem="n2p-If-E5l" secondAttribute="centerY" constant="27.16666666666697" id="cfu-1E-Efy"/>
                             <constraint firstItem="B7m-TR-x3f" firstAttribute="centerX" secondItem="u9B-3i-yrq" secondAttribute="centerX" id="iVZ-dg-G6f"/>
                         </constraints>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990A8594238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990A8593238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift */; };
 		990C2688236E215500836AC6 /* SchulteTableStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */; };
 		990DE7FD22F8742500D18A86 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9923FA4222F872D900F33B0C /* NotoSans-Bold.ttf */; };
 		990DE7FE22F8742500D18A86 /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9923FA3E22F872D900F33B0C /* NotoSans-BoldItalic.ttf */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.debug.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig"; sourceTree = "<group>"; };
+		990A8593238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGameTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartViewController.swift; sourceTree = "<group>"; };
 		990DE80522F8B13C00D18A86 /* LevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		9923FA1A22F60FA500F33B0C /* FruitsStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsStartViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				9969C3682386AF7300F8D222 /* SchulteTableGameViewController.swift */,
 				9969C36A2387076500F8D222 /* SchulteTableGamePresenter.swift */,
 				9969C36C2387077E00F8D222 /* SchulteTableGameConfigurator.swift */,
+				990A8593238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				9969C36B2387076500F8D222 /* SchulteTableGamePresenter.swift in Sources */,
 				9969C3692386AF7300F8D222 /* SchulteTableGameViewController.swift in Sources */,
 				9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */,
+				990A8594238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift in Sources */,
 				99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */,
 				99B0F51922DDDC1B0037A4CA /* HomeViewController.swift in Sources */,
 				99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */,
