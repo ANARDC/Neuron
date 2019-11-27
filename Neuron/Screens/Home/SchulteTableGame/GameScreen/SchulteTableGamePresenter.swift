@@ -24,6 +24,8 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     
     self.view?.makeRestartButtonImage()
     self.view?.makeTimerLabel()
+    self.view?.makeTableCollectionViewSize()
+
     self.view?.collectionViewSetting()
   }
 }

@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/PopUpBottomView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/PopUpBottomView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/BottomView.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +27,7 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_AD28B654-44FB-401B-BD3C-B3B502DC6F42" />
   <component name="FavoritesManager">
     <favorites_list name="Neuron" />
   </component>
@@ -130,6 +130,8 @@
       <workItem from="1569458275058" duration="166000" />
       <workItem from="1569458468532" duration="819000" />
       <workItem from="1569459559373" duration="414000" />
+      <workItem from="1574729295508" duration="4000" />
+      <workItem from="1574729362485" duration="3377000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>

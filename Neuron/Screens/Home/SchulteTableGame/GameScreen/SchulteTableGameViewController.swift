@@ -15,6 +15,8 @@ protocol SchulteTableGameViewControllerDelegate {
   
   func makeRestartButtonImage()
   func makeTimerLabel()
+  func makeTableCollectionViewSize()
+
   func collectionViewSetting()
 }
 
@@ -32,6 +34,9 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   @IBOutlet weak var restartButton       : UIBarButtonItem!
   @IBOutlet weak var tableCollectionView : UICollectionView!
   @IBOutlet var stars                    : [UIImageView]!
+  
+  @IBOutlet weak var tableCollectionViewTrailingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var tableCollectionVIewLeadingConstraint: NSLayoutConstraint!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -53,6 +58,17 @@ extension SchulteTableGameViewController {
   // MARK: - makeTimerLabel
   func makeTimerLabel() {
     self.timerLabel.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)
+  }
+
+  // MARK: - makeTableCollectionViewSize
+  func makeTableCollectionViewSize() {
+    switch UIScreen.main.bounds.height {
+    case 568: // iPhone SE
+      self.tableCollectionVIewLeadingConstraint.constant  = 0
+      self.tableCollectionViewTrailingConstraint.constant = 0
+    default:
+      return
+    }
   }
 }
 
