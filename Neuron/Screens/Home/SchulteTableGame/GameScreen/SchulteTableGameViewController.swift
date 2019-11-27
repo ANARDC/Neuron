@@ -16,6 +16,7 @@ protocol SchulteTableGameViewControllerDelegate {
   func makeRestartButtonImage()
   func makeTimerLabel()
   func makeTableCollectionViewSize()
+  func makeTableCollectionView()
 
   func collectionViewSetting()
 }
@@ -69,6 +70,11 @@ extension SchulteTableGameViewController {
     default:
       return
     }
+  }
+  
+  // MARK: - makeTableCollectionView
+  func makeTableCollectionView() {
+    self.tableCollectionView.backgroundColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
   }
 }
 
