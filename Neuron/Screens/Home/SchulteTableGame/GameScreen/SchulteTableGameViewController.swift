@@ -38,7 +38,13 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   
   @IBOutlet weak var tableCollectionViewTrailingConstraint: NSLayoutConstraint!
   @IBOutlet weak var tableCollectionVIewLeadingConstraint: NSLayoutConstraint!
+}
+
+// MARK: - Life Cycle
+
+extension SchulteTableGameViewController {
   
+  // MARK: - viewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     self.configurator = SchulteTableGameConfiguratorImplementation(self)
