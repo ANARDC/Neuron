@@ -11,13 +11,13 @@ import UIKit
 protocol SchulteTableGameViewControllerDelegate {
   var settingsData : SchulteTableGameSettings! { get }
   
-  func generateRandomUniqueNumbers()
+  var tableCollectionViewCellsData : [tableCollectionViewCellData]! { get set }
   
   func makeRestartButtonImage()
   func makeTimerLabel()
   func makeTableCollectionViewSize()
   func makeTableCollectionView()
-
+  
   func collectionViewSetting()
 }
 
@@ -27,17 +27,18 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   
   var settingsData : SchulteTableGameSettings!
   
-  static var cellLabelText : String!
+  var tableCollectionViewCellsData              : [tableCollectionViewCellData]!
+  static var currentTableCollectionViewCellData : tableCollectionViewCellData!
   
-  var cellsNumbers: [Int]!
+  var cellsNumbers : [Int]!
   
   @IBOutlet weak var timerLabel          : UILabel!
   @IBOutlet weak var restartButton       : UIBarButtonItem!
   @IBOutlet weak var tableCollectionView : UICollectionView!
   @IBOutlet var stars                    : [UIImageView]!
   
-  @IBOutlet weak var tableCollectionViewTrailingConstraint: NSLayoutConstraint!
-  @IBOutlet weak var tableCollectionVIewLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var tableCollectionViewTrailingConstraint : NSLayoutConstraint!
+  @IBOutlet weak var tableCollectionVIewLeadingConstraint  : NSLayoutConstraint!
 }
 
 // MARK: - Life Cycle
@@ -88,22 +89,24 @@ extension SchulteTableGameViewController {
 
 extension SchulteTableGameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
+  // MARK: - tableCollectionView Delegate And DataSource
+  func collectionViewSetting() {
+    self.tableCollectionView.delegate   = self
+    self.tableCollectionView.dataSource = self
+  }
+  
+  // MARK: - Number Of Items In Section
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     let cellsCount = [1: 9, 2: 16, 3: 25, 4: 36, 5: 49, 6: 64, 7: 81]
     return cellsCount[self.settingsData.levelNumber]!
   }
   
+  // MARK: - Cell For Item At
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    SchulteTableGameViewController.cellLabelText = String(self.cellsNumbers[indexPath.row])
+    SchulteTableGameViewController.currentTableCollectionViewCellData = self.tableCollectionViewCellsData[indexPath.row]
     self.tableCollectionView.register(SchulteTableGameTableCollectionViewCell.self, forCellWithReuseIdentifier: "cell\(indexPath.row)")
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell\(indexPath.row)", for: indexPath)
     return cell
-  }
-  
-  // MARK: - tableCollectionView Delegate And DataSource
-  func collectionViewSetting() {
-    self.tableCollectionView.delegate   = self
-    self.tableCollectionView.dataSource = self
   }
   
   // MARK: - Cells Size
@@ -114,21 +117,5 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
     let currentLevelCellsDimension     = tableCollectionViewDimension / cellsDimension[currentLevelNumber]! - 0.1
     
     return CGSize(width: currentLevelCellsDimension, height: currentLevelCellsDimension)
-  }
-  
-  // MARK: - generateRandomUniqueNumbers
-  func generateRandomUniqueNumbers() {
-    var numbers = [Int]()
-    let cellsCount = [1: 9, 2: 16, 3: 25, 4: 36, 5: 49, 6: 64, 7: 81]
-    
-    for _ in 0..<cellsCount[self.settingsData.levelNumber]! {
-      var n: Int
-      repeat {
-        n = Int(arc4random_uniform(UInt32(cellsCount[self.settingsData.levelNumber]!))) + 1
-      } while numbers.contains(n)
-      numbers.append(n)
-    }
-    
-    self.cellsNumbers = numbers
   }
 }

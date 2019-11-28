@@ -26,17 +26,17 @@ extension SchulteTableGameTableCollectionViewCell {
   
   // MARK: - makeCellAppearance
   func makeCellAppearance() {
-    self.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-    self.borderWidth = 2
-    self.borderColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
+    self.backgroundColor = SchulteTableGameViewController.currentTableCollectionViewCellData.backgroundColor
+    self.borderWidth     = 2
+    self.borderColor     = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1).cgColor
   }
   
   // MARK: - makeCellLabel
   func makeCellLabel() {
-    let label = UILabel()
-    label.text = SchulteTableGameViewController.cellLabelText
-    label.textColor = UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 1)
-    label.font = UIFont(name: "NotoSans", size: 30)
+    let label       = UILabel()
+    label.text      = SchulteTableGameViewController.currentTableCollectionViewCellData.labelText
+    label.textColor = SchulteTableGameViewController.currentTableCollectionViewCellData.labelTextColor
+    label.font      = UIFont(name: "NotoSans", size: 30)
     
     self.addSubview(label)
     
