@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +25,7 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_2A77A8A6-EB3B-492B-A853-552FB16E89BD" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_971ABDD6-C626-4400-8672-CB8481CCDDDF" />
   <component name="FavoritesManager">
     <favorites_list name="Neuron" />
   </component>
@@ -62,7 +63,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunDashboard">
@@ -129,6 +130,8 @@
       <workItem from="1569459559373" duration="414000" />
       <workItem from="1574729295508" duration="4000" />
       <workItem from="1574729362485" duration="3377000" />
+      <workItem from="1575126616455" duration="233000" />
+      <workItem from="1575130622502" duration="267000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
