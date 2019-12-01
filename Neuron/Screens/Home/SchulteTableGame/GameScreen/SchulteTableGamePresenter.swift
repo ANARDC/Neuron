@@ -22,14 +22,15 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
   
   // MARK: - viewDidload
   func viewDidload() {
+    self.configureGame()
+    
     self.view?.makeRestartButtonImage()
     self.view?.makeTimerLabel()
     self.view?.makeTableCollectionViewSize()
     self.view?.makeTableCollectionView()
+    self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
 
     self.view?.collectionViewSetting()
-    
-    self.configureGame()
   }
   
   // MARK: - configureGame
@@ -38,7 +39,9 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     let colorsArray       = self.getColorsArray(smashedCellsCount)
     let cellsNumbers      = self.getCellsNumbers()
     
-    self.view!.tableCollectionViewCellsData = self.getTableCollectionViewCellsData(cellsNumbers, colorsArray.map{ $0.0 }, colorsArray.map{ $0.1 })
+    self.view!.tableCollectionViewCellsData             = self.getTableCollectionViewCellsData(cellsNumbers, colorsArray.map{ $0.0 }, colorsArray.map{ $0.1 })
+    self.view!.tableCollectionViewCellsDataInRightOrder = self.view!.tableCollectionViewCellsData
+    self.view!.tableCollectionViewCellsDataInRightOrder.sort { Int($0.labelText)! < Int($1.labelText)! }
   }
   
   // MARK: - getSmashedCellsCount
