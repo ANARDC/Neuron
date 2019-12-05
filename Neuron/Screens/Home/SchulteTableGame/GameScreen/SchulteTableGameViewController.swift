@@ -19,6 +19,7 @@ protocol SchulteTableGameViewControllerDelegate {
   func makeTableCollectionViewSize()
   func makeTableCollectionView()
   func makeNavBarTitle(for cellData: tableCollectionViewCellData)
+  func returnNavBarTitle()
   func startTimer()
   
   func collectionViewSetting()
@@ -62,6 +63,11 @@ extension SchulteTableGameViewController {
     self.configurator = SchulteTableGameConfiguratorImplementation(self)
     self.configurator.configure(self)
     self.presenter.viewDidload()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    self.presenter.viewWillDisappear()
   }
 }
 
@@ -197,6 +203,11 @@ extension SchulteTableGameViewController {
     
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: navBarTitleFont,
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor!]
+  }
+  
+  func returnNavBarTitle() {
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSans-Bold", size: 23)!,
+    NSAttributedString.Key.foregroundColor: UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)]
   }
   
   // MARK: - changeTimerLabel

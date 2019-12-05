@@ -11,6 +11,7 @@ import UIKit
 
 protocol SchulteTableGamePresenterDelegate {
   func viewDidload()
+  func viewWillDisappear()
 }
 
 final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
@@ -32,6 +33,11 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     self.view?.startTimer()
 
     self.view?.collectionViewSetting()
+  }
+  
+  // MARK: - viewWillDisappear
+  func viewWillDisappear() {
+    self.view?.returnNavBarTitle()
   }
   
   // MARK: - configureGame
