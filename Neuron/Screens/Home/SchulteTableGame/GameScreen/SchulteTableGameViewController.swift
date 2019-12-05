@@ -19,6 +19,7 @@ protocol SchulteTableGameViewControllerDelegate {
   func makeTableCollectionViewSize()
   func makeTableCollectionView()
   func makeNavBarTitle(for cellData: tableCollectionViewCellData)
+  func startTimer()
   
   func collectionViewSetting()
 }
@@ -36,6 +37,11 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   var currentCellIndex = 0
   
   var cellsNumbers : [Int]!
+  
+  var timer        : Timer!
+  var minutes      : Int!
+  var seconds      : Int!
+  var milliseconds : Int!
   
   @IBOutlet weak var timerLabel          : UILabel!
   @IBOutlet weak var restartButton       : UIBarButtonItem!
@@ -56,6 +62,65 @@ extension SchulteTableGameViewController {
     self.configurator = SchulteTableGameConfiguratorImplementation(self)
     self.configurator.configure(self)
     self.presenter.viewDidload()
+  }
+}
+
+// MARK: - Timer
+
+extension SchulteTableGameViewController {
+  
+  // MARK: - startTimer
+  func startTimer() {
+    self.minutes      = 0
+    self.seconds      = 0
+    self.milliseconds = 0
+    self.timer        = Timer.scheduledTimer(timeInterval : 1/10,
+                                             target       : self,
+                                             selector     : #selector(self.timerSelectorMethod),
+                                             userInfo     : nil,
+                                             repeats      : true)
+  }
+  
+  // MARK: - @objc timer
+  @objc func timerSelectorMethod() {
+    self.milliseconds += 100
+    
+    if self.milliseconds / 100 == 10 {
+      self.seconds += 1
+      self.milliseconds = 0
+    }
+    
+    if self.seconds == 60 {
+      self.minutes += 1
+      self.seconds = 0
+    }
+    
+    if self.minutes == 60 {
+      self.invalidateTimer(for: .error)
+    }
+    
+    let minutes      = self.minutes < 10 ? "0\(self.minutes!)" : "\(self.minutes!)"
+    let seconds      = self.seconds < 10 ? "0\(self.seconds!)" : "\(self.seconds!)"
+    let milliseconds = self.milliseconds / 100
+    
+    self.timerLabel.text = "\(minutes).\(seconds).\(milliseconds)"
+    self.timerLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)
+  }
+  
+  // MARK: - invalidateTimer
+  func invalidateTimer(for gameFinishState: schulteTableGameFinishStates) {
+    switch gameFinishState {
+    case .error:
+      self.timer.invalidate()
+      self.changeTimerLabel()
+    case .finish:
+      self.timer.invalidate()
+    }
+  }
+  
+  enum schulteTableGameFinishStates {
+    case error
+    case finish
   }
 }
 
@@ -228,11 +293,11 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
         
         // Обрабатываем indexOutOfRange
         let cellsCount = [1: 9, 2: 16, 3: 25, 4: 36, 5: 49, 6: 64, 7: 81]
-        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else { return }
+        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else { self.invalidateTimer(for: .finish); return }
         
         self.makeNavBarTitle(for: self.tableCollectionViewCellsDataInRightOrder[self.currentCellIndex])
       case false:
-        self.changeTimerLabel()
+        self.invalidateTimer(for: .error)
         self.highlight(cellWithText: self.tableCollectionViewCellsDataInRightOrder[self.currentCellIndex].labelText)
       }
     }

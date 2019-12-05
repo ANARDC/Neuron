@@ -29,6 +29,7 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     self.view?.makeTableCollectionViewSize()
     self.view?.makeTableCollectionView()
     self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
+    self.view?.startTimer()
 
     self.view?.collectionViewSetting()
   }
