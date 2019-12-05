@@ -124,9 +124,9 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
             case UIColor(red: 0.459, green: 0.608, blue: 0.98, alpha: 1): // Blue
                 colorsArray.append((blueShades["dark"]!, UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)))
             case UIColor(red: 0.315, green: 0.788, blue: 0.22, alpha: 1): // Green
-                colorsArray.append((greenShades["mostLight"]!, UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 1)))
+                colorsArray.append((greenShades["dark"]!, UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)))
             case UIColor(red: 0.992, green: 0.314, blue: 0.314, alpha: 1): // Red
-                colorsArray.append((redShades["red"]!, UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)))
+                colorsArray.append((redShades["dark"]!, UIColor(red: 0.988, green: 0.988, blue: 0.988, alpha: 1)))
             default:
                 fatalError("How did i get here?")
             }
