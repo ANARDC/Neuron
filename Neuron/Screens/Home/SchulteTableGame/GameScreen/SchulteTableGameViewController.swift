@@ -65,9 +65,24 @@ extension SchulteTableGameViewController {
     self.presenter.viewDidload()
   }
   
-  override func viewWillDisappear(_ animated: Bool) {
-    super.viewWillDisappear(animated)
-    self.presenter.viewWillDisappear()
+  // MARK: - viewWillAppear
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.presenter.viewWillAppear()
+  }
+  
+  // MARK: - willMove
+  override func willMove(toParent parent: UIViewController?) {
+    super.willMove(toParent: parent)
+    /*
+     * Из-за того, что эта
+     * функция вызывается до
+     * инициализации класса,
+     * то презентера еще не
+     * существует и поэтому логика
+     * не может быть вынесена в него
+     */
+    self.returnNavBarTitle()
   }
 }
 
@@ -205,9 +220,10 @@ extension SchulteTableGameViewController {
                                                                     NSAttributedString.Key.foregroundColor: navBarTitleFontColor!]
   }
   
+  // MARK: - returnNavBarTitle
   func returnNavBarTitle() {
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSans-Bold", size: 23)!,
-    NSAttributedString.Key.foregroundColor: UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)]
+                                                                    NSAttributedString.Key.foregroundColor: UIColor(red: 0.153, green: 0.239, blue: 0.322, alpha: 0.9)]
   }
   
   // MARK: - changeTimerLabel

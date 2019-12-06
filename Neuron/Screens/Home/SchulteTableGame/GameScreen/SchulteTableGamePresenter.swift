@@ -11,7 +11,8 @@ import UIKit
 
 protocol SchulteTableGamePresenterDelegate {
   func viewDidload()
-  func viewWillDisappear()
+  func viewWillAppear()
+  func willMove()
 }
 
 final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
@@ -35,8 +36,13 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     self.view?.collectionViewSetting()
   }
   
-  // MARK: - viewWillDisappear
-  func viewWillDisappear() {
+  // MARK: - viewWillAppear
+  func viewWillAppear() {
+    self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
+  }
+  
+  // MARK: - willMove
+  func willMove() {
     self.view?.returnNavBarTitle()
   }
   
