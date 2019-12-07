@@ -109,16 +109,21 @@ extension FruitsGameViewController {
     self.presenter.viewDidLoad()
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    if #available(iOS 13.0, *) {
-      navigationController?.navigationBar.setNeedsLayout()
-    }
-  }
-  
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-//    self.presenter.viewDidDisappear()
+  override func willMove(toParent parent: UIViewController?) {
+    super.willMove(toParent: parent)
+    
+    /*
+     * Так как этот метод срабатывает
+     * до инициализации класса контроллера,
+     * то блюр добавляется в навбар еще до первого
+     * прохождения игры поэтому бага с блюром
+     * не наблюдается, по этой же причине
+     * логика не в презентере, а контроллере
+     * (презентера не существует без контроллера)
+     */
+    
+    let visualEffectNavBarView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light), intensity: 0.2)
+    self.navigationController?.navigationBar.addSubview(visualEffectNavBarView)
   }
 }
 
@@ -568,29 +573,29 @@ extension FruitsGameViewController {
     view.addGestureRecognizer(gesture)
   }
 
-  @objc func appleSelector()      { presenter.fillGameFruits(for: .apple) }
+  @objc func appleSelector()      { self.presenter.fillGameFruits(for: .apple) }
 
-  @objc func bananaSelector()     { presenter.fillGameFruits(for: .banana) }
+  @objc func bananaSelector()     { self.presenter.fillGameFruits(for: .banana) }
 
-  @objc func broccoliSelector()   { presenter.fillGameFruits(for: .broccoli) }
+  @objc func broccoliSelector()   { self.presenter.fillGameFruits(for: .broccoli) }
 
-  @objc func carrotSelector()     { presenter.fillGameFruits(for: .carrot) }
+  @objc func carrotSelector()     { self.presenter.fillGameFruits(for: .carrot) }
 
-  @objc func cornSelector()       { presenter.fillGameFruits(for: .corn) }
+  @objc func cornSelector()       { self.presenter.fillGameFruits(for: .corn) }
 
-  @objc func grapeSelector()      { presenter.fillGameFruits(for: .grape) }
+  @objc func grapeSelector()      { self.presenter.fillGameFruits(for: .grape) }
 
-  @objc func lemonSelector()      { presenter.fillGameFruits(for: .lemon) }
+  @objc func lemonSelector()      { self.presenter.fillGameFruits(for: .lemon) }
 
-  @objc func onionSelector()      { presenter.fillGameFruits(for: .onion) }
+  @objc func onionSelector()      { self.presenter.fillGameFruits(for: .onion) }
 
-  @objc func orangeSelector()     { presenter.fillGameFruits(for: .orange) }
+  @objc func orangeSelector()     { self.presenter.fillGameFruits(for: .orange) }
 
-  @objc func pearSelector()       { presenter.fillGameFruits(for: .pear) }
+  @objc func pearSelector()       { self.presenter.fillGameFruits(for: .pear) }
 
-  @objc func tomatoSelector()     { presenter.fillGameFruits(for: .tomato) }
+  @objc func tomatoSelector()     { self.presenter.fillGameFruits(for: .tomato) }
 
-  @objc func watermelonSelector() { presenter.fillGameFruits(for: .watermelon) }
+  @objc func watermelonSelector() { self.presenter.fillGameFruits(for: .watermelon) }
 }
 
 // MARK: - Blur/PopUp
