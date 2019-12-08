@@ -24,6 +24,8 @@
 		992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992BEF0C22E8BB0C00A9360A /* Calendar.swift */; };
 		992EEE4C236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */; };
 		992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */; };
+		9930EAA9239D3AD20013C521 /* Pods_Neuron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */; };
+		9930EAAA239D3AD20013C521 /* Pods_Neuron.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Design.swift */; };
 		9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7252350A5B900C6CAB1 /* UseCases.swift */; };
 		9966A7282354997800C6CAB1 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7272354997800C6CAB1 /* DataBase.swift */; };
@@ -66,7 +68,22 @@
 		CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9930EAAB239D3AD20013C521 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9930EAAA239D3AD20013C521 /* Pods_Neuron.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neuron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5F89F655FAFDE00BF0549C /* Pods-Neuron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.debug.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig"; sourceTree = "<group>"; };
 		990A8593238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGameTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		990C2687236E215500836AC6 /* SchulteTableStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +102,7 @@
 		992BEF0C22E8BB0C00A9360A /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartConfigurator.swift; sourceTree = "<group>"; };
 		992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartPresenter.swift; sourceTree = "<group>"; };
+		9930EAAC239D3ADF0013C521 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994CBBA522DF44A5007B5BD5 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		9966A7252350A5B900C6CAB1 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
 		9966A7272354997800C6CAB1 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -135,12 +153,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9930EAA9239D3AD20013C521 /* Pods_Neuron.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D24BC7FFD98248F2A2E8F86 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9930EAAC239D3ADF0013C521 /* DeviceKit.framework */,
+				5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4E7B9E2D3E26947D5CD4A00D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +366,7 @@
 				990DE7FC22F8740B00D18A86 /* Fonts */,
 				4E7B9E2D3E26947D5CD4A00D /* Pods */,
 				99B0F51422DDDC1B0037A4CA /* Products */,
+				2D24BC7FFD98248F2A2E8F86 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -452,6 +481,7 @@
 				99B0F51022DDDC1B0037A4CA /* Frameworks */,
 				99B0F51122DDDC1B0037A4CA /* Resources */,
 				9D1754CFB684F71D63E4D083 /* [CP] Embed Pods Frameworks */,
+				9930EAAB239D3AD20013C521 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
