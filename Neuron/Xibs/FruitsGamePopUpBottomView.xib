@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +11,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUpBottomView" customModule="Neuron" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FruitsGamePopUpBottomView" customModule="Neuron" customModuleProvider="target">
             <connections>
                 <outlet property="chooseBackgroundView" destination="cnB-PY-1aD" id="TXu-xG-pKl"/>
                 <outlet property="chooseViewLabel" destination="71K-94-rKI" id="R8k-LV-ApP"/>
@@ -29,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07z-8H-GCX">
-                    <rect key="frame" x="77" y="0.0" width="143.5" height="26"/>
+                    <rect key="frame" x="84" y="0.0" width="129" height="26"/>
                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -38,19 +36,19 @@
                     <rect key="frame" x="22" y="118" width="255" height="41"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="OM4-VR-5F0">
-                            <rect key="frame" x="40.5" y="9.5" width="174" height="22"/>
+                            <rect key="frame" x="33" y="11" width="189.5" height="19"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Далее" translatesAutoresizingMaskIntoConstraints="NO" id="mGr-cZ-H4r">
-                                    <rect key="frame" x="0.0" y="7.5" width="12" height="7"/>
+                                    <rect key="frame" x="0.0" y="2.5" width="24" height="14"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71K-94-rKI">
-                                    <rect key="frame" x="30" y="0.0" width="114" height="22"/>
+                                    <rect key="frame" x="42" y="0.0" width="105.5" height="19"/>
                                     <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Далее" translatesAutoresizingMaskIntoConstraints="NO" id="5ze-eC-mew">
-                                    <rect key="frame" x="162" y="7.5" width="12" height="7"/>
+                                    <rect key="frame" x="165.5" y="2.5" width="24" height="14"/>
                                 </imageView>
                             </subviews>
                         </stackView>

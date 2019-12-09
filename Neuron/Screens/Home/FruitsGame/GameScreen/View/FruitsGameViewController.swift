@@ -658,8 +658,8 @@ extension FruitsGameViewController {
     
     popUp.translatesAutoresizingMaskIntoConstraints = false
     
-    let topView    = PopUpTopView(frame       : CGRect(x       : 0, y       : 0, width       : 297, height       : 189))
-    let bottomView = PopUpBottomView(frame : CGRect(x : 0, y : 0, width : 297, height : 104))
+    let topView    = FruitsGamePopUpTopView(frame: CGRect(x: 0, y: 0, width: 297, height: 189))
+    let bottomView = FruitsGamePopUpBottomView(frame: CGRect(x: 0, y: 0, width: 297, height: 104))
     
     popUp.topContentView    = topView
     popUp.bottomContentView = bottomView

@@ -1,5 +1,5 @@
 //
-//  PopUpBottomView.swift
+//  FruitsGamePopUpBottomView.swift
 //  Neuron
 //
 //  Created by Anar on 22/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PopUpBottomView: UIView {
+final class FruitsGamePopUpBottomView: UIView {
   var presenter: FruitsGamePresenterDelegate?
   private var accessLevel: Int!
   
@@ -53,7 +53,7 @@ final class PopUpBottomView: UIView {
 
 // MARK: - getAccessLevel()
 
-extension PopUpBottomView {
+extension FruitsGamePopUpBottomView {
   
   func getAccessLevel() {
     let userDefaults = UserDefaults.standard
@@ -65,7 +65,7 @@ extension PopUpBottomView {
 
 // MARK: - View appearing
 
-extension PopUpBottomView {
+extension FruitsGamePopUpBottomView {
   
   // MARK: - loadFromNib
   func loadFromNib() -> UIView {
@@ -87,7 +87,7 @@ extension PopUpBottomView {
 }
 
 // MARK: - chooseButtonAppearance
-extension PopUpBottomView {
+extension FruitsGamePopUpBottomView {
   func chooseButtonAppearance() {
     self.chooseBackgroundView.backgroundColor = UIColor(red: 0.99, green: 0.99, blue: 0.99, alpha: 1)
     self.chooseBackgroundView.shadowColor     = UIColor(red: 0.9, green: 0.93, blue: 0.93, alpha: 1).cgColor
@@ -108,7 +108,7 @@ extension PopUpBottomView {
 
 // MARK: - CollectionView
 
-extension PopUpBottomView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FruitsGamePopUpBottomView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   // MARK: - numberOfItemsInSection
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

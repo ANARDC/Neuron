@@ -39,7 +39,7 @@
 		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
 		9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CD2337CAA4004B639A /* Fruits.swift */; };
 		9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */; };
-		9971E2D323380EE9004B639A /* PopUpBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2D223380EE9004B639A /* PopUpBottomView.swift */; };
+		9971E2D323380EE9004B639A /* FruitsGamePopUpBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */; };
 		9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */; };
 		9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20522E3F67900EED8FC /* SettingsViewController.swift */; };
 		9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */; };
@@ -54,7 +54,7 @@
 		99B0F51F22DDDC1B0037A4CA /* Neuron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */; };
 		99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52022DDDC1C0037A4CA /* Assets.xcassets */; };
 		99B0F52422DDDC1C0037A4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99B0F52222DDDC1C0037A4CA /* LaunchScreen.storyboard */; };
-		99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCA232E45B300156597 /* PopUpTopView.swift */; };
+		99B46DCB232E45B300156597 /* FruitsGamePopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */; };
 		99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */; };
 		99DC16272376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */; };
 		99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8320022EBA184004275BB /* CoreDataProcesses.swift */; };
@@ -116,7 +116,7 @@
 		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		9971E2CD2337CAA4004B639A /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
-		9971E2D223380EE9004B639A /* PopUpBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpBottomView.swift; sourceTree = "<group>"; };
+		9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePopUpBottomView.swift; sourceTree = "<group>"; };
 		9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		9974E20522E3F67900EED8FC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9974E20722E3F6F500EED8FC /* AllNotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotesTableViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		99B0F52022DDDC1C0037A4CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99B0F52322DDDC1C0037A4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99B0F52522DDDC1C0037A4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99B46DCA232E45B300156597 /* PopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpTopView.swift; sourceTree = "<group>"; };
+		99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePopUpTopView.swift; sourceTree = "<group>"; };
 		99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePresenter.swift; sourceTree = "<group>"; };
 		99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartLevelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		99F8320022EBA184004275BB /* CoreDataProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProcesses.swift; sourceTree = "<group>"; };
@@ -409,8 +409,8 @@
 			children = (
 				9928825823046AD40078664E /* FruitsGameViewController.swift */,
 				9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */,
-				99B46DCA232E45B300156597 /* PopUpTopView.swift */,
-				9971E2D223380EE9004B639A /* PopUpBottomView.swift */,
+				99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */,
+				9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -616,7 +616,7 @@
 				99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */,
 				9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */,
 				9923FA1F22F7A5E700F33B0C /* NotificationsProcesses.swift in Sources */,
-				9971E2D323380EE9004B639A /* PopUpBottomView.swift in Sources */,
+				9971E2D323380EE9004B639A /* FruitsGamePopUpBottomView.swift in Sources */,
 				99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */,
 				9969C36D2387077E00F8D222 /* SchulteTableGameConfigurator.swift in Sources */,
 				992EEE4C236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift in Sources */,
@@ -636,7 +636,7 @@
 				9969C36F2388048600F8D222 /* Settings.swift in Sources */,
 				9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */,
 				990C2688236E215500836AC6 /* SchulteTableStartViewController.swift in Sources */,
-				99B46DCB232E45B300156597 /* PopUpTopView.swift in Sources */,
+				99B46DCB232E45B300156597 /* FruitsGamePopUpTopView.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */,
 				CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */,
 			);

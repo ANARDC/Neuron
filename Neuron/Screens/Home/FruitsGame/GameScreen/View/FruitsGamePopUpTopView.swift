@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PopUpTopView: UIView {
+final class FruitsGamePopUpTopView: UIView {
   var presenter: FruitsGamePresenterDelegate?
   var accessLevel: Int!
   

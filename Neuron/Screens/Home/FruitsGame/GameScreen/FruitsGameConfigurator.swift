@@ -7,8 +7,8 @@ import UIKit
 
 protocol FruitsGameConfigurator {
   func configure(_: FruitsGameViewController)
-  func configure(_: PopUpTopView)
-  func configure(_: PopUpBottomView)
+  func configure(_: FruitsGamePopUpTopView)
+  func configure(_: FruitsGamePopUpBottomView)
 }
 
 final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
@@ -23,11 +23,11 @@ final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
     fruitsGameViewController.presenter = self.presenter
   }
   
-  func configure(_ popUpTopView: PopUpTopView) {
+  func configure(_ popUpTopView: FruitsGamePopUpTopView) {
     popUpTopView.presenter = self.presenter
   }
   
-  func configure(_ popUpBottomView: PopUpBottomView) {
+  func configure(_ popUpBottomView: FruitsGamePopUpBottomView) {
     popUpBottomView.presenter = self.presenter
   }
 }
