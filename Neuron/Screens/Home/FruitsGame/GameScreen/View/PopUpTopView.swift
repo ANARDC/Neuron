@@ -52,7 +52,7 @@ final class PopUpTopView: UIView {
   
   func loadFromNib() -> UIView {
     let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: "TopView", bundle: bundle)
+    let nib = UINib(nibName: "FruitsGamePopUpTopView", bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
     
     return view

@@ -70,7 +70,7 @@ extension PopUpBottomView {
   // MARK: - loadFromNib
   func loadFromNib() -> UIView {
     let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: "BottomView", bundle: bundle)
+    let nib = UINib(nibName: "FruitsGamePopUpBottomView", bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
     
     return view
