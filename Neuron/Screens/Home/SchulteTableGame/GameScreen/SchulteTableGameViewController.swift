@@ -44,6 +44,9 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   var seconds      : Int!
   var milliseconds : Int!
   
+  var visualEffectNavBarView : CustomIntensityVisualEffectView?  = nil
+  var visualEffectView       : CustomIntensityVisualEffectView?  = nil
+  
   @IBOutlet weak var timerLabel          : UILabel!
   @IBOutlet weak var restartButton       : UIBarButtonItem!
   @IBOutlet weak var tableCollectionView : UICollectionView!
@@ -83,6 +86,9 @@ extension SchulteTableGameViewController {
      * не может быть вынесена в него
      */
     self.returnNavBarTitle()
+    
+    let visualEffectNavBarView = CustomIntensityVisualEffectView(effect: UIBlurEffect(style: .light), intensity: 0.2)
+    self.navigationController?.navigationBar.addSubview(visualEffectNavBarView)
   }
 }
 
@@ -270,6 +276,56 @@ extension SchulteTableGameViewController {
       }
     }
   }
+  
+  // MARK: - makeBlur
+  func makeBlur() {
+    let blurEffect = UIBlurEffect(style: .light)
+
+    // NavBar Blur
+    let visualEffectNavBarView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.2)
+    visualEffectNavBarView.translatesAutoresizingMaskIntoConstraints = false
+    visualEffectNavBarView.alpha = 0
+
+    self.navigationController?.navigationBar.addSubview(visualEffectNavBarView)
+
+    let topNavBarConstraint    = visualEffectNavBarView.topAnchor.constraint(equalTo: self.view.topAnchor)
+    let rightNavBarConstraint  = visualEffectNavBarView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+    let bottomNavBarConstraint = visualEffectNavBarView.bottomAnchor.constraint(equalTo: self.navigationController!.navigationBar.bottomAnchor)
+    let leftNavBarConstraint   = visualEffectNavBarView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
+
+    NSLayoutConstraint.activate([topNavBarConstraint,
+                                 rightNavBarConstraint,
+                                 bottomNavBarConstraint,
+                                 leftNavBarConstraint])
+
+    self.visualEffectNavBarView = visualEffectNavBarView
+
+    // View Blur Without NavBar
+    let visualEffectView = CustomIntensityVisualEffectView(effect: blurEffect, intensity: 0.2)
+    visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+    visualEffectView.alpha = 0
+
+    self.view.addSubview(visualEffectView)
+
+    let topViewConstraint    = visualEffectView.topAnchor.constraint(equalTo: self.navigationController!.navigationBar.bottomAnchor)
+    let rightViewConstraint  = visualEffectView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+    let bottomViewConstraint = visualEffectView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+    let leftViewConstraint   = visualEffectView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
+
+    NSLayoutConstraint.activate([topViewConstraint,
+                                 rightViewConstraint,
+                                 bottomViewConstraint,
+                                 leftViewConstraint])
+    
+    self.visualEffectView = visualEffectView
+
+    UIView.animate(withDuration: 0.6, animations: {
+      visualEffectNavBarView.alpha = 1
+      visualEffectView.alpha = 1
+    }, completion: { finished in
+//      self.makePopUp()
+    })
+  }
 }
 
 // MARK: - UICollectionView functions
@@ -320,7 +376,7 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
         
         // Обрабатываем indexOutOfRange
         let cellsCount = [1: 9, 2: 16, 3: 25, 4: 36, 5: 49, 6: 64, 7: 81]
-        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else { self.invalidateTimer(for: .finish); return }
+        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else { self.invalidateTimer(for: .finish); self.makeBlur(); return }
         
         self.makeNavBarTitle(for: self.tableCollectionViewCellsDataInRightOrder[self.currentCellIndex])
       case false:
