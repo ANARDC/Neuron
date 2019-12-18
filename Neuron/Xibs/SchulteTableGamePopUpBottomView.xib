@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
+        </array>
+        <array key="NotoSans-Regular.ttf">
+            <string>NotoSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SchulteTableGamePopUpBottomView" customModule="Neuron" customModuleProvider="target">
+            <connections>
+                <outlet property="arrow" destination="0Vx-4Z-U9g" id="jFI-60-Yfq"/>
+                <outlet property="chooseViewLabel" destination="ixC-3a-cFd" id="68j-iT-hdp"/>
+                <outlet property="colorsButtonsBackgroundView" destination="HA9-pr-EWz" id="54n-3K-qYc"/>
+                <outlet property="mixingShadesOptionTitle" destination="REq-nj-bg3" id="d70-6o-7ae"/>
+                <outlet property="mixingShadesSwitch" destination="d1r-ur-gU3" id="LDe-l9-NSZ"/>
+                <outlet property="oneColorButton" destination="hOg-3K-6ay" id="wOE-20-GeO"/>
+                <outlet property="settingsCollectionView" destination="PxA-uv-Bgo" id="gsx-Cd-MGK"/>
+                <outlet property="threeColorsButton" destination="h4j-l9-GyP" id="ddh-B9-f9L"/>
+                <outlet property="twoColorsButton" destination="nbE-B6-e7e" id="3ho-Vm-t65"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Pq9-lc-q2C">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="148"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HA9-pr-EWz">
+                    <rect key="frame" x="3" y="67" width="82" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1r-ur-gU3" customClass="PWSwitch" customModule="PWSwitch">
+                    <rect key="frame" x="248" y="32" width="51" height="31"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="51" id="eAg-dg-hlV"/>
+                        <constraint firstAttribute="height" constant="31" id="k7s-yu-mP8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="thumbDiameter">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="mixingShadesSwitchTouchDown:" destination="-1" eventType="touchDown" id="04Z-UD-ijR"/>
+                        <action selector="mixingShadesSwitchTouchDragExit:" destination="-1" eventType="touchDragExit" id="4ej-6r-Hx0"/>
+                        <action selector="mixingShadesSwitchTouchUpInside:" destination="-1" eventType="touchUpInside" id="48a-Aj-tmJ"/>
+                        <action selector="mixingShadesSwitchTouchUpOutside:" destination="-1" eventType="touchUpOutside" id="Waf-ky-UoC"/>
+                        <action selector="mixingShadesSwitchValueChanged:" destination="-1" eventType="valueChanged" id="arR-Yg-Z9z"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mixing shades" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REq-nj-bg3">
+                    <rect key="frame" x="0.0" y="37" width="110" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PxA-uv-Bgo">
+                    <rect key="frame" x="-10" y="120" width="317" height="38"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="Z0b-DQ-AkM"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="7" id="OMG-5q-9h5">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="10"/>
+                    </collectionViewFlowLayout>
+                    <cells/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="CUa-fA-pE2"/>
+                        <outlet property="delegate" destination="-1" id="hGE-EQ-OaL"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbE-B6-e7e">
+                    <rect key="frame" x="104.5" y="75" width="88" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="qhr-tz-BBP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                    <state key="normal" title="Two colors"/>
+                    <connections>
+                        <action selector="twoColorsButton:" destination="-1" eventType="touchUpInside" id="Tb7-pV-qpc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-l9-GyP">
+                    <rect key="frame" x="209" y="75" width="88" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="DVQ-1o-hOB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                    <state key="normal" title="Three colors"/>
+                    <connections>
+                        <action selector="threeColorsButton:" destination="-1" eventType="touchUpInside" id="c1u-8Q-bAM"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixC-3a-cFd">
+                    <rect key="frame" x="76.5" y="0.0" width="144" height="26"/>
+                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Далее" translatesAutoresizingMaskIntoConstraints="NO" id="0Vx-4Z-U9g">
+                    <rect key="frame" x="225.5" y="12" width="12" height="7"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOg-3K-6ay">
+                    <rect key="frame" x="0.0" y="75" width="88" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="KO0-bR-Xmb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="13"/>
+                    <state key="normal" title="One color"/>
+                    <connections>
+                        <action selector="oneColorButton:" destination="-1" eventType="touchUpInside" id="Tn9-4r-stq"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="d1r-ur-gU3" firstAttribute="top" secondItem="ixC-3a-cFd" secondAttribute="bottom" constant="6" id="5Cs-Yq-Gzr"/>
+                <constraint firstItem="REq-nj-bg3" firstAttribute="top" secondItem="ixC-3a-cFd" secondAttribute="bottom" constant="11" id="9AC-73-NgE"/>
+                <constraint firstItem="nbE-B6-e7e" firstAttribute="top" secondItem="d1r-ur-gU3" secondAttribute="bottom" constant="12" id="9xA-aI-KwG"/>
+                <constraint firstAttribute="trailing" secondItem="h4j-l9-GyP" secondAttribute="trailing" id="DhW-3p-d6V"/>
+                <constraint firstItem="PxA-uv-Bgo" firstAttribute="top" secondItem="hOg-3K-6ay" secondAttribute="bottom" constant="15" id="FiI-Hw-EKR"/>
+                <constraint firstItem="REq-nj-bg3" firstAttribute="leading" secondItem="Pq9-lc-q2C" secondAttribute="leading" id="IXF-eA-p4N"/>
+                <constraint firstItem="ixC-3a-cFd" firstAttribute="centerX" secondItem="QrG-En-P7S" secondAttribute="centerX" id="JHb-x8-ZOo"/>
+                <constraint firstItem="hOg-3K-6ay" firstAttribute="top" secondItem="d1r-ur-gU3" secondAttribute="bottom" constant="12" id="JVw-DG-yEP"/>
+                <constraint firstItem="PxA-uv-Bgo" firstAttribute="leading" secondItem="Pq9-lc-q2C" secondAttribute="leading" constant="-10" id="L3h-8G-JLg"/>
+                <constraint firstAttribute="trailing" secondItem="PxA-uv-Bgo" secondAttribute="trailing" constant="-10" id="MtY-5k-mSZ"/>
+                <constraint firstItem="nbE-B6-e7e" firstAttribute="centerX" secondItem="QrG-En-P7S" secondAttribute="centerX" id="OK1-rc-M8r"/>
+                <constraint firstItem="hOg-3K-6ay" firstAttribute="leading" secondItem="Pq9-lc-q2C" secondAttribute="leading" id="Z1v-hQ-Hj9"/>
+                <constraint firstItem="h4j-l9-GyP" firstAttribute="top" secondItem="d1r-ur-gU3" secondAttribute="bottom" constant="12" id="c5o-kN-vsY"/>
+                <constraint firstAttribute="top" secondItem="0Vx-4Z-U9g" secondAttribute="top" constant="-12" id="cE6-EL-EH9"/>
+                <constraint firstItem="PxA-uv-Bgo" firstAttribute="top" secondItem="nbE-B6-e7e" secondAttribute="bottom" constant="15" id="fFK-ZY-li7"/>
+                <constraint firstAttribute="bottom" secondItem="PxA-uv-Bgo" secondAttribute="bottom" constant="-10" id="gBN-Wp-H2b"/>
+                <constraint firstAttribute="trailing" secondItem="d1r-ur-gU3" secondAttribute="trailing" constant="-2" id="i9p-UF-uTb"/>
+                <constraint firstItem="PxA-uv-Bgo" firstAttribute="top" secondItem="h4j-l9-GyP" secondAttribute="bottom" constant="15" id="j75-0a-GUe"/>
+                <constraint firstAttribute="top" secondItem="ixC-3a-cFd" secondAttribute="top" id="tUk-uL-Zg6"/>
+                <constraint firstItem="0Vx-4Z-U9g" firstAttribute="leading" secondItem="ixC-3a-cFd" secondAttribute="trailing" constant="5" id="vFi-yX-Do1"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="QrG-En-P7S"/>
+            <point key="canvasLocation" x="258.69565217391306" y="-482.14285714285711"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Далее" width="12" height="7"/>
+    </resources>
+</document>

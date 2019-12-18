@@ -1,16 +1,15 @@
 //
-//  FruitsGamePopUpTopView.swift
+//  SchulteTableGamePopUpTopView.swift
 //  Neuron
 //
-//  Created by Anar on 15/09/2019.
+//  Created by Anar on 09.12.2019.
 //  Copyright © 2019 Commodo. All rights reserved.
 //
 
 import UIKit
 
-final class FruitsGamePopUpTopView: UIView {
-  var presenter: FruitsGamePresenterDelegate?
-  var accessLevel: Int!
+class SchulteTableGamePopUpTopView: UIView {
+  var presenter: SchulteTableGamePresenterDelegate?
   
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet var stars: [UIImageView]!
@@ -21,11 +20,11 @@ final class FruitsGamePopUpTopView: UIView {
   
   // MARK: - IBActions
   @IBAction func retryButton(_ sender: UIButton) {
-    self.presenter?.restartGame()
+//    self.presenter?.restartGame()
   }
   
   @IBAction func nextButton(_ sender: UIButton) {
-    self.presenter?.startNextLevel()
+//    self.presenter?.startNextLevel()
   }
   
   // MARK: - init
@@ -52,7 +51,7 @@ final class FruitsGamePopUpTopView: UIView {
   
   func loadFromNib() -> UIView {
     let bundle = Bundle(for: type(of: self))
-    let nib = UINib(nibName: "FruitsGamePopUpTopView", bundle: bundle)
+    let nib = UINib(nibName: "SchulteTableGamePopUpTopView", bundle: bundle)
     let view = nib.instantiate(withOwner: self, options: nil).first as! UIView
     
     return view

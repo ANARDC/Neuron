@@ -14,7 +14,7 @@ protocol SchulteTableStartViewControllerDelegate {
   var presenter    : SchulteTableStartPresenterDelegate! { get set }
   
   var mixingShades      : Bool! { get set }
-  var colorsCountChoose : Int! { get }
+  var colorsCountChoose : Int!  { get }
 
   var settingsData : SchulteTableGameSettings! { get set }
   
@@ -26,6 +26,7 @@ protocol SchulteTableStartViewControllerDelegate {
   func getColorsCountChoose()
   func saveColorsButtonsBackgroundViewFrame()
   func setColorsButtonsBackgroundViewFrame()
+  func saveColorsCountChooseButtonsFrames()
   
   func goToGameScreen(data: SchulteTableGameSettings)
   
@@ -86,6 +87,10 @@ final class SchulteTableStartViewController: UIViewController, SchulteTableStart
   var selectedCell: UICollectionViewCell? = nil
   
   let animationsDuration = 0.4
+  
+  // Это нужно для нижнего вью
+  // у попапа, в котором лежит конфигуратор
+  static var colorsCountChooseButtonsFrames = [Int: CGRect]()
 }
 
 // MARK: - Life Cycle
@@ -101,6 +106,25 @@ extension SchulteTableStartViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
     self.tabBarController?.tabBar.isHidden = true
+    self.getColorsCountChoose()
+    self.makeColorsCountSelectingButtons()
+    self.setColorsButtonsBackgroundViewFrame()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.presenter.viewDidAppear()
+    self.setColorsButtonsBackgroundViewFrame()
+  }
+  
+//  override func viewDidDisappear(_ animated: Bool) {
+//    super.viewDidDisappear(animated)
+//    self.saveColorsCountChooseButtonsFrames()
+//  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    self.saveColorsCountChooseButtonsFrames()
   }
 }
 
@@ -182,10 +206,22 @@ extension SchulteTableStartViewController {
   
   // MARK: - saveColorsButtonsBackgroundViewFrame
   func saveColorsButtonsBackgroundViewFrame() {
-    let viewFrameX      = self.colorsButtonsBackgroundView.frame.minX
-    let viewFrameY      = self.colorsButtonsBackgroundView.frame.minY
-    let viewFrameWidth  = self.colorsButtonsBackgroundView.frame.size.width
-    let viewFrameHeight = self.colorsButtonsBackgroundView.frame.size.height
+//    let viewFrameX      = self.colorsButtonsBackgroundView.frame.minX
+//    let viewFrameY      = self.colorsButtonsBackgroundView.frame.minY
+//    let viewFrameWidth  = self.colorsButtonsBackgroundView.frame.size.width
+//    let viewFrameHeight = self.colorsButtonsBackgroundView.frame.size.height
+//
+//    UserDefaults.standard.set(viewFrameX, forKey: "colorsButtonsBackgroundViewFrameX")
+//    UserDefaults.standard.set(viewFrameY, forKey: "colorsButtonsBackgroundViewFrameY")
+//    UserDefaults.standard.set(viewFrameWidth, forKey: "colorsButtonsBackgroundViewFrameWidth")
+//    UserDefaults.standard.set(viewFrameHeight, forKey: "colorsButtonsBackgroundViewFrameHeight")
+    
+    let viewFrame = SchulteTableStartViewController.colorsCountChooseButtonsFrames[self.colorsCountChoose - 1]!
+    
+    let viewFrameX      = viewFrame.minX
+    let viewFrameY      = viewFrame.minY
+    let viewFrameWidth  = 82
+    let viewFrameHeight = 32
     
     UserDefaults.standard.set(viewFrameX, forKey: "colorsButtonsBackgroundViewFrameX")
     UserDefaults.standard.set(viewFrameY, forKey: "colorsButtonsBackgroundViewFrameY")
@@ -195,6 +231,8 @@ extension SchulteTableStartViewController {
   
   // MARK: - setColorsButtonsBackgroundViewFrame
   func setColorsButtonsBackgroundViewFrame() {
+    let buttons = [self.oneColorButton, self.twoColorsButton, self.threeColorsButton]
+    
     let viewFrameX      = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameX"))
     let viewFrameY      = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameY"))
     let viewFrameWidth  = CGFloat(UserDefaults.standard.float(forKey: "colorsButtonsBackgroundViewFrameWidth"))
@@ -202,7 +240,18 @@ extension SchulteTableStartViewController {
     
     guard viewFrameX != 0 || viewFrameY != 0 || viewFrameWidth != 0 || viewFrameHeight != 0 else { return }
     
-    self.colorsButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
+//    self.colorsButtonsBackgroundView.frame = CGRect(x: viewFrameX, y: viewFrameY, width: viewFrameWidth, height: viewFrameHeight)
+    
+    self.colorsButtonsBackgroundView.center = CGPoint(x: viewFrameX + buttons[self.colorsCountChoose - 1]!.frame.size.width / 2,
+                                                      y: viewFrameY + buttons[self.colorsCountChoose - 1]!.frame.size.height / 2)
+    self.colorsButtonsBackgroundView.frame.size = CGSize(width: viewFrameWidth, height: viewFrameHeight)
+  }
+  
+  // MARK: - saveColorsCountChooseButtonsFrames
+  func saveColorsCountChooseButtonsFrames() {
+    [self.oneColorButton, self.twoColorsButton, self.threeColorsButton].enumerated().forEach { (index: Int, button: UIButton) in
+      SchulteTableStartViewController.colorsCountChooseButtonsFrames[index] = self.settingBackgroundView.convert(button.frame, from: button.superview)
+    }
   }
 }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2019 Commodo. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import PWSwitch
 
 protocol SchulteTableGamePresenterDelegate {
   func viewDidload()
@@ -15,8 +15,21 @@ protocol SchulteTableGamePresenterDelegate {
   func willMove()
 }
 
+protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
+  func oneColorSelected()
+  func twoColorsSelected()
+  func threeColorsSelected()
+  
+  func mixingShadesSwitchValueChanged(_ sender: PWSwitch)
+  func mixingShadesSwitchTouchDown(_ sender: PWSwitch)
+  func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch)
+  func mixingShadesSwitchTouchUpOutside(_ sender: PWSwitch)
+  func mixingShadesSwitchTouchDragExit(_ sender: PWSwitch)
+}
+
 final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
-  var view: SchulteTableGameViewControllerDelegate?
+  var view            : SchulteTableGameViewControllerDelegate?
+//  var popUpBottomView : SchulteTableGamePopUpBottomViewDelegate?
   
   init(view: SchulteTableGameViewControllerDelegate) {
     self.view = view
@@ -172,6 +185,106 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     }
     
     return resultTableCollectionViewCellsData
+  }
+}
+
+// MARK: - PopUpBottomView Presenter Functions
+
+extension SchulteTableGamePresenter: SchulteTableGamePopUpBottomViewPresenterDelegate {
+  
+  // MARK: - oneColorSelected
+  func oneColorSelected() {
+//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 1)
+//    self.popUpBottomView?.setColorsCountChoose(1)
+//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
+  }
+  
+  // MARK: - twoColorsSelected
+  func twoColorsSelected() {
+//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 2)
+//    self.popUpBottomView?.setColorsCountChoose(2)
+//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
+  }
+  
+  // MARK: - threeColorsSelected
+  func threeColorsSelected() {
+//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 3)
+//    self.popUpBottomView?.setColorsCountChoose(3)
+//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
+  }
+  
+  // MARK: - mixingShadesSwitchValueChanged
+  func mixingShadesSwitchValueChanged(_ sender: PWSwitch) {
+    switch sender.on {
+    case true:
+      sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+      sender.shadowOpacity = 1
+    case false:
+      sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+      sender.shadowOpacity = 0
+    }
+    
+//    self.popUpBottomView!.mixingShades = sender.on
+  }
+  
+  // MARK: - mixingShadesSwitchTouchDown
+  func mixingShadesSwitchTouchDown(_ sender: PWSwitch) {
+    if sender.on {
+      let animation            = CABasicAnimation(keyPath: "shadowOpacity")
+      animation.fromValue      = sender.shadowOpacity
+      animation.toValue        = 0
+      animation.duration       = 0.4
+      sender.shadowOpacity     = 0
+      sender.layer.add(animation, forKey: animation.keyPath)
+    } else {
+      sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+      let animation            = CABasicAnimation(keyPath : "shadowOpacity")
+      animation.fromValue      = sender.shadowOpacity
+      animation.toValue        = 1
+      animation.duration       = 0.4
+      sender.shadowOpacity     = 1
+      sender.layer.add(animation, forKey: animation.keyPath)
+    }
+  }
+  
+  // MARK: - mixingShadesSwitchTouchUpInside
+  func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch) {
+    if sender.on {
+      sender.shadowOpacity = 1
+    } else {
+      sender.shadowOpacity = 0
+      sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+    }
+  }
+  
+  // MARK: - mixingShadesSwitchTouchUpOutside
+  func mixingShadesSwitchTouchUpOutside(_ sender: PWSwitch) {
+    if sender.on {
+      let animation            = CABasicAnimation(keyPath: "shadowOpacity")
+      animation.fromValue      = sender.shadowOpacity
+      sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+      animation.toValue        = 1
+      animation.duration       = 0.4
+      sender.shadowOpacity     = 1
+      sender.layer.add(animation, forKey: animation.keyPath)
+    } else {
+      if sender.layer.borderColor == UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor {
+        sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
+      }
+      let animation        = CABasicAnimation(keyPath: "shadowOpacity")
+      animation.fromValue  = sender.shadowOpacity
+      animation.toValue    = 0
+      animation.duration   = 0.4
+      sender.shadowOpacity = 0
+      sender.layer.add(animation, forKey: animation.keyPath)
+    }
+  }
+  
+  // MARK: - mixingShadesSwitchTouchDragExit
+  func mixingShadesSwitchTouchDragExit(_ sender: PWSwitch) {
+    if sender.on {
+      sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
+    }
   }
 }
 

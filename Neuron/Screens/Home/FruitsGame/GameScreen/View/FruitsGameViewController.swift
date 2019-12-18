@@ -94,9 +94,9 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   var gameFruitsFillingJump   = 7
   var gameFruitsFillingTerm   = 7
 
-  var popUp                  : FluidCardView?                    = nil
-  var visualEffectNavBarView : CustomIntensityVisualEffectView?  = nil
-  var visualEffectView       : CustomIntensityVisualEffectView?  = nil
+  var popUp                  : FluidCardView?                   = nil
+  var visualEffectNavBarView : CustomIntensityVisualEffectView? = nil
+  var visualEffectView       : CustomIntensityVisualEffectView? = nil
 }
 
 // MARK: - FruitsGameViewController Life Cycle

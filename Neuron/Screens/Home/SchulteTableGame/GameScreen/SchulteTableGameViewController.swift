@@ -44,8 +44,9 @@ final class SchulteTableGameViewController: UIViewController, SchulteTableGameVi
   var seconds      : Int!
   var milliseconds : Int!
   
-  var visualEffectNavBarView : CustomIntensityVisualEffectView?  = nil
-  var visualEffectView       : CustomIntensityVisualEffectView?  = nil
+  var popUp                  : FluidCardView?                   = nil
+  var visualEffectNavBarView : CustomIntensityVisualEffectView? = nil
+  var visualEffectView       : CustomIntensityVisualEffectView? = nil
   
   @IBOutlet weak var timerLabel          : UILabel!
   @IBOutlet weak var restartButton       : UIBarButtonItem!
@@ -63,7 +64,7 @@ extension SchulteTableGameViewController {
   // MARK: - viewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.configurator = SchulteTableGameConfiguratorImplementation(self)
+    self.configurator = SchulteTableGameConfiguratorImplementation(view: self)
     self.configurator.configure(self)
     self.presenter.viewDidload()
   }
@@ -323,8 +324,34 @@ extension SchulteTableGameViewController {
       visualEffectNavBarView.alpha = 1
       visualEffectView.alpha = 1
     }, completion: { finished in
-//      self.makePopUp()
+      self.makePopUp()
     })
+  }
+  
+  // MARK: - makePopUp
+  func makePopUp() {
+    let popUp = FluidCardView(frame: CGRect(x: 0, y: 0, width: 297, height: 297))
+    
+    popUp.translatesAutoresizingMaskIntoConstraints = false
+    
+    let topView    = SchulteTableGamePopUpTopView(frame: CGRect(x: 0, y: 0, width: 297, height: 189))
+    let bottomView = SchulteTableGamePopUpBottomView(frame: CGRect(x: 0, y: 0, width: 297, height: 104))
+    
+    popUp.topContentView    = topView
+    popUp.bottomContentView = bottomView
+    
+    self.configurator.configure(topView)
+    self.configurator.configure(bottomView)
+    
+    self.popUp = popUp
+    
+    self.view.addSubview(popUp)
+
+    let topViewConstraint     = popUp.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 204)
+    let widthViewConstraint   = popUp.widthAnchor.constraint(equalToConstant: 297)
+    let centerXViewConstraint = popUp.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+
+    NSLayoutConstraint.activate([topViewConstraint, widthViewConstraint, centerXViewConstraint])
   }
 }
 

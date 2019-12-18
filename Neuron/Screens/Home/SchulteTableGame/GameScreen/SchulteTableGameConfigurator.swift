@@ -6,20 +6,30 @@
 //  Copyright © 2019 Commodo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol SchulteTableGameConfigurator {
-  func configure(_ schulteTableGameViewController: SchulteTableGameViewController)
+  func configure(_: SchulteTableGameViewController)
+  func configure(_: SchulteTableGamePopUpTopView)
+  func configure(_: SchulteTableGamePopUpBottomView)
 }
 
 final class SchulteTableGameConfiguratorImplementation: SchulteTableGameConfigurator {
   var presenter: SchulteTableGamePresenter?
   
-  init(_ schulteTableGameViewController: SchulteTableGameViewController) {
+  init(view schulteTableGameViewController: SchulteTableGameViewController) {
     self.presenter = SchulteTableGamePresenter(view: schulteTableGameViewController)
   }
   
   func configure(_ schulteTableGameViewController: SchulteTableGameViewController) {
     schulteTableGameViewController.presenter = self.presenter
+  }
+  
+  func configure(_ schulteTableGamePopUpTopView: SchulteTableGamePopUpTopView) {
+    schulteTableGamePopUpTopView.presenter = self.presenter
+  }
+  
+  func configure(_ schulteTableGamePopUpBottomView: SchulteTableGamePopUpBottomView) {
+    schulteTableGamePopUpBottomView.presenter = self.presenter
   }
 }

@@ -11,6 +11,7 @@ import PWSwitch
 
 protocol SchulteTableStartPresenterDelegate {
   func viewDidLoad()
+  func viewDidAppear()
   
   func oneColorSelected()
   func twoColorsSelected()
@@ -53,6 +54,10 @@ final class SchulteTableStartPresenter: SchulteTableStartPresenterDelegate {
     self.view?.makeRecordTimeLabel()
     self.view?.makeChooseBackgroundView()
     self.view?.makeChooseViewLabel()
+  }
+  
+  func viewDidAppear() {
+    self.view?.saveColorsCountChooseButtonsFrames()
   }
 }
 

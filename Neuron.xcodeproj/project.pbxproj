@@ -57,6 +57,10 @@
 		99B46DCB232E45B300156597 /* FruitsGamePopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */; };
 		99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */; };
 		99DC16272376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */; };
+		99E30FC8239E69AF00D53F8A /* SchulteTableGamePopUpTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E30FC7239E69AF00D53F8A /* SchulteTableGamePopUpTopView.xib */; };
+		99E30FCA239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E30FC9239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift */; };
+		99E30FCC239E6F2100D53F8A /* SchulteTableGamePopUpBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99E30FCB239E6F2100D53F8A /* SchulteTableGamePopUpBottomView.xib */; };
+		99E30FCE239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E30FCD239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift */; };
 		99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8320022EBA184004275BB /* CoreDataProcesses.swift */; };
 		99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */; };
 		99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F9B2BF2321525500FEEA69 /* ExpandButton.swift */; };
@@ -136,6 +140,10 @@
 		99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePopUpTopView.swift; sourceTree = "<group>"; };
 		99B46DCF232FB7BF00156597 /* FruitsGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePresenter.swift; sourceTree = "<group>"; };
 		99DC16262376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartLevelsCollectionViewCell.swift; sourceTree = "<group>"; };
+		99E30FC7239E69AF00D53F8A /* SchulteTableGamePopUpTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchulteTableGamePopUpTopView.xib; sourceTree = "<group>"; };
+		99E30FC9239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGamePopUpTopView.swift; sourceTree = "<group>"; };
+		99E30FCB239E6F2100D53F8A /* SchulteTableGamePopUpBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchulteTableGamePopUpBottomView.xib; sourceTree = "<group>"; };
+		99E30FCD239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGamePopUpBottomView.swift; sourceTree = "<group>"; };
 		99F8320022EBA184004275BB /* CoreDataProcesses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProcesses.swift; sourceTree = "<group>"; };
 		99F9B2BD232151CF00FEEA69 /* FluidCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
 		99F9B2BF2321525500FEEA69 /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
@@ -278,6 +286,8 @@
 				9969C36A2387076500F8D222 /* SchulteTableGamePresenter.swift */,
 				9969C36C2387077E00F8D222 /* SchulteTableGameConfigurator.swift */,
 				990A8593238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift */,
+				99E30FC9239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift */,
+				99E30FCD239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -465,6 +475,8 @@
 			children = (
 				99F9B2C8232156BC00FEEA69 /* FruitsGamePopUpTopView.xib */,
 				99F9B2CA23219B1D00FEEA69 /* FruitsGamePopUpBottomView.xib */,
+				99E30FC7239E69AF00D53F8A /* SchulteTableGamePopUpTopView.xib */,
+				99E30FCB239E6F2100D53F8A /* SchulteTableGamePopUpBottomView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -530,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99E30FC8239E69AF00D53F8A /* SchulteTableGamePopUpTopView.xib in Resources */,
 				990DE7FF22F8742500D18A86 /* NotoSans-Regular.ttf in Resources */,
 				99F9B2C9232156BC00FEEA69 /* FruitsGamePopUpTopView.xib in Resources */,
 				990DE80422F8742500D18A86 /* NotoSerif-RegularItalic.ttf in Resources */,
@@ -537,6 +550,7 @@
 				990DE80122F8742500D18A86 /* NotoSerif-Bold.ttf in Resources */,
 				990DE80322F8742500D18A86 /* NotoSerif-Regular.ttf in Resources */,
 				99B0F52122DDDC1C0037A4CA /* Assets.xcassets in Resources */,
+				99E30FCC239E6F2100D53F8A /* SchulteTableGamePopUpBottomView.xib in Resources */,
 				996F4B2022E3768900B19478 /* Stats.storyboard in Resources */,
 				990DE80222F8742500D18A86 /* NotoSerif-BoldItalic.ttf in Resources */,
 				990DE7FD22F8742500D18A86 /* NotoSans-Bold.ttf in Resources */,
@@ -630,7 +644,9 @@
 				9966A72A23590AA900C6CAB1 /* Model.swift in Sources */,
 				997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */,
 				9928825923046AD40078664E /* FruitsGameViewController.swift in Sources */,
+				99E30FCE239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
+				99E30FCA239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */,
 				9969C36F2388048600F8D222 /* Settings.swift in Sources */,

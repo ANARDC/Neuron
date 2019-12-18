@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpTopView.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpTopView.xib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGamePopUpTopView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGamePopUpTopView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameConfigurator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameConfigurator.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartPresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartPresenter.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/FruitsGamePopUpBottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/FruitsGamePopUpBottomView.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +38,7 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_5E2728E8-53E3-4923-9E70-9292DB71384B" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_20F068FF-27AC-49AE-A07C-8FBA2B6CDBFA" />
   <component name="FavoritesManager">
     <favorites_list name="Neuron" />
   </component>
@@ -40,9 +52,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/Calendar.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" root0="SKIP_INSPECTION" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="99B0F52922DDDC1C0037A4CA-Simulator - iOS 12.2 (iphonesimulator12.2 12.2)-x86_64" />
@@ -69,7 +81,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunManager">
@@ -140,6 +152,12 @@
       <workItem from="1575130622502" duration="267000" />
       <workItem from="1575489282272" duration="646000" />
       <workItem from="1575492046966" duration="1350000" />
+      <workItem from="1575937476501" duration="995000" />
+      <workItem from="1576182127528" duration="1930000" />
+      <workItem from="1576184086792" duration="1001000" />
+      <workItem from="1576268348474" duration="4000" />
+      <workItem from="1576522183526" duration="2247000" />
+      <workItem from="1576669707762" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
@@ -180,26 +198,30 @@
     <option name="LAST_COMMIT_MESSAGE" value="docs(fruit_game): добавил комментарий по коду прошлого коммита" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="348" y="224" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1575937872294">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="348" y="224" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1440.900@0.0.1440.900" timestamp="1575937872294" />
     <state x="407" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575489310152">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="407" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1575489310152" />
-    <state width="1438" height="75" key="GridCell.Tab.0.bottom" timestamp="1575545909654">
+    <state width="1438" height="125" key="GridCell.Tab.0.bottom" timestamp="1576700263883">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1438" height="75" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575545909654" />
-    <state width="1438" height="75" key="GridCell.Tab.0.center" timestamp="1575545909653">
+    <state width="1438" height="125" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576700263883" />
+    <state width="1438" height="125" key="GridCell.Tab.0.center" timestamp="1576700263881">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1438" height="75" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1575545909653" />
-    <state width="1438" height="75" key="GridCell.Tab.0.left" timestamp="1575545909652">
+    <state width="1438" height="125" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576700263881" />
+    <state width="1438" height="125" key="GridCell.Tab.0.left" timestamp="1576700263880">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1438" height="75" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1575545909652" />
-    <state width="1438" height="75" key="GridCell.Tab.0.right" timestamp="1575545909653">
+    <state width="1438" height="125" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576700263880" />
+    <state width="1438" height="125" key="GridCell.Tab.0.right" timestamp="1576700263882">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1438" height="75" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1575545909653" />
+    <state width="1438" height="125" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576700263882" />
     <state width="1438" height="75" key="GridCell.Tab.1.bottom" timestamp="1575545909657">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -216,5 +238,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="1438" height="75" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1575545909656" />
+    <state width="600" height="400" key="NewXcodeProjectWizard" timestamp="1575937891790">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="600" height="400" key="NewXcodeProjectWizard/0.0.1440.900@0.0.1440.900" timestamp="1575937891790" />
+    <state x="220" y="89" key="SettingsEditor" timestamp="1576184069659">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="220" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576184069659" />
   </component>
 </project>

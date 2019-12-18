@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bjx-2e-3ey">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bjx-2e-3ey">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -97,13 +97,13 @@
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-5g-rvj">
                                                                             <rect key="frame" x="7" y="3" width="44" height="44.333333333333336"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-aN-Jrd">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBj-aN-Jrd">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="44" height="27.666666666666668"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                                                                     <color key="textColor" red="0.51524770639999995" green="0.62875446049999995" blue="0.87850215519999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBz-8W-aFA">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBz-8W-aFA">
                                                                                     <rect key="frame" x="0.0" y="32.666666666666664" width="44" height="11.666666666666664"/>
                                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                                     <color key="textColor" red="0.4569675326" green="0.60822248459999995" blue="0.97924309970000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -832,7 +832,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Плоды" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-nS-8xb">
-                                <rect key="frame" x="14" y="88" width="347.00000000000006" height="241"/>
+                                <rect key="frame" x="14" y="88" width="347" height="241"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="e5s-nS-8xb" secondAttribute="height" multiplier="347:241" id="k70-qU-XTH"/>
                                 </constraints>
@@ -991,14 +991,14 @@ With increasing complexity increases the number of fruits and reduces the time t
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ТаблицаШульте" translatesAutoresizingMaskIntoConstraints="NO" id="H8c-St-J6X">
-                                <rect key="frame" x="14" y="88" width="347.00000000000006" height="241"/>
+                                <rect key="frame" x="-51.666666666666657" y="88" width="478.33333333333326" height="332"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="WFE-Iw-UeM"/>
                                     <constraint firstAttribute="width" secondItem="H8c-St-J6X" secondAttribute="height" multiplier="347:241" id="tUL-Tq-CJs"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="es4-zX-yjK">
-                                <rect key="frame" x="20" y="346" width="49" height="23.333333333333314"/>
+                                <rect key="frame" x="20" y="437" width="42" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="es4-zX-yjK" secondAttribute="height" multiplier="21:10" id="Roe-W8-zyp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="hwA-qN-kgb"/>
@@ -1008,7 +1008,7 @@ With increasing complexity increases the number of fruits and reduces the time t
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYm-Xs-fz2">
-                                <rect key="frame" x="20" y="369.33333333333331" width="47" height="122"/>
+                                <rect key="frame" x="20" y="457" width="47" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="GI2-z5-q5Y"/>
                                 </constraints>
@@ -1115,13 +1115,13 @@ Line 6</string>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Record:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYu-yp-hbR">
-                                        <rect key="frame" x="17.999999999999996" y="158" width="57.666666666666657" height="22"/>
+                                        <rect key="frame" x="18.000000000000004" y="158" width="56.333333333333343" height="22"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2WO-he-OQP">
-                                        <rect key="frame" x="95" y="161" width="97" height="16"/>
+                                        <rect key="frame" x="93.666666666666686" y="161" width="97" height="16"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="8Kf-QI-tjP">
                                                 <rect key="frame" x="0.0" y="0.0" width="17" height="16"/>
@@ -1131,28 +1131,28 @@ Line 6</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="zoK-RX-H2l">
-                                                <rect key="frame" x="20" y="0.0" width="17" height="16"/>
+                                                <rect key="frame" x="19.999999999999986" y="0.0" width="17" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="n9c-mn-Wsc"/>
                                                     <constraint firstAttribute="width" constant="17" id="ndh-V4-GsN"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="MnZ-6j-cnd">
-                                                <rect key="frame" x="40" y="0.0" width="17" height="16"/>
+                                                <rect key="frame" x="39.999999999999986" y="0.0" width="17" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="F3L-Xz-6AW"/>
                                                     <constraint firstAttribute="width" constant="17" id="LLo-DG-jvd"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="DKw-kU-ydM">
-                                                <rect key="frame" x="60" y="0.0" width="17" height="16"/>
+                                                <rect key="frame" x="59.999999999999986" y="0.0" width="17" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="IyH-lR-KTW"/>
                                                     <constraint firstAttribute="width" constant="17" id="alK-6T-rRF"/>
                                                 </constraints>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="БольшаяЗолотаяЗвезда" translatesAutoresizingMaskIntoConstraints="NO" id="jfq-CG-9ul">
-                                                <rect key="frame" x="80" y="0.0" width="17" height="16"/>
+                                                <rect key="frame" x="79.999999999999986" y="0.0" width="17" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="b4Q-Ib-qOX"/>
                                                     <constraint firstAttribute="width" constant="17" id="rtn-HB-iSJ"/>
@@ -1161,7 +1161,7 @@ Line 6</string>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00.00.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoG-tU-MVc">
-                                        <rect key="frame" x="208.00000000000003" y="150" width="114.33333333333334" height="31.333333333333343"/>
+                                        <rect key="frame" x="206.66666666666666" y="150" width="115.66666666666666" height="31.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1203,7 +1203,7 @@ Line 6</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHN-gg-DUX">
-                                        <rect key="frame" x="93.333333333333314" y="12.333333333333369" width="120.66666666666669" height="23.333333333333329"/>
+                                        <rect key="frame" x="97.666666666666657" y="14" width="112" height="20"/>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
