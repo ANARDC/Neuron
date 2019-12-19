@@ -27,6 +27,8 @@ final class SchulteTableGamePopUpBottomView: UIView {
   var colorsCountChoose : Int!
   var levelNumber       : Int = 1
   
+  var isArrowRotated = false
+  
   var settingsIsReady : Bool! = false
   
   let animationsDuration = 0.4
@@ -223,9 +225,13 @@ extension SchulteTableGamePopUpBottomView {
   
   // MARK: - rotateArrow
   func rotateArrow() {
+    guard !self.isArrowRotated else { return }
+    
     UIView.animate(withDuration: 0.5, animations: {
        self.arrow.transform = self.arrow.transform.rotated(by: -.pi / 2)
     })
+    
+    self.isArrowRotated = true
   }
 
   // MARK: - makeChooseViewLabel
