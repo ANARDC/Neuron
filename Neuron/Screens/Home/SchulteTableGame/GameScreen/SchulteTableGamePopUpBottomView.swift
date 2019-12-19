@@ -86,10 +86,11 @@ final class SchulteTableGamePopUpBottomView: UIView {
 // MARK: - Colors Count Selecting
 
 extension SchulteTableGamePopUpBottomView {
+  
+  // TODO: - Вынеси логику этих кнопок в презентер
 
   // MARK: - oneColorButton
   @IBAction func oneColorButton(_ sender: UIButton) {
-//    self.presenter?.oneColorSelected()
     self.selectingAnimation(self.colorsCountChoose, 1)
     self.setColorsCountChoose(1)
     self.saveColorsButtonsBackgroundViewFrame()
@@ -97,7 +98,6 @@ extension SchulteTableGamePopUpBottomView {
 
   // MARK: - twoColorsButton
   @IBAction func twoColorsButton(_ sender: UIButton) {
-//    self.presenter?.twoColorsSelected()
     self.selectingAnimation(self.colorsCountChoose, 2)
     self.setColorsCountChoose(2)
     self.saveColorsButtonsBackgroundViewFrame()
@@ -105,7 +105,6 @@ extension SchulteTableGamePopUpBottomView {
 
   // MARK: - threeColorsButton
   @IBAction func threeColorsButton(_ sender: UIButton) {
-//    self.presenter?.threeColorsSelected()
     self.selectingAnimation(self.colorsCountChoose, 3)
     self.setColorsCountChoose(3)
     self.saveColorsButtonsBackgroundViewFrame()

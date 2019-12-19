@@ -17,7 +17,7 @@ protocol SchulteTableGameConfigurator {
 final class SchulteTableGameConfiguratorImplementation: SchulteTableGameConfigurator {
   var presenter: SchulteTableGamePresenter?
   
-  init(view schulteTableGameViewController: SchulteTableGameViewController) {
+  init(_ schulteTableGameViewController: SchulteTableGameViewController) {
     self.presenter = SchulteTableGamePresenter(view: schulteTableGameViewController)
   }
   

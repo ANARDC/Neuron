@@ -64,7 +64,7 @@ extension SchulteTableGameViewController {
   // MARK: - viewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.configurator = SchulteTableGameConfiguratorImplementation(view: self)
+    self.configurator = SchulteTableGameConfiguratorImplementation(self)
     self.configurator.configure(self)
     self.presenter.viewDidload()
   }

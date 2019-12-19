@@ -16,10 +16,6 @@ protocol SchulteTableGamePresenterDelegate {
 }
 
 protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
-  func oneColorSelected()
-  func twoColorsSelected()
-  func threeColorsSelected()
-  
   func mixingShadesSwitchValueChanged(_ sender: PWSwitch)
   func mixingShadesSwitchTouchDown(_ sender: PWSwitch)
   func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch)
@@ -28,8 +24,7 @@ protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
 }
 
 final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
-  var view            : SchulteTableGameViewControllerDelegate?
-//  var popUpBottomView : SchulteTableGamePopUpBottomViewDelegate?
+  var view: SchulteTableGameViewControllerDelegate?
   
   init(view: SchulteTableGameViewControllerDelegate) {
     self.view = view
@@ -192,26 +187,7 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
 
 extension SchulteTableGamePresenter: SchulteTableGamePopUpBottomViewPresenterDelegate {
   
-  // MARK: - oneColorSelected
-  func oneColorSelected() {
-//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 1)
-//    self.popUpBottomView?.setColorsCountChoose(1)
-//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
-  }
-  
-  // MARK: - twoColorsSelected
-  func twoColorsSelected() {
-//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 2)
-//    self.popUpBottomView?.setColorsCountChoose(2)
-//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
-  }
-  
-  // MARK: - threeColorsSelected
-  func threeColorsSelected() {
-//    self.popUpBottomView?.selectingAnimation(self.popUpBottomView!.colorsCountChoose, 3)
-//    self.popUpBottomView?.setColorsCountChoose(3)
-//    self.popUpBottomView?.saveColorsButtonsBackgroundViewFrame()
-  }
+  // TODO: - Сделай функции для кнопок выбора кол-ва цветов
   
   // MARK: - mixingShadesSwitchValueChanged
   func mixingShadesSwitchValueChanged(_ sender: PWSwitch) {
@@ -223,8 +199,6 @@ extension SchulteTableGamePresenter: SchulteTableGamePopUpBottomViewPresenterDel
       sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
       sender.shadowOpacity = 0
     }
-    
-//    self.popUpBottomView!.mixingShades = sender.on
   }
   
   // MARK: - mixingShadesSwitchTouchDown
