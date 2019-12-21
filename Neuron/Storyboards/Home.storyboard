@@ -1354,7 +1354,11 @@ Line 6</string>
                         <viewLayoutGuide key="safeArea" id="u9B-3i-yrq"/>
                     </view>
                     <navigationItem key="navigationItem" title="Level 1" id="s4C-VV-27j">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Рестарт" id="2gi-Ji-tUj"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Рестарт" id="2gi-Ji-tUj">
+                            <connections>
+                                <action selector="restart:" destination="Z09-8h-N2M" id="a2v-DS-6o2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="restartButton" destination="2gi-Ji-tUj" id="OOC-J2-s8O"/>

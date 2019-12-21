@@ -101,6 +101,16 @@ extension SchulteTableGameViewController {
   }
 }
 
+// MARK: - Restart Game
+
+extension SchulteTableGameViewController {
+  
+  // MARK: - restart
+  @IBAction func restart(_ sender: UIBarButtonItem) {
+    self.presenter?.restart()
+  }
+}
+
 // MARK: - Timer
 
 extension SchulteTableGameViewController {

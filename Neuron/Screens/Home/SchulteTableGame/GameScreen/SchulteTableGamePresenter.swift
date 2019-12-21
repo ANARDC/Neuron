@@ -13,6 +13,8 @@ protocol SchulteTableGamePresenterDelegate {
   func viewDidload()
   func viewWillAppear()
   func willMove()
+  
+  func restart()
 }
 
 protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
@@ -182,6 +184,24 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     }
     
     return resultTableCollectionViewCellsData
+  }
+}
+
+// MARK: - Restart Game
+
+extension SchulteTableGamePresenter {
+  func restart() {
+    self.view?.returnTimerValues()
+    self.view?.makeTimer()
+    
+    self.view!.currentCellIndex                         = 0
+    self.view!.tableCollectionViewCellsData             = [tableCollectionViewCellData]()
+    self.view!.tableCollectionViewCellsDataInRightOrder = [tableCollectionViewCellData]()
+    
+    self.configureGame()
+    
+    self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
+    self.view!.tableCollectionView.reloadData()
   }
 }
 
