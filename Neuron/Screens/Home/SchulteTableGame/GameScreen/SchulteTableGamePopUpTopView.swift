@@ -20,7 +20,7 @@ class SchulteTableGamePopUpTopView: UIView {
   
   // MARK: - IBActions
   @IBAction func retryButton(_ sender: UIButton) {
-//    self.presenter?.restartGame()
+    self.presenter?.restart(from: .popUp)
   }
   
   @IBAction func nextButton(_ sender: UIButton) {

@@ -14,7 +14,7 @@ protocol SchulteTableGamePresenterDelegate {
   func viewWillAppear()
   func willMove()
   
-  func restart()
+  func restart(from state: SchulteTableGamePresenter.GameViewState)
 }
 
 protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
@@ -190,7 +190,15 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
 // MARK: - Restart Game
 
 extension SchulteTableGamePresenter {
-  func restart() {
+  func restart(from state: GameViewState) {
+    if state == .popUp {
+      UIView.animate(withDuration: 0.6, animations: {
+        self.view?.hidePopUp()
+      }, completion: { finished in
+        self.view?.clearPopUp()
+      })
+    }
+    
     self.view?.returnTimerValues()
     self.view?.makeTimer()
     
@@ -202,6 +210,11 @@ extension SchulteTableGamePresenter {
     
     self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
     self.view!.tableCollectionView.reloadData()
+  }
+  
+  enum GameViewState {
+    case view
+    case popUp
   }
 }
 

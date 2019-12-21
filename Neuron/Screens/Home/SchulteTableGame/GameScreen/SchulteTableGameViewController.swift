@@ -107,7 +107,7 @@ extension SchulteTableGameViewController {
   
   // MARK: - restart
   @IBAction func restart(_ sender: UIBarButtonItem) {
-    self.presenter?.restart()
+    self.presenter?.restart(from: .view)
   }
 }
 
