@@ -9,10 +9,14 @@
 import UIKit
 
 protocol SchulteTableGameViewControllerDelegate {
-  var settingsData : SchulteTableGameSettings! { get }
+  var settingsData : SchulteTableGameSettings! { get set }
+  
+  var currentCellIndex: Int { get set }
   
   var tableCollectionViewCellsData             : [tableCollectionViewCellData]! { get set }
   var tableCollectionViewCellsDataInRightOrder : [tableCollectionViewCellData]! { get set }
+  
+  var tableCollectionView : UICollectionView! { get set }
   
   func makeRestartButtonImage()
   func makeTimerLabel()
@@ -21,6 +25,10 @@ protocol SchulteTableGameViewControllerDelegate {
   func makeNavBarTitle(for cellData: tableCollectionViewCellData)
   func returnNavBarTitle()
   func startTimer()
+  func clearPopUp()
+  func hidePopUp()
+  func returnTimerValues()
+  func makeTimer()
   
   func collectionViewSetting()
 }
@@ -353,6 +361,39 @@ extension SchulteTableGameViewController {
 
     NSLayoutConstraint.activate([topViewConstraint, widthViewConstraint, centerXViewConstraint])
   }
+  
+  // MARK: clearPopUp
+  func clearPopUp() {
+    self.visualEffectNavBarView!.removeFromSuperview()
+    self.visualEffectView!.removeFromSuperview()
+    self.popUp!.removeFromSuperview()
+  }
+  
+  // MARK: - hidePopUp
+  func hidePopUp() {
+    self.visualEffectNavBarView!.alpha = 0
+    self.visualEffectView!.alpha       = 0
+    self.popUp!.alpha                  = 0
+  }
+  
+  // MARK: - returnTimerValues
+  func returnTimerValues() {
+    self.minutes      = 0
+    self.seconds      = 0
+    self.milliseconds = 0
+  }
+  
+  // MARK: - makeTimer
+  func makeTimer() {
+    self.invalidateTimer()
+    self.makeTimerLabel()
+    self.startTimer()
+  }
+  
+  // MARK: - invalidateTimer
+  func invalidateTimer() {
+    self.timer.invalidate()
+  }
 }
 
 // MARK: - UICollectionView functions
@@ -375,7 +416,17 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     SchulteTableGameViewController.currentTableCollectionViewCellData = self.tableCollectionViewCellsData[indexPath.row]
     self.tableCollectionView.register(SchulteTableGameTableCollectionViewCell.self, forCellWithReuseIdentifier: "cell\(indexPath.row)")
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell\(indexPath.row)", for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell\(indexPath.row)", for: indexPath) as! SchulteTableGameTableCollectionViewCell
+    
+    /*
+     * cell.setup() вызывается потому что
+     * по какой-то причине в классе
+     * SchulteTableGameTableCollectionViewCell не происходит
+     * повторная инициализация при вызове tableCollectionView.reloadData()
+     * и необходимо вручную пересоздавать UI каждой ячейки
+     */
+    
+    cell.setup()
     return cell
   }
   

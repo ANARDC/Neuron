@@ -11,8 +11,6 @@ import UIKit
 final class SchulteTableGameTableCollectionViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.makeCellAppearance()
-    self.makeCellLabel()
   }
 
   required init?(coder aDecoder: NSCoder) {
@@ -23,6 +21,20 @@ final class SchulteTableGameTableCollectionViewCell: UICollectionViewCell {
 // MARK: - Appearance Functions
 
 extension SchulteTableGameTableCollectionViewCell {
+  
+  // MARK: - setup
+  func setup() {
+    self.clearSubviews()
+    self.makeCellAppearance()
+    self.makeCellLabel()
+  }
+  
+  // MARK: - clearSubviews
+  func clearSubviews() {
+    self.subviews.forEach { (subview) in
+      subview.removeFromSuperview()
+    }
+  }
   
   // MARK: - makeCellAppearance
   func makeCellAppearance() {

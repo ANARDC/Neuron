@@ -16,6 +16,8 @@ protocol SchulteTableGamePresenterDelegate {
 }
 
 protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
+  func startGame(data: SchulteTableGameSettings)
+
   func mixingShadesSwitchValueChanged(_ sender: PWSwitch)
   func mixingShadesSwitchTouchDown(_ sender: PWSwitch)
   func mixingShadesSwitchTouchUpInside(_ sender: PWSwitch)
@@ -60,7 +62,7 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
     let colorsArray       = self.getColorsArray(smashedCellsCount)
     let cellsNumbers      = self.getCellsNumbers()
     
-    self.view!.tableCollectionViewCellsData             = self.getTableCollectionViewCellsData(cellsNumbers, colorsArray.map{ $0.0 }, colorsArray.map{ $0.1 })
+    self.view!.tableCollectionViewCellsData             = self.getTableCollectionViewCellsData(cellsNumbers, colorsArray.map { $0.0 }, colorsArray.map { $0.1 })
     self.view!.tableCollectionViewCellsDataInRightOrder = self.view!.tableCollectionViewCellsData
     self.view!.tableCollectionViewCellsDataInRightOrder.sort { Int($0.labelText)! < Int($1.labelText)! }
   }
@@ -186,7 +188,29 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
 // MARK: - PopUpBottomView Presenter Functions
 
 extension SchulteTableGamePresenter: SchulteTableGamePopUpBottomViewPresenterDelegate {
-  
+
+  // MARK: - startGame
+  func startGame(data: SchulteTableGameSettings) {
+    UIView.animate(withDuration: 0.6, animations: {
+      self.view?.hidePopUp()
+    }, completion: { finished in
+      self.view?.clearPopUp()
+      self.view?.returnTimerValues()
+      self.view?.makeTimer()
+      
+      self.view!.settingsData = data
+      
+      self.view!.currentCellIndex                         = 0
+      self.view!.tableCollectionViewCellsData             = [tableCollectionViewCellData]()
+      self.view!.tableCollectionViewCellsDataInRightOrder = [tableCollectionViewCellData]()
+      
+      self.configureGame()
+      
+      self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
+      self.view!.tableCollectionView.reloadData()
+    })
+  }
+
   // TODO: - Сделай функции для кнопок выбора кол-ва цветов
   
   // MARK: - mixingShadesSwitchValueChanged

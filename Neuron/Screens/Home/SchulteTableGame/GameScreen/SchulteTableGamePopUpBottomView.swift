@@ -85,6 +85,19 @@ final class SchulteTableGamePopUpBottomView: UIView {
   }
 }
 
+// MARK: - Start Game
+
+extension SchulteTableGamePopUpBottomView {
+  
+  // MARK: - startGame
+  @IBAction func startGame(_ sender: UITapGestureRecognizer) {
+    guard self.chooseViewLabel.text! == "Start" else { print(self.chooseViewLabel.text!); return }
+    self.presenter?.startGame(data: SchulteTableGameSettings(mixingShades: self.mixingShades,
+                                                             levelNumber: self.levelNumber,
+                                                             colorsCount: self.colorsCountChoose))
+  }
+}
+
 // MARK: - Colors Count Selecting
 
 extension SchulteTableGamePopUpBottomView {

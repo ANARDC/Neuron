@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpTopView.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpTopView.xib" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGamePopUpTopView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGamePopUpTopView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameConfigurator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameConfigurator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGameViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartPresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartPresenter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/StartScreen/SchulteTableStartViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/FruitsGamePopUpBottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/FruitsGamePopUpBottomView.xib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +69,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunManager">
@@ -158,6 +146,7 @@
       <workItem from="1576268348474" duration="4000" />
       <workItem from="1576522183526" duration="2247000" />
       <workItem from="1576669707762" duration="495000" />
+      <workItem from="1576824103719" duration="780000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
@@ -242,9 +231,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="600" height="400" key="NewXcodeProjectWizard/0.0.1440.900@0.0.1440.900" timestamp="1575937891790" />
-    <state x="220" y="89" key="SettingsEditor" timestamp="1576184069659">
+    <state x="220" y="89" key="SettingsEditor" timestamp="1576824209290">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="220" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576184069659" />
+    <state x="220" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576824209290" />
   </component>
 </project>

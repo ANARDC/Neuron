@@ -482,7 +482,7 @@ extension FruitsGameViewController {
     }
   }
   
-  // MARK: - increaseAccessLevel()
+  // MARK: - increaseAccessLevel
   func increaseAccessLevel() {
     let userDefaults                         = UserDefaults.standard
     let userDefaultsFruitsGameAccessLevelKey = "fruitsGameAccessLevel"
@@ -491,55 +491,55 @@ extension FruitsGameViewController {
     userDefaults.set(currentAccessLevel+1, forKey: userDefaultsFruitsGameAccessLevelKey)
   }
   
-  // MARK: clearPopUp()
+  // MARK: clearPopUp
   func clearPopUp() {
     self.visualEffectNavBarView!.removeFromSuperview()
     self.visualEffectView!.removeFromSuperview()
     self.popUp!.removeFromSuperview()
   }
   
-  // MARK: - hidePopUp()
+  // MARK: - hidePopUp
   func hidePopUp() {
     self.visualEffectNavBarView!.alpha = 0
     self.visualEffectView!.alpha = 0
     self.popUp!.alpha = 0
   }
   
-  // MARK: - returnTimerValues()
+  // MARK: - returnTimerValues
   func returnTimerValues() {
     self.minutes      = 0
     self.seconds      = 0
     self.milliseconds = 0
   }
   
-  // MARK: - returnFillingValues()
+  // MARK: - returnFillingValues
   func returnFillingValues() {
     self.globalCurrentFruitIndex = 0
     self.gameFruitsFillingJump   = 7
     self.gameFruitsFillingTerm   = 7
   }
   
-  // MARK: - removeFruits()
+  // MARK: - removeFruits
   func removeFruits() {
     self.gameFruits.removeAll()
     self.gameFruitsViews.removeAll()
     self.menuFruitsViews.removeAll()
   }
   
-  // MARK: - makeFruits()
+  // MARK: - makeFruits
   func makeFruits() {
     self.makeMenuFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
     self.makeGameFruits(typesCount: 3+Int((FruitsGameViewController.levelNumber-1)/5))
   }
   
-  // MARK: - makeTimer()
+  // MARK: - makeTimer
   func makeTimer() {
     self.invalidateTimer()
     self.makeTimerLabel()
     self.startTimer(seconds: 4)
   }
   
-  // MARK: - disableMenuFruitsViews()
+  // MARK: - disableMenuFruitsViews
   func disableMenuFruitsViews() {
     self.menuFruitsViews.forEach { fruit in
       fruit.isUserInteractionEnabled = false
