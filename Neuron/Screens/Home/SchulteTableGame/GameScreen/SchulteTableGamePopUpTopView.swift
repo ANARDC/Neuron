@@ -24,7 +24,7 @@ class SchulteTableGamePopUpTopView: UIView {
   }
   
   @IBAction func nextButton(_ sender: UIButton) {
-//    self.presenter?.startNextLevel()
+    self.presenter?.startNextLevel()
   }
   
   // MARK: - init

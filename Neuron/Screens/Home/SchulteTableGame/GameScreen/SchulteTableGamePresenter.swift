@@ -15,6 +15,7 @@ protocol SchulteTableGamePresenterDelegate {
   func willMove()
   
   func restart(from state: SchulteTableGamePresenter.GameViewState)
+  func startNextLevel()
 }
 
 protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
@@ -187,7 +188,7 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
   }
 }
 
-// MARK: - Restart Game
+// MARK: - Restart / Next Level
 
 extension SchulteTableGamePresenter {
   func restart(from state: GameViewState) {
@@ -215,6 +216,16 @@ extension SchulteTableGamePresenter {
   enum GameViewState {
     case view
     case popUp
+  }
+  
+  func startNextLevel() {
+    if self.view!.settingsData.levelNumber != 9 {
+      self.view!.settingsData = SchulteTableGameSettings(mixingShades: self.view!.settingsData.mixingShades,
+                                                         levelNumber: self.view!.settingsData.levelNumber + 1,
+                                                         colorsCount: self.view!.settingsData.colorsCount)
+    }
+    
+    self.restart(from: .popUp)
   }
 }
 
