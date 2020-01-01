@@ -408,13 +408,18 @@ extension SchulteTableGameViewController {
 
 // MARK: - UICollectionView functions
 
-extension SchulteTableGameViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SchulteTableGameViewController {
   
   // MARK: - tableCollectionView Delegate And DataSource
   func collectionViewSetting() {
     self.tableCollectionView.delegate   = self
     self.tableCollectionView.dataSource = self
   }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension SchulteTableGameViewController: UICollectionViewDataSource {
   
   // MARK: - Number Of Items In Section
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -439,17 +444,13 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
     cell.setup()
     return cell
   }
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension SchulteTableGameViewController: UICollectionViewDelegate {
   
-  // MARK: - Cells Size
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let cellsDimension: [Int: CGFloat] = [1: 3, 2: 4, 3: 5, 4: 6, 5: 7, 6: 8, 7: 9]
-    let tableCollectionViewDimension   = self.tableCollectionView.frame.size.width
-    let currentLevelNumber             = self.settingsData.levelNumber
-    let currentLevelCellsDimension     = tableCollectionViewDimension / cellsDimension[currentLevelNumber]! - 0.1
-    
-    return CGSize(width: currentLevelCellsDimension, height: currentLevelCellsDimension)
-  }
-  
+  // MARK: - didSelectItemAt
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let cell = collectionView.cellForItem(at: indexPath) as! SchulteTableGameTableCollectionViewCell
     
@@ -478,5 +479,20 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
         self.tableCollectionView.isUserInteractionEnabled = false
       }
     }
+  }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension SchulteTableGameViewController: UICollectionViewDelegateFlowLayout {
+  
+  // MARK: - Cells Size
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    let cellsDimension: [Int: CGFloat] = [1: 3, 2: 4, 3: 5, 4: 6, 5: 7, 6: 8, 7: 9]
+    let tableCollectionViewDimension   = self.tableCollectionView.frame.size.width
+    let currentLevelNumber             = self.settingsData.levelNumber
+    let currentLevelCellsDimension     = tableCollectionViewDimension / cellsDimension[currentLevelNumber]! - 0.1
+    
+    return CGSize(width: currentLevelCellsDimension, height: currentLevelCellsDimension)
   }
 }
