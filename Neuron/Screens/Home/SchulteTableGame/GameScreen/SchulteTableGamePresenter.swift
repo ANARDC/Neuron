@@ -51,7 +51,7 @@ final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
   
   // MARK: - viewWillAppear
   func viewWillAppear() {
-    self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
+    self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder[self.view!.currentCellIndex])
   }
   
   // MARK: - willMove
@@ -211,6 +211,7 @@ extension SchulteTableGamePresenter {
     
     self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
     self.view!.tableCollectionView.reloadData()
+    self.view!.tableCollectionView.isUserInteractionEnabled = true
   }
   
   enum GameViewState {
@@ -252,6 +253,7 @@ extension SchulteTableGamePresenter: SchulteTableGamePopUpBottomViewPresenterDel
       
       self.view?.makeNavBarTitle(for: self.view!.tableCollectionViewCellsDataInRightOrder.first!)
       self.view!.tableCollectionView.reloadData()
+      self.view!.tableCollectionView.isUserInteractionEnabled = true
     })
   }
 

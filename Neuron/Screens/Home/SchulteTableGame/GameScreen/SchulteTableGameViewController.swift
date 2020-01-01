@@ -464,12 +464,18 @@ extension SchulteTableGameViewController: UICollectionViewDelegate, UICollection
         
         // Обрабатываем indexOutOfRange
         let cellsCount = [1: 9, 2: 16, 3: 25, 4: 36, 5: 49, 6: 64, 7: 81]
-        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else { self.invalidateTimer(for: .finish); self.makeBlur(); return }
+        guard self.currentCellIndex != cellsCount[self.settingsData.levelNumber] else {
+          self.invalidateTimer(for: .finish)
+          self.makeBlur()
+          self.currentCellIndex -= 1 // Это нужно для тайтла навбара
+          return
+        }
         
         self.makeNavBarTitle(for: self.tableCollectionViewCellsDataInRightOrder[self.currentCellIndex])
       case false:
         self.invalidateTimer(for: .error)
         self.highlight(cellWithText: self.tableCollectionViewCellsDataInRightOrder[self.currentCellIndex].labelText)
+        self.tableCollectionView.isUserInteractionEnabled = false
       }
     }
   }
