@@ -26,6 +26,9 @@
 		992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */; };
 		9930EAA9239D3AD20013C521 /* Pods_Neuron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */; };
 		9930EAAA239D3AD20013C521 /* Pods_Neuron.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A358E2485961FFE39BADD9A /* Pods_Neuron.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		993B048423BE32F100EFC884 /* LacesStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B048323BE32F100EFC884 /* LacesStartViewController.swift */; };
+		993B048623BE333A00EFC884 /* LacesStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B048523BE333A00EFC884 /* LacesStartPresenter.swift */; };
+		993B048823BE334200EFC884 /* LacesStartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B048723BE334200EFC884 /* LacesStartConfigurator.swift */; };
 		994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Design.swift */; };
 		9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7252350A5B900C6CAB1 /* UseCases.swift */; };
 		9966A7282354997800C6CAB1 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7272354997800C6CAB1 /* DataBase.swift */; };
@@ -46,6 +49,7 @@
 		9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E23C22E7A46800EED8FC /* CalendarViewController.swift */; };
 		997742BB22F40ADF00D763F5 /* AddNoteCellButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997742BA22F40ADF00D763F5 /* AddNoteCellButton.swift */; };
 		9987AAD822DF81DD0047215F /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9987AAD722DF81DD0047215F /* DiaryCollectionViewCell.swift */; };
+		998A459823BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998A459723BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift */; };
 		999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */; };
 		99A5A61822E0D9D700C28FE1 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */; };
 		99B0F51722DDDC1B0037A4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */; };
@@ -107,6 +111,9 @@
 		992EEE4B236F0A7F005FA8C2 /* SchulteTableStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartConfigurator.swift; sourceTree = "<group>"; };
 		992EEE4D236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableStartPresenter.swift; sourceTree = "<group>"; };
 		9930EAAC239D3ADF0013C521 /* DeviceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DeviceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		993B048323BE32F100EFC884 /* LacesStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartViewController.swift; sourceTree = "<group>"; };
+		993B048523BE333A00EFC884 /* LacesStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartPresenter.swift; sourceTree = "<group>"; };
+		993B048723BE334200EFC884 /* LacesStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartConfigurator.swift; sourceTree = "<group>"; };
 		994CBBA522DF44A5007B5BD5 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		9966A7252350A5B900C6CAB1 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
 		9966A7272354997800C6CAB1 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
@@ -127,6 +134,7 @@
 		9974E23C22E7A46800EED8FC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "Neuron/Screens/Home/All Notes/Calendar/CalendarViewController.swift"; sourceTree = SOURCE_ROOT; };
 		997742BA22F40ADF00D763F5 /* AddNoteCellButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCellButton.swift; sourceTree = "<group>"; };
 		9987AAD722DF81DD0047215F /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		998A459723BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartLevelsCollectionViewCell.swift; sourceTree = "<group>"; };
 		999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		99A5A61722E0D9D700C28FE1 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		99B0F51322DDDC1B0037A4CA /* Neuron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neuron.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +287,25 @@
 			path = GameScreen;
 			sourceTree = "<group>";
 		};
+		993B048123BE329500EFC884 /* LacesGame */ = {
+			isa = PBXGroup;
+			children = (
+				993B048223BE32A400EFC884 /* StartScreen */,
+			);
+			path = LacesGame;
+			sourceTree = "<group>";
+		};
+		993B048223BE32A400EFC884 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				993B048323BE32F100EFC884 /* LacesStartViewController.swift */,
+				993B048523BE333A00EFC884 /* LacesStartPresenter.swift */,
+				993B048723BE334200EFC884 /* LacesStartConfigurator.swift */,
+				998A459723BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
 		9969C3672386AEDF00F8D222 /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +327,7 @@
 				996F4B1B22E36FB600B19478 /* All Notes */,
 				9923FA1922F60F5700F33B0C /* FruitsGame */,
 				990C2685236E20EC00836AC6 /* SchulteTableGame */,
+				993B048123BE329500EFC884 /* LacesGame */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -613,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9969C36B2387076500F8D222 /* SchulteTableGamePresenter.swift in Sources */,
+				998A459823BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift in Sources */,
 				9969C3692386AF7300F8D222 /* SchulteTableGameViewController.swift in Sources */,
 				9974E23D22E7A46800EED8FC /* CalendarViewController.swift in Sources */,
 				990A8594238A800E00F51A4D /* SchulteTableGameTableCollectionViewCell.swift in Sources */,
@@ -621,6 +650,7 @@
 				99F8320122EBA184004275BB /* CoreDataProcesses.swift in Sources */,
 				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
 				9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */,
+				993B048623BE333A00EFC884 /* LacesStartPresenter.swift in Sources */,
 				9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */,
 				9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */,
 				99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */,
@@ -638,6 +668,8 @@
 				9966A7282354997800C6CAB1 /* DataBase.swift in Sources */,
 				992BEF0D22E8BB0C00A9360A /* Calendar.swift in Sources */,
 				99B46DD0232FB7BF00156597 /* FruitsGamePresenter.swift in Sources */,
+				993B048423BE32F100EFC884 /* LacesStartViewController.swift in Sources */,
+				993B048823BE334200EFC884 /* LacesStartConfigurator.swift in Sources */,
 				99DC16272376E70A006DCBC1 /* SchulteTableStartLevelsCollectionViewCell.swift in Sources */,
 				99F9B2C22321527200FEEA69 /* Extensions.swift in Sources */,
 				99F9B2BE232151CF00FEEA69 /* FluidCardView.swift in Sources */,
