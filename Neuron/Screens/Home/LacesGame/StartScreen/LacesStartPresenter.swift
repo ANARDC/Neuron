@@ -6,12 +6,16 @@
 //  Copyright © 2020 Commodo. All rights reserved.
 //
 
+import UIKit
+
 // MARK: - protocol
 protocol LacesStartPresenterDelegate {
   func viewDidLoad()
   func viewWillAppear()
   func viewDidLayoutSubviews()
-  func startGame()
+  
+  func startGame(levelNumber: Int)
+  func prepare(for segue: UIStoryboardSegue, sender: Any?)
 }
 
 // MARK: - class
@@ -52,8 +56,18 @@ final class LacesStartPresenter: LacesStartPresenterDelegate {
 extension LacesStartPresenter {
   
   // MARK: - startGame
-  func startGame() {
+  func startGame(levelNumber: Int) {
     guard self.view!.settingsIsReady else { return }
-    self.view?.goToGameScreen()
+    self.view?.goToGameScreen(levelNumber: levelNumber)
+  }
+  
+  // MARK: - prepareSegue
+  func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard segue.identifier == "startLacesGameSegue" else { return }
+    
+    if let levelNumber = sender as? Int {
+      let destination = segue.destination as! LacesGameViewController
+      destination.levelNumber = levelNumber
+    }
   }
 }

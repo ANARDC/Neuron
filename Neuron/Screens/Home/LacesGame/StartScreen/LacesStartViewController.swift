@@ -12,7 +12,7 @@ import UIKit
 protocol LacesStartViewControllerDelegate {
   var settingsIsReady: Bool { get }
   
-  func goToGameScreen()
+  func goToGameScreen(levelNumber: Int)
   
   func hideTabBar()
   func navBarSetting()
@@ -95,12 +95,17 @@ extension LacesStartViewController {
   
   // MARK: - startGame
   @IBAction func startGame(_ sender: UITapGestureRecognizer) {
-    self.presenter.startGame()
+    self.presenter.startGame(levelNumber: self.levelNumber)
   }
   
   // MARK: - goToGameScreen
-  func goToGameScreen() {
-    performSegue(withIdentifier: "startLacesGameSegue", sender: nil)
+  func goToGameScreen(levelNumber: Int) {
+    performSegue(withIdentifier: "startLacesGameSegue", sender: levelNumber)
+  }
+  
+  // MARK: - prepareSegue
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    self.presenter.prepare(for: segue, sender: sender)
   }
 }
 
@@ -293,6 +298,18 @@ extension LacesStartViewController: UICollectionViewDelegate {
     
     // Change settingsIsReady status
     self.settingsIsReady = true
+    
+    
+    
+//    let theAttributes = collectionView.layoutAttributesForItem(at: indexPath)
+//    let cellFrameInSuperview = collectionView.convert(theAttributes!.frame, to: collectionView.superview)
+//    
+//    let view = UIView()
+//    view.backgroundColor = .red
+//    view.frame = cellFrameInSuperview
+//    view.frame.origin.x = 0
+//    view.frame.origin.y = 0
+//    collectionView.insertSubview(view, belowSubview: collectionView.cellForItem(at: indexPath)!)
   }
   
   // MARK: - cellDidDeselect
