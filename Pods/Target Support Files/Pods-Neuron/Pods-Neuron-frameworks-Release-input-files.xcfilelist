@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/PWSwitch/PWSwitch.framework
+${BUILT_PRODUCTS_DIR}/SwiftGraph/SwiftGraph.framework

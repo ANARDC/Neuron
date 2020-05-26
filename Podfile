@@ -6,6 +6,7 @@ target 'Neuron' do
   use_frameworks!
 
   pod "PWSwitch"
+  pod "SwiftGraph"
 
   post_install do |installer|
     Dir.glob(installer.sandbox.target_support_files_root + "Pods-*/*.sh").each do |script|

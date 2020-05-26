@@ -1,16 +1,21 @@
 PODS:
   - PWSwitch (1.1.2)
+  - SwiftGraph (3.0.0)
 
 DEPENDENCIES:
   - PWSwitch
+  - SwiftGraph
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - PWSwitch
+  trunk:
+    - SwiftGraph
 
 SPEC CHECKSUMS:
   PWSwitch: 399db6ef5dd8417f9a1e9f82cb70602f10a6c38f
+  SwiftGraph: 35298b3dab72887bc834b2e8d45295b870a87f42
 
-PODFILE CHECKSUM: 878e400ad983f621380b7b850ce600ffef5d7e72
+PODFILE CHECKSUM: 4f40661864a8ca49559346221ccb353fee8d8c17
 
 COCOAPODS: 1.8.4

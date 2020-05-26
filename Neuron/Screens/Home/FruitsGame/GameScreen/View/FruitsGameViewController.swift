@@ -144,7 +144,7 @@ extension FruitsGameViewController {
     self.minutes      = 0
     self.seconds      = seconds
     self.milliseconds = 0
-    self.timer        = Timer.scheduledTimer(timeInterval : 1/1000,
+    self.timer        = Timer.scheduledTimer(timeInterval : 1/10,
                                              target       : self,
                                              selector     : #selector(self.timerSelectorMethod),
                                              userInfo     : nil,
@@ -155,17 +155,9 @@ extension FruitsGameViewController {
   @objc func timerSelectorMethod() {
     // Пока фрукты не скрыты мы уменьшаем время
     if !self.fruitsIsHidden {
-      self.milliseconds -= self.milliseconds > 0 ? 1 : 0
+      self.milliseconds -= self.milliseconds > 0 ? 100 : 0
       
-//      var milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
-      var milliseconds: String
-      
-      switch self.milliseconds {
-      case 100..<1000: milliseconds = "\(self.milliseconds)"
-      case 10..<100:   milliseconds = "0\(self.milliseconds)"
-      case ..<10:      milliseconds = "00\(self.milliseconds)"
-      default: return
-      }
+      let milliseconds = self.milliseconds / 100
       
       self.timerLabel.text = "00.0\(self.seconds).\(milliseconds)"
       
@@ -188,7 +180,7 @@ extension FruitsGameViewController {
     } else {
       // Когда фрукты скрыты мы увеличиваем время и уменьшаем рейтинг
       
-      self.milliseconds += 1
+      self.milliseconds += 100
       
       if self.milliseconds == 1000 {
         self.seconds += 1
@@ -197,16 +189,8 @@ extension FruitsGameViewController {
       
       let minutes = self.minutes < 10 ? "0\(self.minutes)" : "\(self.minutes)"
       let seconds = self.seconds < 10 ? "0\(self.seconds)" : "\(self.seconds)"
-//      let milliseconds = self.milliseconds < 10 ? "0\(self.milliseconds)" : "\(self.milliseconds)"
       
-      var milliseconds: String
-      
-      switch self.milliseconds {
-      case 100..<1000: milliseconds = "\(self.milliseconds)"
-      case 10..<100:   milliseconds = "0\(self.milliseconds)"
-      case ..<10:      milliseconds = "00\(self.milliseconds)"
-      default: return
-      }
+      let milliseconds = self.milliseconds / 100
       
       self.timerLabel.text = "\(minutes).\(seconds).\(milliseconds)"
       self.timerLabel.textColor = UIColor(red: 0.15, green: 0.24, blue: 0.32, alpha: 0.9)

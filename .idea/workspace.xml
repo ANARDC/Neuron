@@ -3,9 +3,26 @@
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePopUpBottomView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/SchulteTableGame/GameScreen/SchulteTableGamePresenter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Xibs/SchulteTableGamePopUpBottomView.xib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/FluidCard/FluidCardView.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/GameScreen/View/FruitsGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/Home/AddNoteCellButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/Home/AddNoteCellButton.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Screens/Home/LacesGame/GameScreen/LacesGameViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Screens/Home/LacesGame/GameScreen/LacesGameViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Storyboards/Home.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/anardadashov.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Debug-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Debug-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Debug-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Debug-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Release-input-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Release-input-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Release-output-files.xcfilelist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks-Release-output-files.xcfilelist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +43,13 @@
     <expand />
     <select />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_20F068FF-27AC-49AE-A07C-8FBA2B6CDBFA" />
-  <component name="FavoritesManager">
-    <favorites_list name="Neuron" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Empty Mind Map" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
@@ -40,9 +61,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/FruitsGame/StartScreen/LevelsCollectionViewCell.swift" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/All Notes/Calendar/Calendar.swift" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Neuron/Screens/Home/Note/NoteViewController.swift" root0="SKIP_INSPECTION" />
   </component>
   <component name="OCResolveContextSettings">
     <option name="configuration" value="99B0F52922DDDC1C0037A4CA-Simulator - iOS 12.2 (iphonesimulator12.2 12.2)-x86_64" />
@@ -61,19 +82,19 @@
   <component name="ProjectId" id="1PTYhAWRg2cXhLytYgxhUNpii26" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="Neuron" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.22254059" />
   </component>
   <component name="RunManager">
-    <configuration name="Neuron" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Neuron" TARGET_NAME="Neuron" CONFIG_NAME="Debug" SCHEME_NAME="Neuron" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Neuron" RUN_TARGET_NAME="Neuron" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+    <configuration name="Neuron" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Neuron" TARGET_NAME="Neuron" CONFIG_NAME="Debug" SCHEME_NAME="Neuron" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Neuron" RUN_TARGET_NAME="Neuron" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
@@ -82,18 +103,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -147,6 +156,17 @@
       <workItem from="1576522183526" duration="2247000" />
       <workItem from="1576669707762" duration="495000" />
       <workItem from="1576824103719" duration="780000" />
+      <workItem from="1581597693065" duration="272000" />
+      <workItem from="1581597980833" duration="140000" />
+      <workItem from="1581598133610" duration="448000" />
+      <workItem from="1581598694718" duration="407000" />
+      <workItem from="1581937093176" duration="18000" />
+      <workItem from="1584112883286" duration="192000" />
+      <workItem from="1584117054965" duration="91000" />
+      <workItem from="1588615589797" duration="1000000" />
+      <workItem from="1589061489294" duration="12000" />
+      <workItem from="1590336039168" duration="778000" />
+      <workItem from="1590495282168" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
@@ -166,20 +186,19 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="perf(fruit_game): добавил появление блюра" />
@@ -195,45 +214,59 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="407" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1575489310152" />
-    <state width="1438" height="125" key="GridCell.Tab.0.bottom" timestamp="1576700263883">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.0.bottom" timestamp="1581599958906">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="125" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576700263883" />
-    <state width="1438" height="125" key="GridCell.Tab.0.center" timestamp="1576700263881">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958906" />
+    <state width="1680" height="90" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1581598793578" />
+    <state width="1680" height="90" key="GridCell.Tab.0.center" timestamp="1581599958905">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="125" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576700263881" />
-    <state width="1438" height="125" key="GridCell.Tab.0.left" timestamp="1576700263880">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958905" />
+    <state width="1680" height="90" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1581598793576" />
+    <state width="1680" height="90" key="GridCell.Tab.0.left" timestamp="1581599958904">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="125" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576700263880" />
-    <state width="1438" height="125" key="GridCell.Tab.0.right" timestamp="1576700263882">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958904" />
+    <state width="1680" height="90" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1581598793574" />
+    <state width="1680" height="90" key="GridCell.Tab.0.right" timestamp="1581599958906">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="125" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576700263882" />
-    <state width="1438" height="75" key="GridCell.Tab.1.bottom" timestamp="1575545909657">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958906" />
+    <state width="1680" height="90" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1581598793577" />
+    <state width="1680" height="90" key="GridCell.Tab.1.bottom" timestamp="1581599958908">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="75" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575545909657" />
-    <state width="1438" height="75" key="GridCell.Tab.1.center" timestamp="1575545909656">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958908" />
+    <state width="1680" height="90" key="GridCell.Tab.1.center" timestamp="1581599958907">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="75" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1575545909656" />
-    <state width="1438" height="75" key="GridCell.Tab.1.left" timestamp="1575545909655">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958907" />
+    <state width="1680" height="90" key="GridCell.Tab.1.left" timestamp="1581599958907">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="75" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1575545909655" />
-    <state width="1438" height="75" key="GridCell.Tab.1.right" timestamp="1575545909656">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958907" />
+    <state width="1680" height="90" key="GridCell.Tab.1.right" timestamp="1581599958908">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1438" height="75" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1575545909656" />
-    <state width="600" height="400" key="NewXcodeProjectWizard" timestamp="1575937891790">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1680" height="90" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958908" />
+    <state width="700" height="467" key="NewXcodeProjectWizard" timestamp="1581598441928">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="600" height="400" key="NewXcodeProjectWizard/0.0.1440.900@0.0.1440.900" timestamp="1575937891790" />
-    <state x="220" y="89" key="SettingsEditor" timestamp="1576824209290">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="700" height="467" key="NewXcodeProjectWizard/0.0.1680.1050@0.0.1680.1050" timestamp="1581598441928" />
+    <state x="257" y="104" key="SettingsEditor" timestamp="1581598677882">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="220" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576824209290" />
+    <state x="257" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1581598677882" />
   </component>
 </project>
