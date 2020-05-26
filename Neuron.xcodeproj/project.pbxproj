@@ -428,15 +428,11 @@
 		99B0F51522DDDC1B0037A4CA /* Neuron */ = {
 			isa = PBXGroup;
 			children = (
+				99D8E8F4247D9DAE002A4397 /* Supporting Files */,
 				99F9B2C72321568900FEEA69 /* Xibs */,
 				996F4B1C22E3740000B19478 /* Storyboards */,
 				99CDB50022EDF8B6007660BE /* Helpers */,
 				996F4B1922E36F1300B19478 /* Screens */,
-				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
-				9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */,
-				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
-				99B0F52522DDDC1C0037A4CA /* Info.plist */,
-				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
 			);
 			path = Neuron;
 			sourceTree = "<group>";
@@ -478,6 +474,18 @@
 				99D9528A23C224BC00E783C8 /* Postfixes.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		99D8E8F4247D9DAE002A4397 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99B0F51622DDDC1B0037A4CA /* AppDelegate.swift */,
+				9923FA1E22F7A5E700F33B0C /* NotificationsProcesses.swift */,
+				99B0F52022DDDC1C0037A4CA /* Assets.xcassets */,
+				99B0F52522DDDC1C0037A4CA /* Info.plist */,
+				99B0F51D22DDDC1B0037A4CA /* Neuron.xcdatamodeld */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		99D9528323C0E92A00E783C8 /* GameScreen */ = {
@@ -859,7 +867,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 989TVX6JAA;
-				INFOPLIST_FILE = Neuron/Info.plist;
+				INFOPLIST_FILE = "Neuron/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -879,7 +887,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 989TVX6JAA;
-				INFOPLIST_FILE = Neuron/Info.plist;
+				INFOPLIST_FILE = "Neuron/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
