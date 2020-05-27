@@ -15,7 +15,7 @@ final class AllNotesTableViewController: UITableViewController {
   @IBOutlet weak var sortButton: UIBarButtonItem!
 
   // MARK: - Class Properties
-  var notes = CoreDataProcesses.notesFromCoreData
+  var notes = DataService.notesFromCoreData
   var notesCount = 0
 
   var selectedNoteTitle = ""

@@ -36,7 +36,7 @@ extension NoteViewController {
       return
     }
 
-    CoreDataProcesses.saveNoteToCoreData(text: noteText.text, title: noteTitle.text!)
+    DataService.saveNoteToCoreData(text: noteText.text, title: noteTitle.text!)
 
     performSegue(withIdentifier: "unwindSeque", sender: nil)
   }

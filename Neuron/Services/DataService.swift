@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-final class CoreDataProcesses {
+final class DataService {
 
   // MARK: - Getting Notes From CoreData
   static var notesFromCoreData: [Note] {

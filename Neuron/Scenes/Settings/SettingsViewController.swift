@@ -48,7 +48,7 @@ final class SettingsViewController: UIViewController {
   var diaryFillingTimeSelectedBackgroundViewPosition = 0
   var tasksFillingTimeSelectedBackgroundViewPosition = 0
 
-  let notificationsProcesses = NotificationsProcesses()
+  let notificationsProcesses = NotificationsService()
 }
 
 // MARK: - SettingsViewController Life Cycle

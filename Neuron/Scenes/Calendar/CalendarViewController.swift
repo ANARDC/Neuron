@@ -105,7 +105,7 @@ extension CalendarViewController: UICollectionViewDataSource, UICollectionViewDe
       cell.dayView.borderWidth = 2
     }
 
-    let notes = CoreDataProcesses.notesFromCoreData
+    let notes = DataService.notesFromCoreData
     for note in notes {
       let day = note.date!.components(separatedBy: ".")[0]
       let month = note.date!.components(separatedBy: ".")[2].prefix(3)

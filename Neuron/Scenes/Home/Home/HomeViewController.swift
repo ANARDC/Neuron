@@ -54,7 +54,7 @@ extension HomeViewController {
   @IBAction func unwindToHome(_ sender: UIStoryboardSegue) {
     self.tabBarController?.tabBar.isHidden = false
     
-    notes = CoreDataProcesses.notesFromCoreData
+    notes = DataService.notesFromCoreData
     
     diaryCollectionView?.reloadData()
     switch userDefaults.integer(forKey: "notesCount") {
@@ -141,7 +141,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         addNoteCell = cell
         return cell
       default:
-        notes = CoreDataProcesses.notesFromCoreData
+        notes = DataService.notesFromCoreData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Note", for: indexPath) as! DiaryCollectionViewCell
         let index = notes.count - indexPath.row
         cell.title.text = notes[index].title

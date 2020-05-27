@@ -1,5 +1,5 @@
 //
-//  NotificationsProcesses.swift
+//  NotificationsService.swift
 //  Neuron
 //
 //  Created by Anar on 05/08/2019.
@@ -8,7 +8,7 @@
 
 import UserNotifications
 
-class NotificationsProcesses {
+class NotificationsService {
     let notificationCenter = UNUserNotificationCenter.current()
     var tasksNotificationsStatus = "daily"
     
