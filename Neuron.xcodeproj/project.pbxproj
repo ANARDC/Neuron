@@ -78,6 +78,7 @@
 		99F9B2C9232156BC00FEEA69 /* FruitsGamePopUpTopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2C8232156BC00FEEA69 /* FruitsGamePopUpTopView.xib */; };
 		99F9B2CB23219B1D00FEEA69 /* FruitsGamePopUpBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F9B2CA23219B1D00FEEA69 /* FruitsGamePopUpBottomView.xib */; };
 		CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */; };
+		CA451B9261DD70ED47ADEF70 /* MonthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4517CB7C636B4C02EA472A /* MonthData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -168,6 +169,7 @@
 		99F9B2C5232152B800FEEA69 /* UnitBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 		99F9B2C8232156BC00FEEA69 /* FruitsGamePopUpTopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitsGamePopUpTopView.xib; sourceTree = "<group>"; };
 		99F9B2CA23219B1D00FEEA69 /* FruitsGamePopUpBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitsGamePopUpBottomView.xib; sourceTree = "<group>"; };
+		CA4517CB7C636B4C02EA472A /* MonthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthData.swift; sourceTree = "<group>"; };
 		CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitsGameConfigurator.swift; sourceTree = "<group>"; };
 		D0F1DAE99B9D28DCE537C84D /* Pods-Neuron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neuron.release.xcconfig"; path = "Target Support Files/Pods-Neuron/Pods-Neuron.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,6 +301,7 @@
 		9932FF03247ED5DC005E6148 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				CA4517CB7C636B4C02EA472A /* MonthData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -375,9 +378,9 @@
 		9974E23B22E765E000EED8FC /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				9932FF01247DA3C3005E6148 /* CalendarViewController.swift */,
 				999CDDFA22E842FD00D3ED7D /* CalendarCollectionViewCell.swift */,
 				992BEF0C22E8BB0C00A9360A /* Calendar.swift */,
-				9932FF01247DA3C3005E6148 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				99B46DCB232E45B300156597 /* FruitsGamePopUpTopView.swift in Sources */,
 				994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */,
 				CA45108EDE202D277AA2C3F5 /* FruitsGameConfigurator.swift in Sources */,
+				CA451B9261DD70ED47ADEF70 /* MonthData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

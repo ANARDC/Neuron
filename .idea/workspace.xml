@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/AllNotesTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/AllNotesTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/NoteTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/NoteTableViewCell.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Neuron/Entities/MonthData.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Calendar/Calendar.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Calendar/Calendar.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Calendar/CalendarCollectionViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Calendar/CalendarCollectionViewCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Calendar/CalendarViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Calendar/CalendarViewController.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +78,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1PTYhAWRg2cXhLytYgxhUNpii26" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="manualOrder" value="true" />
@@ -166,7 +173,7 @@
       <workItem from="1590688605101" duration="306000" />
       <workItem from="1590690240079" duration="512000" />
       <workItem from="1590765187905" duration="219000" />
-      <workItem from="1590765422547" duration="556000" />
+      <workItem from="1590765422547" duration="1543000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
@@ -189,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590765628029</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactor(all_notes): вычищаем выгребную яму">
+      <created>1590766017678</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1590766017678</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,12 +225,17 @@
     <MESSAGE value="perf(fruit_game): добавил появление блюра" />
     <MESSAGE value="docs(fruit_game): добавил комментарий по коду прошлого коммита" />
     <MESSAGE value="refactor(note): вычищаем выгребную яму" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(note): вычищаем выгребную яму" />
+    <MESSAGE value="refactor(all_notes): вычищаем выгребную яму" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(all_notes): вычищаем выгребную яму" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1320" y="460" key="Vcs.Push.Dialog.v2" timestamp="1590765634383">
+    <state x="1229" y="359" key="SettingsEditor" timestamp="1590767700782">
       <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="1320" y="460" key="Vcs.Push.Dialog.v2/880.1440.1680.1050/0.0.3440.1440@0.0.3440.1440" timestamp="1590765634383" />
+    <state x="1229" y="359" key="SettingsEditor/880.1440.1680.1050/0.0.3440.1440@0.0.3440.1440" timestamp="1590767700782" />
+    <state x="1320" y="460" key="Vcs.Push.Dialog.v2" timestamp="1590766021258">
+      <screen x="0" y="0" width="3440" height="1440" />
+    </state>
+    <state x="1320" y="460" key="Vcs.Push.Dialog.v2/880.1440.1680.1050/0.0.3440.1440@0.0.3440.1440" timestamp="1590766021258" />
   </component>
 </project>
