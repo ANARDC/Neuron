@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Helpers/Postfixes.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Helpers/Postfixes.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Home/Home/HomeViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Home/Home/HomeViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Note/NoteViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Note/NoteViewController.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,6 +146,7 @@
       <workItem from="1590600280371" duration="2567000" />
       <workItem from="1590688605101" duration="306000" />
       <workItem from="1590690240079" duration="512000" />
+      <workItem from="1590765187905" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
