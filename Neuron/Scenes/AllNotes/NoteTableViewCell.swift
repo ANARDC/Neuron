@@ -9,9 +9,9 @@
 import UIKit
 
 final class NoteTableViewCell: UITableViewCell {
-  @IBOutlet weak var mainView: UIView!
-  @IBOutlet weak var dateInt: UILabel!
-  @IBOutlet weak var dateString: UILabel!
-  @IBOutlet weak var noteTitle: UILabel!
-  @IBOutlet weak var noteText: UILabel!
+  @IBOutlet weak var mainView   : UIView!
+  @IBOutlet weak var dateInt    : UILabel!
+  @IBOutlet weak var dateString : UILabel!
+  @IBOutlet weak var noteTitle  : UILabel!
+  @IBOutlet weak var noteText   : UILabel!
 }

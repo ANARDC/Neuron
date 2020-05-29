@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4fce5c01-e53e-4524-9b35-1bf40d490eae" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/Note/NoteViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/Note/NoteViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/AllNotesTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/AllNotesTableViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/NoteTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Neuron/Scenes/AllNotes/NoteTableViewCell.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +166,7 @@
       <workItem from="1590688605101" duration="306000" />
       <workItem from="1590690240079" duration="512000" />
       <workItem from="1590765187905" duration="219000" />
+      <workItem from="1590765422547" duration="556000" />
     </task>
     <task id="LOCAL-00001" summary="perf(fruit_game): добавил появление блюра">
       <created>1567623485418</created>
@@ -162,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567626760666</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor(note): вычищаем выгребную яму">
+      <created>1590765628029</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590765628029</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,70 +210,13 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="perf(fruit_game): добавил появление блюра" />
     <MESSAGE value="docs(fruit_game): добавил комментарий по коду прошлого коммита" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs(fruit_game): добавил комментарий по коду прошлого коммита" />
+    <MESSAGE value="refactor(note): вычищаем выгребную яму" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(note): вычищаем выгребную яму" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="348" y="224" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1575937872294">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="1320" y="460" key="Vcs.Push.Dialog.v2" timestamp="1590765634383">
+      <screen x="0" y="0" width="3440" height="1440" />
     </state>
-    <state x="348" y="224" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1440.900@0.0.1440.900" timestamp="1575937872294" />
-    <state x="407" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575489310152">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="407" y="184" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1575489310152" />
-    <state width="1680" height="90" key="GridCell.Tab.0.bottom" timestamp="1581599958906">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="125" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1576700263883" />
-    <state width="1680" height="90" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958906" />
-    <state width="1680" height="90" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1581598793578" />
-    <state width="1680" height="90" key="GridCell.Tab.0.center" timestamp="1581599958905">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="125" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1576700263881" />
-    <state width="1680" height="90" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958905" />
-    <state width="1680" height="90" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1581598793576" />
-    <state width="1680" height="90" key="GridCell.Tab.0.left" timestamp="1581599958904">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="125" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1576700263880" />
-    <state width="1680" height="90" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958904" />
-    <state width="1680" height="90" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1581598793574" />
-    <state width="1680" height="90" key="GridCell.Tab.0.right" timestamp="1581599958906">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="125" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1576700263882" />
-    <state width="1680" height="90" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958906" />
-    <state width="1680" height="90" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1581598793577" />
-    <state width="1680" height="90" key="GridCell.Tab.1.bottom" timestamp="1581599958908">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="75" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1575545909657" />
-    <state width="1680" height="90" key="GridCell.Tab.1.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958908" />
-    <state width="1680" height="90" key="GridCell.Tab.1.center" timestamp="1581599958907">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="75" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1575545909656" />
-    <state width="1680" height="90" key="GridCell.Tab.1.center/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958907" />
-    <state width="1680" height="90" key="GridCell.Tab.1.left" timestamp="1581599958907">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="75" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1575545909655" />
-    <state width="1680" height="90" key="GridCell.Tab.1.left/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958907" />
-    <state width="1680" height="90" key="GridCell.Tab.1.right" timestamp="1581599958908">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="1438" height="75" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1575545909656" />
-    <state width="1680" height="90" key="GridCell.Tab.1.right/0.0.1680.1050@0.0.1680.1050" timestamp="1581599958908" />
-    <state width="700" height="467" key="NewXcodeProjectWizard" timestamp="1581598441928">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state width="600" height="400" key="NewXcodeProjectWizard/0.0.1440.900@0.0.1440.900" timestamp="1575937891790" />
-    <state width="700" height="467" key="NewXcodeProjectWizard/0.0.1680.1050@0.0.1680.1050" timestamp="1581598441928" />
-    <state x="257" y="104" key="SettingsEditor" timestamp="1581598677882">
-      <screen x="0" y="0" width="1680" height="1050" />
-    </state>
-    <state x="220" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1576824209290" />
-    <state x="257" y="104" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1581598677882" />
+    <state x="1320" y="460" key="Vcs.Push.Dialog.v2/880.1440.1680.1050/0.0.3440.1440@0.0.3440.1440" timestamp="1590765634383" />
   </component>
 </project>
