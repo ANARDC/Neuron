@@ -9,19 +9,19 @@
 import UIKit
 
 final class AddNoteCellButton: UIButton {
-  
-  // MARK: - Class Properties
   @IBInspectable var fillColor: UIColor = UIColor.clear
   var isAddButton: Bool = true
   
-  // MARK: - Customize functions
-  // Adding dashed border
+  override func draw(_ rect: CGRect) {
+    self.addDashedBorder(rect)
+    self.addPlus(rect)
+  }
+  
   func addDashedBorder(_ rect: CGRect) {
     let color = UIColor.lightGray.cgColor
     
     let shapeLayer: CAShapeLayer = CAShapeLayer()
     let frameSize = self.frame.size
-    //        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
     let shapeRect = rect
     
     shapeLayer.bounds = shapeRect
@@ -36,7 +36,6 @@ final class AddNoteCellButton: UIButton {
     self.layer.addSublayer(shapeLayer)
   }
   
-  // Here drawing of plus
   private struct Constants {
     static let plusLineWidth: CGFloat = 3.0
     static let plusButtonScale: CGFloat = 0.3
@@ -92,10 +91,5 @@ final class AddNoteCellButton: UIButton {
     //set the stroke color
     UIColor.lightGray.setStroke()
     plusPath.stroke()
-  }
-  
-  override func draw(_ rect: CGRect) {
-    addDashedBorder(rect)
-    addPlus(rect)
   }
 }

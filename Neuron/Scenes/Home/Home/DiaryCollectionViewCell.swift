@@ -9,9 +9,9 @@
 import UIKit
 
 final class DiaryCollectionViewCell: UICollectionViewCell {
-  @IBOutlet weak var addNote: AddNoteCellButton!
-  @IBOutlet weak var dateInt: UILabel!
-  @IBOutlet weak var dateString: UILabel!
-  @IBOutlet weak var title: UILabel!
-  @IBOutlet weak var text: UILabel!
+  @IBOutlet weak var addNote    : AddNoteCellButton!
+  @IBOutlet weak var dateInt    : UILabel!
+  @IBOutlet weak var dateString : UILabel!
+  @IBOutlet weak var title      : UILabel!
+  @IBOutlet weak var text       : UILabel!
 }
