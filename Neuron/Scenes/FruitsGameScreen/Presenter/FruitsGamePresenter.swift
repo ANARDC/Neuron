@@ -9,21 +9,21 @@
 import UIKit
 
 // MARK: - PresenterDelegate
-protocol FruitsGamePresenterDelegate: class {
+protocol FruitsGamePresenterProtocol: class {
   func viewDidLoad()
   func viewDidDisappear()
-  func fillGameFruits(for fruit: Fruits)
+  func fillGameFruits(for fruit: Fruit)
   func restartGame()
   func startNextLevel()
   func startNewGame(choosenLevelNumber: Int)
 }
 
 // MARK: - FruitsGamePresenter
-final class FruitsGamePresenter: FruitsGamePresenterDelegate {
-  var view: FruitsGameViewDelegate?
+final class FruitsGamePresenter: FruitsGamePresenterProtocol {
+  var view: FruitsGameViewProtocol?
   var model: FruitsGameModel?
 
-  init(view: FruitsGameViewDelegate, model: FruitsGameModel) {
+  init(view: FruitsGameViewProtocol, model: FruitsGameModel) {
     self.view = view
     self.model = model
   }
@@ -57,7 +57,7 @@ final class FruitsGamePresenter: FruitsGamePresenterDelegate {
   }
   
   // MARK: - fillGameFruits()
-  func fillGameFruits(for fruit: Fruits) {
+  func fillGameFruits(for fruit: Fruit) {
     var localCurrentFruitIndex = 0
     
     // Корректируем значение указателя (currentFruitIndex) так чтобы можно было двигаться по фруктам справа налево

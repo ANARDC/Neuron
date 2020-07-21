@@ -10,14 +10,14 @@ import UIKit
 import SwiftGraph
 
 // MARK: - protocol
-protocol LacesGameViewControllerDelegate {
+protocol LacesGameViewControllerProtocol {
   
 }
 
 // MARK: - class
-final class LacesGameViewController: UIViewController, LacesGameViewControllerDelegate {
+final class LacesGameViewController: UIViewController, LacesGameViewControllerProtocol {
   var configurator : LacesGameConfigurator!
-  var presenter    : LacesGamePresenterDelegate!
+  var presenter    : LacesGamePresenterProtocol!
   
   
   @IBOutlet weak var timerLabel            : UILabel!

@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - protocol
-protocol LacesStartPresenterDelegate {
+protocol LacesStartPresenterProtocol {
   func viewDidLoad()
   func viewWillAppear()
   func viewDidLayoutSubviews()
@@ -19,10 +19,10 @@ protocol LacesStartPresenterDelegate {
 }
 
 // MARK: - class
-final class LacesStartPresenter: LacesStartPresenterDelegate {
-  var view: LacesStartViewControllerDelegate?
+final class LacesStartPresenter: LacesStartPresenterProtocol {
+  var view: LacesStartViewControllerProtocol?
   
-  init(view: LacesStartViewControllerDelegate) {
+  init(view: LacesStartViewControllerProtocol) {
     self.view = view
   }
   

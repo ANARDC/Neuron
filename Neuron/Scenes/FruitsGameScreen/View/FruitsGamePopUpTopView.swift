@@ -9,17 +9,16 @@
 import UIKit
 
 final class FruitsGamePopUpTopView: UIView {
-  var presenter: FruitsGamePresenterDelegate?
-  var accessLevel: Int!
+  var presenter   : FruitsGamePresenterProtocol?
+  var accessLevel : Int!
   
-  @IBOutlet weak var statusLabel: UILabel!
-  @IBOutlet var stars: [UIImageView]!
-  @IBOutlet weak var timerLabel: UILabel!
-  @IBOutlet weak var separatorView: UIView!
-  @IBOutlet weak var retryButton: UIButton!
-  @IBOutlet weak var nextButton: UIButton!
+  @IBOutlet weak var statusLabel   : UILabel!
+  @IBOutlet var stars              : [UIImageView]!
+  @IBOutlet weak var timerLabel    : UILabel!
+  @IBOutlet weak var separatorView : UIView!
+  @IBOutlet weak var retryButton   : UIButton!
+  @IBOutlet weak var nextButton    : UIButton!
   
-  // MARK: - IBActions
   @IBAction func retryButton(_ sender: UIButton) {
     self.presenter?.restartGame()
   }
@@ -28,7 +27,6 @@ final class FruitsGamePopUpTopView: UIView {
     self.presenter?.startNextLevel()
   }
   
-  // MARK: - init
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()
@@ -39,7 +37,6 @@ final class FruitsGamePopUpTopView: UIView {
     setup()
   }
   
-  // MARK: - setup
   func setup() {
     let view = loadFromNib()
     view.frame = bounds

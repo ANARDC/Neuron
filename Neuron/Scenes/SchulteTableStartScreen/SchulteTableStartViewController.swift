@@ -9,9 +9,9 @@
 import UIKit
 import PWSwitch
 
-protocol SchulteTableStartViewControllerDelegate {
+protocol SchulteTableStartViewControllerProtocol {
   var configurator : SchulteTableStartConfigurator!      { get set }
-  var presenter    : SchulteTableStartPresenterDelegate! { get set }
+  var presenter    : SchulteTableStartPresenterProtocol! { get set }
   
   var mixingShades      : Bool! { get set }
   var colorsCountChoose : Int!  { get }
@@ -48,9 +48,9 @@ protocol SchulteTableStartViewControllerDelegate {
   func makeChooseViewLabel()
 }
 
-final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerDelegate {
+final class SchulteTableStartViewController: UIViewController, SchulteTableStartViewControllerProtocol {
   var configurator : SchulteTableStartConfigurator!
-  var presenter    : SchulteTableStartPresenterDelegate!
+  var presenter    : SchulteTableStartPresenterProtocol!
   
   @IBOutlet weak var statsButton : UIBarButtonItem!
   

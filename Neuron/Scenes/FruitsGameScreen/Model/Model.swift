@@ -9,11 +9,9 @@
 import Foundation
 
 final class FruitsGameModel {
-  let useCases: UseCases
   let fruitsDataCore: FruitsDataCore
   
-  init(useCases: UseCases, fruitsDataCore: FruitsDataCore) {
-    self.useCases = useCases
+  init(fruitsDataCore: FruitsDataCore) {
     self.fruitsDataCore = fruitsDataCore
   }
 }

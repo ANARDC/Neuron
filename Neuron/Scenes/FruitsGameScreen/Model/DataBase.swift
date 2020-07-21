@@ -9,17 +9,14 @@
 import UIKit
 import CoreData
 
-// MARK: - Delegate
+// MARK: - Protocol
 protocol FruitsDataCoreProtocol {
   func saveFruitsGameData(fruitsGameSessionModel: FruitsGameSessionModel)
   func getFruitsGameData() -> [FruitsGameSessionModel]
 }
 
 // MARK: - FruitsDataCore
-
-final class FruitsDataCore {
-  
-  // MARK: - Saving FruitsGameSessionModel To Storage
+final class FruitsDataCore: FruitsDataCoreProtocol {
   func saveFruitsGameData(fruitsGameSessionModel: FruitsGameSessionModel) {
     // Получаем необходимые свойства
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

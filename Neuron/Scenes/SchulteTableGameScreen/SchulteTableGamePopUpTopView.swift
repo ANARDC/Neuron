@@ -9,7 +9,7 @@
 import UIKit
 
 class SchulteTableGamePopUpTopView: UIView {
-  var presenter: SchulteTableGamePresenterDelegate?
+  var presenter: SchulteTableGamePresenterProtocol?
   
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet var stars: [UIImageView]!

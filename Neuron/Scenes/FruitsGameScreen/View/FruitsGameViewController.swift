@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Delegate
-protocol FruitsGameViewDelegate {
+protocol FruitsGameViewProtocol {
   var fruitsIsHidden: Bool { get set }
   
   var filledFruitsCount: Int16 { get set }
@@ -18,7 +18,7 @@ protocol FruitsGameViewDelegate {
   
   var gamePassed: Bool? { get set }
   
-  var gameFruits      : [Fruits] { get set }
+  var gameFruits      : [Fruit] { get set }
   var gameFruitsViews : [UIView] { get set }
   var menuFruitsViews : [UIView] { get set }
   
@@ -62,9 +62,9 @@ protocol FruitsGameViewDelegate {
 }
 
 // MARK: - View
-final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
+final class FruitsGameViewController: UIViewController, FruitsGameViewProtocol {
   var configurator : FruitsGameConfigurator!
-  var presenter    : FruitsGamePresenterDelegate!
+  var presenter    : FruitsGamePresenterProtocol!
   
   @IBOutlet weak var timerLabel     : UILabel!
   @IBOutlet weak var restartButton  : UIBarButtonItem!
@@ -81,7 +81,7 @@ final class FruitsGameViewController: UIViewController, FruitsGameViewDelegate {
   
   var gamePassed: Bool? = nil
 
-  var gameFruits      = [Fruits]()
+  var gameFruits      = [Fruit]()
   var gameFruitsViews = [UIView]()
   var menuFruitsViews = [UIView]()
 
@@ -274,12 +274,12 @@ extension FruitsGameViewController {
     var mainStackView: UIStackView
 
     for i in 0..<typesCount {
-      let fruitView = Fruits.allCases[i].getFruitView(width: 59, height: 59, space: .menu)
+      let fruitView = Fruit.allCases[i].getFruitView(width: 59, height: 59, space: .menu)
       self.menuFruitsViews.append(fruitView)
     }
 
     self.menuFruitsViews.enumerated().forEach { (index, fruit) in
-      self.addTapGesture(for: fruit, fruit: Fruits.allCases[index])
+      self.addTapGesture(for: fruit, fruit: Fruit.allCases[index])
     }
 
     switch typesCount {
@@ -349,7 +349,7 @@ extension FruitsGameViewController {
   
   // MARK: - makeGameFruits
   func makeGameFruits(typesCount: Int) {
-    let fruitsTypes: [Fruits] = Array(Fruits.allCases[0..<typesCount])
+    let fruitsTypes: [Fruit] = Array(Fruit.allCases[0..<typesCount])
 
     let preFruitsCount = FruitsGameViewController.levelNumber + 7
     let fruitsCount    = preFruitsCount <= 53 ? preFruitsCount : 53
@@ -534,7 +534,7 @@ extension FruitsGameViewController {
 // MARK: - Gesture
 
 extension FruitsGameViewController {
-  func addTapGesture(for view: UIView, fruit: Fruits) {
+  func addTapGesture(for view: UIView, fruit: Fruit) {
     var gestureAction: Selector? = nil
 
     switch fruit {

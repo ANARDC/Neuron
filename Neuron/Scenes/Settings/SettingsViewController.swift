@@ -48,7 +48,7 @@ final class SettingsViewController: UIViewController {
   var diaryFillingTimeSelectedBackgroundViewPosition = 0
   var tasksFillingTimeSelectedBackgroundViewPosition = 0
 
-  let notificationsProcesses = NotificationsService()
+  let notificationsService = NotificationsService()
 }
 
 // MARK: - SettingsViewController Life Cycle
@@ -79,12 +79,12 @@ extension SettingsViewController {
       sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
       sender.shadowOpacity = 1
 
-      notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
+      notificationsService.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
     default:
       sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
       sender.shadowOpacity = 0
 
-      notificationsProcesses.removeNotification(notificationType: "DiaryFillingNotificationID")
+      notificationsService.removeNotification(notificationType: "DiaryFillingNotificationID")
     }
 
     [firstTimeFillingDiaryButton,
@@ -122,12 +122,12 @@ extension SettingsViewController {
       sender.layer.borderColor = UIColor(red: 0.46, green: 0.61, blue: 0.98, alpha: 0.37).cgColor
       sender.shadowOpacity = 1
 
-      notificationsProcesses.tasksNotificationsStatus = "daily"
+      notificationsService.tasksNotificationsStatus = "daily"
     } else {
       sender.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1).cgColor
       sender.shadowOpacity = 0
 
-      notificationsProcesses.tasksNotificationsStatus = "NONE"
+      notificationsService.tasksNotificationsStatus = "NONE"
     }
 
     [dailyFrequencyTaskButton,
@@ -221,38 +221,38 @@ extension SettingsViewController {
 extension SettingsViewController {
   @IBAction func firstTimeFillingDiaryButton(_ sender: UIButton) {
     diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 0)
-    notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
+    notificationsService.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 22, minute: 30, frequency: nil)
   }
 
   @IBAction func secondTimeFillingDiaryButton(_ sender: UIButton) {
     diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 1)
-    notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 00, frequency: nil)
+    notificationsService.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 00, frequency: nil)
   }
 
   @IBAction func thirdTimeFillingDiaryButton(_ sender: UIButton) {
     diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 2)
-    notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 30, frequency: nil)
+    notificationsService.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 23, minute: 30, frequency: nil)
   }
 
   @IBAction func fourthTimeFillingDiaryButton(_ sender: UIButton) {
     diarySelectButtonTappedAction(from: diaryFillingTimeSelectedBackgroundViewPosition, to: 3)
-    notificationsProcesses.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 0, minute: 0, frequency: nil)
+    notificationsService.scheduleNotification(notificationType: "DiaryFillingNotificationID", hour: 0, minute: 0, frequency: nil)
   }
 
 
   @IBAction func dailyFrequencyTaskButton(_ sender: UIButton) {
     tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 0)
-    notificationsProcesses.tasksNotificationsStatus = "daily"
+    notificationsService.tasksNotificationsStatus = "daily"
   }
 
   @IBAction func weeklyFrequencyTaskButton(_ sender: UIButton) {
     tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 1)
-    notificationsProcesses.tasksNotificationsStatus = "weekly"
+    notificationsService.tasksNotificationsStatus = "weekly"
   }
 
   @IBAction func monthlyFrequencyTaskButton(_ sender: UIButton) {
     tasksSelectButtonTappedAction(from: tasksFillingTimeSelectedBackgroundViewPosition, to: 2)
-    notificationsProcesses.tasksNotificationsStatus = "monthly"
+    notificationsService.tasksNotificationsStatus = "monthly"
   }
 
 

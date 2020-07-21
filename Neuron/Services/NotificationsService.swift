@@ -8,7 +8,7 @@
 
 import UserNotifications
 
-class NotificationsService {
+final class NotificationsService {
     let notificationCenter = UNUserNotificationCenter.current()
     var tasksNotificationsStatus = "daily"
     

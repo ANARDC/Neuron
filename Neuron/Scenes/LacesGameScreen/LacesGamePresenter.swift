@@ -7,15 +7,15 @@
 //
 
 // MARK: - protocol
-protocol LacesGamePresenterDelegate {
+protocol LacesGamePresenterProtocol {
   func viewDidLoad()
 }
 
 // MARK: - class
-final class LacesGamePresenter: LacesGamePresenterDelegate {
-  var view: LacesGameViewControllerDelegate?
+final class LacesGamePresenter: LacesGamePresenterProtocol {
+  var view: LacesGameViewControllerProtocol?
   
-  init(view: LacesGameViewControllerDelegate) {
+  init(view: LacesGameViewControllerProtocol) {
     self.view = view
   }
   

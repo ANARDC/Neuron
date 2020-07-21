@@ -12,10 +12,10 @@ protocol FruitsGameConfigurator {
 }
 
 final class FruitsGameConfiguratorImplementation: FruitsGameConfigurator {
-  var presenter: FruitsGamePresenterDelegate?
+  var presenter: FruitsGamePresenterProtocol?
   
   init(_ fruitsGameViewController: FruitsGameViewController) {
-    let model = FruitsGameModel(useCases: UseCases(), fruitsDataCore: FruitsDataCore())
+    let model = FruitsGameModel(fruitsDataCore: FruitsDataCore())
     self.presenter = FruitsGamePresenter(view: fruitsGameViewController, model: model)
   }
   

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SchulteTableGameViewControllerDelegate {
+protocol SchulteTableGameViewControllerProtocol {
   var settingsData : SchulteTableGameSettings! { get set }
   
   var currentCellIndex: Int { get set }
@@ -33,9 +33,9 @@ protocol SchulteTableGameViewControllerDelegate {
   func collectionViewSetting()
 }
 
-final class SchulteTableGameViewController: UIViewController, SchulteTableGameViewControllerDelegate {
+final class SchulteTableGameViewController: UIViewController, SchulteTableGameViewControllerProtocol {
   var configurator : SchulteTableGameConfigurator!
-  var presenter    : SchulteTableGamePresenterDelegate!
+  var presenter    : SchulteTableGamePresenterProtocol!
   
   var settingsData : SchulteTableGameSettings!
   

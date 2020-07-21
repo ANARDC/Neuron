@@ -31,7 +31,8 @@
 		993B048623BE333A00EFC884 /* LacesStartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B048523BE333A00EFC884 /* LacesStartPresenter.swift */; };
 		993B048823BE334200EFC884 /* LacesStartConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B048723BE334200EFC884 /* LacesStartConfigurator.swift */; };
 		994CBBA622DF44A5007B5BD5 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994CBBA522DF44A5007B5BD5 /* Design.swift */; };
-		9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7252350A5B900C6CAB1 /* UseCases.swift */; };
+		995C051B2481708F00191E31 /* FruitsSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995C051A2481708F00191E31 /* FruitsSpace.swift */; };
+		995C051D248170B100191E31 /* FruitConstraintsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995C051C248170B100191E31 /* FruitConstraintsConstants.swift */; };
 		9966A7282354997800C6CAB1 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A7272354997800C6CAB1 /* DataBase.swift */; };
 		9966A72A23590AA900C6CAB1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9966A72923590AA900C6CAB1 /* Model.swift */; };
 		9969C3692386AF7300F8D222 /* SchulteTableGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9969C3682386AF7300F8D222 /* SchulteTableGameViewController.swift */; };
@@ -41,7 +42,7 @@
 		996F4B1E22E3741900B19478 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1D22E3741900B19478 /* Home.storyboard */; };
 		996F4B2022E3768900B19478 /* Stats.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B1F22E3768900B19478 /* Stats.storyboard */; };
 		996F4B2222E376A000B19478 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 996F4B2122E376A000B19478 /* Settings.storyboard */; };
-		9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CD2337CAA4004B639A /* Fruits.swift */; };
+		9971E2CE2337CAA4004B639A /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CD2337CAA4004B639A /* Fruit.swift */; };
 		9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */; };
 		9971E2D323380EE9004B639A /* FruitsGamePopUpBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */; };
 		9974E1FE22E3DE1600EED8FC /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */; };
@@ -121,7 +122,8 @@
 		993B048523BE333A00EFC884 /* LacesStartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartPresenter.swift; sourceTree = "<group>"; };
 		993B048723BE334200EFC884 /* LacesStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LacesStartConfigurator.swift; sourceTree = "<group>"; };
 		994CBBA522DF44A5007B5BD5 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
-		9966A7252350A5B900C6CAB1 /* UseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCases.swift; sourceTree = "<group>"; };
+		995C051A2481708F00191E31 /* FruitsSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsSpace.swift; sourceTree = "<group>"; };
+		995C051C248170B100191E31 /* FruitConstraintsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitConstraintsConstants.swift; sourceTree = "<group>"; };
 		9966A7272354997800C6CAB1 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		9966A72923590AA900C6CAB1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9969C3682386AF7300F8D222 /* SchulteTableGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchulteTableGameViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +133,7 @@
 		996F4B1D22E3741900B19478 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		996F4B1F22E3768900B19478 /* Stats.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stats.storyboard; sourceTree = "<group>"; };
 		996F4B2122E376A000B19478 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		9971E2CD2337CAA4004B639A /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		9971E2CD2337CAA4004B639A /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
 		9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIntensityVisualEffectView.swift; sourceTree = "<group>"; };
 		9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsGamePopUpBottomView.swift; sourceTree = "<group>"; };
 		9974E1FD22E3DE1600EED8FC /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -270,9 +272,8 @@
 		9928825723046AAD0078664E /* FruitsGameScreen */ = {
 			isa = PBXGroup;
 			children = (
-				9971E2D12337FCAC004B639A /* Entity */,
-				99B46DCC232FB21800156597 /* Model */,
 				99B46DCD232FB72200156597 /* View */,
+				99B46DCC232FB21800156597 /* Model */,
 				99B46DCE232FB72F00156597 /* Presenter */,
 				CA451E2F4E7CB40EE6813734 /* FruitsGameConfigurator.swift */,
 			);
@@ -302,6 +303,9 @@
 			isa = PBXGroup;
 			children = (
 				CA4517CB7C636B4C02EA472A /* MonthData.swift */,
+				9971E2CD2337CAA4004B639A /* Fruit.swift */,
+				995C051A2481708F00191E31 /* FruitsSpace.swift */,
+				995C051C248170B100191E31 /* FruitConstraintsConstants.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -359,14 +363,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		9971E2D12337FCAC004B639A /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				9971E2CD2337CAA4004B639A /* Fruits.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
 		9974E20422E3F5F400EED8FC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -421,7 +417,6 @@
 		99B46DCC232FB21800156597 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9966A7252350A5B900C6CAB1 /* UseCases.swift */,
 				9966A7272354997800C6CAB1 /* DataBase.swift */,
 				9966A72923590AA900C6CAB1 /* Model.swift */,
 			);
@@ -432,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				9928825823046AD40078664E /* FruitsGameViewController.swift */,
-				9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */,
 				99B46DCA232E45B300156597 /* FruitsGamePopUpTopView.swift */,
 				9971E2D223380EE9004B639A /* FruitsGamePopUpBottomView.swift */,
 			);
@@ -453,6 +447,7 @@
 				99F9B2BA2321516900FEEA69 /* FluidCard */,
 				994CBBA522DF44A5007B5BD5 /* Design.swift */,
 				99D9528A23C224BC00E783C8 /* Postfixes.swift */,
+				9971E2CF2337F038004B639A /* CustomIntensityVisualEffectView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -649,6 +644,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9969C36B2387076500F8D222 /* SchulteTableGamePresenter.swift in Sources */,
+				995C051B2481708F00191E31 /* FruitsSpace.swift in Sources */,
 				998A459823BE7F36009FFC5F /* LacesStartLevelsCollectionViewCell.swift in Sources */,
 				9969C3692386AF7300F8D222 /* SchulteTableGameViewController.swift in Sources */,
 				99D9528923C0E98000E783C8 /* LacesGameConfigurator.swift in Sources */,
@@ -659,10 +655,9 @@
 				99F8320122EBA184004275BB /* DataService.swift in Sources */,
 				9974E20622E3F67900EED8FC /* SettingsViewController.swift in Sources */,
 				99D9528523C0E94F00E783C8 /* LacesGameViewController.swift in Sources */,
-				9971E2CE2337CAA4004B639A /* Fruits.swift in Sources */,
+				9971E2CE2337CAA4004B639A /* Fruit.swift in Sources */,
 				993B048623BE333A00EFC884 /* LacesStartPresenter.swift in Sources */,
 				9971E2D02337F038004B639A /* CustomIntensityVisualEffectView.swift in Sources */,
-				9966A7262350A5B900C6CAB1 /* UseCases.swift in Sources */,
 				99F9B2C02321525500FEEA69 /* ExpandButton.swift in Sources */,
 				9923FA1B22F60FA500F33B0C /* FruitsStartViewController.swift in Sources */,
 				99F9B2C42321528C00FEEA69 /* TimingFunction.swift in Sources */,
@@ -690,6 +685,7 @@
 				99E30FCE239E74BD00D53F8A /* SchulteTableGamePopUpBottomView.swift in Sources */,
 				9974E20822E3F6F500EED8FC /* AllNotesTableViewController.swift in Sources */,
 				99D9528B23C224BC00E783C8 /* Postfixes.swift in Sources */,
+				995C051D248170B100191E31 /* FruitConstraintsConstants.swift in Sources */,
 				99E30FCA239E6BE500D53F8A /* SchulteTableGamePopUpTopView.swift in Sources */,
 				999CDDFB22E842FD00D3ED7D /* CalendarCollectionViewCell.swift in Sources */,
 				992EEE4E236F0AA0005FA8C2 /* SchulteTableStartPresenter.swift in Sources */,

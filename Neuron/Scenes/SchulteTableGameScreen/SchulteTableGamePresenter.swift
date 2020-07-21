@@ -9,7 +9,7 @@
 import UIKit
 import PWSwitch
 
-protocol SchulteTableGamePresenterDelegate {
+protocol SchulteTableGamePresenterProtocol {
   func viewDidload()
   func viewWillAppear()
   func willMove()
@@ -28,10 +28,10 @@ protocol SchulteTableGamePopUpBottomViewPresenterDelegate {
   func mixingShadesSwitchTouchDragExit(_ sender: PWSwitch)
 }
 
-final class SchulteTableGamePresenter: SchulteTableGamePresenterDelegate {
-  var view: SchulteTableGameViewControllerDelegate?
+final class SchulteTableGamePresenter: SchulteTableGamePresenterProtocol {
+  var view: SchulteTableGameViewControllerProtocol?
   
-  init(view: SchulteTableGameViewControllerDelegate) {
+  init(view: SchulteTableGameViewControllerProtocol) {
     self.view = view
   }
   

@@ -9,7 +9,7 @@
 import UIKit
 
 final class FruitsGamePopUpBottomView: UIView {
-  var presenter: FruitsGamePresenterDelegate?
+  var presenter: FruitsGamePresenterProtocol?
   private var accessLevel: Int!
   
   // MARK: - Properties

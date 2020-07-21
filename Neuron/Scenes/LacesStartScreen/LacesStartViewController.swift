@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - protocol
-protocol LacesStartViewControllerDelegate {
+protocol LacesStartViewControllerProtocol {
   var settingsIsReady: Bool { get }
   
   func goToGameScreen(levelNumber: Int)
@@ -29,9 +29,9 @@ protocol LacesStartViewControllerDelegate {
 }
 
 // MARK: - class
-final class LacesStartViewController: UIViewController, LacesStartViewControllerDelegate {
+final class LacesStartViewController: UIViewController, LacesStartViewControllerProtocol {
   var configurator : LacesStartConfigurator!
-  var presenter    : LacesStartPresenterDelegate!
+  var presenter    : LacesStartPresenterProtocol!
   
   let animationsDuration = 0.4
   
